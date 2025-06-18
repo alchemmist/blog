@@ -1,17 +1,18 @@
 alchemmist.xyz {
     root * /srv/site
-    encode gzip
-
-    handle_path /cv* {
-        file_server {
-            root * /srv/site
-            index cv.html
-        }
+    
+    handle /cv {
+        rewrite * /cv.html
+        file_server
     }
 
+    handle /blog {
+        rewrite * /blog.html
+        file_server
+    }
+    
     handle {
         try_files {path} /index.html
         file_server
     }
 }
-
