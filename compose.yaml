@@ -1,13 +1,9 @@
 services:
   eleventy:
-    image: node:alpine
+    build: ./site
     container_name: eleventy
-    working_dir: /usr/src/app
-    volumes:
-      - ./:/usr/src/app:delegated
-    command: npm start
-    expose:
-      - "8080"
+    ports:
+      - "8080:8080"
     restart: unless-stopped
   caddy:
     image: caddy:latest

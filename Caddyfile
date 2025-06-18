@@ -2,10 +2,5 @@ alchemmist.xyz {
     encode gzip
 
     reverse_proxy eleventy:8080
-
-    log {
-        output file /data/access.log
-        format single_field common_log
-    }
 }
 
