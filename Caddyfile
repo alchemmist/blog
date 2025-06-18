@@ -1,0 +1,10 @@
+alchemmist.xyz {
+    root * /srv/site
+
+    try_files /index.html
+
+    @cv path /cv
+    rewrite @cv /cv.html
+
+    file_server
+}
