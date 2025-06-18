@@ -5,6 +5,8 @@ services:
     ports:
       - "8080:8080"
     restart: unless-stopped
+    volumes: 
+      - ./site/src:/usr/src/app/src
   caddy:
     image: caddy:latest
     container_name: caddy
