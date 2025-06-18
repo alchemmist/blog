@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ${{ secrets.SSH_PROJECT_PATH }}
-            git pull origin main
+            git pull origin main --rebase
             docker compose down
             docker compose up -d
 
