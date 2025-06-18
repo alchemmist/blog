@@ -1,18 +1,11 @@
 alchemmist.xyz {
-    root * /srv/site
-    
-    handle /cv {
-        rewrite * /cv.html
-        file_server
-    }
+    encode gzip
 
-    handle /blog {
-        rewrite * /blog.html
-        file_server
-    }
-    
-    handle {
-        try_files {path} /index.html
-        file_server
+    reverse_proxy eleventy:8080
+
+    log {
+        output file /data/access.log
+        format single_field common_log
     }
 }
+

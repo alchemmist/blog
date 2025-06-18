@@ -1,4 +1,14 @@
 services:
+  eleventy:
+    image: node:alpine
+    container_name: eleventy
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app:delegated
+    command: npm start
+    expose:
+      - "8080"
+    restart: unless-stopped
   caddy:
     image: caddy:latest
     container_name: caddy
@@ -6,12 +16,12 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./site:/srv/site
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
       - caddy_config:/config
+    depends_on:
+      - eleventy
     restart: unless-stopped
-
 volumes:
   caddy_data:
   caddy_config:
