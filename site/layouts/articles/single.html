@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main class="base-container">
+  <article>
+    <h1>{{ .Title }}</h1>
+    <p><em>{{ .Date.Format "2006-01-02" }}</em></p>
+    {{ .Content }}
+  </article>
+</main>
+{{ end }}

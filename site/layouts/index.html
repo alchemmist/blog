@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta property="og:title" content="alchemmist" />
     <meta property="og:description" content="Personal web site of alchemmist" />
-    <meta property="og:image" content="https://alchemmist.xyz/assets/preview2.png" />
+    <meta
+      property="og:image"
+      content="https://alchemmist.xyz/assets/preview2.png"
+    />
     <meta property="og:url" content="https://alchemmist.xyz/" />
     <meta property="og:type" content="website" />
 
@@ -13,9 +16,10 @@
     <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
   </head>
   <body>
-    {% include "header.html" %}
+    {{ partial "header.html" . }}
+
     <div class="base-container home-container">
-          <pre class="ascii-art">
+      <pre class="ascii-art">
 ⠀⠀⠀⠀⠀⠀⢀⣀⣠⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⣠⣶⣾⣷⣶⣄⠀⠀⠀⠀⠀
@@ -40,6 +44,7 @@
         </ul>
       </div>
     </div>
-    {% include "footer.html" %}
+
+    {{ partial "footer.html" }}
   </body>
 </html>

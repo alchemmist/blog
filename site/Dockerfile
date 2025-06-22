@@ -1,11 +1,9 @@
-FROM node:alpine
+FROM archlinux:latest
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-
-RUN npm install
+RUN pacman -Syu hugo
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["hugo", "serve"]

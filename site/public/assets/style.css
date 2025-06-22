@@ -5,10 +5,11 @@
   box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -84,7 +85,6 @@ h1 a {
 
 .cv-container {
   display: flex;
-  width: 80%;
   flex-direction: column;
 }
 
@@ -124,4 +124,8 @@ footer p {
 
 .footer-link a {
   color: lightgray;
+}
+
+.articles-container {
+  flex-direction: column;
 }

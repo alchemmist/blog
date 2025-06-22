@@ -1,12 +1,12 @@
 services:
-  eleventy:
+  hugo:
     build: ./site
-    container_name: eleventy
+    container_name: hugo
     ports:
       - "8080:8080"
     restart: unless-stopped
     volumes: 
-      - ./site/src:/usr/src/app/src
+      - ./site:/usr/src/app
   caddy:
     image: caddy:latest
     container_name: caddy
@@ -18,7 +18,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     depends_on:
-      - eleventy
+      - hugo
     restart: unless-stopped
 volumes:
   caddy_data:
