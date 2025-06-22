@@ -1,19 +1,13 @@
 name: Deploy
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Clone repo
-        uses: actions/checkout@v4
-
-      - name: 🚀 Depoly with ssh
+      - name: Pull repo
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -22,6 +16,21 @@ jobs:
           script: |
             cd ${{ secrets.SSH_PROJECT_PATH }}
             git pull origin main --rebase
+      - name: Compose down
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.SSH_PROJECT_PATH }}
             docker compose down
+      - name: Compose up
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.SSH_PROJECT_PATH }}
             docker compose up -d
-

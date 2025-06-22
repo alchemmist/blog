@@ -3,10 +3,12 @@ services:
     build: ./site
     container_name: hugo
     ports:
-      - "8080:8080"
+      - "1313:1313"
     restart: unless-stopped
     volumes: 
       - ./site:/usr/src/app
+    networks:
+      - default
   caddy:
     image: caddy:latest
     container_name: caddy
@@ -20,6 +22,12 @@ services:
     depends_on:
       - hugo
     restart: unless-stopped
+    networks:
+      - default
 volumes:
   caddy_data:
   caddy_config:
+
+networks:
+  default:
+    driver: bridge
