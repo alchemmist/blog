@@ -156,8 +156,38 @@ article p {
   text-align: left;
 }
 
+.article-date {
+  text-align: center !important;
+}
+
+.article-date em {
+  font-size: 15px !important;
+}
+
 article * {
   font-family: "Computer Modern Roman", serif;
   font-size: 19px;
 }
 
+article h1 {
+  margin-bottom: 0;
+  font-size: 25px;
+}
+
+article h2 {
+  margin: 0.5cm;
+}
+
+article h3 {
+  margin: 0.5cm;
+}
+
+article h4 {
+  margin: 0.5cm;
+}
+
+
+.articles-container li {
+  text-align: left;
+  margin: 0.3cm;
+}
