@@ -129,3 +129,35 @@ footer p {
 .articles-container {
   flex-direction: column;
 }
+
+mjx-container[display="true"] {
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: "Computer Modern Roman";
+  src: url("/assets/fonts/cmu.serif-roman.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Computer Modern Roman";
+  src: url("/assets/fonts/cmu.serif-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+article {
+  width: 50%;
+}
+
+article p {
+  text-align: left;
+}
+
+article * {
+  font-family: "Computer Modern Roman", serif;
+  font-size: 19px;
+}
+
