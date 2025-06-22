@@ -1,11 +1,12 @@
 services:
   hugo:
     build: ./site
+    command: hugo serve --bind 0.0.0.0 --baseURL https://alchemmist.xyz --port 1313
     container_name: hugo
     ports:
       - "1313:1313"
     restart: unless-stopped
-    volumes: 
+    volumes:
       - ./site:/usr/src/app
     networks:
       - default
@@ -27,7 +28,6 @@ services:
 volumes:
   caddy_data:
   caddy_config:
-
 networks:
   default:
     driver: bridge
