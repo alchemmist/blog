@@ -3,6 +3,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scrollbar-width: none
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 html,
@@ -135,6 +140,13 @@ mjx-container[display="true"] {
 }
 
 @font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Computer Modern Roman";
   src: url("/assets/fonts/cmu.serif-roman.ttf") format("truetype");
   font-weight: normal;
@@ -148,12 +160,33 @@ mjx-container[display="true"] {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  src: url("/assets/fonts/cmu.typewriter-text-regular.ttf") format("truetype");
+  font-weight: noraml;
+  font-style: normal;
+}
+
 article {
   width: 50%;
 }
 
 article p {
   text-align: left;
+}
+
+article ol li {
+  margin: 0.9em 0;
+}
+
+article ul, ol {
+  text-align: left;
+  padding-left: 1.5em; 
+  margin-left: 0;      
+}
+
+li::marker {
+    font-size: 1em;
 }
 
 .article-date {
@@ -186,8 +219,41 @@ article h4 {
   margin: 0.5cm;
 }
 
-
 .articles-container li {
   text-align: left;
   margin: 0.3cm;
+}
+
+pre code {
+  display: block;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+pre code * {
+  /* font-family: "JetBrains Mono"; */
+  font-family: "Computer Modern Typewriter";
+  font-size: 0.95em;
+  line-height: 1.2;
+}
+
+pre {
+  margin: 0;
+}
+
+p code,
+li code,
+blockquote code {
+  background-color: #f0f0f0;
+  padding: 0.0em 0.3em 0.0em 0.3em;
+  margin: 0 0.1em;
+  border-radius: 3px;
+  font-family: "Computer Modern Typewriter";
+  font-size: 0.95em;
+  color: #333;
 }

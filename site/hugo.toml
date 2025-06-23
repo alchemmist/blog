@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'alchemmist'
 
 [markup]
+  [markup.highlight]
+    style = "github"
+    noClasses = false
+    lineNos = false
   [markup.goldmark]
     [markup.goldmark.renderer]
         unsafe = true
@@ -12,6 +16,7 @@ title = 'alchemmist'
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+
 [params]
   math = true
 

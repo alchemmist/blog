@@ -42,6 +42,13 @@ This was 10 years ago, sorry for the delay :), but I thought I'll put a more act
 
 ### Addition
 
-If you want to import let's say the regular (400) and 500 oswald fonts, simply search for "Oswald", select regular and 500, and you get the code like this:
+If you `want` to import let's say the regular (400) and 500 oswald fonts, simply search for "Oswald", select regular and 500, and you get the code like this:
 
+```python
+def test_foo(res: list[int]) -> list[int]:
+    for i in range(1, 100):
+        if i % 2 == 0:
+            res.append(i)
+    return res
+```
 
