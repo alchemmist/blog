@@ -39,8 +39,13 @@
       >
       <div class="updates-container">
         <h3>Last updates</h3>
+        {{ $updates := .Site.GetPage "updates" }}
         <ul>
-          <li>We start! Lets write and read)</li>
+          {{ range $line := split $updates.RawContent "\n" }}
+            {{ if in $line "- [ ]" }}
+              <li>{{ replace (replace $line "- [ ]" "") "[" "<a href=\"" | safeHTML }}{{ replace $line "](" "\">" | safeHTML }}</a></li>
+            {{ end }}
+          {{ end }}
         </ul>
       </div>
     </div>

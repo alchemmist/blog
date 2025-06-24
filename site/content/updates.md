@@ -1,5 +1,7 @@
 ---
 tech_name: "updates"
+title: "Updates"
+type: updates
 extra: 
   custom_props:
      public: true
