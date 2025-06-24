@@ -20,3 +20,6 @@ title = 'alchemmist'
 [params]
   math = true
 
+
+[taxonomies]
+  tag = "tags"

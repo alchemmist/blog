@@ -2,9 +2,8 @@
 date: 2025-02-02
 title: "Linux disk clean up"
 tech_name: "linux-clean-up"
-taxonomies:
-  tags:
-    - linux
+tags:
+  - linux
 extra:
   custom_props:
     time: 14:18

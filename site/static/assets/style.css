@@ -132,6 +132,7 @@ footer p {
 }
 
 .articles-container {
+  display: flex;
   flex-direction: column;
 }
 
@@ -224,6 +225,11 @@ article h4 {
   margin: 0.3cm;
 }
 
+.articles-container h2 {
+  margin: 1cm;
+}
+
+
 pre code {
   display: block;
   background-color: #f9f9f9;
@@ -257,3 +263,23 @@ blockquote code {
   font-size: 0.95em;
   color: #333;
 }
+
+.arhive-containter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#tags-between-arhive {
+  display: inline;
+  height: 100px;
+}
+
+.tags-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
