@@ -1,6 +1,6 @@
 ---
 date: 2025-01-24
-tile: "Дверь"
+title: "Дверь"
 tech_name: "door"
 extra:
   custom_props:
