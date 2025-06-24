@@ -27,4 +27,10 @@ $$
 \lambda v = \lambda \cdot \begin{pmatrix}v_1 \\ v_2 \\ \ldots \\ v_n \end{pmatrix} = \begin{pmatrix}\lambda v_1 \\ \lambda v_2 \\ \ldots \\ \lambda v_n \end{pmatrix}
 $$
 2. Difference of vectors is a sum of vectors, but one of vector product by scalar $-1$.
-3. 
+3. Scalar product of vectors:
+$$
+x \cdot y = \langle x;y\rangle = x_1 y_1 + x_2 y_2 + \ldots + x_n y_n = \sum \limits_{i = 1}^{n}x_i y_i
+$$
+## Geometric meaning 
+In geometry vector is a segment having a direction. The length of vector we calculate with Pythagoras’s theorem: $|v| = \sqrt{\sum\limits_{i = 1}^{n}{x_i}}$. If length of vector equal one we call it a **unit vector**. If $v$ not a unit vector we can change it multiplying by $\lambda = \frac{1}{|v|}$. We can calculate distance and angle between two vectors. Distance is a length of difference two vectors: $|d| = |v - w| = \sqrt{\sum\limits_{i = 1}^{n}{(v_i - w_i)^2}}$. Angle between two vectors follows from Law of Cosines: $\cos{\theta} = \frac{\sum\limits_{i = 1}^{n}{u_i v_i}}{|u||v|}$. 
+
