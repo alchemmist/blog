@@ -335,32 +335,3 @@ blockquote code {
   text-align: cetner;
 }
 
-/* при наведении на «датчик» — картинка выезжает */
-.edge-trigger:hover + .edge-image {
-  left: 0;
-}
-
-.edge-panel {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 20px; /* Невидимая область активации */
-  z-index: 100;
-}
-
-.sliding-image {
-  position: fixed;
-  left: -200px; /* Скрыто за левым краем */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 200px;
-  height: 200px;
-  background: url("https://alchemmist.xyz/images/moss1.png") center/cover;
-  transition: left 0.3s ease-out;
-  z-index: 99;
-}
-
-.edge-panel:hover ~ .sliding-image {
-  left: 0; /* Появляется при наведении */
-}
