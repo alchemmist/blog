@@ -7,6 +7,7 @@ tags:
 extra:
   custom_props:
     time: 14:18
+    public: true
     type: synopsis
     theme: linux
     status: writing

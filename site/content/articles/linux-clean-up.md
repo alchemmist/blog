@@ -7,11 +7,12 @@ tags:
 extra:
   custom_props:
     time: 14:18
+    public: true
     type: synopsis
     theme: linux
     status: writing
 ---
-If you using docker on your machine, would be a good place for start it’s clean all docker stuff. Only if you’re sure in your docker containers, volumes nothing important:
+If [you](https://google.com) using docker on your machine, would be a good place for start it’s clean all docker stuff. Only if you’re sure in your docker containers, volumes nothing important:
 ```sh
 docker system prune
 ```
