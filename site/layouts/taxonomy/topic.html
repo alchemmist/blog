@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main class="base-container articles-container">
+  <h2>Articles about {{ .Title }}</h2>
+
+  <ul>
+    {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "2006-01-02" }}</li>
+    {{ else }}
+      <li>No articles found for this tag.</li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}
+
+

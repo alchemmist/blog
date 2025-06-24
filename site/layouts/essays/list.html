@@ -7,7 +7,7 @@
     <ul>
       {{ range .Site.Taxonomies.topics }}
         <span class="tag">
-          <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>({{ .Count }})
+          <a href="{{ .Page.RelPermalink }}">{{ .Page.Title | lower }}</a>({{ .Count }})
         </span>
       {{ end }}
     </ul>
