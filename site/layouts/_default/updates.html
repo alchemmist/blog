@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main class="base-container">
+  <h2>{{ .Title }}</h2>
+  <ul>
+    {{ range $line := split .RawContent "\n" }}
+      <li>{{ $line }}</li>
+      {{- if in $line "- [ ]" }}
+        <li>{{ replace (replace $line "- [ ]" "") "[" "<a href=\"" | safeHTML }}{{ replace $line "](" "\">" | safeHTML }}</a></li>
+      {{ else if in $line "- [x]" }}
+        <li>{{ replace (replace $line "- [x]" "") "[" "<a href=\"" | safeHTML }}{{ replace $line "](" "\">" | safeHTML }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</main>
+{{ end }}
+
