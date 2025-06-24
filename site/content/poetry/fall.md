@@ -9,7 +9,9 @@ extra:
     status: finished
 ---
 # Падение
-![[Pasted image 20250124163318.png]]
+
+![](https://alchemmist.xyz/images/Pasted image 20250124163318.png)
+
 внутри  тьма
 что молчит обычно
 пока радость течёт

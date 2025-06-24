@@ -10,7 +10,7 @@ extra:
 ---
 # Тишина
 
-![[Pasted image 20250429144907.png|300]]
+![](https://alchemmist.xyz/images/Pasted image 20250429144907.png)
 
 маркетинг чувств не терпит тишины
 об этом знали лишь бараш и горы

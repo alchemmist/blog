@@ -9,7 +9,8 @@ extra:
     status: finished
 ---
 # Проблеск
-![[Pasted image 20250609172412.png | 400]]
+
+![](https://alchemmist.xyz/images/Pasted image 20250609172412.png)
 
 Мы тонем в текстах, но нет слов.
 Живем в надежде на божков.
