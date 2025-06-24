@@ -178,6 +178,7 @@ mjx-container[display="true"] {
 
 article {
   width: 50%;
+  min-width: 700px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -360,4 +361,17 @@ blockquote code {
   margin: 0.5em 0;
 }
 
+blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #333;
+  border-left: 4px solid #aaa;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  quotes: "“" "”" "‘" "’";
+}
 
+blockquote p {
+  display: inline;
+}
