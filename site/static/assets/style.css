@@ -316,3 +316,22 @@ blockquote code {
   flex-direction: column;
 }
 
+.poetry {
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.poetry * {
+  font-family: "Computer Modern Roman", serif;
+  font-size: 19px;
+}
+
+.poetry img {
+  width: 100%;
+}
+
+.poetry-text {
+  text-align: left;
+}

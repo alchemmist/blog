@@ -1,10 +1,10 @@
 {{ define "main" }}
 <main class="base-container">
-  <article>
+  <div class="poetry">
     <h1>{{ .Title }}</h1>
     <p class="article-date"><em>{{ .Date.Format "2006-01-02" }}</em></p>
-    {{ .Content }}
+    <pre class="poetry-text">{{ .Content | safeHTML }}</pre>
     {{ partial "artical-finish.html" }}
-  </article>
+  </div >
 </main>
 {{ end }}
