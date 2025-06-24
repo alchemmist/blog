@@ -3,12 +3,12 @@ date: 2025-02-02
 title: "Clear Deployment with GitHub Actions"
 tech_name: "deploy-gh-actions"
 tags:
-  - linux
+  - github
 extra:
   custom_props:
     time: 14:18
     type: synopsis
-    theme: devops
+    theme: linux
     status: writing
 ---
 
