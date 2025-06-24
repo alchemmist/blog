@@ -310,3 +310,9 @@ blockquote code {
 .tags-list h3 {
   margin: 15px 0;
 }
+
+.poetry-container {
+  display: flex;
+  flex-direction: column;
+}
+
