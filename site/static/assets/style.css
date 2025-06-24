@@ -349,7 +349,7 @@ blockquote code {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px; /* ширина зоны срабатывания */
+  width: 50px; /* ширина зоны срабатывания */
   height: 100%;
   pointer-events: all; /* только он будет ловить hover */
 }

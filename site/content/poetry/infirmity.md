@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![[Pasted image 20250424164337.png|400]]
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250424164337.png)
 
 героям ангелы слагали песни
 о славе подвигов сиих 
