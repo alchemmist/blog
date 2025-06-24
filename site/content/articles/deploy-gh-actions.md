@@ -1,5 +1,5 @@
 ---
-date: 2025-02-02
+date: 2025-06-24
 title: "Clear Deployment with GitHub Actions"
 tech_name: "deploy-gh-actions"
 tags:
