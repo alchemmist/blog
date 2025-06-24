@@ -3,14 +3,18 @@
   <h2>Articles</h2>
 
   <section class="tags-list">
-    <h3>Tags</h3>
+    <h3>Topics</h3>
     <ul>
-      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-        <span class="tag"><a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>({{ len $taxonomy }})</span>
+      {{ range .Site.Taxonomies.topics }}
+        <span class="tag">
+          <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>({{ .Count }})
+        </span>
       {{ end }}
     </ul>
   </section>
-  <div id="tags-between-arhive" ></div>
+
+  <div id="tags-between-arhive"></div>
+  
   <h3>Archive</h3>
   <div class="arhive-containter">
     {{ range .Pages.GroupByDate "2006" }}
@@ -18,7 +22,8 @@
     <ul>
       {{ range .Pages }}
         <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a> — <span>{{ .Date.Format "2006-01-02" }}</span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a> — 
+          <span>{{ .Date.Format "2006-01-02" }}</span>
         </li>
       {{ end }}
     </ul>
@@ -26,4 +31,3 @@
   </div>
 </main>
 {{ end }}
-
