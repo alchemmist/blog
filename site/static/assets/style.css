@@ -73,6 +73,10 @@ header {
   text-align: left;
 }
 
+.updates-container li {
+  margin: 10px 0;
+}
+
 .base-container {
   flex: 1;
   display: flex;
@@ -339,3 +343,15 @@ blockquote code {
   text-align: cetner;
 }
 
+.udpates-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.udpates-page-container * {
+  text-align: left;
+}
+
+.udpates-page-container li {
+  margin: 10px 0;
+}

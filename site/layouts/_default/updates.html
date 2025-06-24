@@ -1,16 +1,14 @@
 {{ define "main" }}
-<main class="base-container">
-  <h2>{{ .Title }}</h2>
+<main class="base-container udpates-page-container">
+  <h2>Updates</h2>
+  {{ $updates := .Site.GetPage "updates" }}
   <ul>
-    {{ range $line := split .RawContent "\n" }}
-      <li>{{ $line }}</li>
-      {{- if in $line "- [ ]" }}
-        <li>{{ replace (replace $line "- [ ]" "") "[" "<a href=\"" | safeHTML }}{{ replace $line "](" "\">" | safeHTML }}</a></li>
-      {{ else if in $line "- [x]" }}
-        <li>{{ replace (replace $line "- [x]" "") "[" "<a href=\"" | safeHTML }}{{ replace $line "](" "\">" | safeHTML }}</a></li>
+    {{ range $line := split $updates.RawContent "\n" }}
+      {{ if in $line "- [ ]" }}
+        {{ $cleanLine := replace $line "- [ ]" "" }}
+        <li>{{ $cleanLine | markdownify }}</li>
       {{ end }}
     {{ end }}
   </ul>
 </main>
 {{ end }}
-
