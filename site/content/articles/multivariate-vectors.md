@@ -14,6 +14,5 @@ extra:
 ---
 Let’s test a quote:
 > this is a nice thing
-> 
 > in two lines
 
