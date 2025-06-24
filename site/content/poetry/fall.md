@@ -1,6 +1,7 @@
 ---
 date: 2025-01-18
 tech_name: "fall"
+title: "Падение"
 extra:
   custom_props:
     time: '12:03'
@@ -10,7 +11,7 @@ extra:
 ---
 # Падение
 
-![](https://alchemmist.xyz/images/Pasted image 20250124163318.png)
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250124163318.png)
 
 внутри  тьма
 что молчит обычно

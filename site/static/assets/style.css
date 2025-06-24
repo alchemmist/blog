@@ -317,7 +317,6 @@ blockquote code {
 }
 
 .poetry {
-  width: 40%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -329,9 +328,49 @@ blockquote code {
 }
 
 .poetry img {
-  width: 100%;
+  width: 400px;
 }
 
 .poetry-text {
-  text-align: left;
+  text-align: cetner;
+}
+
+.edge-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* чтобы не мешать остальным элементам */
+}
+
+/* «датчик» у левого края */
+.edge-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px; /* ширина зоны срабатывания */
+  height: 100%;
+  pointer-events: all; /* только он будет ловить hover */
+}
+
+/* блок с картинкой, из-за левого края */
+.edge-image {
+  position: absolute;
+  top: 50%;
+  left: -250px; /* отрицательный отступ равен ширине картинки */
+  width: 250px; /* ширина вашей картинки */
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+  pointer-events: none; /* чтобы мышь свободно ходила по картинке */
+}
+.edge-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* при наведении на «датчик» — картинка выезжает */
+.edge-trigger:hover + .edge-image {
+  left: 0;
 }

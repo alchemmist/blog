@@ -1,5 +1,6 @@
 ---
 date: 2025-06-09
+title: "Проблеск"
 tech_name: "glimmer"
 extra:
   custom_props:
@@ -10,7 +11,7 @@ extra:
 ---
 # Проблеск
 
-![](https://alchemmist.xyz/images/Pasted image 20250609172412.png)
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250609172412.png)
 
 Мы тонем в текстах, но нет слов.
 Живем в надежде на божков.

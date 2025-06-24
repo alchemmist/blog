@@ -1,5 +1,6 @@
 ---
 date: 2025-04-29
+title: "Тишина"
 tech_name: "silence"
 extra:
   custom_props:
@@ -10,7 +11,7 @@ extra:
 ---
 # Тишина
 
-![](https://alchemmist.xyz/images/Pasted image 20250429144907.png)
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250429144907.png)
 
 маркетинг чувств не терпит тишины
 об этом знали лишь бараш и горы

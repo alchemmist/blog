@@ -1,5 +1,6 @@
 ---
 date: 2024-02-01
+title: "Прекрасное древо"
 tech_name: "beautiful_tree"
 extra:
   custom_props:

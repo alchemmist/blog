@@ -1,15 +1,24 @@
 {{ define "main" }}
 <main class="base-container poetry-container">
+  <div class="edge-container">
+    <div class="edge-trigger"></div>
+    <div class="edge-image">
+      <img
+        src="/assets/moss1.png"
+      />
+    </div>
+  </div>
+
   <h2>Poetry</h2>
   <div class="arhive-containter">
     <ul>
       {{ range .Pages }}
-        <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a> — <span>{{ .Date.Format "2006-01-02" }}</span>
-        </li>
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> —
+        <span>{{ .Date.Format "2006-01-02" }}</span>
+      </li>
       {{ end }}
     </ul>
   </div>
 </main>
 {{ end }}
-

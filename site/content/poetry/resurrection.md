@@ -11,7 +11,7 @@ extra:
 ---
 # Воскресение
 
-![](https://alchemmist.xyz/images/Pasted image 20250609174259.png)
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250609174259.png)
 
 Детьми мы были, но пока не стали
 Смиренно воскресения ждем

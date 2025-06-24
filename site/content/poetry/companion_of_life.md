@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![](https://alchemmist.xyz/images/Pastedimage20250318203109.png)
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250318203109.png)
 
 цикличность бытия уже не данность,
 а любование промыслом богов
@@ -41,5 +41,3 @@ extra:
 молча руку твою я возьму 
 сквозь туман опьяняющей юности
 “спутник жизни” тебя назову
-
-

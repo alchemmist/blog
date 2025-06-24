@@ -10,7 +10,9 @@ extra:
     status: finished
 ---
 # Дверь
-![[Pasted image 20250124153549.png | 300]]
+
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250124153549.png)
+
 однажды протрезвеет ум
 отпустит дух больной похмелье
 развеется туман от зелья

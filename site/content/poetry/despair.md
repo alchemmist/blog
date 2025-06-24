@@ -10,7 +10,9 @@ extra:
     status: finished
 ---
 # Отчаяние
-![[Pasted image 20250315173759.png | 300]]
+
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250315173759.png)
+
 рождался я как мудрое дитя
 а умирать буду как одуревший старец.
 мне чистоты хватило б до зари,
