@@ -9,7 +9,6 @@ extra:
     public: true
     status: finished
 ---
-# Проблеск
 
 ![ | 400](https://alchemmist.xyz/images/Pastedimage20250609172412.png)
 

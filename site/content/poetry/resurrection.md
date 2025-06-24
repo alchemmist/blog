@@ -9,7 +9,6 @@ extra:
     public: true
     status: writing
 ---
-# Воскресение
 
 ![ | 400](https://alchemmist.xyz/images/Pastedimage20250609174259.png)
 

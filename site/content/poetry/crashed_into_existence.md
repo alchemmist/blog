@@ -10,9 +10,7 @@ extra:
     status: finished
 ---
 
-# Разбилось сущее
-
-![](https://alchemmist.xyz/images/Pasted image 20250124140433.png)
+![ | 400](https://alchemmist.xyz/images/Pastedimage20250124140433.png)
 
 Взглянув в глубь сущего
 Узрел я паутину трещин

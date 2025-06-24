@@ -9,7 +9,6 @@ extra:
     public: true
     status: finished
 ---
-# Дверь
 
 ![ | 400](https://alchemmist.xyz/images/Pastedimage20250124153549.png)
 

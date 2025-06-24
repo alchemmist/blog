@@ -9,7 +9,6 @@ extra:
     public: true
     status: finished
 ---
-# Падение
 
 ![ | 400](https://alchemmist.xyz/images/Pastedimage20250124163318.png)
 

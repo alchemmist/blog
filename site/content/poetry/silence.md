@@ -9,7 +9,6 @@ extra:
     public: true
     status: finished
 ---
-# Тишина
 
 ![ | 400](https://alchemmist.xyz/images/Pastedimage20250429144907.png)
 

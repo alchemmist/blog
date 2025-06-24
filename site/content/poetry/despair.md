@@ -9,7 +9,6 @@ extra:
     public: true
     status: finished
 ---
-# Отчаяние
 
 ![ | 400](https://alchemmist.xyz/images/Pastedimage20250315173759.png)
 

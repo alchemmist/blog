@@ -9,7 +9,6 @@ extra:
     public: true
     status: finished
 ---
-# Немощь
 
 ![[Pasted image 20250424164337.png|400]]
 
