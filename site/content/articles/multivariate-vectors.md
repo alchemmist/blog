@@ -36,8 +36,7 @@ Properties of scalar vectors product:
 - Distributivity over addition: $\langle x; (v + w)\rangle = \langle x; v\rangle + \langle x; w \rangle$
 - Compatibility with scalar multiplication: $\langle v; \lambda w\rangle = \lambda \langle v;w\rangle$
 ## Geometric meaning 
-
-![[/images/the-vector.png| 400]]
+![|400](/images/the-vector.png)
 
 In geometry vector is a segment having a direction. The length of vector we calculate with Pythagoras’s theorem: $|v| = \sqrt{\sum\limits_{i = 1}^{n}{x_i}}$. If length of vector equal one we call it a **unit vector**. If $v$ not a unit vector we can change it multiplying by $\lambda = \frac{1}{|v|}$. We can calculate distance and angle between two vectors. 
 
