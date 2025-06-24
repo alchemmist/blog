@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main class="base-container articles-container">
+  <h2>Articles</h2>
+
+  <section class="tags-list">
+    <h3>Tags</h3>
+    <ul>
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <span class="tag"><a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>({{ len $taxonomy }})</span>
+      {{ end }}
+    </ul>
+  </section>
+  <div id="tags-between-arhive" ></div>
+  <h3>Archive</h3>
+  <div class="arhive-containter">
+    {{ range .Pages.GroupByDate "2006" }}
+    <h4>{{ .Key }}</h4>
+    <ul>
+      {{ range .Pages }}
+        <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> — <span>{{ .Date.Format "2006-01-02" }}</span>
+        </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</main>
+{{ end }}
+

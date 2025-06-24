@@ -4,10 +4,8 @@
   {{ $updates := .Site.GetPage "updates" }}
   <ul>
     {{ range $line := split $updates.RawContent "\n" }}
-      {{ if in $line "- [ ]" }}
-        {{ $cleanLine := replace $line "- [ ]" "" }}
-        <li>{{ $cleanLine | markdownify }}</li>
-      {{ end }}
+      {{ $cleanLine := replace $line "- [ ]" "" }}
+      <li>{{ $cleanLine | markdownify }}</li>
     {{ end }}
   </ul>
 </main>
