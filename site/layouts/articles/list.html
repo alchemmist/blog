@@ -6,7 +6,7 @@
     <h3>Tags</h3>
     <ul>
       {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-        <li><a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }}</a> ({{ len $taxonomy }})</li>
+        <span class="tag"><a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>({{ len $taxonomy }})</span>
       {{ end }}
     </ul>
   </section>
