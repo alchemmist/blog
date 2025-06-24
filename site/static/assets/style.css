@@ -335,42 +335,32 @@ blockquote code {
   text-align: cetner;
 }
 
-.edge-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* чтобы не мешать остальным элементам */
-}
-
-/* «датчик» у левого края */
-.edge-trigger {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px; /* ширина зоны срабатывания */
-  height: 100%;
-  pointer-events: all; /* только он будет ловить hover */
-}
-
-/* блок с картинкой, из-за левого края */
-.edge-image {
-  position: absolute;
-  top: 50%;
-  left: -250px; /* отрицательный отступ равен ширине картинки */
-  width: 250px; /* ширина вашей картинки */
-  transform: translateY(-50%);
-  transition: left 0.3s ease;
-  pointer-events: none; /* чтобы мышь свободно ходила по картинке */
-}
-.edge-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 /* при наведении на «датчик» — картинка выезжает */
 .edge-trigger:hover + .edge-image {
   left: 0;
+}
+
+.edge-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20px; /* Невидимая область активации */
+  z-index: 100;
+}
+
+.sliding-image {
+  position: fixed;
+  left: -200px; /* Скрыто за левым краем */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  background: url("https://alchemmist.xyz/images/moss1.png") center/cover;
+  transition: left 0.3s ease-out;
+  z-index: 99;
+}
+
+.edge-panel:hover ~ .sliding-image {
+  left: 0; /* Появляется при наведении */
 }

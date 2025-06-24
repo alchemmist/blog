@@ -1,13 +1,24 @@
 {{ define "main" }}
 <main class="base-container poetry-container">
-  <div class="edge-container">
-    <div class="edge-trigger"></div>
-    <div class="edge-image">
-      <img
-        src="/assets/moss1.png"
-      />
-    </div>
-  </div>
+  <div class="edge-panel"></div>
+
+  <div class="sliding-image"></div>
+
+  <!-- Минимальный JavaScript для краев экрана -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const edgePanel = document.querySelector(".edge-panel");
+
+      // Расширяем область активации до 100px
+      edgePanel.style.width = "100px";
+
+      // Сжимаем обратно после загрузки
+      setTimeout(() => {
+        edgePanel.style.width = "20px";
+        edgePanel.style.transition = "width 0.3s";
+      }, 500);
+    });
+  </script>
 
   <h2>Poetry</h2>
   <div class="arhive-containter">
