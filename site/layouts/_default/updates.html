@@ -5,6 +5,7 @@
   <ul>
     {{ range $line := split $updates.RawContent "\n" }}
       {{ $cleanLine := replace $line "- [ ]" "" }}
+      {{ $cleanLine := replace $cleanLine "- [x]" "" }}
       <li>{{ $cleanLine | markdownify }}</li>
     {{ end }}
   </ul>
