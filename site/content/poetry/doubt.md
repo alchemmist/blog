@@ -1,6 +1,7 @@
 ---
 date: 2025-04-24
 tech_name: "doubt"
+title: "Сомнение"
 extra:
   custom_props:
     time: '17:05'

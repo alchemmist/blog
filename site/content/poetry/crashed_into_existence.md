@@ -1,6 +1,7 @@
 ---
 date: 2024-02-17
 tech_name: "crashed_into_existence"
+title: "Разбилось сущее"
 extra:
   custom_props:
     time: '23:28'

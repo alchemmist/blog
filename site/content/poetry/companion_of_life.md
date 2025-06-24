@@ -1,6 +1,7 @@
 ---
 date: 2025-03-18
 tech_name: "companion_of_life"
+title: "Спутник жизни"
 extra:
   custom_props:
     time: '20:31'

@@ -1,6 +1,7 @@
 ---
 date: 2025-06-09
 tech_name: "resurrection"
+title: "Воскресение"
 extra:
   custom_props:
     time: '20:00'

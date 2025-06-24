@@ -1,6 +1,7 @@
 ---
 date: 2025-03-15
 tech_name: "despair"
+title: "Отчаяние"
 extra:
   custom_props:
     time: '17:13'

@@ -1,6 +1,7 @@
 ---
 date: 2025-04-24
 tech_name: "infirmity"
+title: "Немощь"
 extra:
   custom_props:
     time: '16:41'

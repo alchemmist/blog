@@ -1,6 +1,6 @@
 ---
 date: 2025-06-24
-title: "Clear Deployment with GitHub Actions"
+title: "Transparent Deployment with GitHub Actions"
 tech_name: "deploy-gh-actions"
 tags:
   - github

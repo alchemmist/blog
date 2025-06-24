@@ -1,6 +1,7 @@
 ---
 date: 2025-01-24
 tech_name: "door"
+title: "Дверь"
 extra:
   custom_props:
     time: '15:35'
