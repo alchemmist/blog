@@ -360,8 +360,4 @@ blockquote code {
   margin: 0.5em 0;
 }
 
-.essay-container p + p {
-  text-indent: 1em;
-}
-
 
