@@ -1,10 +1,12 @@
 ---
 date: 2025-01-24
+title: "Солнце и луна"
 tech_name: "sun_and_moon"
 extra:
   custom_props:
     time: '14:00'
     type: poetry
+    public: true
     status: finished
 ---
 # Солнце и луна
