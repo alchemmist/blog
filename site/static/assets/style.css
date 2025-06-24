@@ -69,6 +69,10 @@ header {
   margin-bottom: 15px;
 }
 
+.updates-container * {
+  text-align: left;
+}
+
 .base-container {
   flex: 1;
   display: flex;

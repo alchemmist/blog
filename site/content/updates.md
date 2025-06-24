@@ -7,7 +7,7 @@ extra:
      public: true
 ---
 
-- [x] We start! Let’s write and read
-- [ ] New article: [Linux disk clean up](https://alchemmist.xyz/articles/linux-clean-up/)
-- [ ] New article: [Transparent Deployment with GitHub Actions](https://alchemmist.xyz/articles/deploy-gh-actions/)
 - [ ] Add [poetry](https://alchemmist.xyz/poetry/) section!
+- [ ] New article: [Transparent Deployment with GitHub Actions](https://alchemmist.xyz/articles/deploy-gh-actions/)
+- [ ] New article: [Linux disk clean up](https://alchemmist.xyz/articles/linux-clean-up/)
+- [ ] We start! Let’s write and read

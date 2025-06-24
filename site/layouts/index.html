@@ -43,7 +43,8 @@
         <ul>
           {{ range $line := split $updates.RawContent "\n" }}
             {{ if in $line "- [ ]" }}
-              <li>{{ replace (replace $line "- [ ]" "") "[" "<a href=\"" | safeHTML }}{{ replace $line "](" "\">" | safeHTML }}</a></li>
+              {{ $cleanLine := replace $line "- [ ]" "" }}
+              <li>{{ $cleanLine | markdownify }}</li>
             {{ end }}
           {{ end }}
         </ul>
