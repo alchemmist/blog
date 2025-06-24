@@ -31,7 +31,7 @@ We make “clear” deployment, therefore all step in our manually pipeline will
 Open your GitHub repository and go to `Settings`, here in `Security` section click to `Secrets and Variables` and go to `Actions`. Then we will add three secrets: `SSH_USER`, `SSH_HOST`, `SSH_KEY`.  Remember, the public pair of `SSH_KEY` private key need to be added to `~/.ssh/authorized_keys` on server. Nice! First step was finished.
 
 Next we need to pull repository. If your server is clean, you need to firstly clone it. If your repository is private, most likely, when you try to do it, you got something like this:
-```
+```txt
 git@github.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
 
