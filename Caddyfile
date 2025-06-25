@@ -5,9 +5,5 @@ alchemmist.xyz {
 
     redir /cv/long-rus https://alchemmist.github.io/CV/pdf/long-rus.pdf
     redir /cv/long-eng https://alchemmist.github.io/CV/pdf/long-eng.pdf
-
-    metrics {
-        per_host
-   }
 }
 
