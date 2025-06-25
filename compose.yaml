@@ -25,6 +25,26 @@ services:
     restart: unless-stopped
     networks:
       - default
+  umami-db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - ./umami-db:/var/lib/postgresql/data
+    networks:
+      - default
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    env_file:
+      - ./umami.env
+    ports: 
+      - "3000:3000"
+    depends_on: 
+      - umami-db
+    networks:
+      - default
 volumes:
   caddy_data:
   caddy_config:

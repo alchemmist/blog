@@ -1,6 +1,13 @@
 alchemmist.xyz {
     encode gzip
 
+    handle /admin/umami {
+        basicauth {
+            admin $2a$14$YvOYNCHknBXfNeMIGMFLPe/PEmmFkntu0B46qi8WvwTtBM.oNQk/O
+        }
+        reverse_proxy umami:3000 
+    }
+
     reverse_proxy hugo:1313
 
     redir /cv/long-rus https://alchemmist.github.io/CV/pdf/long-rus.pdf
