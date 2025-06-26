@@ -48,11 +48,3 @@ $$
 $$
 Often be helpful: $|u| = \sqrt{\langle u;u\rangle}$
 
-
->[!done] Импульс
-$$
-\vec{p} = \vec{v} m
-$$
-v - скорость тела
-m - масса тела
-
