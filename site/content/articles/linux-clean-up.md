@@ -10,7 +10,7 @@ extra:
     public: true
     type: synopsis
     theme: linux
-    status: writing
+    status: finished
 ---
 If you using docker on your machine, would be a good place for start it’s clean all docker stuff. Only if you’re sure in your docker containers, volumes nothing important:
 ```sh
