@@ -203,8 +203,10 @@ article p {
 }
 
 article img {
-  transform: translate(-50%, 0%);
-  margin: 15px 50%;
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    height: auto;
 }
 
 article ol li {
