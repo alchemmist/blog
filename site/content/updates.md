@@ -6,6 +6,7 @@ extra:
   custom_props:
      public: true
 ---
+- [ ] First math article: [Base of multivariate vectors](/articles/multivariate-vectors)
 - [ ] Publish first essay (rus): [О выборе профессии](https://alchemmist.xyz/essays/career-choice)
 - [ ] Add [essays](https://alchemmist.xyz/essays) section!
 - [ ] Add [poetry](https://alchemmist.xyz/poetry/) section!

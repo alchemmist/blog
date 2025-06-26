@@ -40,7 +40,6 @@ body {
 
 a {
   color: black;
-  text-decoration: none;
 }
 
 a:hover {
@@ -259,6 +258,16 @@ article h4 {
   text-align: left;
   margin: 0.3cm;
 }
+
+.poetry-container li {
+  text-align: left;
+  margin: 0.3cm;
+}
+
+.poetry-container h2 {
+  margin: 20px 0;
+}
+
 
 .articles-container h2 {
   margin: 0.5cm;

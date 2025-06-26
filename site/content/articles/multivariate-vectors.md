@@ -47,3 +47,4 @@ $$
 \cos{\theta} = \frac{\sum\limits_{i = 1}^{n}{u_i v_i}}{|u||v|}
 $$
 Often be helpful: $|u| = \sqrt{\langle u;u\rangle}$
+
