@@ -13,7 +13,10 @@
             ["\\[", "\\]"],
             ["$$", "$$"],
           ],
-          inlineMath: [["\\(", "\\)"], ["$", "$"]],
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
         },
         loader: {
           load: ["ui/safe"],
@@ -28,12 +31,20 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("img[alt^='|']").forEach(function (img) {
+          const width = img.alt.match(/^\|(\d+)/)?.[1];
+          if (width) {
+            img.style.width = width + "px";
+            img.alt = ""; // убираем странный alt
+          }
+        });
+      });
+    </script>
   </head>
   <body>
-    {{ partial "header.html" . }}
-
-    {{ block "main" . }}{{ end }}
-
-    {{ partial "footer.html" }}
+    {{ partial "header.html" . }} {{ block "main" . }}{{ end }} {{ partial
+    "footer.html" }}
   </body>
 </html>

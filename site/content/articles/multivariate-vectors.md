@@ -39,10 +39,9 @@ Properties of scalar vectors product:
 ![|400](/images/the-vector.png)
 
 In geometry vector is a segment having a direction. The length of vector we calculate with Pythagoras’s theorem: $|v| = \sqrt{\sum\limits_{i = 1}^{n}{x_i}}$. If length of vector equal one we call it a **unit vector**. If $v$ not a unit vector we can change it multiplying by $\lambda = \frac{1}{|v|}$. We can calculate distance and angle between two vectors. 
-
-![](https://alchemmist.xyz/images/distance-between-vectors.png.png)
+![|600](distance-between-vectors.png)
 Distance is a length of difference two vectors: $|d| = |v - w| = \sqrt{\sum\limits_{i = 1}^{n}{(v_i - w_i)^2}}$. Angle between two vectors follows from Law of Cosines: 
 $$
 \cos{\theta} = \frac{\sum\limits_{i = 1}^{n}{u_i v_i}}{|u||v|}
 $$
-
+Often be helpful: $|u| = \sqrt{\langle u;u\rangle}$
