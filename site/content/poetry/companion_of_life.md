@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250318203109.png)
+![|400](/images/Pastedimage20250318203109.png)
 
 цикличность бытия уже не данность,
 а любование промыслом богов

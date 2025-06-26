@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250424170551.png)
+![|400](/images/Pastedimage20250424170551.png)
 
 прорежит пустоту в который раз
 уже не праздный голос вопрошания

@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250124163318.png)
+![|400](/images/Pastedimage20250124163318.png)
 
 внутри  тьма
 что молчит обычно

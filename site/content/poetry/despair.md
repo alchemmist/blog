@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250315173759.png)
+![|400](/images/Pastedimage20250315173759.png)
 
 рождался я как мудрое дитя
 а умирать буду как одуревший старец.

@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250429144907.png)
+![|400](/images/Pastedimage20250429144907.png)
 
 маркетинг чувств не терпит тишины
 об этом знали лишь бараш и горы

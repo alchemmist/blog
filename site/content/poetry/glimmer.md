@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250609172412.png)
+![|400](/images/Pastedimage20250609172412.png)
 
 Мы тонем в текстах, но нет слов.
 Живем в надежде на божков.

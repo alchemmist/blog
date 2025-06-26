@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250124140433.png)
+![|400](/images/Pastedimage20250124140433.png)
 
 Взглянув в глубь сущего
 Узрел я паутину трещин

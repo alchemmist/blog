@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250124153549.png)
+![|400](/images/Pastedimage20250124153549.png)
 
 однажды протрезвеет ум
 отпустит дух больной похмелье

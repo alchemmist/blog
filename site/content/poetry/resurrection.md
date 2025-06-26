@@ -10,7 +10,7 @@ extra:
     status: writing
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250609174259.png)
+![|400](/images/Pastedimage20250609174259.png)
 
 Детьми мы были, но пока не стали
 Смиренно воскресения ждем

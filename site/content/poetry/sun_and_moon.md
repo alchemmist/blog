@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![ | 400](https://alchemmist.xyz/images/Pastedimage20250124140122.png)
+![|400](/images/Pastedimage20250124140122.png)
 
 рассеивать лунарность фотовспышкой,
 глушить солярку чернотой
