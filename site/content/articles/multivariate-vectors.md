@@ -45,7 +45,7 @@ In geometry vector is a segment having a direction.
 $$
 \cos{\theta} = \frac{\langle u;b \rangle}{||u||\ ||v||}
 $$
-Often be helpful: $||u|| = \sqrt{\langle u;u\rangle}$. Next operation is projection vector $u$ to vector $w$:
+Often be helpful: $||u|| = \sqrt{\langle u;u\rangle}$. Next operation is **projection vector $u$ to vector $w$**:
 $$
 Proj_w(u) = \frac{\langle u;w\rangle}{||w||^2}w
 $$
