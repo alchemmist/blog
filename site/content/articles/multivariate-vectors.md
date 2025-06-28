@@ -43,7 +43,7 @@ In geometry vector is a segment having a direction.
 
  The **length** of vector we calculate with Pythagoras’s theorem: $||v|| = \sqrt{\sum\limits_{i = 1}^{n}{x_i}}$. If length of vector equal one we call it a **unit vector**. If $v$ not a unit vector we can change it multiplying by $\lambda = \frac{1}{|v|}$. We can calculate distance and angle between two vectors.  **Distance** is a length of difference two vectors: $||d|| = ||v - w|| = \sqrt{\sum\limits_{i = 1}^{n}{(v_i - w_i)^2}}$. **Angle** between two vectors follows from Law of Cosines: 
 $$
-\cos{\theta} = \frac{\sum\limits_{i = 1}^{n}{u_i v_i}}{||u||\ ||v||}
+\cos{\theta} = \frac{\langle u;b \rangle}{||u||\ ||v||}
 $$
 Often be helpful: $||u|| = \sqrt{\langle u;u\rangle}$. Next operation is projection vector $u$ to vector $w$:
 $$
@@ -53,5 +53,5 @@ Another property of vectors: module of scalar product does not exceed product of
 $$
 -||v||\ ||w|| \leqslant \langle v;w\rangle \leqslant ||v||\ ||w||
 $$
-The **Triangle inequality:** $||v + w|| \leqslant ||v|| + ||w||$, so length of sum of vectors less than or equal to sum of vectors lengths.
+The **Triangle inequality:** $||v + w|| \leqslant ||v|| + ||w||$, so length of sum of vectors less than or equal to sum of vectors lengths. If vectors is orthogonal, work the Pythagoras’s theorem: $||a + b||^2 = ||a||^2 + ||b||^2$. 
 
