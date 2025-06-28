@@ -51,4 +51,4 @@ Another property of vectors: module of scalar product does not exceed product of
 $$
 -||v||\ ||w|| \leqslant \langle v;w\rangle \leqslant ||v||\ ||w||
 $$
-
+The **Triangle inequality:** $||v + w|| \leqslant ||v|| + ||w||$, so length of sum of vectors less than or equal to sum of vectors lengths.
