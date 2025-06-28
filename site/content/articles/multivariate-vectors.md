@@ -35,6 +35,7 @@ Properties of scalar vectors product:
 - Commutativity: $\langle v; w\rangle = \langle w; v\rangle$
 - Distributivity over addition: $\langle x; (v + w)\rangle = \langle x; v\rangle + \langle x; w \rangle$
 - Compatibility with scalar multiplication: $\langle v; \lambda w\rangle = \lambda \langle v;w\rangle$
+- If scalar product equal zero we call this two vectors *orthogonal* or *perpendicular*
 ## Geometric meaning 
 In geometry vector is a segment having a direction.
 ![|400](/images/the-vector.png)
