@@ -55,7 +55,6 @@ header {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15px 40px;
   width: 100%;
 }
 
@@ -202,10 +201,10 @@ article p {
 }
 
 article img {
-    display: block;
-    margin: 15px auto;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  margin: 15px auto;
+  max-width: 100%;
+  height: auto;
 }
 
 article ol li {
@@ -244,7 +243,7 @@ article h1 {
 
 article h2 {
   text-align: left;
-  margin: 2.0em 0em 0.7em 0;
+  margin: 2em 0em 0.7em 0;
   font-size: 20px;
 }
 
@@ -269,7 +268,6 @@ article h4 {
 .poetry-container h2 {
   margin: 20px 0;
 }
-
 
 .articles-container h2 {
   margin: 0.5cm;
@@ -393,5 +391,278 @@ blockquote {
   padding: 0.5em 1em;
   margin: 0.5em 0;
   quotes: "“" "”" "‘" "’";
+}
+
+/* ===== АДАПТИВНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+@media (max-width: 768px) {
+  /* Общие корректировки */
+  body {
+    padding: 0;
+  }
+
+  .link {
+    font-size: 16px;
+    margin: 15px;
+  }
+
+  /* Шапка */
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Основной контент */
+  .base-container {
+    width: 100%;
+  }
+
+  .home-container {
+    width: 100%;
+    gap: 1cm;
+  }
+
+  /* Статьи и контент */
+  article {
+    width: 100%;
+    min-width: unset;
+    padding: 0 10px;
+  }
+
+  article * {
+    font-size: 16px;
+  }
+
+  article h1 {
+    font-size: 22px;
+  }
+
+  article h2 {
+    font-size: 18px;
+  }
+
+  article ul,
+  article ol {
+    padding-left: 1em;
+  }
+
+  /* Поэзия */
+  .poetry * {
+    font-size: 17px;
+  }
+
+  /* Футер */
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .footer-info-box {
+    margin-top: 15px;
+    order: 2;
+  }
+
+  /* ASCII-арт */
+  .ascii-art {
+    font-size: 10px;
+    overflow-x: auto;
+  }
+
+  /* Блоки кода */
+  pre code {
+    padding: 0.8rem;
+    font-size: 0.85em;
+  }
+
+  /* Навигационные ссылки */
+  .footer-link {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Дополнительные корректировки для маленьких экранов */
+  .link {
+    margin: 10px;
+  }
+
+  article h1 {
+    font-size: 20px;
+  }
+
+  .home-container {
+    gap: 0.5cm;
+  }
+
+  blockquote {
+    padding: 0.3em 0.8em;
+    font-size: 1rem;
+  }
+}
+
+/* Обёртка header */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  width: 100%;
+}
+
+/* Бургер‑иконка */
+.burger {
+  display: none; /* скрываем на больших экранах */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.burger span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Сайд‑меню (спрятано вправо) */
+.side-menu {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding-left: 15%;
+  top: 0;
+  right: 0;
+  width: 250px;
+  max-width: 80%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.side-menu li + li {
+  margin-top: 1em;
+}
+.side-menu a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-size: 18px;
+}
+
+/* Оверлей */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 999;
+}
+
+/* Класс открытия */
+header.is-open .side-menu {
+  transform: translateX(0);
+}
+header.is-open .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+/* Преобразование бургера в крестик */
+header.is-open .burger span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+header.is-open .burger span:nth-child(2) {
+  opacity: 0;
+}
+header.is-open .burger span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Показываем бургер на мобильных */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  .header-container {
+    display: none;
+  }
+}
+
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1cm 2cm;
+  background: #f8f8f8; /* или ваш фон */
+}
+
+footer p {
+  color: lightgray;
+  margin: 0;
+}
+
+.footer-info-box {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-link a {
+  font-size: 15px;
+  color: lightgray;
+  text-decoration: none;
+  transition: transform .2s;
+}
+
+.footer-link:hover {
+  transform: scale(1.1);
+}
+
+/* ========== АДАПТИВ ========== */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer p {
+    margin-bottom: 15px;
+  }
+
+  .footer-info-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-link a {
+    font-size: 16px;
+  }
 }
 

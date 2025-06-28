@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="alchemmist" />
+    <meta property="og:description" content="Personal web site of alchemmist" />
+    <meta property="og:image" content="/assets/preview2.png" />
+    <meta property="og:url" content="https://alchemmist.xyz/" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="/assets/style.css" />
     <link rel="stylesheet" href="/assets/syntax.css" />
     <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
@@ -40,6 +46,20 @@
             img.alt = ""; // убираем странный alt
           }
         });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("header");
+        const burger = header.querySelector(".burger");
+        const overlay = header.querySelector(".overlay");
+
+        function toggleMenu() {
+          header.classList.toggle("is-open");
+        }
+
+        burger.addEventListener("click", toggleMenu);
+        overlay.addEventListener("click", toggleMenu);
       });
     </script>
   </head>
