@@ -39,12 +39,16 @@ Properties of scalar vectors product:
 In geometry vector is a segment having a direction.
 ![|400](/images/the-vector.png)
 
- The **length** of vector we calculate with Pythagoras’s theorem: $|v| = \sqrt{\sum\limits_{i = 1}^{n}{x_i}}$. If length of vector equal one we call it a **unit vector**. If $v$ not a unit vector we can change it multiplying by $\lambda = \frac{1}{|v|}$. We can calculate distance and angle between two vectors. 
-
-![|600](/images/distance-between-vectors.png)
-**Distance** is a length of difference two vectors: $|d| = |v - w| = \sqrt{\sum\limits_{i = 1}^{n}{(v_i - w_i)^2}}$. **Angle** between two vectors follows from Law of Cosines: 
+ The **length** of vector we calculate with Pythagoras’s theorem: $||v|| = \sqrt{\sum\limits_{i = 1}^{n}{x_i}}$. If length of vector equal one we call it a **unit vector**. If $v$ not a unit vector we can change it multiplying by $\lambda = \frac{1}{|v|}$. We can calculate distance and angle between two vectors.  **Distance** is a length of difference two vectors: $||d|| = ||v - w|| = \sqrt{\sum\limits_{i = 1}^{n}{(v_i - w_i)^2}}$. **Angle** between two vectors follows from Law of Cosines: 
 $$
-\cos{\theta} = \frac{\sum\limits_{i = 1}^{n}{u_i v_i}}{|u||v|}
+\cos{\theta} = \frac{\sum\limits_{i = 1}^{n}{u_i v_i}}{||u||\ ||v||}
 $$
-Often be helpful: $|u| = \sqrt{\langle u;u\rangle}$
+Often be helpful: $||u|| = \sqrt{\langle u;u\rangle}$. Next operation is projection vector $u$ to vector $w$:
+$$
+Proj_w(u) = \frac{\langle u;w\rangle}{||w||^2}w
+$$
+Another property of vectors: module of scalar product does not exceed product of their length — the **Cauchy–Schwarz inequality**:
+$$
+-||v||\ ||w|| \leqslant \langle v;w\rangle \leqslant ||v||\ ||w||
+$$
 
