@@ -42,7 +42,8 @@
         document.querySelectorAll("img[alt^='|']").forEach(function (img) {
           const width = img.alt.match(/^\|(\d+)/)?.[1];
           if (width) {
-            img.style.width = width + "px";
+            // img.style.width = width + "px";
+            img.style.width = "15rem";
             img.alt = ""; // убираем странный alt
           }
         });
@@ -61,6 +62,10 @@
         burger.addEventListener("click", toggleMenu);
         overlay.addEventListener("click", toggleMenu);
       });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
     </script>
   </head>
   <body>
