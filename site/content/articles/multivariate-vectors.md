@@ -36,6 +36,8 @@ Properties of scalar vectors product:
 - Distributivity over addition: $\langle x; (v + w)\rangle = \langle x; v\rangle + \langle x; w \rangle$
 - Compatibility with scalar multiplication: $\langle v; \lambda w\rangle = \lambda \langle v;w\rangle$
 - If scalar product equal zero we call this two vectors *orthogonal* or *perpendicular*
+
+We have the concept *line combination* of vectors: $\left\{\sum\limits_{i = i}^{n}{w_i\alpha_i}, \alpha \in \mathbb{R} \right\}$
 ## Geometric meaning 
 In geometry vector is a segment having a direction.
 ![|400](/images/the-vector.png)
@@ -53,3 +55,4 @@ $$
 -||v||\ ||w|| \leqslant \langle v;w\rangle \leqslant ||v||\ ||w||
 $$
 The **Triangle inequality:** $||v + w|| \leqslant ||v|| + ||w||$, so length of sum of vectors less than or equal to sum of vectors lengths.
+
