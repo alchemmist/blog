@@ -314,9 +314,13 @@ blockquote code {
   width: 100%;
 }
 
+.arhive-containter h4 {
+  margin-top: 10px;
+}
+
 #tags-between-arhive {
   display: inline;
-  height: 100px;
+  height: 80px;
 }
 
 .tags-list {
