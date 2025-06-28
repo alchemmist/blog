@@ -423,6 +423,7 @@ blockquote {
   /* Основной контент */
   .base-container {
     width: 100%;
+    padding: 0 0.5rem;
   }
 
   .home-container {
@@ -616,7 +617,6 @@ header.is-open .burger span:nth-child(3) {
   }
 }
 
-
 footer {
   width: 100%;
   display: flex;
@@ -640,7 +640,7 @@ footer p {
   font-size: 15px;
   color: lightgray;
   text-decoration: none;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .footer-link:hover {
@@ -668,5 +668,21 @@ footer p {
   .footer-link a {
     font-size: 16px;
   }
-}
+  .base-container.home-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2rem;
+  }
 
+  .ascii-art {
+    font-size: 0.65rem;
+  }
+
+  .updates-container h3 {
+    font-size: 1.25rem;
+  }
+
+  .updates-container li {
+    font-size: 0.95rem;
+  }
+}
