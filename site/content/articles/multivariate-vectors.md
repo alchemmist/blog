@@ -37,7 +37,6 @@ Properties of scalar vectors product:
 - Compatibility with scalar multiplication: $\langle v; \lambda w\rangle = \lambda \langle v;w\rangle$
 - If scalar product equal zero we call this two vectors *orthogonal* or *perpendicular*
 
-We have the concept *line combination* of vectors: $\left\{\sum\limits_{i = i}^{n}{w_i\alpha_i}, \alpha \in \mathbb{R} \right\}$
 ## Geometric meaning 
 In geometry vector is a segment having a direction.
 ![|400](/images/the-vector.png)
