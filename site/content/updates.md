@@ -6,6 +6,7 @@ extra:
   custom_props:
      public: true
 ---
+- [ ] New article: [Subspaces and bases](/aritcles/subspaces-and-bases)
 - [ ] New poem (rus): [Тишина](/poetry/silence)
 - [ ] New article: [Line and plane](/articles/line-and-plane)
 - [ ] New essay (rus): [Бытие есть, небытия нет](/essays/genesis-exist-oblivion-notexist)
