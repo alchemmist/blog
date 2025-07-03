@@ -6,6 +6,7 @@ extra:
   custom_props:
      public: true
 ---
+- [ ] New article: [Line and plane](/articles/line-and-plane)
 - [ ] New essay (rus): [Бытие есть, небытия нет](/essays/genesis-exist-oblivion-notexist)
 - [ ] New essay (rus): [Коротко о бессмертии](/essays/briefly-about-immortality)
 - [ ] First math article: [Base of multivariate vectors](/articles/multivariate-vectors)
