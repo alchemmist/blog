@@ -32,10 +32,14 @@ Let’s final this with pivotal definition: **linear subspace** $\mathbb{R}^n$ c
 $$
 V = \text{span}(v_1, v_2, \dots, v_k)
 $$
-The span concept and subspace concept equivalents. Why linear subspace is important? Here is an example:
+The span concept and subspace concept equivalents. And any span and subspace contain a $0$, because we can make all ratio $\alpha_1, \alpha_2, \dots, \alpha_k$ equal to zero . 
 
+Why linear subspace is important? Here is an example:
 > Let us take a black-and-white digital photograph of size 512 by 512 pixels. In computer memory, this photograph can be represented as $512 \times 512 = 262144$ numbers — each representing the intensity of the corresponding pixel, ranging from 0 (completely black) to 1 (completely white). Thus, the photograph can be represented as a vector $x$ in a space of dimension $d=262144$.
 >
 > Now, let us consider an important practical problem — compressing the photograph without significant loss. It turns out that this problem can be solved by finding a special low-dimensional subspace and projecting the vector $x$ onto this subspace.
 
-
+We told, that subspace need to contain zero. It’s mean line $y = 2x$ is a subspace, but line $y = x + 2$ not. But many properties of subspace saved when it doesn’t contain zero. Therefore, we call such subspaces as affine subspaces. **Affine subspaces** of $\mathbb{R}^n$ is a set of vectors $A$ of the form $a + v$, where $a \in \mathbb{R}^n$ — is a fixed vector, and vector $v$ belongs to linear subspace $V$. Let linear subspace $V$ is span of vectors $v_1, v_2, \dots, v_k$. Then, affine affine subspace is a set:
+$$
+A = \{ x: \ x = a + \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_k v_k, \ \alpha_i \in \mathbb{R}\}
+$$
