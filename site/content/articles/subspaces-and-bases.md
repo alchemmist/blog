@@ -43,3 +43,27 @@ We told, that subspace need to contain zero. It’s mean line $y = 2x$ is a subs
 $$
 A = \{ x: \ x = a + \alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_k v_k, \ \alpha_i \in \mathbb{R}\}
 $$
+Let $V$ — subspace in $\mathbb{R}^n$. **Dimension** of this subspace is minimal count of vectors $v_1, v_2, \dots, v_k \in \mathbb{R}^n$ for define subspace $V$:
+$$
+V = \text{span}(v_1, v_2, \dots, v_k).
+$$
+Dimension is denoted by: $\dim{(V)}$. 
+Let’s think about it. For example, we have two non-collinear vectors $u, v \in \mathbb{R}^{100}$ and subspace $V = \text{span}(u, v)$. We know every vector $x \in V$ have 100 coordinates, but, by subspace definition: $x = \alpha u + \beta v$. it’s mean any vector $x$ defined only two parameters $\alpha$ and $\beta$, therefore $\dim{(V))} = 2$. For define point in $\mathbb{R}^n$ we need $n$ parameters, for define point in $V$ we need $\dim{(V)}$ parameters. 
+
+![|800](/images/define-subspace.png)
+
+Exist subspace, which defined only one vector $0$: $V = \text{span}(0)$. We call this subspace trivial, and considered $\dim{(V)} = 0$.
+
+If we have subspace $V = \text{span}(v_1, v_2, \dots, v_k)$, when $\dim{(V)}$ can be smaller than $k$? if and only if one of the vectors can be express as linear combination rest vectors, for example: $v_1 = \gamma_2v_2 + \gamma_3v_3 + \dots + \gamma_kv_k$. 
+
+Set of vectors called **linearly independent** if equality:
+$$
+\alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_k v_k = 0
+$$
+holds only for $\alpha_1 = \alpha_2 = \dots = \alpha_k = 0$. If equality can be holds for non-zero rates, vectors **linearly dependent**.
+
+Consider space $\mathbb{R}^n$ and a given non-zero vector $w \in \mathbb{R}^n$ . Then set of vectors $P$, perpendicular $w$:
+$$
+P = \{ \ x: \langle x;w \rangle = 0\ \}
+$$
+is linear subspace with $\dim{(P)} = n - 1$
