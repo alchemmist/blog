@@ -71,7 +71,7 @@ d(P, l) = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}
 $$
 And we can detect where point relative to a line: group of points from one side, for which $Ax +By + C > 0$ is true; group from another side, for which $Ax +By + C < 0$ is true.
 ## The plane in space
-Again this question. How to define a plane in space? Of course, through with three points non-collinear, that do not lie on the same straight line. Collinear points lie on the same line. And again let’s consider three methods:
+Again this question. How to define a plane in space? Of course, through with three points non-collinear, that do not lie on the same straight line. **Collinear points** lie on the same line. And again let’s consider three methods:
 1. **Parametric equation**:
 $$
 \pi = \{r: r = r_0 + t_1v_1 + t_2v_2, \quad t_1, t_2 \in \mathbb{R}\}
