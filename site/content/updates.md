@@ -6,6 +6,7 @@ extra:
   custom_props:
      public: true
 ---
+- [ ] New article: [Hessian matrix](/articles/hessian-matrix)
 - [ ] New article: [Subspaces](/articles/subspaces)
 - [ ] New poem (rus): [Тишина](/poetry/silence)
 - [ ] New article: [Line and plane](/articles/line-and-plane)
