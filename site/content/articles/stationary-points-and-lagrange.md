@@ -30,9 +30,7 @@ $$
 \displaystyle \frac{\partial f}{\partial x} \\
 \displaystyle \frac{\partial f}{\partial y} \\
 \displaystyle \frac{\partial f}{\partial z}
-\end{pmatrix}
-= 
-\begin{pmatrix}
+\end{pmatrix} =  \begin{pmatrix}
 2x - 4 \\
 2y - 4 \\
 4z^3 - 8z
