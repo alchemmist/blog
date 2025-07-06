@@ -51,7 +51,7 @@ $$
 
 Finally, we got this stationary points: $(2, 2, 0), \ (2, 2, \sqrt{2}), \ (2, 2, -\sqrt{2})$. 
 
-> If you want to continue analysis, use [Hessian matrix](/aritcles/hessian-matrix).
+> If you want to continue analysis, use [Hessian matrix](/aritcles/articles/hessian-matrix/).
 
 Now, look at case, when we have function and **constraints**. This is where the **Lagrange multiplier method** comes into play. For example, function is $f(x, y) = x^2 + y^2$ on condition $x + y = 1$. Rewrite a condition as: $g(x, y) = 0$, therefore $g(x, y) = x + y - 1$. Then, find gradients for all functions:
 $$
