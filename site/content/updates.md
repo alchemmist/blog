@@ -6,6 +6,7 @@ extra:
   custom_props:
      public: true
 ---
+- [ ] Add moss to poetry (moh-moh-moh)
 - [ ] New article: [Gram-Schmidt orthogonalization](/articles/gram-schmidt)
 - [ ] New article: [Stationary points and Lagrange method](/articles/stationary-points-and-lagrange)
 - [ ] New article: [Hessian matrix](/articles/hessian-matrix)
