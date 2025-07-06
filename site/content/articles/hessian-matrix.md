@@ -9,11 +9,12 @@ extra:
     time: 12:48
     type: synopsis
     theme: math
-    status: writing
+    status: finished
     public: true
-    theme: math
 ---
 Imagine we got function and a few stationary points of this function, and we need to classify them, like: max, min or saddle point. If function without constraints, we can use Hessian matrix. 
+
+> How to find stationary points of the function you can read at this article: “[Stationary points and Lagrange method](/articles/stationary-points-and-lagrange)”
 
 Let’s learn it on example. Function and stationary points:
 $$

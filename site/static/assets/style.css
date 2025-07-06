@@ -654,11 +654,11 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 1cm 2cm;
-  background: #f8f8f8; /* или ваш фон */
+  background: #fafafa; /* или ваш фон */
 }
 
 footer p {
-  color: lightgray;
+  color: #969696;
   margin: 0;
 }
 
@@ -669,7 +669,7 @@ footer p {
 
 .footer-link a {
   font-size: 15px;
-  color: lightgray;
+  color: #969696;
   text-decoration: none;
   transition: transform 0.2s;
 }
