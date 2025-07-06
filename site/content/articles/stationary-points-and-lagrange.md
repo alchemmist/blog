@@ -13,6 +13,7 @@ extra:
     status: finished
 ---
 When we analyze a function, we want to find stationary points. If we haven’t a constraints, use gradient. Gradient it’s a vector of partial derivatives:
+
 $$
 \nabla f = \begin{pmatrix}
 \displaystyle \frac{\partial f}{\partial x_1} \\
@@ -21,7 +22,9 @@ $$
 \displaystyle \frac{\partial f}{\partial x_n}
 \end{pmatrix}
 $$
+
 See on example: $f(x, y, z) = x^2 + y^2 - 4x - 4y + z^4 - 4z^2$. Let’s find gradient:
+
 $$
 \nabla f = \begin{pmatrix}
 \displaystyle \frac{\partial f}{\partial x} \\
@@ -35,7 +38,9 @@ $$
 4z^3 - 8z
 \end{pmatrix}
 $$
+
 Then set equal to zero: $\nabla f = 0$, and got system of equations:
+
 $$
 \begin{cases}2x - 4 = 0 \\ 2y - 4 = 0 \\ 4z^3 - 8z = 0 \end{cases} \quad \Rightarrow \quad \begin{cases}x = 2\\ y = 2 \\ \left[
 \begin{array}{l}
@@ -45,6 +50,7 @@ z = -\sqrt{2}
 \end{array}
 \right.\end{cases}
 $$
+
 Finally, we got this stationary points: $(2, 2, 0), \ (2, 2, \sqrt{2}), \ (2, 2, -\sqrt{2})$. 
 
 > If you want to continue analysis, use [Hessian matrix](/aritcles/hessian-matrix).
