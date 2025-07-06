@@ -1,17 +1,17 @@
 ---
-date: 2025-07-06
-title: "Gram-Schmidt orthogonalization"
-tech_name: "gram-schmidt"
+date: '2025-07-06T07:16:00+03:00'
+title: Gram-Schmidt orthogonalization
+tech_name: gram-schmidt
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 07:16
     type: synopsis
     public: true
     theme: math
     status: finished
 ---
+
 In more practical cases we want to make projection of vector to subspace, and if subspace define with orthogonal and orthonormal basis we can do it easily. To orthogonalize a vectors, we using Gram-Schmidt method. 
 
 We have source vectors $v_1, v_2, \dots, v_n$, and we need to get orthogonal vectors $u_1, u_2, \dots, u_n$. In general, describe the method:

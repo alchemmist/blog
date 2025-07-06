@@ -1,14 +1,14 @@
 ---
-date: 2025-01-24
-title: "Дверь"
-tech_name: "door"
+date: '2025-01-24T15:35:00+03:00'
+title: Дверь
+tech_name: door
 extra:
   custom_props:
-    time: '15:35'
     type: poetry
     public: true
     status: finished
 ---
+
 
 ![|400](/images/Pastedimage20250124153549.png)
 

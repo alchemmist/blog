@@ -1,17 +1,17 @@
 ---
-date: 2025-07-06
-title: "Stationary points and Lagrange method"
-tech_name: "stationary-points-and-lagrange"
+date: '2025-07-06T05:19:00+03:00'
+title: Stationary points and Lagrange method
+tech_name: stationary-points-and-lagrange
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 05:19
     type: synopsis
     theme: math
     public: true
     status: finished
 ---
+
 When we analyze a function, we want to find stationary points. If we haven’t a constraints, use gradient. Gradient it’s a vector of partial derivatives:
 
 $$

@@ -1,14 +1,14 @@
 ---
-date: 2025-04-29
-title: "Тишина"
-tech_name: "silence"
+date: '2025-04-29T14:48:00+03:00'
+title: Тишина
+tech_name: silence
 extra:
   custom_props:
-    time: '14:48'
     type: poetry
     public: true
     status: finished
 ---
+
 
 ![|400](/images/Pastedimage20250429144907.png)
 

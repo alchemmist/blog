@@ -1,14 +1,15 @@
 ---
-tech_name: "genesis-exist-oblivion-notexist"
-title: "Бытие есть, небытия нет"
-date: 2024-03-25
-topics: 
-  - philosophy
-extra: 
+tech_name: genesis-exist-oblivion-notexist
+title: Бытие есть, небытия нет
+date: '2024-03-25T00:00:00+03:00'
+topics:
+- philosophy
+extra:
   custom_props:
-     public: true
-     type: essay
+    public: true
+    type: essay
 ---
+
 — Слава Богу. – сказал Ансельм
 
 — Так ведь бога нет. – возразил Акуан

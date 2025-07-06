@@ -1,14 +1,14 @@
 ---
-date: 2025-01-18
-tech_name: "fall"
-title: "Падение"
+date: '2025-01-18T12:03:00+03:00'
+tech_name: fall
+title: Падение
 extra:
   custom_props:
-    time: '12:03'
     type: poetry
     public: true
     status: finished
 ---
+
 
 ![|400](/images/Pastedimage20250124163318.png)
 

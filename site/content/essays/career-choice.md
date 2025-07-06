@@ -1,14 +1,15 @@
 ---
-tech_name: "career-choice"
-title: "О выборе профессии"
-date: 2025-06-25
-topics: 
-  - career
-extra: 
+tech_name: career-choice
+title: О выборе профессии
+date: '2025-06-25T00:00:00+03:00'
+topics:
+- career
+extra:
   custom_props:
-     public: true
-     type: essay
+    public: true
+    type: essay
 ---
+
 Есть простая идея: 
 
 >В молодости накапливать экспертизу, а затем — её реализовывать. Если начать в молодости реализовывать свою слабую экспертизу, то время потратишь, денег почти на заработаешь и останешься ни с чем.

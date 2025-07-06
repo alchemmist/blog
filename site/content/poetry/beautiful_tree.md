@@ -1,14 +1,14 @@
 ---
-date: 2024-02-01
-title: "Прекрасное древо"
-tech_name: "beautiful_tree"
+date: '2024-02-01T20:07:00+03:00'
+title: Прекрасное древо
+tech_name: beautiful_tree
 extra:
   custom_props:
-    time: '20:07'
     type: poetry
     public: true
     status: finished
 ---
+
 
 Цветущее древо стоит на холме
 Там, где лучи прорезают во тьме

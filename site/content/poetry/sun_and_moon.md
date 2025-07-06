@@ -1,14 +1,14 @@
 ---
-date: 2025-01-24
-title: "Солнце и луна"
-tech_name: "sun_and_moon"
+date: '2025-01-24T14:00:00+03:00'
+title: Солнце и луна
+tech_name: sun_and_moon
 extra:
   custom_props:
-    time: '14:00'
     type: poetry
     public: true
     status: finished
 ---
+
 
 ![|400](/images/Pastedimage20250124140122.png)
 

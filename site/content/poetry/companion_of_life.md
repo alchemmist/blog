@@ -1,14 +1,14 @@
 ---
-date: 2025-03-18
-tech_name: "companion_of_life"
-title: "Спутник жизни"
+date: '2025-03-18T20:31:00+03:00'
+tech_name: companion_of_life
+title: Спутник жизни
 extra:
   custom_props:
-    time: '20:31'
     type: poetry
     public: true
     status: finished
 ---
+
 
 ![|400](/images/Pastedimage20250318203109.png)
 

@@ -1,14 +1,14 @@
 ---
-date: 2025-03-15
-tech_name: "despair"
-title: "Отчаяние"
+date: '2025-03-15T17:13:00+03:00'
+tech_name: despair
+title: Отчаяние
 extra:
   custom_props:
-    time: '17:13'
     type: poetry
     public: true
     status: finished
 ---
+
 
 ![|400](/images/Pastedimage20250315173759.png)
 
