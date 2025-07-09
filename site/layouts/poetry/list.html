@@ -1,4 +1,103 @@
-{{ define "main" }}
+{{ define "head" }}
+<link rel="preload" href="/assets/moss1.webp" as="image" />
+<link rel="preload" href="/assets/moss1-1.webp" as="image" />
+<link rel="preload" href="/assets/moss1-2.webp" as="image" />
+<link rel="preload" href="/assets/moss2.webp" as="image" />
+<link rel="preload" href="/assets/moss3.webp" as="image" />
+<link rel="preload" href="/assets/moss7.webp" as="image" />
+<link rel="preload" href="/assets/moss8.webp" as="image" />
+{{ end }} {{ define "main" }}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const leftZone = document.querySelector(".moss-trigger-zone.left");
+    const rightZone = document.querySelector(".moss-trigger-zone.right");
+    const overlay = document.querySelector(".moss-overlay");
+
+    let hoverCount = 0;
+
+    function showMoss() {
+      hoverCount++;
+      overlay.classList.add("active");
+    }
+
+    function hideMoss() {
+      hoverCount--;
+      if (hoverCount <= 0) {
+        overlay.classList.remove("active");
+        hoverCount = 0;
+      }
+    }
+
+    leftZone.addEventListener("mouseenter", showMoss);
+    rightZone.addEventListener("mouseenter", showMoss);
+    leftZone.addEventListener("mouseleave", hideMoss);
+    rightZone.addEventListener("mouseleave", hideMoss);
+  });
+  document.querySelectorAll("img.moss-layer").forEach((img) => {
+    img.style.opacity = 0;
+    img.addEventListener("load", () => {
+      img.style.transition = "opacity 0.3s ease";
+      img.style.opacity = 1;
+    });
+  });
+</script>
+
+<div class="moss-overlay">
+  <img
+    src="/assets/moss3.webp"
+    class="moss-layer moss-left"
+    style="--delay: 0.5s; top: 21%"
+  />
+  <img
+    src="/assets/moss1-2.webp"
+    class="moss-layer moss-left"
+    style="--delay: 0.1s; top: 2%"
+  />
+  <img
+    src="/assets/moss2.webp"
+    class="moss-layer moss-left"
+    style="--delay: 0.2s; top: 62%"
+  />
+  <img
+    src="/assets/moss8.webp"
+    class="moss-layer moss-left"
+    style="--delay: 0.4s; top: 40%"
+  />
+  <img
+    src="/assets/moss1.webp"
+    class="moss-layer moss-left"
+    style="--delay: 0.4s; top: 68%"
+  />
+  <img
+    src="/assets/moss2.webp"
+    class="moss-layer moss-right"
+    style="--delay: 0.2s; top: -5%; right: -15%"
+  />
+  <img
+    src="/assets/moss8.webp"
+    class="moss-layer moss-right"
+    style="--delay: 0.4s; top: 10%"
+  />
+  <img
+    src="/assets/moss1-1.webp"
+    class="moss-layer moss-right"
+    style="--delay: 0.1s; top: 50%"
+  />
+  <img
+    src="/assets/moss7.webp"
+    class="moss-layer moss-right"
+    style="--delay: 0.3s; top: 39%"
+  />
+  <img
+    src="/assets/moss3.webp"
+    class="moss-layer moss-right"
+    style="--delay: 0.3s; top: 69%"
+  />
+</div>
+
+<div class="moss-trigger-zone left"></div>
+<div class="moss-trigger-zone right"></div>
+
 <main class="base-container poetry-container">
   <h2>Poetry</h2>
   <div class="arhive-containter">

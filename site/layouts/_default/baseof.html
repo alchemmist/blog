@@ -81,6 +81,7 @@
     <script>
       mermaid.initialize({ startOnLoad: true });
     </script>
+    {{ block "head" . }}{{ end }}
   </head>
   <body>
     {{ partial "header.html" . }} {{ block "main" . }}{{ end }} {{ partial
