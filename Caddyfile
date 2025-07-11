@@ -7,6 +7,7 @@ alchemmist.xyz {
     redir /cv/eng/go https://alchemmist.github.io/CV/pdf/go-eng.pdf
     redir /cv/eng/python https://alchemmist.github.io/CV/pdf/python-eng.pdf
     redir /cv/rus/long https://alchemmist.github.io/CV/pdf/long-rus.pdf
+    redir /cv/rus/short https://alchemmist.github.io/CV/pdf/short-rus.pdf
     redir /cv/rus/go https://alchemmist.github.io/CV/pdf/go-rus.pdf
     redir /cv/rus/python https://alchemmist.github.io/CV/pdf/python-rus.pdf
 }

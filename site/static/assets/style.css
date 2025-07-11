@@ -143,6 +143,10 @@ h1 a {
   flex-direction: column;
 }
 
+.cv-container li {
+  text-align: left;
+}
+
 .cv-container h3 {
   margin: 10px;
 }
