@@ -92,7 +92,7 @@ upower -i $(upower -e | grep BAT) | awk '\
 ```
 Here we find `energy-full` and save to variable `ef`, find `enengry-full-design` and save to `efd` variable. On the end we divide them: `ef/efd`.  
 
-After that calculate percent value, with `bc` *(ishell calculator for expression with float numbers)*:
+After that calculate percent value, with `bc` *(is shell calculator for expression with float numbers)*:
 ```sh
 echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
         /energy-full:/ {ef=$2}\
@@ -122,7 +122,6 @@ Here `-d'.'` means we split by dot and `-f1` means we take first part.
 ## Waybar module
 In my waybar config `~/.config/waybar/config.json` I’m add two modules on right section, but you can do as you want. Finally i’m got this:
 ![](/images/battery-waybar-module.png)
-
 > If you like my wallpaper you can find this and more very good stuff in my `dotfiles` repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forgot: I love your stars!
 
 
