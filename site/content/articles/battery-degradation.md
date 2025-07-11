@@ -201,5 +201,4 @@ And finish this modules with css style in `~/.config/waybar/style.css`:
 }
 ```
 
-As result: 
-![](/images/waybar-battery-module-2.png)
+As result:    ![](/images/waybar-battery-module-2.png)

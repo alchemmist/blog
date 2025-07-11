@@ -325,6 +325,10 @@ pre code * {
   line-height: 1.2;
 }
 
+pre code * .err {
+  background-color: transparent !important;
+}
+
 pre {
   margin: 0;
 }
