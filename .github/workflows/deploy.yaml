@@ -25,6 +25,15 @@ jobs:
           script: |
             cd ${{ secrets.SSH_PROJECT_PATH }}
             docker compose down
+      - name: Compose pull
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.SSH_PROJECT_PATH }}
+            docker compose pull
       - name: Compose up
         uses: appleboy/ssh-action@master
         with:
@@ -33,4 +42,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ${{ secrets.SSH_PROJECT_PATH }}
-            docker compose up -d
+            docker compose up --build -d
