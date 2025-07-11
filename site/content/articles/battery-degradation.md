@@ -1,6 +1,6 @@
 ---
 date: '2025-07-11T09:58:00+03:00'
-title: Check battery degradation on Linux
+title: Battery degradation on Linux
 tech_name: battery-degradation
 tags:
 - linux

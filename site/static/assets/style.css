@@ -97,6 +97,10 @@ header h1 a:hover {
   display: flex;
 }
 
+.udpates-page-container h2 {
+  margin: 25px 0;
+}
+
 .ascii-art {
   white-space: pre;
   font-size: 12px;
