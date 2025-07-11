@@ -35,7 +35,7 @@ Then get detailed information about this device, with `-i` flag of `upower`:
 upower -i $(upower -e | grep BAT)
 ```
 We got something like this:
-```
+```txt
   native-path:          BATT
   vendor:               DESAY
   model:                BASE-BAT
