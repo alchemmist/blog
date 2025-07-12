@@ -160,13 +160,13 @@ Second module it’s today topic: `custom/batterydegradaion`:
 "custom/battery-degradation": {
   "format": " {}%",
   "interval": "once",
-  "exec": "~/scripts/battery-degradation.sh",
+  "exec": "<span class="tilde">~</span>/scripts/battery-degradation.sh",
   "tooltip": false
 },
 ```
 I’m put our command to script, for me it’s useful. You can do same, don’t forgot add shebang `#!/bin/bash` and:
 ```sh
-chmod +x ~/scripts/battery-degradation.sh
+chmod +x <span class="tilde">~</span>/scripts/battery-degradation.sh
 ```
 
 In module we define the format with nerd icon and percent, turn off tooltip and set run once on waybar start *(because this parameter changing very long)*. 

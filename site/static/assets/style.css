@@ -322,11 +322,15 @@ pre code {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
-pre code * {
-  /* font-family: "JetBrains Mono"; */
+pre code {
   font-family: "Computer Modern Typewriter";
   font-size: 0.95em;
   line-height: 1.2;
+  text-align: left;
+}
+
+.tilde {
+  font-family: "JetBrains Mono";
 }
 
 pre code * .err {
