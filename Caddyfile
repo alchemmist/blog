@@ -1,7 +1,6 @@
 alchemmist.xyz {
     encode gzip
 
-    reverse_proxy /cats* http://cats:5173
     reverse_proxy /* hugo:1313
 
     redir /cv/eng/long https://alchemmist.github.io/CV/pdf/long-eng.pdf
