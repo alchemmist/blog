@@ -19,23 +19,23 @@ Now we will understand how to find the desired value and then make a beautiful m
 ## Find a battery degradation value
 
 Firstly get list of all power devices:
-``<code>sh
+```sh
 upower -e
-</code>`<code>
+```
 Then find battery from this list:
-</code>`<code>sh
+```sh
 upower -e | grep BAT
 
 # For example:
 # /org/freedesktop/UPower/devices/battery_BATT
-</code>`<code>
+```
 
-Then get detailed information about this device, with </code>-i<code> flag of </code>upower<code>:
-</code>`<code>sh
+Then get detailed information about this device, with <code>-i</code> flag of <code>upower</code>:
+```sh
 upower -i $(upower -e | grep BAT)
-</code>`<code>
+```
 We got something like this:
-</code>`<code>txt
+```txt
   native-path:          BATT
   vendor:               DESAY
   model:                BASE-BAT
@@ -72,28 +72,28 @@ We got something like this:
     1752222987	11.192	charging
     1752222957	10.822	charging
     1752222927	10.857	charging
-</code>`<code>
+```
 
 Here many interesting information, for example charge-cycles, time to full battery, and so on. But now we use two parameters: 
-- </code>energy-full-design<code> — the original full battery volume 
-- </code>energy-full<code> — current battery volume
+- <code>energy-full-design</code> — the original full battery volume 
+- <code>energy-full</code> — current battery volume
 Deference between this two parameters is degradation of battery:
 $$
 \text{Degradation} = \left(1 - \frac{E_{\text{full}}}{E_{\text{design}}}\right) \times 100\%
 $$
 Now let’s calculate this metric in percents. 
 
-First find this parameters in big output and devide them, with </code>awk<code>:
-</code>`<code>sh
+First find this parameters in big output and devide them, with <code>awk</code>:
+```sh
 upower -i $(upower -e | grep BAT) | awk '\
 	/energy-full:/ {ef=$2}\
 	/energy-full-design:/ {efd=$2}\
 	END {print ef/efd}'
-</code>`<code>
-Here we find </code>energy-full<code> and save to variable </code>ef<code>, find </code>enengry-full-design<code> and save to </code>efd<code> variable. On the end we divide them: </code>ef/efd<code>.  
+```
+Here we find <code>energy-full</code> and save to variable <code>ef</code>, find <code>enengry-full-design</code> and save to <code>efd</code> variable. On the end we divide them: <code>ef/efd</code>.  
 
-After that calculate percent value, with </code>bc<code> *(is shell calculator for expression with float numbers)*:
-</code>`<code>sh
+After that calculate percent value, with <code>bc</code> *(is shell calculator for expression with float numbers)*:
+```sh
 echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
         /energy-full:/ {ef=$2}\
         /energy-full-design:/ {efd=$2}\
@@ -102,11 +102,11 @@ echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
 
 # Output example:
 # 20.558200
-</code>`<code>
-Here we make </code>+ 0.5<code> for rounding when the fractional part is cut off later.
+```
+Here we make <code>+ 0.5</code> for rounding when the fractional part is cut off later.
 
-In last step we need to round value. We make it simple: we already add </code>0.5<code> to value and now it remains to cut off the fractional part with </code>cut<code> util:
-</code>`<code>sh
+In last step we need to round value. We make it simple: we already add <code>0.5</code> to value and now it remains to cut off the fractional part with <code>cut</code> util:
+```sh
 echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
         /energy-full:/ {ef=$2}\
         /energy-full-design:/ {efd=$2}\
@@ -116,17 +116,17 @@ echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
 
 # Output example:
 # 20
-</code>`<code>
-Here </code>-d'.'<code> means we split by dot and </code>-f1<code> means we take first part.
+```
+Here <code>-d'.'</code> means we split by dot and <code>-f1</code> means we take first part.
 
 ## Waybar module
-In my waybar config </code>~/.config/waybar/config.json<code> I’m add two modules on right section, but you can do as you want. Finally i’m got this:
+In my waybar config <code><span class="tilde">~</span>/.config/waybar/config.json</code> I’m add two modules on right section, but you can do as you want. Finally i’m got this:
 ![](/images/battery-waybar-module.png)
-> If you like my wallpaper you can find this and more very good stuff in my </code>dotfiles<code> repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forgot: I love your stars!
+> If you like my wallpaper you can find this and more very good stuff in my <code>dotfiles</code> repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forgot: I love your stars!
 
 
 Let’s see:
-</code>`<code>json
+```json
 {
   ...
   "modules-left": [...],
@@ -137,9 +137,9 @@ Let’s see:
 	...
   ],
   ...
-</code>`<code>
-First module it’s default </code>battery<code> module, for me it’s great work on hyprland. Here we define levels of good, warning and critical level of charging, define nerd icons format for different battery state:
-</code>`<code>json
+```
+First module it’s default <code>battery</code> module, for me it’s great work on hyprland. Here we define levels of good, warning and critical level of charging, define nerd icons format for different battery state:
+```json
 "battery": {
   "states": {
     "good": 90,
@@ -153,26 +153,26 @@ First module it’s default </code>battery<code> module, for me it’s great wor
   "tooltip": "{time}",
   "style": "{capacity < 10 ? 'color: red;' : 'color: normal;'}"
 },
-</code>`<code>
+```
 
-Second module it’s today topic: </code>custom/batterydegradaion<code>:
-</code>`<code>json
+Second module it’s today topic: <code>custom/batterydegradaion</code>:
+```json
 "custom/battery-degradation": {
   "format": " {}%",
   "interval": "once",
-  "exec": "<span class="tilde">~</span>/scripts/battery-degradation.sh",
+  "exec": "~/scripts/battery-degradation.sh",
   "tooltip": false
 },
-</code>`<code>
-I’m put our command to script, for me it’s useful. You can do same, don’t forgot add shebang </code>#!/bin/bash<code> and:
-</code>`<code>sh
-chmod +x <span class="tilde">~</span>/scripts/battery-degradation.sh
-</code>`<code>
+```
+I’m put our command to script, for me it’s useful. You can do same, don’t forgot add shebang <code>#!/bin/bash</code> and:
+```sh
+chmod +x ~/scripts/battery-degradation.sh
+```
 
 In module we define the format with nerd icon and percent, turn off tooltip and set run once on waybar start *(because this parameter changing very long)*. 
 
-And finish this modules with css style in </code>~/.config/waybar/style.css<code>:
-</code>`<code>css
+And finish this modules with css style in <code><span class="tilde">~</span>/.config/waybar/style.css</code>:
+```css
 #battery,
 #custom-battery-degradation {
   background: #1e1e2e;
@@ -198,7 +198,7 @@ And finish this modules with css style in </code>~/.config/waybar/style.css<code
 #battery.critical {
   color: red;
 }
-</code>``
+```
 
 Done! As result: 
 ![](/images/waybar-battery-module-2.png)
