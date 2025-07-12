@@ -30,7 +30,7 @@ upower -e | grep BAT
 # /org/freedesktop/UPower/devices/battery_BATT
 ```
 
-Then get detailed information about this device, with <code>-i</code> flag of <code>upower</code>:
+Then get detailed information about this device, with `-i` flag of `upower`:
 ```sh
 upower -i $(upower -e | grep BAT)
 ```
@@ -75,24 +75,24 @@ We got something like this:
 ```
 
 Here many interesting information, for example charge-cycles, time to full battery, and so on. But now we use two parameters: 
-- <code>energy-full-design</code> — the original full battery volume 
-- <code>energy-full</code> — current battery volume
+- `energy-full-design` — the original full battery volume 
+- `energy-full` — current battery volume
 Deference between this two parameters is degradation of battery:
 $$
 \text{Degradation} = \left(1 - \frac{E_{\text{full}}}{E_{\text{design}}}\right) \times 100\%
 $$
 Now let’s calculate this metric in percents. 
 
-First find this parameters in big output and devide them, with <code>awk</code>:
+First find this parameters in big output and devide them, with `awk`:
 ```sh
 upower -i $(upower -e | grep BAT) | awk '\
 	/energy-full:/ {ef=$2}\
 	/energy-full-design:/ {efd=$2}\
 	END {print ef/efd}'
 ```
-Here we find <code>energy-full</code> and save to variable <code>ef</code>, find <code>enengry-full-design</code> and save to <code>efd</code> variable. On the end we divide them: <code>ef/efd</code>.  
+Here we find `energy-full` and save to variable `ef`, find `enengry-full-design` and save to `efd` variable. On the end we divide them: `ef/efd`.  
 
-After that calculate percent value, with <code>bc</code> *(is shell calculator for expression with float numbers)*:
+After that calculate percent value, with `bc` *(is shell calculator for expression with float numbers)*:
 ```sh
 echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
         /energy-full:/ {ef=$2}\
@@ -103,9 +103,9 @@ echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
 # Output example:
 # 20.558200
 ```
-Here we make <code>+ 0.5</code> for rounding when the fractional part is cut off later.
+Here we make `+ 0.5` for rounding when the fractional part is cut off later.
 
-In last step we need to round value. We make it simple: we already add <code>0.5</code> to value and now it remains to cut off the fractional part with <code>cut</code> util:
+In last step we need to round value. We make it simple: we already add `0.5` to value and now it remains to cut off the fractional part with `cut` util:
 ```sh
 echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
         /energy-full:/ {ef=$2}\
@@ -117,12 +117,12 @@ echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
 # Output example:
 # 20
 ```
-Here <code>-d'.'</code> means we split by dot and <code>-f1</code> means we take first part.
+Here `-d'.'` means we split by dot and `-f1` means we take first part.
 
 ## Waybar module
 In my waybar config <code><span class="tilde">~</span>/.config/waybar/config.json</code> I’m add two modules on right section, but you can do as you want. Finally i’m got this:
 ![](/images/battery-waybar-module.png)
-> If you like my wallpaper you can find this and more very good stuff in my <code>dotfiles</code> repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forgot: I love your stars!
+> If you like my wallpaper you can find this and more very good stuff in my `dotfiles` repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forgot: I love your stars!
 
 
 Let’s see:
@@ -138,7 +138,7 @@ Let’s see:
   ],
   ...
 ```
-First module it’s default <code>battery</code> module, for me it’s great work on hyprland. Here we define levels of good, warning and critical level of charging, define nerd icons format for different battery state:
+First module it’s default `battery` module, for me it’s great work on hyprland. Here we define levels of good, warning and critical level of charging, define nerd icons format for different battery state:
 ```json
 "battery": {
   "states": {
@@ -155,7 +155,7 @@ First module it’s default <code>battery</code> module, for me it’s great wor
 },
 ```
 
-Second module it’s today topic: <code>custom/batterydegradaion</code>:
+Second module it’s today topic: `custom/batterydegradaion`:
 ```json
 "custom/battery-degradation": {
   "format": " {}%",
@@ -164,7 +164,7 @@ Second module it’s today topic: <code>custom/batterydegradaion</code>:
   "tooltip": false
 },
 ```
-I’m put our command to script, for me it’s useful. You can do same, don’t forgot add shebang <code>#!/bin/bash</code> and:
+I’m put our command to script, for me it’s useful. You can do same, don’t forgot add shebang `#!/bin/bash` and:
 ```sh
 chmod +x ~/scripts/battery-degradation.sh
 ```
