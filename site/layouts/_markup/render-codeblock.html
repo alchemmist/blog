@@ -1,0 +1,3 @@
+{{ $highlighted := highlight .Inner .Type "" }}
+{{ $replaced := $highlighted | replaceRE `~` `<span class="tilde">~</span>` }}
+{{ $replaced | safeHTML }}
