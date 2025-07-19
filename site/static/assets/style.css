@@ -27,7 +27,7 @@
 }
 
 * {
-  font-family: "CourierCyr";
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -226,6 +226,13 @@ mjx-container[display="true"] {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "NerdFontFallback";
+  src: url("assets/fonts/SymbolsNerdFont-Regular.ttf") format("truetype");
+  font-weight: noraml;
+  font-style: normal;
+}
+
 article {
   width: 50%;
   min-width: 700px;
@@ -270,7 +277,7 @@ li::marker {
 }
 
 article * {
-  font-family: "Computer Modern Roman", serif;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
   font-size: 18px;
 }
 
@@ -323,7 +330,7 @@ pre code {
 }
 
 pre code * {
-  font-family: "Computer Modern Typewriter";
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
   font-size: 0.95em;
   line-height: 1.2;
   text-align: left;
@@ -796,3 +803,4 @@ footer p {
 .moss-overlay.active .moss-right {
   transform: translateX(0);
 }
+
