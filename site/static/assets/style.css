@@ -806,3 +806,12 @@ footer p {
 mjx-container, mjx-container svg {
   font-family: "Times New Roman", serif !important;
 }
+
+.medium-zoom-overlay {
+  z-index: 1000; /* Поверх навигации */
+}
+
+.medium-zoom-image {
+  z-index: 1001;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}

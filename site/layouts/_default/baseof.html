@@ -29,15 +29,12 @@
     <script>
       MathJax = {
         tex: {
-          displayMath: [
-            ["$$", "$$"],
-          ],
-          inlineMath: [
-            ["$", "$"],
-          ],
+          displayMath: [["$$", "$$"]],
+          inlineMath: [["$", "$"]],
         },
         loader: {
-          load: ["ui/safe"], },
+          load: ["ui/safe"],
+        },
         svg: {
           fontCache: "local",
         },
@@ -54,7 +51,7 @@
           const width = img.alt.match(/^\|(\d+)/)?.[1];
           if (width) {
             // img.style.width = width + "px";
-            img.style.width = `${(width / 20)}` + "rem";
+            img.style.width = `${width / 20}` + "rem";
             img.alt = ""; // убираем странный alt
           }
         });
@@ -77,6 +74,25 @@
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.css"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Выбираем ВСЕ изображения внутри контента поста
+        const images = document.querySelectorAll("img");
+
+        // Применяем medium-zoom с настройками
+        mediumZoom(images, {
+          background: "rgba(0, 0, 0, 0.8)", // Темный оверлей
+          margin: 4, // Отступ от краев экрана
+          scrollOffset: 50, // Компенсация при прокрутке
+          animationDuration: 300, // Длительность анимации в мс
+        });
+      });
     </script>
     {{ block "head" . }}{{ end }}
   </head>
