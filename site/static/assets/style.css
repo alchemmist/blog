@@ -270,6 +270,16 @@ li::marker {
   font-size: 15px !important;
 }
 
+.essay-topics {
+  text-align: center !important;
+  margin-bottom: 0.8cm;
+}
+
+.essay-topics a {
+  font-size: 15px !important;
+  font-family: "CourierCyr"
+}
+
 article * {
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
   font-size: 18px;

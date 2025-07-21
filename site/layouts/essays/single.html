@@ -3,6 +3,16 @@
   <article>
     <h1>{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
     <p class="article-date"><em>{{ .Date.Format "2006-01-02" }}</em></p>
+
+    {{ if .Params.topics }}
+    <p class="essay-topics">
+      {{ range $index, $topic := .Params.topics }}
+        {{ if $index }}, {{ end }}
+        <code><a href="{{ (path.Join "topics" $topic) | relLangURL }}">{{ $topic }}</a></code>
+      {{ end }}
+    </p>
+    {{ end }}
+
     {{ .Content }}
     {{ partial "artical-finish.html" }}
   </article>
