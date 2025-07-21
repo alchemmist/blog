@@ -131,6 +131,11 @@ header h1 a:hover {
   justify-content: center;
 }
 
+.base-container .lang-switcher {
+  text-decoration: underline;
+}
+
+
 .home-container {
   gap: 2cm;
   width: 70%;
