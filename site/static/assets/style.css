@@ -780,20 +780,20 @@ footer p {
   position: absolute;
   height: auto;
   max-width: 30vw;
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-  transition-delay: var(--delay);
 }
 
-/* Начальные состояния */
 .moss-left {
   transform: translateX(-100%);
   left: -10%;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .moss-right {
   transform: translateX(100%);
   right: -10%;
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
+
 
 /* Когда активен - мох выдвигается */
 .moss-overlay.active {
