@@ -851,25 +851,3 @@ mjx-container, mjx-container svg {
 .lang-switcher {
   font-size: inherit;
 }
-
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
-}
-
-.book-card {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 6px;
-    background: #fdfdfd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.book-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0.5rem;
-}
-

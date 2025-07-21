@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="library">
+  <h1>{{ .Title }}</h1>
+  
+  {{ range $.Site.Data.books }}
+    <div class="category">
+      <h2>{{ .name }}</h2>
+      <div class="books">
+        {{ range .books }}
+          <div class="book">
+            {{ if .cover }}
+              <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+            {{ end }}
+            <div class="book-details">
+              <h3>{{ .title }}</h3>
+              <p class="author">{{ .author }}</p>
+              <p class="status">
+                {{ if eq .status "read" }}
+                  <span class="read-status">Прочитана</span>
+                {{ else if eq .status "reading" }}
+                  <span class="reading-status">Читаю сейчас</span>
+                {{ else }}
+                  <span class="unread-status">В планах</span>
+                {{ end }}
+              </p>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</div>
+{{ end }}
