@@ -35,8 +35,6 @@ disableDefaultLanguageRedirect = false
   [languages.en]
     languageName = "English"
     weight = 1
-    baseURL = '/en/'
   [languages.ru]
     languageName = "Русский"
     weight = 2
-    baseURL = '/ru/'

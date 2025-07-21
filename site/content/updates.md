@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2025-07-21 15:41\]* New translated essay: [Если друг оказался вдруг женщиной](/essays/en/is-woman-friend) 
+- [ ] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
 - [ ] *\[2025-07-21 15:41\]* Setup multilingual mode!
 - [ ] *\[2025-07-21 12:39*\] New essay: [Если друг оказался вдруг женщиной](/essays/ru/is-woman-friend) 
 - [ ] *\[2025-07-11 12:43\]* New article: [Battery degradation on Linux](/articles/battery-degradation) 
