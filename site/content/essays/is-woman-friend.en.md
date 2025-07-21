@@ -25,11 +25,9 @@ Secondly, in same-sex relationships, due to the limitations mentioned above, dev
 
 Thus, the relationship between a man and a woman is that union which can go the farthest in the degree of love, acceptance, and intimacy, combining within itself the Greek concepts of ἔρως (eros), φιλία (philia), and ἀγάπη (agape). But such a union must begin with friendship and is not obligated to go beyond it. And in such a friendship, it is necessary to set boundaries and be prepared that these relationships will not be able to fully develop.
 
->If your friend suddenly turns out
->Neither friend nor foe, just — so;
->
->If you cannot figure out,
->
+>If your friend suddenly turns out<br>
+Neither friend nor foe, just — so;
+If you cannot figure out,
 Whether he's good or bad, —
 Pull the guy up the mountain — take the risk!
 Don't leave him there alone:
