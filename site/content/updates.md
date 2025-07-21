@@ -11,7 +11,7 @@ title: Updates
 ---
 - [ ] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
 - [ ] *\[2025-07-21 15:41\]* Setup multilingual mode!
-- [ ] *\[2025-07-21 12:39*\] New essay: [Если друг оказался вдруг женщиной](/essays/ru/is-woman-friend) 
+- [ ] *\[2025-07-21 12:39*\] New essay: [Если друг оказался вдруг женщиной](/ru/essays/is-woman-friend/) 
 - [ ] *\[2025-07-11 12:43\]* New article: [Battery degradation on Linux](/articles/battery-degradation) 
 - [ ] *\[2025-07-09 11:32\]* Add moss to poetry (moh-moh-moh) 
 - [ ] *\[2025-07-07 19:05\]* New article: [Gram-Schmidt orthogonalization](/articles/gram-schmidt)
