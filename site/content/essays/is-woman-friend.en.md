@@ -23,7 +23,7 @@ Same-sex relationships, firstly, have a limit in the degree of intimacy because 
 
 Secondly, in same-sex relationships, due to the limitations mentioned above, development toward love does not require: A) exclusivity, B) physicality. This means that I, as a man, can develop and deepen love in friendship without physical contact and without harm to my other relationships. The same is true for female friendship. But the same cannot be said for relationships between a man and a woman. In them, love without sexuality, without intimacy, and without exclusivity is not full-fledged. Yet, without genuine friendship, without respect and care, without individual freedom – love between a man and a woman will also not be full-fledged.
 
-Thus, the relationship between a man and a woman is that union which can go the farthest in the degree of love, acceptance, and intimacy, combining within itself the Greek concepts of ἔρως (eros), φιλία (philia), and ἀγάπη (agape). But such a union must begin with friendship and is not obligated to go beyond it. And in such a friendship, it is necessary to set boundaries and be prepared that these relationships will not be able to fully develop.
+Thus, the relationship between a man and a woman is that union which can go the farthest in the degree of love, acceptance, and intimacy, combining within itself the Greek concepts of ἔρως (eros), φιλία (philia), and ἀγάπη (agape). But such a union must begin with friendship and is not obligated to go beyond it. And in such a friendship, it is necessary to set boundaries and be prepared that these relationships will find it hard to achieve full-fledged development.
 
 >If your friend suddenly turns out<br>
 Neither friend nor foe, just — so;<br>
