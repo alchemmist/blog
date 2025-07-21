@@ -26,6 +26,10 @@ title = 'alchemmist'
 [taxonomies]
   tag = "tags"
   topic = "topics"
+  genre = "genres"
+  author = "authors"
+  status = "statuses"
+
 
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
@@ -38,3 +42,4 @@ disableDefaultLanguageRedirect = false
   [languages.ru]
     languageName = "Русский"
     weight = 2
+
