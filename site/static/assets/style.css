@@ -421,6 +421,14 @@ blockquote code {
   flex-direction: column;
 }
 
+.poetry h1 {
+  margin-bottom: 0;
+}
+
+.poetry img {
+  margin: 1em;
+}
+
 .poetry * {
   font-family: "Computer Modern Roman", serif;
   font-size: 19px;
