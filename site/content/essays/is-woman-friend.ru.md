@@ -5,10 +5,6 @@ date: '2025-07-21T00:00:00+03:00'
 language: ru
 topics:
 - psychology
-- test1
-- asdf
-- social
-- love
 extra:
   custom_props:
     public: true

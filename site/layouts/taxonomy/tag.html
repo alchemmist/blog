@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="base-container articles-container">
-  <h2>Articles about {{ .Title }}</h2>
+  <h2>Articles about {{ .Title }} {{ partial "allLanguages.html" . }}</h2>
 
   <ul>
     {{ range .Pages }}

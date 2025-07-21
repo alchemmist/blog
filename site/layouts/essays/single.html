@@ -7,7 +7,7 @@
     {{ if .Params.topics }}
     <p class="essay-topics">
       {{ range $index, $topic := .Params.topics }}
-        {{ if $index }}, {{ end }}
+        {{ if $index }} {{ end }}
         <code><a href="{{ (path.Join "topics" $topic) | relLangURL }}">{{ $topic }}</a></code>
       {{ end }}
     </p>
