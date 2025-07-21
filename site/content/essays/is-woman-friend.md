@@ -25,7 +25,7 @@ Secondly, in same-sex relationships, due to the limitations mentioned above, dev
 
 Thus, the relationship between a man and a woman is that union which can go the farthest in the degree of love, acceptance, and intimacy, combining within itself the Greek concepts of ἔρως (eros), φιλία (philia), and ἀγάπη (agape). But such a union must begin with friendship and is not obligated to go beyond it. And in such a friendship, it is necessary to set boundaries and be prepared that these relationships will not be able to fully develop.
 
-> If your friend suddenly turns out
+>If your friend suddenly turns out
 Neither friend nor foe, just — so;
 If you cannot figure out,
 Whether he's good or bad, —
@@ -34,7 +34,7 @@ Don't leave him there alone:
 Let him be roped to you as one —
 There you'll learn who he is.
 >
-If the guy in the mountains ain't much,
+>If the guy in the mountains ain't much,
 If he suddenly buckles and quits,
 Steps on the glacier — and slumps,
 Makes a misstep — and yells, —
@@ -43,7 +43,7 @@ Don't you scold him — drive him away.
 They don't take such men up high,
 And they don't sing songs of such guys.
 >
-But if he didn't whine, didn't moan;
+>But if he didn't whine, didn't moan;
 Though sullen and angry, he strode,
 And when you fell from the cliff's height,
 He groaned, but he held the line;
