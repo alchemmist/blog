@@ -51,3 +51,7 @@ If he marched with you as to war,<br>
 Stood drunk with joy on the peak, —<br>
 Then on him you may rely<br>
 As you would upon yourself!<br>
+
+Vladimir Vysotsky,  Soviet singer-songwriter, poet, and actor.
+
+“Song about a friend”.
