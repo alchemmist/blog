@@ -2,6 +2,7 @@
 date: 2025-06-24
 title: "Transparent Deployment with GitHub Actions"
 tech_name: "deploy-gh-actions"
+language: en
 tags:
   - github
 extra:

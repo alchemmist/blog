@@ -2,6 +2,7 @@
 date: 2025-06-26
 title: "Base of multivariate vectors"
 tech_name: "multivariate-vectors"
+language: en
 tags:
   - math
 extra:
