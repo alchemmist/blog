@@ -1,9 +1,9 @@
 {{ if .IsTranslated }}
   {{ range .Translations }}
       {{ if eq .Lang "en" }}
-        (<a href="{{ .Permalink }}">ru</a>)
+        (<a class="lang-switcher" href="{{ .Permalink }}">ru</a>)
       {{ else if eq .Lang "ru" }}
-        (<a href="{{ .Permalink }}">en</a>)
+        (<a hclass="lang-switcher" ref="{{ .Permalink }}">en</a>)
       {{ end }}
   {{ end }}
 {{ end }}

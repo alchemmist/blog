@@ -817,3 +817,6 @@ mjx-container, mjx-container svg {
   transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
 }
 
+.lang-switcher {
+  font-size: inherit;
+}
