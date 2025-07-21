@@ -1,7 +1,7 @@
 ---
 tech_name: is-woman-frined
 title: Если друг оказался вдруг женщиной
-date: '2025-06-25T00:00:00+03:00'
+date: '2025-07-21T00:00:00+03:00'
 topics:
 - psychology
 extra:
