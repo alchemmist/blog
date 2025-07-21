@@ -174,8 +174,7 @@
   date: 2023-09-03
 - title: Илиада
   author: Гомер
-  genre:
-  - other
+  genre: other
   status: future
   cover: https://img4.labirint.ru/rc/7ecf7baf7b2b910a4b9b34e2d7c18a7f/363x561q80/books65/648218/cover.jpg?1617981911
   date: 2023-09-09
@@ -289,8 +288,7 @@
   date: 2023-05-21
 - title: Иоан Лествичник
   author: Лествица
-  genre:
-  - религия ☦
+  genre: религия
   status: now
   cover: https://img4.labirint.ru/rc/de74f84e931c348022c34509587bbfd8/363x561q80/books37/366608/cover.jpg?1672421105
   date: 2023-11-18
@@ -386,8 +384,7 @@
   date: 2023-06-03
 - title: Скука
   author: Альберто Моравиа
-  genre:
-  - философия ✡
+  genre: философия
   status: finished
   cover: https://fantlab.ru/images/editions/big/92653?r=1492542897
   date: 2023-08-17
@@ -777,8 +774,7 @@
   date: 2023-07-23
 - title: Почти серьёзно
   author: Никулин
-  genre:
-  - other
+  genre: other
   status: future
   cover: https://img4.labirint.ru/rc/28190fe3a7e43bf3f675ea46c07c2d0e/363x561q80/books73/721462/cover.jpg?1571124350
   date: 2023-05-18
@@ -946,8 +942,7 @@
   date: 2023-05-17
 - title: Искусство любить
   author: Эрих Фромм
-  genre:
-  - other
+  genre: психология
   status: future
   cover: https://monster-book.com/sites/default/files/styles/sc290x400/public/books/iskusstvo-lyubit_0.png?itok=0frFgT_S
   date: 2023-07-23
