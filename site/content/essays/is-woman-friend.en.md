@@ -27,8 +27,10 @@ Thus, the relationship between a man and a woman is that union which can go the 
 
 >If your friend suddenly turns out
 >
-Neither friend nor foe, just — so;
-If you cannot figure out,
+>Neither friend nor foe, just — so;
+>
+>If you cannot figure out,
+>
 Whether he's good or bad, —
 Pull the guy up the mountain — take the risk!
 Don't leave him there alone:
