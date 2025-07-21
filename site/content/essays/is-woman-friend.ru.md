@@ -2,7 +2,7 @@
 tech_name: is-woman-friend
 title: Если друг оказался вдруг женщиной
 date: '2025-07-21T00:00:00+03:00'
-lagnuage: ru
+language: ru
 topics:
 - psychology
 extra:

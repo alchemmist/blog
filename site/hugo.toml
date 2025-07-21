@@ -34,8 +34,6 @@ defaultContentLanguageInSubdir = true
   [languages.en]
     languageName = "English"
     weight = 1
-    contentDir = "content"
   [languages.ru]
     languageName = "Русский"
     weight = 2
-    contentDir = "content"

@@ -2,7 +2,7 @@
 tech_name: career-choice
 title: О выборе профессии
 date: '2025-06-25T00:00:00+03:00'
-lagnuage: ru
+language: ru
 topics:
 - career
 extra:

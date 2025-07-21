@@ -2,7 +2,7 @@
 tech_name: briefly-about-immortality
 title: Коротко о бессмертии
 date: '2024-10-15T00:00:00+03:00'
-lagnuage: ru
+language: ru
 topics:
 - philosophy
 extra:
