@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2025-07-21 12:39*\] New essay: [Если друг оказался вдруг женщиной](/essays/is-women-friend) 
+- [ ] *\[2025-07-21 12:39*\] New essay: [Если друг оказался вдруг женщиной](/essays/is-woman-friend) 
 - [ ] *\[2025-07-11 12:43\]* New article: [Battery degradation on Linux](/articles/battery-degradation) 
 - [ ] *\[2025-07-09 11:32\]* Add moss to poetry (moh-moh-moh) 
 - [ ] *\[2025-07-07 19:05\]* New article: [Gram-Schmidt orthogonalization](/articles/gram-schmidt)
