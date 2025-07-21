@@ -2,6 +2,7 @@
 date: 2025-07-05
 title: "Hessian matrix"
 tech_name: "hessian-matrix"
+language: en
 tags:
   - math
 extra:

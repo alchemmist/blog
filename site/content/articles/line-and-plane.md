@@ -2,6 +2,7 @@
 date: 2025-06-28
 title: "Line and plane"
 tech_name: "line-and-plane"
+language: en
 tags:
   - math
 extra:

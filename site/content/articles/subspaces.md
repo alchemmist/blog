@@ -2,6 +2,7 @@
 date: 2025-07-03
 title: "Subsapces"
 tech_name: "subspaces"
+language: en
 tags:
   - math
 extra:

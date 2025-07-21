@@ -2,6 +2,7 @@
 date: 2025-02-02
 title: "Linux disk clean up"
 tech_name: "linux-clean-up"
+language: en
 tags:
   - linux
 extra:

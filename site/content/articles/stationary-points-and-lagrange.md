@@ -2,6 +2,7 @@
 date: '2025-07-06T05:19:00+03:00'
 title: Stationary points and Lagrange method
 tech_name: stationary-points-and-lagrange
+language: en
 tags:
 - math
 extra:

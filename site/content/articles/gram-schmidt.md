@@ -2,6 +2,7 @@
 date: '2025-07-06T07:16:00+03:00'
 title: Gram-Schmidt orthogonalization
 tech_name: gram-schmidt
+language: en
 tags:
 - math
 extra:
