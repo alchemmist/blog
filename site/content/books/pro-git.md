@@ -6,6 +6,5 @@ genre:
 status: future
 cover: https://git-scm.com/images/progit2.png
 date: 2023-05-17
-headless: true
 ---
 

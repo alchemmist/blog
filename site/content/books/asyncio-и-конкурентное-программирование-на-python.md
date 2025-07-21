@@ -6,6 +6,5 @@ genre:
 status: future
 cover: https://ir.ozone.ru/s3/multimedia-m/wc1000/6730996738.jpg
 date: 2025-01-23
-headless: true
 ---
 
