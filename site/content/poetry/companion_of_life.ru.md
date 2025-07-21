@@ -2,6 +2,7 @@
 date: '2025-03-18T20:31:00+03:00'
 tech_name: companion_of_life
 title: Спутник жизни
+language: ru
 extra:
   custom_props:
     type: poetry

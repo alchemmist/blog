@@ -2,6 +2,7 @@
 date: '2025-04-24T17:05:00+03:00'
 tech_name: doubt
 title: Сомнение
+language: ru
 extra:
   custom_props:
     type: poetry

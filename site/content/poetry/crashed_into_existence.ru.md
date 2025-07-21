@@ -1,6 +1,7 @@
 ---
 date: '2024-02-17T23:28:00+03:00'
 tech_name: crashed_into_existence
+language: ru
 title: Разбилось сущее
 extra:
   custom_props:

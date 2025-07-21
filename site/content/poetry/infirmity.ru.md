@@ -2,6 +2,7 @@
 date: '2025-04-24T16:41:00+03:00'
 tech_name: infirmity
 title: Немощь
+language: ru
 extra:
   custom_props:
     type: poetry

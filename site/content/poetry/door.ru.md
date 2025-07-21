@@ -2,6 +2,7 @@
 date: '2025-01-24T15:35:00+03:00'
 title: Дверь
 tech_name: door
+language: ru
 extra:
   custom_props:
     type: poetry

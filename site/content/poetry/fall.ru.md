@@ -2,6 +2,7 @@
 date: '2025-01-18T12:03:00+03:00'
 tech_name: fall
 title: Падение
+language: ru
 extra:
   custom_props:
     type: poetry

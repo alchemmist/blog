@@ -2,6 +2,7 @@
 date: '2024-02-01T20:07:00+03:00'
 title: Прекрасное древо
 tech_name: beautiful_tree
+language: ru
 extra:
   custom_props:
     type: poetry

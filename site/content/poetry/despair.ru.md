@@ -2,6 +2,7 @@
 date: '2025-03-15T17:13:00+03:00'
 tech_name: despair
 title: Отчаяние
+language: ru
 extra:
   custom_props:
     type: poetry
