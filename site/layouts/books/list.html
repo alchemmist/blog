@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ if .Pages }}
+  {{ range .Pages }}
+    <div style="margin-bottom: 2em;">
+      {{ with .Params.cover }}
+        <img src="{{ . }}" width="100" alt="Обложка {{ $.Title }}">
+      {{ end }}
+      <h2>{{ .Title }}</h2>
+      <p>Автор: {{ .Params.author }}</p>
+      <p>Жанр: {{ delimit .Params.genre ", " }}</p>
+      <p>Дата: {{ .Date.Format "2006-01-02" }}</p>
+    </div>
+  {{ end }}
+{{ else }}
+  <p>Книг не найдено.</p>
+{{ end }}
+
+{{ end }}
+
