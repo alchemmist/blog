@@ -27,13 +27,14 @@ title = 'alchemmist'
   tag = "tags"
   topic = "topics"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
+disableDefaultLanguageRedirect = false
 
 [languages]
   [languages.en]
     languageName = "English"
-    weight = 1
+    weight = 2
   [languages.ru]
     languageName = "Русский"
-    weight = 2
+    weight = 1
