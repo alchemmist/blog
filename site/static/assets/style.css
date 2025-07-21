@@ -263,7 +263,7 @@ li::marker {
 
 .article-date {
   text-align: center !important;
-  margin-bottom: 0.8cm;
+  margin: 0.5em 0;
 }
 
 .article-date em {
@@ -272,12 +272,16 @@ li::marker {
 
 .essay-topics {
   text-align: center !important;
-  margin-bottom: 0.8cm;
 }
 
 .essay-topics a {
   font-size: 15px !important;
   font-family: "CourierCyr"
+}
+
+.article-topics {
+  text-align: center !important;
+  margin: 0.5em 0 1em 0;
 }
 
 article * {
