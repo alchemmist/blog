@@ -1,7 +1,8 @@
 ---
 tech_name: is-woman-friend
-title: Если друг оказался вдруг женщиной
+title: If your friend is a woman
 date: '2025-07-21T00:00:00+03:00'
+language: en
 topics:
 - psychology
 extra:
@@ -10,42 +11,43 @@ extra:
     type: essay
 ---
 
-Есть отношения между людьми, и они одни на всех, и для мужчин и для женщин. То есть отношения между учеником и учителем – это отношения, отношения между мужем и женой – это отношения, отношения между братом и сестрой – это отношения, отношения между мужиками рыболовами – это отношения и любые отношения между мужчиной и женщиной – это тоже всегда отношения. 
 
-Важнейшее свойство отношений это развитие, отношения либо развиваются, либо останавливаются на определенном этапе. Конечная цель любых отношений это построение любви. Но не все отношения должны стремиться к какой-либо цели, не все отношения должны в принципе развиваться, это абсолютно нормально.
+There are relationships between people, and they are the same for everyone, both for men and for women. That is, the relationship between a student and a teacher is a relationship, the relationship between husband and wife is a relationship, the relationship between brother and sister is a relationship, the relationship between male fishermen is a relationship, and any relationship between a man and a woman is also always a relationship.
 
-Например, отношения с коллегами на работе – это достаточно поверхностный уровень, на котором в большинстве случаев останавливаются в статусе “знакомые”. Но в жизни каждого человека должно быть небольшое количество действительно глубоких отношений, которые стремятся в своем развитии в вечность. Конечная цель таких отношений, как уже было сказано, это настоящая полноценная любовь.
+The most important property of a relationship is development; relationships either develop or stop at a certain stage. The ultimate goal of any relationship is building love. But not all relationships must strive for some goal; not all relationships must develop at all, and that is absolutely normal.
 
-Но развитие в любви между мужчиной и женщиной выглядит по-разному. 
-Однополые отношения, во-первых, имеют предел в степени близости, так как участники в них одного пола, а следовательно, будут занимать одинаковые базовые роли, что при достаточно тесном сближении будет естественно приводить к конфликтам либо к подавлению (возможно вполне осознанному и приемлемому) одного из партнеров. Отношениям между мужчиной и женщиной доступна максимальная глубина близости. 
+For example, relationships with colleagues at work are a fairly superficial level, which in most cases stops at the status of "acquaintances." But every person should have a small number of truly deep relationships in their life, relationships that strive toward eternity in their development. The ultimate goal of such relationships, as already stated, is genuine, full-fledged love.
 
-Во-вторых, в однополых отношениях из-за ограничений озвученных выше, развитие в любви не требует: А – избранности, Б – телесности. Это означает, что я как мужчина могу развивать и углублять любовь в дружбе без физического контакта и ущерба остальным отношениям. То же справедливо и для женской дружбы. Но того же нельзя сказать про отношения между мужчиной и женщиной. В них любовь без сексуальности, без интимности и без исключительности — не полноценна. Но и без настоящей дружбы, без уважения и заботы, без свободы личности — любовь между мужчиной и женщиной тоже не будет полноценной. 
+However, development toward love between a man and a woman looks different.
+Same-sex relationships, firstly, have a limit in the degree of intimacy because the participants are of the same sex, and consequently, will occupy identical basic roles. At a sufficiently close level, this will naturally lead to conflicts or to the suppression (potentially conscious and acceptable) of one of the partners. Relationships between a man and a woman allow for the maximum depth of intimacy.
 
-Таким образом, отношения между мужчиной и женщиной это тот союз который может зайти максимально далеко в степени любви, принятия и близости, совместив в себе греческие ἔρως (эрос), φιλία (филия) и ἀγάπη (агапе). Но начинаться такой союз должен с дружбы и не обязан заходить дальше неё. А в такой дружбе необходимо проводить границы и быть готовым, что этим отношениям будет не смогут полноценно развиваться.
+Secondly, in same-sex relationships, due to the limitations mentioned above, development toward love does not require: A) exclusivity, B) physicality. This means that I, as a man, can develop and deepen love in friendship without physical contact and without harm to my other relationships. The same is true for female friendship. But the same cannot be said for relationships between a man and a woman. In them, love without sexuality, without intimacy, and without exclusivity is not full-fledged. Yet, without genuine friendship, without respect and care, without individual freedom – love between a man and a woman will also not be full-fledged.
 
->Если друг оказался вдруг  
-И не друг, и не враг, а — так;  
-Если сразу не разберешь,  
-Плох он или хорош, —  
-Парня в горы тяни — рискни!  
-Не бросай одного его:  
-Пусть он в связке в одной с тобой —  
-Там поймешь, кто такой.
+Thus, the relationship between a man and a woman is that union which can go the farthest in the degree of love, acceptance, and intimacy, combining within itself the Greek concepts of ἔρως (eros), φιλία (philia), and ἀγάπη (agape). But such a union must begin with friendship and is not obligated to go beyond it. And in such a friendship, it is necessary to set boundaries and be prepared that these relationships will not be able to fully develop.
+
+> If your friend suddenly turns out
+> Neither friend nor foe, just — so;
+> If you cannot figure out,
+> Whether he's good or bad, —
+> Pull the guy up the mountain — take the risk!
+> Don't leave him there alone:
+> Let him be roped to you as one —
+> There you'll learn who he is.
 >
->Если парень в горах не ах,  
-Если сразу раскис — и вниз,  
-Шаг ступил на ледник — и сник,  
-Оступился — и в крик, —  
-Значит рядом с тобой — чужой,  
-Ты его не брани — гони.  
-Вверх таких не берут и тут  
-Про таких не поют.
+> If the guy in the mountains ain't much,
+> If he suddenly buckles and quits,
+> Steps on the glacier — and slumps,
+> Makes a misstep — and yells, —
+> Then he's a stranger by your side,
+> Don't you scold him — drive him away.
+> They don't take such men up high,
+> And they don't sing songs of such guys.
 >
->Если ж он не скулил, не ныл;  
-Пусть он хмур был и зол, но шел,  
-А когда ты упал со скал,  
-Он стонал, но держал;  
-Если шел он с тобой, как в бой,  
-На вершине стоял хмельной, —  
-Значит, как на себя самого,  
-Положись на него!
+> But if he didn't whine, didn't moan;
+> Though sullen and angry, he strode,
+> And when you fell from the cliff's height,
+> He groaned, but he held the line;
+> If he marched with you as to war,
+> Stood drunk with joy on the peak, —
+> Then on him you may rely
+> As you would upon yourself!

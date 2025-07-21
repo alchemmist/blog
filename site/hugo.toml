@@ -27,4 +27,13 @@ title = 'alchemmist'
   tag = "tags"
   topic = "topics"
 
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
 
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.ru]
+    languageName = "Русский"
+    weight = 2
