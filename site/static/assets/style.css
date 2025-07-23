@@ -402,6 +402,10 @@ blockquote code {
   color: rgba(0, 0, 0, 0.2);
 }
 
+.thanks-container p {
+  margin: 0 !important;
+}
+
 .tag {
   margin: 5px 0;
 }
