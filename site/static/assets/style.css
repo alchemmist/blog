@@ -377,7 +377,6 @@ blockquote code {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
 }
 
 .arhive-containter h4 {
@@ -424,6 +423,9 @@ blockquote code {
 .poetry-container {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .poetry {
