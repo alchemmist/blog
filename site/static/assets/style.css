@@ -197,6 +197,7 @@ footer p {
 .articles-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 mjx-container[display="true"] {
