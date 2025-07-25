@@ -385,7 +385,7 @@ blockquote code {
 }
 
 #tags-between-arhive {
-  display: inline;
+  /* display: inline; */
   height: 80px;
 }
 
@@ -413,7 +413,8 @@ blockquote code {
 }
 
 .tag {
-  margin: 0 10px 0 0;
+  display: inline-block;
+  margin: 5px 10px 5px 0;
 }
 
 .tags-list h3 {
