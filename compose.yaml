@@ -1,7 +1,7 @@
 services:
   hugo:
     build: ./site
-    command: hugo serve --bind 0.0.0.0 --baseURL https://alchemmist.xyz --port 1313
+    command: hugo serve --bind 0.0.0.0 --baseURL https://alchemmist.xyz --port 1313 --disableFastRender --disableLiveReload
     container_name: hugo
     ports:
       - "1313:1313"
