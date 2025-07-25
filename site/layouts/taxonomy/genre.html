@@ -1,4 +1,22 @@
 {{ define "main" }}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Путь к изображению-заглушке
+  const placeholder = '/assets/book-cover.png'; 
+  
+  // Обработка ошибок загрузки обложек
+  document.querySelectorAll('.book-cover').forEach(img => {
+    img.addEventListener('error', function() {
+      if (this.src !== placeholder) {
+        this.src = placeholder;
+        this.alt = "Обложка недоступна";
+      }
+    });
+  });
+});
+</script>
+
 <h1>Books about: {{ .Title }}</h1>
 
 <div class="book-grid">
@@ -18,9 +36,9 @@
 
         {{ $status := .Params.status }}
         <div class="book-status">
-            {{ if eq $status "reading" }}📖 
-            {{ else if eq $status "readed" }}✅ 
-            {{ else if eq $status "future" }}🕓 
+            {{ if eq $status "reading" }} 
+            {{ else if eq $status "readed" }} 
+            {{ else if eq $status "future" }} 
             {{ end }}
         </div>
     </div>
