@@ -1,14 +1,12 @@
 {{ define "main" }}
 <div class="base-container books-container">
 <h2>Books genres</h2>
-  <div class="archive-container">
+  <div class="tags-list">
     <ul>
       {{ range $key, $value := site.Taxonomies.genre }}
-        <li>
-          <a href="{{ "/genre/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})
-        </li>
-      {{ else }}
-        <li>Genres not found</li>
+        <span class="tag">
+          <a href="{{ "/genre/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>({{ len $value }})
+        </span>
       {{ end }}
     </ul>
   </div>

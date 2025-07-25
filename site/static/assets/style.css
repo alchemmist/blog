@@ -859,10 +859,7 @@ mjx-container svg {
 .books-container {
   flex-direction: column;
   text-align: left;
-}
-
-.books-container ul li {
-  margin: 1rem;
+  width: 50%;
 }
 
 .book-grid {
