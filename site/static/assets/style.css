@@ -135,7 +135,6 @@ header h1 a:hover {
   text-decoration: underline;
 }
 
-
 .home-container {
   gap: 2cm;
   width: 70%;
@@ -281,7 +280,7 @@ li::marker {
 
 .essay-topics a {
   font-size: 15px !important;
-  font-family: "CourierCyr"
+  font-family: "CourierCyr";
 }
 
 .article-topics {
@@ -343,7 +342,7 @@ pre code {
 }
 
 pre code * {
-  font-family:  "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
   font-size: 0.95em;
   line-height: 1.2;
   text-align: left;
@@ -815,7 +814,6 @@ footer p {
   transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-
 /* Когда активен - мох выдвигается */
 .moss-overlay.active {
   opacity: 1;
@@ -835,7 +833,8 @@ footer p {
     format("woff2");
 }
 
-mjx-container, mjx-container svg {
+mjx-container,
+mjx-container svg {
   font-family: "Times New Roman", serif !important;
 }
 
@@ -844,10 +843,19 @@ mjx-container, mjx-container svg {
 }
 
 .medium-zoom-image {
+  z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.medium-zoom-image--opened {
   z-index: 1001;
   transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
 }
 
 .lang-switcher {
   font-size: inherit;
+}
+
+.books-container {
+  flex-direction: column;
 }

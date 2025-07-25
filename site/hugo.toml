@@ -26,9 +26,9 @@ title = 'alchemmist'
 [taxonomies]
   tag = "tags"
   topic = "topics"
-  genre = "genres"
-  author = "authors"
-  status = "statuses"
+  genre = "genre"
+  author = "author"
+  status = "status"
 
 
 defaultContentLanguage = 'en'

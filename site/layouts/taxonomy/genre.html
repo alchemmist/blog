@@ -1,0 +1,75 @@
+{{ define "main" }}
+<h1>Books about: {{ .Title }}</h1>
+
+<style>
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem;
+    background-color: #fafafa;
+}
+
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.book-title {
+    font-weight: 600;
+    text-align: center;
+    margin: 0.2rem 0;
+}
+
+.book-author {
+    color: #666;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.book-status {
+    font-size: 1.2rem;
+}
+</style>
+
+<div class="book-grid">
+    {{ range .Pages }}
+    <div class="book-card">
+        {{ with .Params.cover }}
+        <img class="book-cover" src="{{ . }}" alt="Cover preview" loading="lazy" />
+        {{ end }}
+
+        {{ with .Params.title }}
+        <div class="book-title">{{ . }}</div>
+        {{ end }}
+
+        {{ with .Params.author }}
+        <div class="book-author">{{ . }}</div>
+        {{ end }}
+
+        {{ $status := .Params.status }}
+        <div class="book-status">
+            {{ if eq $status "reading" }}📖
+            {{ else if eq $status "readed" }}✅
+            {{ else if eq $status "future" }}🕓
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+
