@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="base-container books-container">
-<h2>Books genres</h2>
+<h2>Books archive</h2>
   <div class="tags-list">
+  <h3>Genres</h3>
     <ul>
       {{ range $key, $value := site.Taxonomies.genre }}
         <span class="tag">
@@ -10,27 +11,23 @@
       {{ end }}
     </ul>
   </div>
-<h2>Books statuses</h2>
-  <div class="archive-container">
+  <div class="tags-list">
+  <h3>Statuses</h3>
     <ul>
       {{ range $key, $value := site.Taxonomies.status }}
-        <li>
-          <a href="{{ "/status/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})
-        </li>
-      {{ else }}
-        <li>Statuses not found</li>
+        <span class="tag">
+          <a href="{{ "/status/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>({{ len $value }})
+        </span>
       {{ end }}
     </ul>
   </div>
-<h2>Books authors</h2>
-  <div class="archive-container">
+  <div class="tags-list">
+  <h3>Authors</h3>
     <ul>
       {{ range $key, $value := site.Taxonomies.author }}
-        <li>
-          <a href="{{ "/author/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})
-        </li>
-      {{ else }}
-        <li>Authors not found</li>
+        <span class="tag">
+          <a href="{{ "/author/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>({{ len $value }})
+        </span>
       {{ end }}
     </ul>
   </div>

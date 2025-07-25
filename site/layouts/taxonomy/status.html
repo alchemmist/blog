@@ -17,7 +17,8 @@
   });
 </script>
 
-<h1>Books about: {{ .Title }}</h1>
+<div class="base-container book-container">
+<h1>Books with status: {{ .Title }}</h1>
 
 <div class="book-grid">
   {{ range .Pages }}
@@ -35,5 +36,6 @@
     </div>
   </div>
   {{ end }}
+</div>
 </div>
 {{ end }}
