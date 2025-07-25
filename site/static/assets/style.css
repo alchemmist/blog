@@ -197,7 +197,7 @@ footer p {
 .articles-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
 }
 
 mjx-container[display="true"] {
@@ -377,6 +377,7 @@ blockquote code {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .arhive-containter h4 {
@@ -392,7 +393,7 @@ blockquote code {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
+  width: 100%;
   text-align: left;
 }
 
@@ -425,7 +426,6 @@ blockquote code {
   flex-direction: column;
   flex-shrink: 0;
   flex-grow: 1;
-  width: 100%;
 }
 
 .poetry {
@@ -865,6 +865,7 @@ mjx-container svg {
   flex-direction: column;
   text-align: left;
   margin: 5rem 0;
+  width: 50%;
 }
 
 .book-container {
