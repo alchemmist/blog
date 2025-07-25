@@ -858,4 +858,52 @@ mjx-container svg {
 
 .books-container {
   flex-direction: column;
+  text-align: left;
+}
+
+.books-container ul li {
+  margin: 1rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 2rem 0 5rem 0;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem;
+    background-color: #fafafa;
+}
+
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.book-title {
+    font-weight: 600;
+    text-align: center;
+    margin: 0.2rem 0;
+}
+
+.book-author {
+    color: #666;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.book-status {
+    font-size: 1.2rem;
 }
