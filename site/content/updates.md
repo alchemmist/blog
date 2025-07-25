@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-07-25 16:21\]* Add [book](/books) section!
 - [ ] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
 - [ ] *\[2025-07-21 15:41\]* Setup multilingual mode!
 - [ ] *\[2025-07-21 12:39*\] New essay: [Если друг оказался вдруг женщиной](/ru/essays/is-woman-friend/) 
