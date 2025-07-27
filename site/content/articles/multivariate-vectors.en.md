@@ -23,12 +23,12 @@ v + w = \begin{pmatrix}v_1 \\ v_2 \\ \ldots \\ v_n \end{pmatrix} + \begin{pmatri
 $$
 
 We can add vectors only they have same dimension.
-1. Product of vector by scalar is a product off each coordinates by a scalar:
+2. Product of vector by scalar is a product off each coordinates by a scalar:
 $$
 \lambda v = \lambda \cdot \begin{pmatrix}v_1 \\ v_2 \\ \ldots \\ v_n \end{pmatrix} = \begin{pmatrix}\lambda v_1 \\ \lambda v_2 \\ \ldots \\ \lambda v_n \end{pmatrix}
 $$
-2. Difference of vectors is a sum of vectors, but one of vector product by scalar $-1$.
-3. Scalar product of vectors:
+3. Difference of vectors is a sum of vectors, but one of vector product by scalar $-1$.
+4. Scalar product of vectors:
 $$
 x \cdot y = \langle x;y\rangle = x_1 y_1 + x_2 y_2 + \ldots + x_n y_n = \sum \limits_{i = 1}^{n}x_i y_i
 $$

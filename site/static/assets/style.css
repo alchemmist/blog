@@ -133,6 +133,7 @@ header h1 a:hover {
 
 .base-container .lang-switcher {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .home-container {
@@ -859,6 +860,7 @@ mjx-container svg {
 
 .lang-switcher {
   font-size: inherit;
+  cursor: pointer;
 }
 
 .books-container {

@@ -87,4 +87,3 @@ jobs:
             docker compose up -d
 ```
 In this example I’m using docker for restart my services. Choose your way!
-
