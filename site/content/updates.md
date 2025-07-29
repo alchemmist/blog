@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] First article about Go: [Predicate Pattern in Go](/articles/predicate-pattern-go) *(2025-07-29 14:06*)
+- [ ] *\[2025-07-29 14:40*\] First article about Go: [Predicate Pattern in Go](/articles/predicate-pattern-go) 
 - [ ] *\[2025-07-25 16:21\]* Add [book](/books) section!
 - [ ] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
 - [ ] *\[2025-07-21 15:41\]* Setup multilingual mode!
