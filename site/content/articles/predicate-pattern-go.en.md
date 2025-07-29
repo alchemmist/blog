@@ -1,7 +1,7 @@
 ---
 date: 2025-07-29
 title: "Predicate Pattern in Go"
-tech_name: "preicate-pattern-go"
+tech_name: "predicate-pattern-go"
 language: en
 tags:
   - Go
