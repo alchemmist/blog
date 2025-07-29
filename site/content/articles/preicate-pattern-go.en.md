@@ -61,4 +61,34 @@ func ByPID(pid int) ProcessSearchPredicate {
 	}
 }
 ```
+It’s will work like this:
+```go
+proc, err := pm.findProcess(ByTitle(title))
+```
+This already good, but I want to use autocomplete in my code editor for filter options. For make it we can rewrite filter options from *functions* to *methods* and use one empty object for call it, like this:
+```go
+type ProcessSearchFilter struct{}
+
+var filter = ProcessSearchFilter{}
+
+func (f ProcessSearchFilter) ByTitle(title string) ProcessSearchPredicate {
+	return func(p *Process) bool {
+		return p.Title == title
+	}
+}
+
+func (f ProcessSearchFilter) ByPID(pid int) ProcessSearchPredicate {
+	return func(p *Process) bool {
+		return p.PID == pid
+	}
+}
+```
+After that we can use like this:
+```go
+proc, err := pm.findProcess(filter.ByTitle(title))
+```
+And my workflow in code editor very comfortable:
+![](/images/predicate-pattern-demo.gif)
+
+>If you like my code editor view you can use my Neovim theme: [nothing](https://github.com/alchemmist/nothing.nvim). And you can use my nvim config, find it in my [dotfiles](https://github.com/alchemmist/dotfiles)
 
