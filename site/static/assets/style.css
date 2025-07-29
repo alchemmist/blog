@@ -198,7 +198,7 @@ footer p {
 .articles-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  max-width: 50%;
 }
 
 mjx-container[display="true"] {
@@ -887,7 +887,7 @@ mjx-container svg {
   flex-direction: column;
   text-align: left;
   margin: 5rem 0;
-  width: 50%;
+  max-width: 50%;
 }
 
 .book-container {
