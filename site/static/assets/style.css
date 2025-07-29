@@ -295,6 +295,10 @@ article * {
   font-size: 18px;
 }
 
+article::selection {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 article h1 {
   margin-bottom: 0;
   font-size: 25px;
@@ -341,6 +345,21 @@ pre code {
   border-radius: 8px;
   overflow-x: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  white-space: pre-wrap;
+  background-clip: padding-box;
+}
+
+pre code .tab {
+  display: inline-block;
+  width: 2em; 
+  content: "";
+}
+
+pre code .tab::selection {
+  color: rgba(0, 0, 0, 0);
 }
 
 pre code * {

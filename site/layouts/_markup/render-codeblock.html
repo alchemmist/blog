@@ -1,3 +1,11 @@
+{{/* Получаем подсвеченный код с помощью Hugo highlight */}}
 {{ $highlighted := highlight .Inner .Type "" }}
-{{ $replaced := $highlighted | replaceRE `~` `<span class="tilde">~</span>` }}
-{{ $replaced | safeHTML }}
+
+{{/* Заменяем табы на <span class="tab"></span> */}}
+{{ $tabsReplaced := replaceRE `\t` `<span class="tab">	</span>` $highlighted }}
+
+{{/* Заменяем символ тильды ~ на <span class="tilde">~</span> */}}
+{{ $final := replaceRE `~` `<span class="tilde">~</span>` $tabsReplaced }}
+
+{{/* Выводим безопасный HTML */}}
+{{ $final | safeHTML }}
