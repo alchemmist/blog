@@ -27,4 +27,38 @@ For example in Python we have standard function `filter`, which got array of ite
 ```python
 filter([1, 2, 3, 4, 5], lambda n: n % 2 == 0)
 ```
-But here we need to handle write a predicate, because this is a more general function. For our process function we add intermediate step: predicate builder. Finally we will got this scheme:
+But here we need to handle write a predicate, because this is a more general function. For our case we add intermediate step: predicate builder. Finally we will got this scheme:
+![|800](/images/predicate-pattern-schema.svg)
+Let’s write a method `findProcess`:
+```go
+func (pm *ProcManager) findProcess(searchPredicate ProcessSearchPredicate) (*Process, error) {
+	pm.mu.RLock()
+	defer pm.mu.RUnlock()
+
+	for _, proc := range pm.processes {
+		if searchPredicate(proc) {
+			return proc, nil
+		}
+	}
+	return nil, fmt.Errorf("no process with this parameter")
+}
+```
+This method got one argument: `searchPredicate` with specific type `ProcessSearchPreciate`:
+```go
+type ProcessSearchPredicate func(p *Process) bool
+```
+Let’s see: it’s function from `Process` to `bool` – predicate. Then we can write a predicate builder functions, like filter options:
+```go
+func ByTitle(title string) ProcessSearchPredicate {
+	return func(p *Process) bool {
+		return p.Title == title
+	}
+}
+
+func ByPID(pid int) ProcessSearchPredicate {
+	return func(p *Process) bool {
+		return p.PID == pid
+	}
+}
+```
+
