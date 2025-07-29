@@ -28,7 +28,7 @@ For example in Python we have standard function `filter`, which got array of ite
 filter([1, 2, 3, 4, 5], lambda n: n % 2 == 0)
 ```
 But here we need to handle write a predicate, because this is a more general function. For our case we add intermediate step: predicate builder. Finally we will got this scheme:
-![|800](/images/predicate-pattern-schema.svg)
+![|900](/images/predicate-pattern-schema.svg)
 Let’s write a method `findProcess`:
 ```go
 func (pm *ProcManager) findProcess(searchPredicate ProcessSearchPredicate) (*Process, error) {
