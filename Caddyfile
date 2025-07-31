@@ -1,3 +1,7 @@
+umami.alchemmist.xyz {
+    reverse_proxy umami:3000
+}
+
 alchemmist.xyz {
     encode gzip
 
@@ -10,5 +14,6 @@ alchemmist.xyz {
     redir /cv/ru/short https://alchemmist.github.io/CV/pdf/short-rus.pdf
     redir /cv/ru/go https://alchemmist.github.io/CV/pdf/go-rus.pdf
     redir /cv/ru/python https://alchemmist.github.io/CV/pdf/python-rus.pdf
+
 }
 
