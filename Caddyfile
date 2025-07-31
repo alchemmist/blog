@@ -2,6 +2,10 @@ umami.alchemmist.xyz {
     reverse_proxy umami:3000
 }
 
+cats.alchemmist.xyz {
+    reverse_proxy cats:5173
+}
+
 alchemmist.xyz {
     encode gzip
 

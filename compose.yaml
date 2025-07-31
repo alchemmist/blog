@@ -50,6 +50,14 @@ services:
     networks:
       - default
     restart: unless-stopped
+  cats:
+    image: alchemmist/cats:latest
+    container_name: cats
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    networks:
+      - default
 volumes:
   caddy_data:
   caddy_config:
