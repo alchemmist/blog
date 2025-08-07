@@ -39,7 +39,8 @@
       "style",
       "svg",
       "title",
-      "ul"
+      "ul",
+      "video"
     ],
     "classes": [
       "about-blog-container",
@@ -122,6 +123,7 @@
       "2-очистка-файлов",
       "MathJax-script",
       "SVGG1Ot4cAD",
+      "cli-control-noscreenshare-option",
       "find-a-battery-degradation-value",
       "geometric-meaning",
       "header-left",

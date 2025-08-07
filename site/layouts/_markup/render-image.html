@@ -1,0 +1,22 @@
+{{ if strings.HasSuffix .Destination ".mp4" }}
+    {{/* Проверяем, начинается ли alt с | и берём число */}}
+    {{ $width := "" }}
+    {{ if strings.HasPrefix .Text "|" }}
+        {{ $numbers := findRE `^\|(\d+)` .Text }}
+        {{ if $numbers }}
+            {{ $width = index (findRE `\d+` (index $numbers 0)) 0 }}
+        {{ end }}
+    {{ end }}
+
+    <div style="display: flex; justify-content: center; margin: 1rem 0;">
+        <video 
+            src="{{ .Destination | safeURL }}" 
+            autoplay loop muted playsinline 
+            controls
+            {{ with $width }}width="{{ . }}%"{{ end }}
+            style="border-radius: 0.5rem; box-shadow: 0 0 20px rgba(0,0,0,0.15);">
+        </video>
+    </div>
+{{ else }}
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" />
+{{ end }}

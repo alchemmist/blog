@@ -288,6 +288,11 @@ article img {
   height: auto;
 }
 
+article img[src$=".gif"] {
+  border-radius: .5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
 article ol li {
   margin: 0.5em 0;
 }
