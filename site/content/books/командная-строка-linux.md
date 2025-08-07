@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Командная строка Linux
 author: Уильям Шоттс
 genre:

@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Python Разработка на основе тестирования
 author: Персиваль Гарри
 genre:

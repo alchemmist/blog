@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: СтартUP
 author: Дорф Боб
 genre:

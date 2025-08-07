@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Head First
 author: Фримен Эрик
 genre:

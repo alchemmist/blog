@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Новая большая книга CSS
 author: Дэвид Макфарланд
 genre:

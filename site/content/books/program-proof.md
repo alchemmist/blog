@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Program Proof
 author: Samuel MIMRAM
 genre:

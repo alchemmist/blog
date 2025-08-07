@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Generation П
 author: Пелевин
 genre:

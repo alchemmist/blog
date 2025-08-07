@@ -1,7 +1,4 @@
 ---
-build:
-  list: false
-  render: false
 title: Go идиомы и паттерны проектирования
 author: Боднер Джон
 genre:
