@@ -289,7 +289,7 @@ article img {
 }
 
 article img[src$=".gif"] {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -514,7 +514,18 @@ p code * {
 
 .poetry * {
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
-  font-size: 19px;
+  font-size: 18px;
+}
+
+.poetry img {
+  display: block;
+}
+
+.poetry p {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
 }
 
 .poetry-text {
