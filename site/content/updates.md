@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-08-27 22:50\]* Add [teach](/ru/teach) section!
 - [ ] *\[2025-08-25 14:40\]* New verse (Ru): [Воскресенье](/ru/poetry/resurrection/) 
 - [ ] *\[2025-08-23 19:46\]* New article: [Privacy screen share in Hyprland](/articles/hyrpland-noscreenshare/) 
 - [ ] *\[2025-08-23 09:54\]* Add the more follow options on home page.
