@@ -18,7 +18,7 @@ title: Updates
 - [ ] *\[2025-08-05 09:51\]* New essay (Ru): [Аристотелевские категории причинности](/ru/essays/aristotelian-categories-causality/) 
 - [ ] *\[2025-07-29 14:40\]* First article about Go: [Predicate Pattern in Go](/articles/predicate-pattern-go) 
 - [ ] *\[2025-07-25 16:21\]* Add [book](/books) section!
-- [ ] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
+- [x] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
 - [x] *\[2025-07-21 15:41\]* Setup multilingual mode!
 - [x] *\[2025-07-21 12:39\]* New essay (Ru): [Если друг оказался вдруг женщиной](/ru/essays/is-woman-friend/) 
 - [x] *\[2025-07-11 12:43\]* New article: [Battery degradation on Linux](/articles/battery-degradation) 

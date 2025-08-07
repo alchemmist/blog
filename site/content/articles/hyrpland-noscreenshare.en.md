@@ -21,7 +21,7 @@ Next we will set up a useful workflow for this case. But, this setup will use ne
 > If you like my wallpaper you can find [this](https://github.com/alchemmist/dotfiles/blob/main/wallpapers/miyazaki/images/1198594-3200x1680-desktop-hd-studio-ghibli-background.jpg) and more very good stuff in my `dotfiles` repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forget: I love your stars!
 
 Let’s go step-by-step. Firstly, let’s recall that in Hyprland [release](https://hypr.land/news/update50/#:~:text=on%20by%20default.-,No%20screen%20share,-There%E2%80%99s%20a%20new) of version `0.50.0` a new `windowrulev2` option `noscreenshare` was added. It’s a new release and now it isn’t controlled from `hyprctl` only from the config file, like this:
-```
+```plaintext
 windowrulev2 = noscreenshare, class:^(org.telegram.desktop|obsidian|discord)$
 ```
 This option will tell Hyprland to draw a black rectangle instead of window content (*even if this window isn’t in focus or int the background*). This works perfect and protects our privacy. But, I’ve found two inconvenient cases: **1.** When we want to make screenshot (*in my case, with flameshot*) Hyprland interpret it as try to share our screen and hide all privacy windows. **2.** Sometimes, I want to share something from my Obsidian, for example, and dive into configs in this moment — not so good.
