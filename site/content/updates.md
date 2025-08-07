@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-08-18 21:06\]* New essay (Ru): [По ту сторону дна](/ru/essays/other-side-of-bottom) 
 - [ ] *\[2025-08-17 23:28\]* Update blog design! Add home page, mobile version adaptive, easter eggs.
 - [ ] *\[2025-08-14 12:08\]* Setup telegram [channel](https://t.me/alchemmist_blog) for blog subscribers!
 - [ ] *\[2025-08-05 09:51\]* New essay (Ru): [Аристотелевские категории причинности](/ru/essays/aristotelian-categories-causality/) 

@@ -426,6 +426,9 @@ p code * {
   align-items: center;
   width: 100%;
 }
+.arhive-containter ul {
+  width: 100%;
+}
 
 .arhive-containter h4 {
   margin-top: 10px;
@@ -1305,3 +1308,4 @@ li {
     transform: translateY(0);
   }
 }
+
