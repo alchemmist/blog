@@ -6,7 +6,7 @@ extra:
   custom_props:
     type: poetry
     public: true
-    status: writing
+    status: finished
 ---
 
 ![|450](/images/sunday.png)
