@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-08-23 19:46\]* New article: [Privacy screen share in Hyprland](/articles/hyrpland-noscreenshare/) 
 - [ ] *\[2025-08-23 09:54\]* Add the more follow options on home page.
 - [ ] *\[2025-08-22 22:53\]* Blog speed up! From 3.8 seconds to less than 700 milliseconds.
 - [ ] *\[2025-08-18 21:06\]* New essay (Ru): [По ту сторону дна](/ru/essays/other-side-of-bottom) 
