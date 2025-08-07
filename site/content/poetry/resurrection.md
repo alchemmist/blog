@@ -1,7 +1,7 @@
 ---
 date: '2025-06-09T20:00:00+03:00'
 tech_name: resurrection
-title: Воскресение
+title: Воскресенье
 extra:
   custom_props:
     type: poetry
@@ -9,9 +9,9 @@ extra:
     status: writing
 ---
 
-![|500](/images/sunday.png)
+![|450](/images/sunday.png)
 Детьми мы были, но пока не стали
-Смиренно воскресения ждем…
+Смиренно воскресенья ждем…
 Лишь изредка приснится отблеск счастья
 Ради него мы и живем.
 
