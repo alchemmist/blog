@@ -1150,7 +1150,7 @@ mjx-container[display="true"] {
 
 .subscribe-banner {
   background-color: #f9f9f9;
-  border-radius: 0.5em;
+  border-radius: 6px;
   padding: 0.4em 0.6em;
   display: inline-flex;
   align-items: center;
@@ -1422,4 +1422,8 @@ body.modal-open {
 .pagefind-ui__search-input {
   position: sticky !important;
   z-index: 510;
+}
+
+.no-break {
+  white-space: nowrap;
 }

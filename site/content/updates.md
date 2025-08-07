@@ -9,6 +9,8 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-08-23 09:54\]* Add the more follow options on home page.
+- [ ] *\[2025-08-22 22:53\]* Blog speed up! From 3.8 seconds to less than 700 milliseconds.
 - [ ] *\[2025-08-18 21:06\]* New essay (Ru): [По ту сторону дна](/ru/essays/other-side-of-bottom) 
 - [ ] *\[2025-08-17 23:28\]* Update blog design! Add home page, mobile version adaptive, easter eggs.
 - [ ] *\[2025-08-14 12:08\]* Setup telegram [channel](https://t.me/alchemmist_blog) for blog subscribers!
@@ -16,8 +18,8 @@ title: Updates
 - [ ] *\[2025-07-29 14:40\]* First article about Go: [Predicate Pattern in Go](/articles/predicate-pattern-go) 
 - [ ] *\[2025-07-25 16:21\]* Add [book](/books) section!
 - [ ] *\[2025-07-21 15:41\]* New translated essay: [If your friend is a woman](/essays/is-woman-friend) 
-- [ ] *\[2025-07-21 15:41\]* Setup multilingual mode!
-- [ ] *\[2025-07-21 12:39\]* New essay (Ru): [Если друг оказался вдруг женщиной](/ru/essays/is-woman-friend/) 
+- [x] *\[2025-07-21 15:41\]* Setup multilingual mode!
+- [x] *\[2025-07-21 12:39\]* New essay (Ru): [Если друг оказался вдруг женщиной](/ru/essays/is-woman-friend/) 
 - [x] *\[2025-07-11 12:43\]* New article: [Battery degradation on Linux](/articles/battery-degradation) 
 - [x] *\[2025-07-09 11:32\]* Add moss to poetry (moh-moh-moh) 
 - [x] *\[2025-07-07 19:05\]* New article: [Gram-Schmidt orthogonalization](/articles/gram-schmidt)
