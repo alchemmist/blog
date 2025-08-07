@@ -16,7 +16,7 @@ extra:
 ---
 We’ve all been in a situation when you need to share your screen with many windows, and you need a few minutes before clicking on “Share screen” button, in order to decide. It’s okay, especially if your system is your second (or even first) home: with private notes, documents, passwords, chats and so on.
 
-Next we will set up a useful workflow for this case. But, this setup will use new feature, which is hardwired into Hyprland and most likely absent in other DEs/compositors. I will demonstrate our final goal:
+Next we will set up a useful workflow for this case. But, this setup will use new feature, which is hardwired into Hyprland and most likely absent in other DEs/compositors. I will demonstrate our final goal. For example, my screen share can be looks, like this:
 ![|85](/images/noscreenshare-demo.mp4)
 > If you like my wallpaper you can find [this](https://github.com/alchemmist/dotfiles/blob/main/wallpapers/miyazaki/images/1198594-3200x1680-desktop-hd-studio-ghibli-background.jpg) and more very good stuff in my `dotfiles` repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forget: I love your stars!
 
