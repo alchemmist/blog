@@ -25,7 +25,7 @@
           {{ range $line := split $updates.RawContent "\n" }}
             {{ if in $line "- [ ]" }}
               {{ $cleanLine := replace $line "- [ ]" "" }}
-              <li>{{ $cleanLine | markdownify }}</li>
+              <p>{{ $cleanLine | markdownify }}</p>
             {{ end }}
           {{ end }}
         </ul>
