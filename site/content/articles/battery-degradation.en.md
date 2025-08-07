@@ -130,15 +130,13 @@ In my waybar config <code><span class="tilde">~</span>/.config/waybar/config.jso
 Let’s see:
 ```json
 {
-  ...
   "modules-left": [...],
   "modules-center": [...],
   "modules-right": [
     "battery",
     "custom/battery-degradation",
-	...
   ],
-  ...
+}
 ```
 First module it’s default `battery` module, for me it’s great work on hyprland. Here we define levels of good, warning and critical level of charging, define nerd icons format for different battery state:
 ```json
