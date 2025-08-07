@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-08-17 23:28\]* Update blog design! Add home page, mobile version adaptive, easter eggs.
 - [ ] *\[2025-08-14 12:08\]* Setup telegram [channel](https://t.me/alchemmist_blog) for blog subscribers!
 - [ ] *\[2025-08-05 09:51\]* New essay (Ru): [Аристотелевские категории причинности](/ru/essays/aristotelian-categories-causality/) 
 - [ ] *\[2025-07-29 14:40\]* First article about Go: [Predicate Pattern in Go](/articles/predicate-pattern-go) 
