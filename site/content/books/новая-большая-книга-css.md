@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Новая большая книга CSS
 author: Дэвид Макфарланд

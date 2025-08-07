@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Program Proof
 author: Samuel MIMRAM

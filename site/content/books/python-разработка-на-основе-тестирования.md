@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Python Разработка на основе тестирования
 author: Персиваль Гарри

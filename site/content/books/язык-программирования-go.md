@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Язык программирования Go
 author: Брайан Кенниган

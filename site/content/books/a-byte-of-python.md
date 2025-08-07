@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: A byte of Python
 author: Swaroop C.H.

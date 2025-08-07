@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Asyncio и конкурентное программирование на Python
 author: Мэтью Фаулер

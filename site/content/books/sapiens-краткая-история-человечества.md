@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Sapiens Краткая история человечества
 author: Харари

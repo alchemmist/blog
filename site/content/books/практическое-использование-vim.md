@@ -1,6 +1,6 @@
 ---
 build:
-  list: false
+  list: true
   render: false
 title: Практическое использование Vim
 author: Нейл Дрю
