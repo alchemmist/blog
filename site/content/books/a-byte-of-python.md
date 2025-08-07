@@ -1,4 +1,7 @@
 ---
+build:
+  list: false
+  render: false
 title: A byte of Python
 author: Swaroop C.H.
 genre:

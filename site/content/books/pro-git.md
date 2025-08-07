@@ -1,4 +1,7 @@
 ---
+build:
+  list: false
+  render: false
 title: Pro GIT
 author: Scott Chacon, Ben Straub
 genre:

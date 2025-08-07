@@ -1,4 +1,7 @@
 ---
+build:
+  list: false
+  render: false
 title: Изучаем Java
 author: Бэйтс Берт
 genre:

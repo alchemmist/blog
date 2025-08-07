@@ -1,4 +1,7 @@
 ---
+build:
+  list: false
+  render: false
 title: Lean Startup
 author: Эрик Рис
 genre:
