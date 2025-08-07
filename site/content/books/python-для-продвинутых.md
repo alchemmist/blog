@@ -1,7 +1,4 @@
 ---
-build:
-  list: true
-  render: false
 title: Python для продвинутых
 author: Эл Свейгарт
 genre:

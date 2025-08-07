@@ -1,7 +1,4 @@
 ---
-build:
-  list: true
-  render: false
 title: Rework бизнес без предрасудков
 author: Джейсон Фрайд
 genre:

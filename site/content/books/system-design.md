@@ -1,7 +1,4 @@
 ---
-build:
-  list: true
-  render: false
 title: System Design
 author: Сюй Алекс
 genre:

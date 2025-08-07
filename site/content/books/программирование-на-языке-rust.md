@@ -1,7 +1,4 @@
 ---
-build:
-  list: true
-  render: false
 title: Программирование на языке Rust
 author: Орендорф Джейсон
 genre:

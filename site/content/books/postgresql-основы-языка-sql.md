@@ -1,7 +1,4 @@
 ---
-build:
-  list: true
-  render: false
 title: PostgreSQL Основы языка SQL
 author: Евгений Маргунов
 genre:

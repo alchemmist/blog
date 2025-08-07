@@ -1,7 +1,4 @@
 ---
-build:
-  list: true
-  render: false
 title: Python к вершинам мастерства
 author: Лусиану Рамальо
 genre:
