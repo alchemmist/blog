@@ -1,6 +1,7 @@
 ---
 date: '2025-07-11T09:58:00+03:00'
 title: Battery degradation on Linux
+description: How to check laptop battery degradation on Linux and display at Waybar.
 tech_name: battery-degradation
 language: en
 tags:
@@ -153,7 +154,7 @@ First module it’s default `battery` module, for me it’s great work on hyprla
   "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   "tooltip": "{time}",
   "style": "{capacity < 10 ? 'color: red;' : 'color: normal;'}"
-},
+}
 ```
 
 Second module it’s today topic: `custom/batterydegradaion`:
@@ -163,7 +164,7 @@ Second module it’s today topic: `custom/batterydegradaion`:
   "interval": "once",
   "exec": "~/scripts/battery-degradation.sh",
   "tooltip": false
-},
+}
 ```
 I’m put our command to script, for me it’s useful. You can do same, don’t forgot add shebang `#!/bin/bash` and:
 ```sh

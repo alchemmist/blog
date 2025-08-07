@@ -3,25 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="alchemmist" />
-    <meta property="og:description" content="Personal web site of alchemmist" />
-    <meta property="og:image" content="/assets/preview.png" />
-    <meta property="og:url" content="https://alchemmist.xyz/" />
-    <meta property="og:type" content="website" />
+
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta
+      name="description"
+      content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
+    />
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta
+      property="og:description"
+      content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
+    />
+    <meta
+      property="og:image"
+      content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
+    />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta
+      property="og:type"
+      content="{{ if .IsPage }}article{{ else }}website{{ end }}"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta
+      name="twitter:description"
+      content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
+    />
+    <meta
+      name="twitter:image"
+      content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
+    />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="/assets/style.css" />
     <link rel="stylesheet" href="/assets/syntax.css" />
+
+    <!-- Favicons -->
     <link
       rel="icon"
-      href="/favicon.ico"
-      type="image/x-icon"
+      href="/assets/favicon-32.png"
+      sizes="32x32"
+      type="image/png"
     />
+    <link
+      rel="icon"
+      href="/assets/favicon-192.png"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <!-- RSS -->
     <link
       rel="alternate"
       type="application/rss+xml"
       href="{{ .Site.BaseURL }}index.xml"
       title="{{ .Site.Title }} RSS Feed"
     />
-    <title>{{ .Title }}</title>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
