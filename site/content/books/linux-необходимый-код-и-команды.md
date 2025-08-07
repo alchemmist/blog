@@ -1,4 +1,7 @@
 ---
+build:
+  list: false
+  render: false
 title: Linux Необходимый код и команды
 author: Скотт Граннеман
 genre:

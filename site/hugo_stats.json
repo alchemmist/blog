@@ -40,8 +40,6 @@
       "ul"
     ],
     "classes": [
-      "$tag",
-      "Go",
       "about-blog-container",
       "arhive-containter",
       "article-date",
@@ -67,6 +65,7 @@
       "footer-info-box",
       "footer-link",
       "genre-container",
+      "github",
       "go",
       "go-back-button",
       "header-container",

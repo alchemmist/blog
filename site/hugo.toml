@@ -65,3 +65,5 @@ home = ["HTML", "RSS"]
   filename = "sitemap.xml"
 
 
+disableKinds = ["books"]
+

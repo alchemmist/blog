@@ -1,4 +1,7 @@
 ---
+build:
+  list: false
+  render: false
 title: IT как оружие
 author: Брэд Смит
 genre:
