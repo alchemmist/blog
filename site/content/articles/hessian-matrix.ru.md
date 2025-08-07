@@ -1,18 +1,18 @@
 ---
-date: 2025-07-05
-title: "Матрица Гессе"
-tech_name: "hessian-matrix"
+date: '2025-07-05T12:48:00+03:00'
+title: Матрица Гессе
+tech_name: hessian-matrix
 language: ru
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 12:48
     type: synopsis
     theme: math
     status: finished
     public: true
 ---
+
 Предположим, у нас есть функция и несколько её стационарных точек, которые нужно классифицировать (максимум, минимум, седловая точка). Для функции без ограничений используем матрицу Гессе.
 
 > Как найти стационарные точки, читайте в статье: «[Стационарные точки и метод Лагранжа](/articles/stationary-points-and-lagrange)»

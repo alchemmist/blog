@@ -1,18 +1,18 @@
 ---
-date: 2025-06-26
-title: "Основы многомерных векторов"
-tech_name: "multivariate-vectors"
+date: '2025-06-26T14:18:00+03:00'
+title: Основы многомерных векторов
+tech_name: multivariate-vectors
 language: ru
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 14:18
     public: true
     type: synopsis
     theme: math
     status: finished
 ---
+
 Что такое вектор? Для натурального числа $n$ назовём **вектором** упорядоченный список из $n$ действительных чисел $v = \begin{pmatrix}v_1&v_2&v_3&\ldots&v_n\end{pmatrix}$. Число $n$ называется размерностью вектора: $\dim{v} = n$. Множество всех возможных векторов размерности $n$ обозначается $R^n$. 
 Обычные числа называются "скалярами". Например, $5$ — скаляр, а $\begin{pmatrix}1&3\end{pmatrix}$ — вектор.
 

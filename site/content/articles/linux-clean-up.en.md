@@ -1,18 +1,18 @@
 ---
-date: 2025-02-02
-title: "Linux disk clean up"
-tech_name: "linux-clean-up"
+date: '2025-02-02T14:18:00+03:00'
+title: Linux disk clean up
+tech_name: linux-clean-up
 language: en
 tags:
-  - linux
+- linux
 extra:
   custom_props:
-    time: 14:18
     public: true
     type: synopsis
     theme: linux
     status: finished
 ---
+
 If you using docker on your machine, would be a good place for start it’s clean all docker stuff. Only if you’re sure in your docker containers, volumes nothing important:
 ```sh
 docker system prune

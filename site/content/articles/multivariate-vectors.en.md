@@ -1,18 +1,18 @@
 ---
-date: 2025-06-26
-title: "Base of multivariate vectors"
-tech_name: "multivariate-vectors"
+date: '2025-06-26T14:18:00+03:00'
+title: Base of multivariate vectors
+tech_name: multivariate-vectors
 language: en
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 14:18
     public: true
     type: synopsis
     theme: math
     status: finished
 ---
+
 What is a vector? For natural number $n$ will call a n-variate **vector** list of n ordered real numbers $v = \begin{pmatrix}v_1&v_2&v_3&\ldots&v_n\end{pmatrix}$. Well the $n$ number is a vector dimension: $\dim{v} = n$. For $n$ number the set of all possible vectors will call $R^n$. 
 The regular number we call “scalar”. For example, $5 \ - \ scalar$, but $\begin{pmatrix}1&3\end{pmatrix} \ - \ vector$.
 

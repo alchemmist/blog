@@ -1,19 +1,20 @@
 ---
-date: 2025-08-23
-title: "Privacy screen share in Hyprland"
-description: "How to share full screen on Hyprland without worries about chats, notes and other privacy info."
-tech_name: "hyrpland-noscreenshare"
+date: '2025-08-23T17:14:00+03:00'
+title: Privacy screen share in Hyprland
+description: How to share full screen on Hyprland without worries about chats, notes
+  and other privacy info.
+tech_name: hyrpland-noscreenshare
 language: en
 tags:
-  - linux
+- linux
 extra:
   custom_props:
-    time: 17:14
     public: true
     type: synopsis
     theme: linux
     status: finished
 ---
+
 We’ve all been in a situation when you need to share your screen with many windows, and you need a few minutes before clicking on “Share screen” button, in order to decide. It’s okay, especially if your system is your second (or even first) home: with private notes, documents, passwords, chats and so on.
 
 Next we will set up a useful workflow for this case. But, this setup will use new feature, which is hardwired into Hyprland and most likely absent in other DEs/compositors. I will demonstrate our final goal. For example, my screen share can be looks, like this:
@@ -26,7 +27,7 @@ windowrulev2 = noscreenshare, class:^(org.telegram.desktop|obsidian|discord)$
 ```
 This option will tell Hyprland to draw a black rectangle instead of window content (*even if this window isn’t in focus or int the background*). This works perfect and protects our privacy. But, I’ve found two inconvenient cases: **1.** When we want to make screenshot (*in my case, with flameshot*) Hyprland interpret it as try to share our screen and hide all privacy windows. **2.** Sometimes, I want to share something from my Obsidian, for example, and dive into configs in this moment — not so good.
 ## CLI control noscreenshare option
-To fix this experience, let’s write a script for control window rule in config. If you don’t have time, the full version of the script [here](https://github.com/alchemmist/dotfiles/blob/main/scripts/toggle_noscreenshare.sh). Script will comment or uncomment line in config file with rule and save info about current rule state in maker-file `~/.config/hypr/.screenshare_rule_disabled`. And script can be run with command `toggle` to change state to the opposite:
+To fix this experience, let’s write a script for control window rule in config. If you don’t have time, the full version of the script [here](https://github.com/alchemmist/dotfiles/blob/main/scripts/toggle_noscreenshare.sh). Script will comment or uncomment line in config file with rule and save info about current rule state in maker-file <code><span class="tilde">~</span>/.config/hypr/.screenshare_rule_disabled</code>. And script can be run with command `toggle` to change state to the opposite:
 ```bash
 #!/bin/bash
 

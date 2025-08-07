@@ -1,18 +1,18 @@
 ---
-date: 2025-02-02
-title: "Очистка диска в Linux"
-tech_name: "linux-clean-up"
+date: '2025-02-02T14:18:00+03:00'
+title: Очистка диска в Linux
+tech_name: linux-clean-up
 language: ru
 tags:
-  - linux
+- linux
 extra:
   custom_props:
-    time: 14:18
     public: true
     type: synopsis
     theme: linux
     status: finished
 ---
+
 Если вы используете Docker, хорошее начало — очистка связанных с ним данных (только если уверены, что контейнеры и тома не содержат важного):
 ```sh
 docker system prune

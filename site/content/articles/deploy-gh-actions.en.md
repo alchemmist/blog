@@ -1,18 +1,18 @@
 ---
-date: 2025-06-24
-title: "Transparent Deployment with GitHub Actions"
-tech_name: "deploy-gh-actions"
+date: '2025-06-24T14:18:00+03:00'
+title: Transparent Deployment with GitHub Actions
+tech_name: deploy-gh-actions
 language: en
 tags:
-  - github
+- github
 extra:
   custom_props:
-    time: 14:18
     public: true
     type: synopsis
     theme: linux
     status: finished
 ---
+
 
 Recently, find the simple way to make anything at my servers in GitHub pipeline with Actions. And I love it’s very clear. I can control all operations, step and processes. Now I’ll show how to make clear depoly with it, but you can use similar for your goals.
 
@@ -28,7 +28,7 @@ Here i have three information unit for get access:
 3. SSH private key
 We make “clear” deployment, therefore all step in our manually pipeline will be automate. In order to GitHub Actions can connect to our server we need to give all information. GitHub have special entity for it: `Secrets and Variables` now, for more security we put all to `secrets`. 
 
-Open your GitHub repository and go to `Settings`, here in `Security` section click to `Secrets and Variables` and go to `Actions`. Then we will add three secrets: `SSH_USER`, `SSH_HOST`, `SSH_KEY`.  Remember, the public pair of `SSH_KEY` private key need to be added to `~/.ssh/authorized_keys` on server. Nice! First step was finished.
+Open your GitHub repository and go to `Settings`, here in `Security` section click to `Secrets and Variables` and go to `Actions`. Then we will add three secrets: `SSH_USER`, `SSH_HOST`, `SSH_KEY`.  Remember, the public pair of `SSH_KEY` private key need to be added to <code><span class="tilde">~</span>/.ssh/authorized_keys</code> on server. Nice! First step was finished.
 
 Next we need to pull repository. If your server is clean, you need to firstly clone it. If your repository is private, most likely, when you try to do it, you got something like this:
 ```txt
@@ -43,7 +43,7 @@ You need to generate *(or migrate)* the ssh keys on your server. For generate yo
 ```sh
 ssh-keygen -C github -t ed25519
 ```
-Then copy `~/.ssh/id_ed25519.pub` and copy on GitHub repository settings at `Deploy keys`. After you can clone repository. In order to GitHub Actions know where your project we make new secret `SSH_PROJECT_PATH`.
+Then copy <code><span class="tilde">~</span>/.ssh/id_ed25519.pub</code> and copy on GitHub repository settings at `Deploy keys`. After you can clone repository. In order to GitHub Actions know where your project we make new secret `SSH_PROJECT_PATH`.
 
 Last step: GitHub Actions. Restart service or anything steps, what you want, we describe `.gitub/workflows/deploy.yaml` *(file name doesn’t matter)*:
 ```yaml

@@ -1,18 +1,18 @@
 ---
-date: 2025-06-28
-title: "Прямая и плоскость"
-tech_name: "line-and-plane"
+date: '2025-06-28T17:18:00+03:00'
+title: Прямая и плоскость
+tech_name: line-and-plane
 language: ru
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 17:18
     public: true
     type: synopsis
     theme: math
     status: finished
 ---
+
 Линейная алгебра начинается с базовой геометрической интуиции, которая распространяется на многомерные пространства. Сейчас мы поговорим о прямой, плоскости и пространстве. 
 
 ## Прямая на плоскости и в пространстве

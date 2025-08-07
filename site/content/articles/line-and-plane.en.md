@@ -1,18 +1,18 @@
 ---
-date: 2025-06-28
-title: "Line and plane"
-tech_name: "line-and-plane"
+date: '2025-06-28T17:18:00+03:00'
+title: Line and plane
+tech_name: line-and-plane
 language: en
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 17:18
     public: true
     type: synopsis
     theme: math
     status: finished
 ---
+
 The Linear Algebra starts from basic geometry intuition, which continues to multivariate spaces. Now we will talk about line, plane and space. 
 
 ## The line in plane and space

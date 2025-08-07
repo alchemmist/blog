@@ -1,18 +1,18 @@
 ---
-date: 2025-07-03
-title: "Subsapces"
-tech_name: "subspaces"
+date: '2025-07-03T10:42:00+03:00'
+title: Subsapces
+tech_name: subspaces
 language: en
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 10:42
     public: true
     type: synopsis
     theme: math
     status: finished
 ---
+
 Start with useful definition: Non-zero vectors $u, v \in \mathbb{R}$ call **collinear vectors**, if they are proportional to each other, that is exist $\lambda \in \mathbb{R}$, that $u = \lambda v$. Collinear vectors denoted as $u || v$. Zero-vector collinear with any vector. Geometrically, vectors collinear, if they have same or opposite direction. 
 
 Let’s consider the plane $\pi$ in $\mathbb{R}^3$ space, which passes through zero-coordinate. Consider two non-collinear vectors $u$ an $v$ from this plane. Then, any point $x \in \pi$ we can be represented as: $x = \alpha u + \beta v$. 

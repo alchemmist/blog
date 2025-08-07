@@ -1,18 +1,18 @@
 ---
-date: 2025-07-05
-title: "Hessian matrix"
-tech_name: "hessian-matrix"
+date: '2025-07-05T12:48:00+03:00'
+title: Hessian matrix
+tech_name: hessian-matrix
 language: en
 tags:
-  - math
+- math
 extra:
   custom_props:
-    time: 12:48
     type: synopsis
     theme: math
     status: finished
     public: true
 ---
+
 Imagine we got function and a few stationary points of this function, and we need to classify them, like: max, min or saddle point. If function without constraints, we can use Hessian matrix. 
 
 > How to find stationary points of the function you can read at this article: “[Stationary points and Lagrange method](/articles/stationary-points-and-lagrange)”

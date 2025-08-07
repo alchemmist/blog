@@ -1,18 +1,18 @@
 ---
-date: 2025-07-29
-title: "Predicate Pattern in Go"
-tech_name: "predicate-pattern-go"
+date: '2025-07-29T12:09:00+03:00'
+title: Predicate Pattern in Go
+tech_name: predicate-pattern-go
 language: en
 tags:
-  - Go
+- Go
 extra:
   custom_props:
-    time: 12:09
     public: true
     type: synopsis
     theme: other
     status: finished
 ---
+
 If you think this code is idiomatic, elegant and beautiful, read this article!
 ```go
 FindProcess(ByTitle(title))
