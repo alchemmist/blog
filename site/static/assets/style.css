@@ -55,7 +55,7 @@ body {
 
 .link {
   font-size: 18px;
-  margin: 25px;
+  margin: 15px 25px;
 }
 
 .link a {
@@ -95,6 +95,7 @@ header h1 a:hover {
 
 .header-container {
   display: flex;
+  align-items: center;
 }
 
 .udpates-page-container h2 {
@@ -355,7 +356,7 @@ pre code {
 
 pre code .tab {
   display: inline-block;
-  width: 2em; 
+  width: 2em;
   content: "";
 }
 
@@ -980,4 +981,8 @@ mjx-container svg {
 }
 .book-cover[src]::before {
   display: none;
+}
+
+.header-logo {
+  width: 3rem;
 }

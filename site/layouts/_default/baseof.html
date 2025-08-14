@@ -82,17 +82,23 @@
     />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll("img");
-
-        mediumZoom(images, {
-          background: "rgba(0, 0, 0, 0.7)", // Темный оверлей
-          margin: 50, // Отступ от краев экрана
-          scrollOffset: 50, // Компенсация при прокрутке
-          animationDuration: 300, // Длительность анимации в мс
+        const zoom = mediumZoom("img", {
+          background: "rgba(0, 0, 0, 0.7)",
+          margin: 50,
+          scrollOffset: 50,
+          animationDuration: 300,
         });
+
+        // Отключаем зум для изображений с классом 'no-zoom'
+        const noZoomImages = document.querySelectorAll("img.no-zoom");
+        noZoomImages.forEach((img) => zoom.detach(img));
       });
     </script>
-    <script defer src="https://umami.alchemmist.xyz/script.js" data-website-id="a45a3e3e-9010-47e0-8831-9e51449a85c3"></script>
+    <script
+      defer
+      src="https://umami.alchemmist.xyz/script.js"
+      data-website-id="a45a3e3e-9010-47e0-8831-9e51449a85c3"
+    ></script>
     {{ block "head" . }}{{ end }}
   </head>
   <body>
