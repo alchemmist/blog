@@ -48,6 +48,9 @@
         svg: {
           fontCache: "local",
         },
+        options: {
+          enableMenu: false, // <-- отключаем контекстное меню
+        },
       };
     </script>
     <script
@@ -93,6 +96,64 @@
         overlay.addEventListener("click", toggleMenu);
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const headerLogo = document.querySelector(".header-logo");
+        let logoAngle = 0;
+
+        // Для подсчёта кликов
+        let clickTimes = [];
+
+        headerLogo.addEventListener("click", () => {
+          // Вращение логотипа на 390 градусов
+          logoAngle += 390;
+          headerLogo.style.transition = "transform 0.5s ease-in-out";
+          headerLogo.style.transform = `rotate(${logoAngle}deg)`;
+
+          // Логика для Moss-секрета
+          const now = Date.now();
+          clickTimes.push(now);
+
+          if (
+            clickTimes[clickTimes.length - 1] -
+              clickTimes[clickTimes.length - 2] >=
+            2000
+          ) {
+            clickTimes = []; // сбрасываем счётчик
+          }
+
+          if (clickTimes.length >= 12) {
+            clickTimes = []; // сбрасываем счётчик
+            showMossLoader();
+          }
+        });
+
+        function showMossLoader() {
+          const loader = document.getElementById("moss-loader");
+          loader.style.display = "block";
+
+          // Создаём случайные надписи "moss" на фоне
+          const interval = setInterval(() => {
+            const span = document.createElement("span");
+            span.textContent = "moss";
+            span.style.position = "absolute";
+            span.style.left = Math.random() * 100 + "%";
+            span.style.top = Math.random() * 100 + "%";
+            span.style.color = "#fff";
+            span.style.userSelect = "none";
+
+            span.style.fontSize = 10 + Math.random() * 20 + "px";
+            loader.appendChild(span);
+          }, 10); // каждые 100 мс появляется новая надпись
+
+          // Через 3 секунды перенаправляем
+          setTimeout(() => {
+            clearInterval(interval);
+            window.location.href = "/moss/logo-symbolism";
+          }, 3000);
+        }
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       mermaid.initialize({ startOnLoad: true });
@@ -124,6 +185,18 @@
     {{ block "head" . }}{{ end }}
   </head>
   <body>
+    <div
+      id="moss-loader"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #000;
+        color: #fff;
+        font-family: monospace;
+        z-index: 9999;
+      "
+    ></div>
     {{ partial "header.html" . }} {{ block "main" . }}{{ end }} {{ partial
     "footer.html" }}
   </body>
