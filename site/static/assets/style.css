@@ -1024,7 +1024,6 @@ mjx-container[display="true"] {
 .medium-zoom-image {
   z-index: 999;
   transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
-  padding: 1em;
 }
 
 .medium-zoom-image--opened {

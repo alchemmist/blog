@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|500](/images/sun_and_moon.png)
+![|400](/images/sun_and_moon.png)
 рассеивать лунарность фотовспышкой,
 глушить солярку чернотой
 я думал через это возродиться 

@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|450](/images/fall.png)
+![|400](/images/fall.png)
 внутри  тьма
 что молчит обычно
 пока радость течёт

@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|500](/images/crashed_into_existence.png)
+![|400](/images/crashed_into_existence.png)
 Взглянув в глубь сущего
 Узрел я паутину трещин
 Что по поверхности материи,

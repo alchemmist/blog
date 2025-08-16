@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|500](/images/infirmity.png)
+![|400](/images/infirmity.png)
 героям ангелы слагали песни
 о славе подвигов сиих 
 я немощно искал надежды

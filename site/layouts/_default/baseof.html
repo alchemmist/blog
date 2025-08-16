@@ -165,9 +165,12 @@
     />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Определяем margin в зависимости от ширины экрана
+        let marginValue = window.innerWidth < 868 ? 25 : 50;
+
         const zoom = mediumZoom("img", {
           background: "rgba(0, 0, 0, 0.7)",
-          margin: 0,
+          margin: marginValue,
           scrollOffset: 50,
           animationDuration: 300,
         });
@@ -175,6 +178,12 @@
         // Отключаем зум для изображений с классом 'no-zoom'
         const noZoomImages = document.querySelectorAll("img.no-zoom");
         noZoomImages.forEach((img) => zoom.detach(img));
+
+        // Если нужно реагировать на ресайз (смена ориентации и т.д.)
+        window.addEventListener("resize", () => {
+          let newMargin = window.innerWidth < 868 ? 25 : 50;
+          zoom.update({ margin: newMargin });
+        });
       });
     </script>
     <script

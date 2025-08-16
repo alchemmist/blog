@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|500](/images/companion_of_life.png)
+![|400](/images/companion_of_life.png)
 цикличность бытия уже не данность,
 а любование промыслом богов
 сбившись с тропы и заплутавши
