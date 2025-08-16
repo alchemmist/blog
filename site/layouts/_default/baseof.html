@@ -71,6 +71,17 @@
       });
     </script>
     <script>
+      const currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
+      document.write(`
+    <style>
+      header .burger img {
+        transform: rotate(${currentAngle}deg);
+      }
+    </style>
+  `);
+    </script>
+
+    <script>
       document.addEventListener("DOMContentLoaded", () => {
         const header = document.querySelector("header");
         const burger = header.querySelector(".burger");
@@ -79,7 +90,7 @@
 
         // достаём сохранённое состояние
         let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
-        let menuOpen = localStorage.getItem("burgerMenuOpen") === "true";
+        let menuOpen = false;
 
         // применяем сразу при загрузке
         img.style.transform = `rotate(${currentAngle}deg)`;
@@ -99,7 +110,6 @@
 
           // сохраняем состояние
           localStorage.setItem("burgerAngle", currentAngle);
-          localStorage.setItem("burgerMenuOpen", menuOpen);
         }
 
         burger.addEventListener("click", toggleMenu);
