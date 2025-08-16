@@ -75,10 +75,17 @@
         const header = document.querySelector("header");
         const burger = header.querySelector(".burger");
         const overlay = header.querySelector(".overlay");
-        const img = burger.querySelector("header .burger img");
-        let currentAngle = 0;
+        const img = burger.querySelector("img");
 
-        let menuOpen = false;
+        // достаём сохранённое состояние
+        let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
+        let menuOpen = localStorage.getItem("burgerMenuOpen") === "true";
+
+        // применяем сразу при загрузке
+        img.style.transform = `rotate(${currentAngle}deg)`;
+        if (menuOpen) {
+          header.classList.add("is-open");
+        }
 
         function toggleMenu() {
           let delta = menuOpen ? -150 : 180; // при закрытии меньше оборот
@@ -88,14 +95,18 @@
           img.style.transform = `rotate(${currentAngle}deg)`;
 
           menuOpen = !menuOpen;
-
           header.classList.toggle("is-open");
+
+          // сохраняем состояние
+          localStorage.setItem("burgerAngle", currentAngle);
+          localStorage.setItem("burgerMenuOpen", menuOpen);
         }
 
         burger.addEventListener("click", toggleMenu);
         overlay.addEventListener("click", toggleMenu);
       });
     </script>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const headerLogo = document.querySelector(".header-logo");

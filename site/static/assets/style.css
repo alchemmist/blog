@@ -46,7 +46,7 @@ body {
 }
 
 body {
-  font-size: 1.08em;
+  font-size: 1em;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -794,10 +794,6 @@ footer p {
   .updates-container h3 {
     font-size: 1.25rem;
   }
-
-  .updates-container li {
-    font-size: 0.95rem;
-  }
 }
 
 .moss-trigger-zone {
@@ -1221,7 +1217,18 @@ li {
 .about-blog-container p {
   text-align: left;
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
-  font-size: 18px;
+  font-size: 1.1em;
+}
+
+.mustreads-container ul li::marker {
+  content: "";
+  font-size: 0.6em;
+}
+
+.mustreads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .updates-container {
@@ -1230,6 +1237,9 @@ li {
   align-items: flex-start;
 }
 
+.go-back-button {
+  text-align: center;
+}
 .go-back-button a {
   text-decoration: none;
 }
