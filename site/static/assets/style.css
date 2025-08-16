@@ -484,7 +484,7 @@ p code * {
 }
 
 .poetry img {
-  margin: 1em;
+  max-width: 100%;
 }
 
 .poetry * {
@@ -656,7 +656,7 @@ blockquote {
   box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.15);
   border: none;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 800;
   position: fixed;
   left: 100%;
   top: 0%;
@@ -677,7 +677,7 @@ blockquote {
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  z-index: 1000;
+  z-index: 700;
   flex-direction: column;
   justify-content: center;
 }
@@ -708,7 +708,7 @@ blockquote {
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease;
-  z-index: 999;
+  z-index: 600;
 }
 
 /* Класс открытия */
@@ -1024,6 +1024,7 @@ mjx-container[display="true"] {
 .medium-zoom-image {
   z-index: 999;
   transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
+  padding: 1em;
 }
 
 .medium-zoom-image--opened {
