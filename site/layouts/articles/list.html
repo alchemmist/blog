@@ -17,7 +17,7 @@
     <h4>{{ .Key }}</h4>
     <ul>
       {{ range .Pages }}
-        <li>
+        <li class="article-item">
         <a href="{{ .RelPermalink }}">{{ .Title }}</a> — <span>{{ .Date.Format "2006-01-02" }}</span>
         </li>
       {{ end }}

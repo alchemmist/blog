@@ -1,16 +1,18 @@
+{{ if ne .RelPermalink "/" }}
 <header>
+  <!-- Кнопка‑бургер -->
+  <button class="burger" aria-label="Открыть меню">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <div class="header-inner">
     <div class="header-container">
-      <a href="/"><img class="no-zoom header-logo" src="/assets/logo-nobackground.svg"/></a>
+      <a href="/"
+        ><img class="no-zoom header-logo" src="/assets/logo-nobackground.svg"
+      /></a>
       <h1><a href="/">alchemmist</a></h1>
     </div>
-
-    <!-- Кнопка‑бургер -->
-    <button class="burger" aria-label="Открыть меню">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
 
     <!-- Основные ссылки (для больших экранов) -->
     <div class="header-container">
@@ -38,3 +40,4 @@
   <!-- Затеняющий фон -->
   <div class="overlay"></div>
 </header>
+{{ end }}

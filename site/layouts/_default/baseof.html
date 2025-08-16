@@ -10,7 +10,17 @@
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="/assets/style.css" />
     <link rel="stylesheet" href="/assets/syntax.css" />
-    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="/assets/logo-nobackground.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="{{ .Site.BaseURL }}index.xml"
+      title="{{ .Site.Title }} RSS Feed"
+    />
     <title>{{ .Title }}</title>
     <!-- Google tag (gtag.js) -->
     <script

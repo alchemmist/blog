@@ -43,3 +43,5 @@ disableDefaultLanguageRedirect = false
     languageName = "Русский"
     weight = 2
 
+[outputs]
+home = ["HTML", "RSS"]

@@ -1,12 +1,12 @@
 {{ define "main" }}
-<main class="base-container udpates-page-container">
+<main class="base-container updates-page-container">
   <h2>Updates archive</h2>
   {{ $updates := .Site.GetPage "updates" }}
   <ul>
     {{ range $line := split $updates.RawContent "\n" }}
       {{ $cleanLine := replace $line "- [ ]" "" }}
       {{ $cleanLine := replace $cleanLine "- [x]" "" }}
-      <li>{{ $cleanLine | markdownify }}</li>
+      <p>{{ $cleanLine | markdownify }}</p>
     {{ end }}
   </ul>
 </main>

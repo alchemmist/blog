@@ -1,34 +1,72 @@
 {{ define "main" }}
-    <div class="base-container home-container">
-      <pre class="ascii-art">
-⠀⠀⠀⠀⠀⠀⢀⣀⣠⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⣠⣶⣾⣷⣶⣄⠀⠀⠀⠀⠀
-⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⢰⣿⠟⠉⠻⣿⣿⣷⠀⠀⠀⠀
-⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢷⣄⠘⠿⠀⠀⠀⢸⣿⣿⡆⠀⠀⠀
-⠀⠀⠀⠀⠈⠿⣿⣿⣿⣿⣿⣀⣸⣿⣷⣤⣴⠟⠀⠀⠀⠀⢀⣼⣿⣿⠁⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⠙⣛⣿⣿⣿⣿⣿⣿⣿⣿⣦⣀⣀⣀⣴⣾⣿⣿⡟⠀⠀⠀⠀
-⠀⠀⠀⢀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⣠⣤⣀⠀⠀
-⠀⠀⣴⣿⣿⣿⠿⠟⠛⠛⢛⣿⣿⣿⣿⣿⣿⣧⡈⠉⠁⠀⠀⠀⠈⠉⢻⣿⣧⠀
-⠀⣼⣿⣿⠋⠀⠀⠀⠀⢠⣾⣿⣿⠟⠉⠻⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀⣸⣿⣿⠃
-⠀⣿⣿⡇⠀⠀⠀⠀⠀⣿⣿⡿⠃⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣶⣿⣿⣿⡿⠋⠀
-⠀⢿⣿⣧⡀⠀⣶⣄⠘⣿⣿⡇⠀⠀⠠⠶⣿⣶⡄⠈⠙⠛⠻⠟⠛⠛⠁⠀⠀⠀
-⠀⠈⠻⣿⣿⣿⣿⠏⠀⢻⣿⣿⣄⠀⠀⠀⣸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣶⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
-    </pre
-      >
-      <div class="updates-container">
-        <h3>Last updates</h3>
-        {{ $updates := .Site.GetPage "updates" }}
-        <ul>
-          {{ range $line := split $updates.RawContent "\n" }}
-            {{ if in $line "- [ ]" }}
-              {{ $cleanLine := replace $line "- [ ]" "" }}
-              <p>{{ $cleanLine | markdownify }}</p>
-            {{ end }}
-          {{ end }}
-        </ul>
+<div class="base-container home-container">
+  <div class="base-container home-menu-container">
+    <div class="home-title">
+      <a href="/"
+        ><img class="no-zoom header-logo" src="/assets/logo-nobackground.svg"
+      /></a>
+      <a href="/"><h1>alchemmist</h1></a>
+      <div></div>
+    </div>
+    <div class="home-menu">
+      <div class="link"><a href="/articles">Articles</a></div>
+      <div class="link"><a href="/essays">Essays</a></div>
+      <div class="link"><a href="/cv">CV</a></div>
+      <div class="link"><a href="/books">Books</a></div>
+      <div class="link"><a href="/ru/poetry">Poetry</a></div>
+      <div class="link"><a href="/updates">Updates</a></div>
+    </div>
+  </div>
+  <div class="follow-container base-container">
+    <h3>Follow</h3>
+    <div class="follow-options-container">
+      <div class="subscribe-banner">
+        
+        <a target="_blank" href="https://t.me/alchemmist_blog">Subscribe</a> to
+        Telegram
+      </div>
+      <div class="subscribe-banner">
+         <a href="/index.xml" target="_blank">RSS</a> Feed
+      </div>
+      <div class="subscribe-banner">
+         <a target="_blank" href="https://github.com/alchemmist">Follow</a> me
+        on GitHub
       </div>
     </div>
+  </div>
+  <div class="about-blog-container base-container">
+    <h3>About</h3>
+    <p>
+      I'm Anton. This is my personal blog. Here I'm writing articles about STEM
+      topics: programming, linux, math, and so on, and essays about life:
+      philosophy, psychology, career, ... Also here you can find some funny
+      stuff: pictures, poetry, my bookshelf, my cv and other sections. Welcome!
+    </p>
+  </div>
+  <div class="about-blog-container base-container">
+    <h3>Mustreads</h3>
+    <ul>
+      <li>
+        <a href="/essays/is-woman-friend">If your friend is a woman</a> (En, Ru)
+      </li>
+      <li>
+        <a href="/articles/battery-degradation/"
+          >Battery degradation on Linux</a
+        >
+        (En, Ru)
+      </li>
+    </ul>
+  </div>
+  <div class="updates-container">
+    <h3>Last updates</h3>
+    {{ $updates := .Site.GetPage "updates" }}
+    <ul>
+      {{ range $line := split $updates.RawContent "\n" }} {{ if in $line "- [ ]"
+      }} {{ $cleanLine := replace $line "- [ ]" "" }} {{ $withoutDate :=
+      replaceRE `\*\\\[[^\]]*\\\]\*\s*` "" $cleanLine }}
+      <li>{{ $withoutDate | markdownify }}</li>
+      {{ end }} {{ end }}
+    </ul>
+  </div>
+</div>
 {{ end }}

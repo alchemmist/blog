@@ -55,7 +55,6 @@ body {
 
 .link {
   font-size: 18px;
-  margin: 15px 25px;
 }
 
 .link a {
@@ -96,6 +95,7 @@ header h1 a:hover {
 .header-container {
   display: flex;
   align-items: center;
+  gap: 1.5em;
 }
 
 .udpates-page-container h2 {
@@ -113,18 +113,19 @@ header h1 a:hover {
 }
 
 .updates-container h3 {
-  margin-bottom: 15px;
+  margin-bottom: 0.5em;
 }
 
 .updates-container * {
   text-align: left;
 }
 
-.updates-container p {
+.updates-container li {
   margin: 10px 0;
 }
 
 .base-container {
+  max-width: 42em;
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -138,8 +139,22 @@ header h1 a:hover {
 }
 
 .home-container {
-  gap: 2cm;
-  width: 70%;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: self-start;
+  gap: 2em;
+  margin: 3em 0;
+}
+
+.home-title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.home-title a {
+  text-decoration: none;
+  cursor: default;
 }
 
 h1 a {
@@ -199,7 +214,6 @@ footer p {
 .articles-container {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
 }
 
 mjx-container[display="true"] {
@@ -292,6 +306,11 @@ li::marker {
   margin: 0.5em 0 1em 0;
 }
 
+.article-topics code * {
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+}
+
 article * {
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
   font-size: 18px;
@@ -308,7 +327,7 @@ article h1 {
 
 article h2 {
   text-align: left;
-  margin: 2em 0em 0.7em 0;
+  margin: 1.3em 0em 0.7em 0;
   font-size: 20px;
 }
 
@@ -473,16 +492,17 @@ blockquote code {
   text-align: cetner;
 }
 
-.udpates-page-container {
+.updates-page-container {
   display: flex;
   flex-direction: column;
+  gap: 1.5em;
 }
 
-.udpates-page-container * {
+.updates-page-container * {
   text-align: left;
 }
 
-.udpates-page-container li {
+.updates-page-container p {
   margin: 10px 0;
 }
 
@@ -533,6 +553,7 @@ blockquote {
   .home-container {
     width: 100%;
     gap: 1cm;
+    margin: 1rem 0 2rem 0;
   }
 
   /* Статьи и контент */
@@ -604,10 +625,6 @@ blockquote {
     font-size: 20px;
   }
 
-  .home-container {
-    gap: 0.5cm;
-  }
-
   blockquote {
     padding: 0.3em 0.8em;
     font-size: 1rem;
@@ -634,6 +651,7 @@ blockquote {
   border: none;
   cursor: pointer;
   z-index: 1001;
+  position: absolute;
 }
 .burger span {
   display: block;
@@ -775,7 +793,7 @@ footer p {
   .base-container.home-container {
     flex-direction: column;
     align-items: stretch;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .ascii-art {
@@ -985,4 +1003,90 @@ mjx-container svg {
 
 .header-logo {
   width: 3rem;
+}
+
+.subscribe-banner {
+  background-color: #f9f9f9;
+  border-radius: 0.5em;
+  padding: 0.5em 0.8em;
+}
+
+.home-menu-container {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.5em;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em 1.5em;
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .home-menu {
+    max-width: 90%;
+  } 
+}
+
+.follow-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  flex: none;
+  gap: 0.5em;
+}
+
+.follow-options-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em 0.8em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+ul {
+  padding-left: 1.2em; /* Отступ для маркеров */
+  list-style-position: outside; /* Важно: маркеры вне блока содержимого */
+}
+
+li {
+  margin-bottom: 0.7em;
+  padding-left: 0.4em; /* Дополнительный отступ для текста */
+  text-align: left;
+}
+
+
+/* Для мобильной адаптации */
+@media (max-width: 768px) {
+  .updates-list {
+    padding-left: 1.5rem;
+  }
+
+  .update-item {
+    padding-left: 0.8rem;
+  }
+}
+
+.about-blog-container {
+  display: flex;
+  flex: none;
+  gap: 0.5em;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-blog-container p {
+  text-align: left;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
+  font-size: 18px;
 }
