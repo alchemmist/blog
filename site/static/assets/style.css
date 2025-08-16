@@ -125,7 +125,7 @@ header h1 a:hover {
 }
 
 .base-container {
-  max-width: 42em;
+  max-width: 40em;
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -445,7 +445,7 @@ p code * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2cm 0;
+  padding: 1cm 0 2cm 0;
 }
 
 .thanks-container * {
@@ -1091,4 +1091,12 @@ li {
   text-align: left;
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
   font-size: 18px;
+}
+
+.go-back-button a {
+  text-decoration: none;
+}
+
+.go-back-button a:hover {
+  text-decoration: underline;
 }
