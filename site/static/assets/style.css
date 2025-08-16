@@ -214,6 +214,8 @@ footer p {
 .articles-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2em;
+  gap: 2em;
 }
 
 mjx-container[display="true"] {
@@ -353,17 +355,13 @@ article h4 {
   margin: 20px 0;
 }
 
-.articles-container h2 {
-  margin: 0.5cm;
-}
-
 pre code {
   display: block;
   background-color: #f9f9f9;
   color: #333;
   padding: 1rem;
   margin: 0.5rem 0;
-  border-radius: 8px;
+  border-radius: 0.3em;
   overflow-x: auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   tab-size: 2;
@@ -417,17 +415,14 @@ blockquote code {
 .arhive-containter {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
 .arhive-containter h4 {
   margin-top: 10px;
-}
-
-#tags-between-arhive {
-  /* display: inline; */
-  height: 80px;
+  width: 100%;
+  text-align: left;
 }
 
 .tags-list {
@@ -522,7 +517,7 @@ blockquote {
 }
 
 /* ===== АДАПТИВНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   /* Общие корректировки */
   body {
     padding: 0;
@@ -536,7 +531,6 @@ blockquote {
   /* Шапка */
   header {
     flex-direction: column;
-    padding: 15px 20px;
   }
 
   .header-container {
@@ -636,8 +630,8 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 40px;
   width: 100%;
+  padding: 1rem 2rem;
 }
 
 /* Бургер‑иконка */
@@ -645,22 +639,19 @@ blockquote {
   display: none; /* скрываем на больших экранах */
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  background: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  padding: 6px;
+  background-color: white;
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.15);
   border: none;
   cursor: pointer;
   z-index: 1001;
-  position: absolute;
-}
-.burger span {
-  display: block;
-  height: 3px;
-  background: #333;
-  border-radius: 2px;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  position: fixed;
+  left: 100%;
+  top: 0%;
+  transform: translateY(20px) translateX(calc(-100% - 20px));
 }
 
 /* Сайд‑меню (спрятано вправо) */
@@ -668,7 +659,6 @@ blockquote {
   display: flex;
   align-items: center;
   position: fixed;
-  padding-left: 15%;
   top: 0;
   right: 0;
   width: 250px;
@@ -679,6 +669,8 @@ blockquote {
   transform: translateX(100%);
   transition: transform 0.3s ease;
   z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
 }
 .side-menu ul {
   list-style: none;
@@ -718,19 +710,9 @@ header.is-open .overlay {
   opacity: 1;
   visibility: visible;
 }
-/* Преобразование бургера в крестик */
-header.is-open .burger span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-header.is-open .burger span:nth-child(2) {
-  opacity: 0;
-}
-header.is-open .burger span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
 
 /* Показываем бургер на мобильных */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .burger {
     display: flex;
   }
@@ -770,7 +752,7 @@ footer p {
 }
 
 /* ========== АДАПТИВ ========== */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   footer {
     flex-direction: column;
     align-items: center;
@@ -881,6 +863,13 @@ footer p {
 mjx-container,
 mjx-container svg {
   font-family: "Times New Roman", serif !important;
+}
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px; /* место под скролл */
+  pointer-events: auto; /* разрешаем взаимодействие */
 }
 
 .medium-zoom-overlay {
@@ -1029,10 +1018,10 @@ mjx-container svg {
   max-width: 50%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .home-menu {
     max-width: 90%;
-  } 
+  }
 }
 
 .follow-container {
@@ -1065,9 +1054,8 @@ li {
   text-align: left;
 }
 
-
 /* Для мобильной адаптации */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .updates-list {
     padding-left: 1.5rem;
   }
