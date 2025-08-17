@@ -45,3 +45,8 @@ disableDefaultLanguageRedirect = false
 
 [outputs]
 home = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"

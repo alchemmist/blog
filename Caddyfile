@@ -20,5 +20,6 @@ alchemmist.xyz {
     redir /cv/ru/python https://alchemmist.github.io/CV/pdf/python-rus.pdf
 
     redir /rss /index.xml
+    redir /feed /index.xml
 }
 
