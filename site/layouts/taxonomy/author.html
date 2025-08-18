@@ -18,7 +18,7 @@
 </script>
 
 <div class="base-container book-container">
-<h1>Books from: {{ .Title }}</h1>
+<h1 data-pagefind-meta="title">Books from: {{ .Title }}</h1>
   <div class="book-grid">
     {{ range .Pages }}
     <div class="book-card">
