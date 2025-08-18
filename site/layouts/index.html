@@ -36,8 +36,9 @@
     <p>
       I'm Anton. This is my personal blog. Here I'm writing articles about STEM
       topics: programming, linux, math, and so on, and essays about life:
-      philosophy, psychology, career, and so on. Also here you can find some funny
-      stuff: pictures, poetry, my bookshelf, my cv and other sections. Welcome!
+      philosophy, psychology, career, and so on. Also here you can find some
+      funny stuff: pictures, poetry, my bookshelf, my cv and other sections.
+      Welcome!
     </p>
   </div>
   <div class="mustreads-container base-container">
@@ -66,4 +67,14 @@
     </ul>
   </div>
 </div>
+{{ end }} {{ define "head" }}
+<meta
+  name="description"
+  content="Technical blog by alchemmist: Linux tips, tutorials, and open-source insights."
+/>
+<meta
+  property="og:description"
+  content="Technical blog by alchemmist: Linux tips, tutorials, and open-source insights."
+/>
+<meta property="og:type" content="website" />
 {{ end }}
