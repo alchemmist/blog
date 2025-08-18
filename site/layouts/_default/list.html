@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main>
-    <h1>{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
+    <h1 data-pagefind-meta="title">{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
     <ul>
         {{ range .Pages }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>

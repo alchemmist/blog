@@ -1,0 +1,16 @@
+site: public
+output_subdir: _pagefind
+
+exclude_selectors:
+  - ".header-inner"
+  - ".home-menu-container"
+  - ".articles-container"
+  - ".logo-symbolism-page"
+  - ".poetry-container"
+  - ".updates-page-container"
+  - ".home-ru"
+  - ".genre-container"
+  - ".status-container"
+  - ".books-container"
+  - ".thanks-container"
+  - ".go-back-button"

@@ -7,9 +7,12 @@ cats.alchemmist.xyz {
 }
 
 alchemmist.xyz {
+    root * /srv
     encode gzip
-
-    reverse_proxy /* hugo:1313
+    file_server
+    
+    header /sitemap*.xml Content-Type application/xml
+    header /robots.txt Content-Type text/plain
 
     redir /cv/en/long https://alchemmist.github.io/CV/pdf/long-eng.pdf
     redir /cv/en/go https://alchemmist.github.io/CV/pdf/go-eng.pdf
@@ -21,5 +24,6 @@ alchemmist.xyz {
 
     redir /rss /index.xml
     redir /feed /index.xml
+    redir /ru /
 }
 

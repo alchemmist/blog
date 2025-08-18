@@ -2,6 +2,8 @@ baseURL = 'https://alchemmist.xyz/'
 languageCode = 'en-us'
 title = 'alchemmist'
 
+disableKinds = ["taxonomy"]
+
 [markup]
   [markup.highlight]
     style = "github"
@@ -31,6 +33,7 @@ title = 'alchemmist'
   status = "status"
 
 
+
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 disableDefaultLanguageRedirect = false
@@ -50,3 +53,5 @@ home = ["HTML", "RSS"]
   changefreq = "monthly"
   priority = 0.5
   filename = "sitemap.xml"
+
+

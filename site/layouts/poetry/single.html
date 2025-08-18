@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main class="base-container">
   <div class="poetry">
-    <h1>{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
+    <h1 data-pagefind-meta="title">{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
     <p class="article-date"><em>{{ .Date.Format "2006-01-02" }}</em></p>
     <pre class="poetry-text">{{ .Content | safeHTML }}</pre>
     <p class="go-back-button">
@@ -10,4 +10,7 @@
     {{ partial "artical-finish.html" }}
   </div >
 </main>
+{{ end }}
+{{ define "head" }}
+    <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
 {{ end }}

@@ -1,8 +1,18 @@
+FROM archlinux:latest AS builder
 
-FROM archlinux:latest
+# Установка зависимостей
+RUN pacman -Syu --noconfirm \
+    hugo \
+    python \
+    python-pip \
+    git \
+    curl
+
+# Установка Pagefind с расширенной поддержкой
+RUN pip install 'pagefind[extended]' --break-system-packages
 
 WORKDIR /usr/src/app
-
-RUN pacman --noconfirm -Syu hugo
-
 COPY . .
+
+# Команда сборки
+CMD ["sh", "-c", "rm -rf public && hugo --minify && python -m pagefind  --site public --output-subdir _pagefind --verbose --force-language all && cp -r public/* /output"]

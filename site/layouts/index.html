@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="base-container home-container">
+<div class="base-container home-container{{ if and .IsHome (eq .Lang "ru") }} home-ru{{ end }}">
   <div class="base-container home-menu-container">
     <div class="home-title">
       <img class="no-zoom header-logo" src="/assets/logo-nobackground.svg" />

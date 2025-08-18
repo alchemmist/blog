@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,7 +26,6 @@
       property="og:type"
       content="{{ if .IsPage }}article{{ else }}website{{ end }}"
     />
-
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ .Title }}" />
@@ -244,9 +243,55 @@
       src="https://umami.alchemmist.xyz/script.js"
       data-website-id="10c310bd-96d9-4521-a366-c7ff4a78bce4"
     ></script>
+    <link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/_pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        // Инициализация Pagefind
+        new PagefindUI({
+          languages: ["ru", "en"],
+          element: "#search",
+          showImages: false,
+        });
+
+        // Элементы управления поиском
+        const searchModal = document.getElementById("search-modal");
+        const closeButton = document.querySelector(".search-close-button");
+
+        // Функции открытия/закрытия
+        function openSearch() {
+          searchModal.style.display = "flex";
+          document.querySelector(".pagefind-ui__search-input")?.focus();
+        }
+
+        function closeSearch() {
+          searchModal.style.display = "none";
+        }
+
+        // Обработчики событий
+        document.addEventListener("keydown", (e) => {
+          if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+            e.preventDefault();
+            openSearch();
+          }
+          if (e.key === "Escape") closeSearch();
+        });
+
+        closeButton.addEventListener("click", closeSearch);
+        searchModal.addEventListener("click", (e) => {
+          if (e.target === searchModal) closeSearch();
+        });
+      });
+    </script>
     {{ block "head" . }}{{ end }}
   </head>
   <body>
+    <div id="search-modal" class="search-modal">
+      <div class="search-modal-content">
+        <div id="search"></div>
+        <button class="search-close-button">&times;</button>
+      </div>
+    </div>
     <div
       id="moss-loader"
       style="

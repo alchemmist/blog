@@ -95,7 +95,11 @@ header h1 a:hover {
 .header-container {
   display: flex;
   align-items: center;
-  gap: 1.5em;
+  gap: 2em;
+}
+
+#header-left {
+  gap: 0.5em;
 }
 
 .updates-page-container h2 {
@@ -402,7 +406,7 @@ p code,
 li code,
 blockquote code {
   background-color: rgba(0, 0, 0, 0.04);
-  padding: 0em 0.3em 0em 0.3em;
+  padding: 0.1em 0.3em;
   margin: 0 0.1em;
   border-radius: 3px;
   font-family:
@@ -1244,4 +1248,60 @@ li {
 
 .go-back-button a:hover {
   text-decoration: underline;
+}
+
+.go-back-button * {
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+}
+
+.search-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5%;
+}
+
+.search-modal-content {
+  position: relative;
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.search-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+  line-height: 1;
+}
+
+.search-modal-content {
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
