@@ -245,12 +245,13 @@
     ></script>
     <link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
     <script src="/_pagefind/pagefind-ui.js"></script>
+    {{ if ne .RelPermalink "/search" }}
     <script>
       window.addEventListener("DOMContentLoaded", (event) => {
         // Инициализация Pagefind
         new PagefindUI({
           languages: ["ru", "en"],
-          element: "#search",
+          element: "#search-hidden",
           showImages: false,
         });
 
@@ -261,11 +262,16 @@
         // Функции открытия/закрытия
         function openSearch() {
           searchModal.style.display = "flex";
-          document.querySelector(".pagefind-ui__search-input")?.focus();
+          document.body.classList.add("modal-open"); // 🚫 блокируем скролл страницы
+          // Фокус на поле ввода после небольшой задержки
+          setTimeout(() => {
+            document.querySelector(".pagefind-ui__search-input")?.focus();
+          }, 100);
         }
 
         function closeSearch() {
           searchModal.style.display = "none";
+          document.body.classList.remove("modal-open"); // ✅ возвращаем скролл
         }
 
         // Обработчики событий
@@ -283,15 +289,17 @@
         });
       });
     </script>
-    {{ block "head" . }}{{ end }}
+    {{ end }} {{ block "head" . }}{{ end }}
   </head>
   <body>
+    {{ if ne .RelPermalink "/search" }}
     <div id="search-modal" class="search-modal">
       <div class="search-modal-content">
-        <div id="search"></div>
+        <div id="search-hidden"></div>
         <button class="search-close-button">&times;</button>
       </div>
     </div>
+    {{ end }}
     <div
       id="moss-loader"
       style="
@@ -304,7 +312,7 @@
         z-index: 9999;
       "
     ></div>
-    {{ partial "header.html" . }} {{ block "main" . }}{{ end }} {{ partial
-    "footer.html" }}
+    {{ partial "header.html" . }} {{ block "main" . }}{{ end }} 
+    {{ partial "footer.html" . }}
   </body>
 </html>

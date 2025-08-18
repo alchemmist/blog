@@ -1,22 +1,16 @@
-<html lang="en-ru">
-  <head>
-    <link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/style.css" />
-    <script src="/_pagefind/pagefind-ui.js"></script>
-    <script>
-      window.addEventListener("DOMContentLoaded", (event) => {
-        new PagefindUI({
-          languages: ["ru", "en"],
-          element: "#search",
-        });
-      });
-    </script>
-    {{ block "head" . }}{{ end }}
-  </head>
-  <body>
-    {{ partial "header.html" . }}
-    <div class="search-page-container">
-      <div id="search"></div>
-    </div>
-  </body>
-</html>
+{{ define "main" }}
+<main>
+  <div class="search-page-container">
+    <div id="search"></div>
+  </div>
+</main>
+{{ end }} {{ define "head"}}
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    new PagefindUI({
+      languages: ["ru", "en"],
+      element: "#search",
+    });
+  });
+</script>
+{{ end }}

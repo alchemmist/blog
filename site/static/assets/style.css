@@ -1258,6 +1258,10 @@ li {
     "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
 }
 
+.search-page-container {
+  padding: 1rem;
+}
+
 .search-modal {
   display: none;
   position: fixed;
@@ -1272,14 +1276,22 @@ li {
   padding-top: 5%;
 }
 
+/* Исправления для контейнера модалки */
 .search-modal-content {
   position: relative;
   background: white;
   width: 90%;
   max-width: 700px;
+  max-height: 90vh; /* Максимальная высота окна */
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  
+  /* Ключевые исправления: */
+  box-sizing: border-box; /* Учитываем padding в общей высоте */
+  overflow: hidden; /* Скрываем переполнение */
 }
 
 .search-close-button {
@@ -1292,6 +1304,39 @@ li {
   cursor: pointer;
   color: #555;
   line-height: 1;
+}
+
+/* Исправления для контейнера поиска */
+#search-hidden {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden; /* Важно для работы flex-сжатия */
+}
+
+.pagefind-ui {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Разрешаем сжатие */
+  overflow: hidden; /* Скрываем переполнение */
+}
+
+.pagefind-ui__results-area {
+  flex: 1;
+  overflow-y: auto; /* Скролл для области результатов */
+  min-height: 0; /* Ключевое свойство для flex-потомков */
+}
+
+/* Остальные стили без изменений */
+.pagefind-ui__results {
+  max-height: none !important;
+}
+
+.pagefind-ui__form {
+  flex-shrink: 0;
 }
 
 .search-modal-content {
@@ -1309,6 +1354,6 @@ li {
   }
 }
 
-.search-page-container {
-  padding: 1rem;
+body.modal-open {
+  overflow: hidden;
 }
