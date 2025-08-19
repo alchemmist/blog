@@ -1,0 +1,50 @@
+{{/*
+  Partial: Go Back Button
+  Parameters:
+    - context: контекст страницы (обязательно)
+    - url: (optional) целевой URL
+    - disableLang: (optional boolean) отключение автоматического определения языка
+*/}}
+
+{{- $context := .context -}}
+{{- $targetUrl := "" -}}
+{{- $currentUrl := $context.RelPermalink -}}
+{{- $disableLang := .disableLang | default false -}}
+{{- $title := .title | default "cd .." -}}
+{{- $iconClass := .iconclass | default "" -}}
+
+{{/* Определяем язык текущей страницы */}}
+{{- $currentLang := "" -}}
+{{- if and (not $disableLang) (strings.HasPrefix $currentUrl "/ru/") -}}
+  {{- $currentLang = "/ru" -}}
+{{- end -}}
+
+{{/* Обрабатываем URL в соответствии с логикой Python */}}
+{{- if .url -}}
+  {{/* Если URL передан явно */}}
+  {{- $targetUrl = .url -}}
+  {{- if $currentLang -}}
+    {{/* Добавляем языковой префикс, если нужно */}}
+    {{- $targetUrl = printf "%s%s" $currentLang $targetUrl -}}
+  {{- end -}}
+{{- else -}}
+  {{/* Если URL не передан, вычисляем родительскую директорию */}}
+  {{- $url := $currentUrl -}}
+  
+  {{/* Убираем завершающий слеш */}}
+  {{- if strings.HasSuffix $url "/" -}}
+    {{- $url = strings.TrimSuffix "/" $url -}}
+  {{- end -}}
+  
+  {{/* Разбиваем на части и убираем последний сегмент */}}
+  {{- $parts := split $url "/" -}}
+  {{- $parts = first (sub (len $parts) 1) $parts -}}
+  {{- $targetUrl = delimit $parts "/" -}}
+  
+  {{/* Добавляем завершающий слеш */}}
+  {{- $targetUrl = printf "%s/" $targetUrl -}}
+{{- end -}}
+
+<p class="go-back-button">
+  <code><a href="{{ $targetUrl }}">{{ partial "iconify.html" (dict "icon" "icon-park-solid:left-one" "class" $iconClass) }} {{ $title }}</a></code>
+</p>

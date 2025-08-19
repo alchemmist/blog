@@ -15,4 +15,4 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Команда сборки
-CMD ["sh", "-c", "rm -rf public && hugo --minify && python -m pagefind  --site public --output-subdir _pagefind --verbose --force-language all && cp -r public/* /output"]
+CMD ["sh", "-c", "rm -rf public && hugo --minify --gc --ignoreCache && python -m pagefind  --site public --output-subdir _pagefind --verbose --force-language all && cp -r public/* /output"]

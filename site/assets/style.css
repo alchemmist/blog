@@ -1,29 +1,37 @@
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps.woff2")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps_bold.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_bold.woff2")
+    format("truetype");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps_inclined.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_inclined.woff2")
+    format("truetype");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps_boldinclined.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_boldinclined.woff2")
+    format("truetype");
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
 }
 
 * {
@@ -225,30 +233,36 @@ mjx-container[display="true"] {
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("/assets/fonts/JetBrainsMono-Regular.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/JetBrainsMono-Regular.woff2")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Computer Modern Roman";
-  src: url("/assets/fonts/cmu.serif-roman.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-roman.woff2")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Computer Modern Roman";
-  src: url("/assets/fonts/cmu.serif-bold.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-bold.woff2") format("truetype");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Computer Modern Typewriter";
-  src: url("/assets/fonts/cmu.typewriter-text-regular.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.typewriter-text-regular.woff2") format("truetype");
   font-weight: noraml;
   font-style: normal;
+  font-display: swap;
 }
 
 article {
@@ -992,13 +1006,6 @@ footer p {
   #moss-right-5 {
   }
 }
-
-@font-face {
-  font-family: "NerdFontsSymbols Nerd Font";
-  src: url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete.woff2")
-    format("woff2");
-}
-
 mjx-container,
 mjx-container svg {
   font-family: "Times New Roman", serif !important;
@@ -1142,7 +1149,28 @@ mjx-container[display="true"] {
 .subscribe-banner {
   background-color: #f9f9f9;
   border-radius: 0.5em;
-  padding: 0.5em 0.8em;
+  padding: 0.4em 0.6em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em; /* расстояние между иконкой и текстом */
+  font-size: 1rem;
+}
+
+.subscribe-banner .icon-user {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.subscribe-banner .icon-user svg {
+  vertical-align: middle; /* корректное выравнивание */
+  fill: currentColor; /* иконка наследует цвет текста */
+}
+
+.subscribe-banner span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .home-menu-container {
@@ -1188,11 +1216,6 @@ mjx-container[display="true"] {
   justify-content: flex-start;
 }
 
-ul {
-  padding-left: 1.2em; /* Отступ для маркеров */
-  list-style-position: outside; /* Важно: маркеры вне блока содержимого */
-}
-
 li {
   margin-bottom: 0.7em;
   padding-left: 0.4em; /* Дополнительный отступ для текста */
@@ -1224,9 +1247,23 @@ li {
   font-size: 1.1em;
 }
 
-.mustreads-container ul li::marker {
-  content: "";
-  font-size: 0.6em;
+ul {
+  list-style-position: inside;
+}
+
+.mustreads-container li::marker {
+  content: "";
+}
+
+.mustreads-container li {
+  display: flex;
+  align-items: center;
+}
+
+.mustread-item-bullet {
+  margin-right: 0.6em;
+  display: flex;
+  align-items: center;
 }
 
 .mustreads-container {
@@ -1248,6 +1285,7 @@ li {
 }
 .go-back-button a {
   text-decoration: none;
+  display: inline-flex;
 }
 
 .go-back-button a:hover {
@@ -1257,6 +1295,10 @@ li {
 .go-back-button * {
   font-family:
     "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+}
+
+svg {
+  vertical-align: middle;
 }
 
 .search-page-container {
@@ -1341,7 +1383,7 @@ li {
 .pagefind-ui__form {
   flex-shrink: 0;
   overflow: scroll !important;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   -ms-overflow-style: none;
   position: relateive;
 }

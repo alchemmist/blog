@@ -7,8 +7,7 @@
 
     // Обработка ошибок загрузки обложек
     document.querySelectorAll(".book-cover").forEach((img) => {
-      img.addEventListener("error", function () {
-        if (this.src !== placeholder) {
+      img.addEventListener("error", function () { if (this.src !== placeholder) {
           this.src = placeholder;
           this.alt = "Обложка недоступна";
         }
@@ -31,11 +30,14 @@
     <div class="book-author">{{ . }}</div>
     {{ end }} {{ $status := .Params.status }}
     <div class="book-status">
-      {{ if eq $status "reading" }}  {{ else if eq $status "readed" }}  {{
-      else if eq $status "future" }}  {{ end }}
+        {{ if eq $status "reading" }} {{ partial "iconify" (dict "icon" "material-symbols:menu-book-outline-rounded")}} {{ else if eq $status "readed" }} {{ partial "iconify" (dict "icon" "ion:checkmark-done-outline")}} {{
+        else if eq $status "future" }} {{ partial "iconify" (dict "icon" "wi:time-4") }} {{ end }}
     </div>
   </div>
   {{ end }}
 </div>
 </div>
+{{ end }}
+{{ define "head" }}
+{{ partial "connect-medium-zoom.heml" }}
 {{ end }}

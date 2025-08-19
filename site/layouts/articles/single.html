@@ -14,13 +14,18 @@
 
     {{ end }}
     {{ .Content }}
-    <p class="go-back-button">
-      <code><a href="/articles"> cd ..</a></code>
-    </p>
+    {{ partial "go-back-button" (dict "context" . "url" "/articles" ) }}
     {{ partial "artical-finish.html" }}
   </article>
 </main>
 {{ end }}
 {{ define "head" }}
     <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
+  {{ if .Params.tags }}
+    <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+  {{ end }}
+  {{ partial "connect-medium-zoom.html" }}
+  {{ partial "connect-mermaid.html" }}
+  {{ partial "connect-mathjax.html" }}
+  {{ partial "connect-nerdfont.html" }}
 {{ end }}

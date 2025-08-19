@@ -2,6 +2,16 @@ baseURL = 'https://alchemmist.xyz/'
 languageCode = 'en-us'
 title = 'alchemmist'
 
+[build]
+  writeStats = true
+
+[minify]
+  minifyOutput = true
+  disableCSS = false
+  disableJS = false
+  disableHTML = false
+
+
 disableKinds = ["taxonomy"]
 
 [markup]

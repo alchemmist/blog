@@ -2,7 +2,8 @@
 <div class="base-container home-container{{ if and .IsHome (eq .Lang "ru") }} home-ru{{ end }}">
   <div class="base-container home-menu-container">
     <div class="home-title">
-      <img class="no-zoom header-logo" src="/assets/logo-nobackground.svg" />
+      <img class="no-zoom header-logo" src="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/logo-nobackground.svg" 
+        loading="lazy" alt="logo"/>
       <a href="/"><h1>alchemmist</h1></a>
     </div>
     <div class="home-menu">
@@ -18,15 +19,16 @@
     <h3>Follow</h3>
     <div class="follow-options-container">
       <div class="subscribe-banner">
-        
+        {{ partial "iconify.html" (dict "icon" "ic:baseline-telegram" "size" "1.5em") }}
         <a target="_blank" href="https://t.me/alchemmist_blog">Subscribe</a> to
         Telegram
       </div>
       <div class="subscribe-banner">
-         <a href="/index.xml" target="_blank">RSS</a> Feed
+        {{ partial "iconify.html" (dict "icon" "mingcute:rss-fill" "size" "1.5em") }}
+        <a href="/index.xml" target="_blank">RSS</a> Feed
       </div>
       <div class="subscribe-banner">
-         <a target="_blank" href="https://github.com/alchemmist">Follow</a> me
+        {{ partial "iconify.html" (dict "icon" "mdi:github" "size" "1.5em")}}<a target="_blank" href="https://github.com/alchemmist">Follow</a> me
         on GitHub
       </div>
     </div>
@@ -37,7 +39,7 @@
       I'm Anton. This is my personal blog. Here I'm writing articles about STEM
       topics: programming, linux, math, and so on, and essays about life:
       philosophy, psychology, career, and so on. Also here you can find some
-      funny stuff: pictures, poetry, my bookshelf, my cv and other sections.
+      funny stuff: pictures, poetry, my bookshelf, my CV and other sections.
       Welcome!
     </p>
   </div>
@@ -45,9 +47,11 @@
     <h3>Mustreads</h3>
     <ul>
       <li>
+        {{ partial "iconify" (dict "icon" "material-symbols:star-rounded" "class" "mustread-item-bullet") }}
         <a href="/essays/is-woman-friend">If your friend is a woman</a> (En, Ru)
       </li>
       <li>
+        {{ partial "iconify" (dict "icon" "material-symbols:star-rounded" "class" "mustread-item-bullet") }}
         <a href="/articles/battery-degradation/"
           >Battery degradation on Linux</a
         >

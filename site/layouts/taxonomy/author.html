@@ -18,7 +18,7 @@
 </script>
 
 <div class="base-container book-container">
-<h1 data-pagefind-meta="title">Books from: {{ .Title }}</h1>
+  <h1 data-pagefind-meta="title">Books from: {{ .Title }}</h1>
   <div class="book-grid">
     {{ range .Pages }}
     <div class="book-card">
@@ -35,11 +35,11 @@
       <div class="book-author">{{ . }}</div>
       {{ end }} {{ $status := .Params.status }}
       <div class="book-status">
-        {{ if eq $status "reading" }}  {{ else if eq $status "readed" }}  {{
-        else if eq $status "future" }}  {{ end }}
+        {{ if eq $status "reading" }} {{ partial "iconify" (dict "icon" "material-symbols:menu-book-outline-rounded")}} {{ else if eq $status "readed" }} {{ partial "iconify" (dict "icon" "ion:checkmark-done-outline")}} {{
+        else if eq $status "future" }} {{ partial "iconify" (dict "icon" "wi:time-4") }} {{ end }}
       </div>
     </div>
     {{ end }}
   </div>
 </div>
-{{ end }}
+{{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.heml" }} {{ end }}
