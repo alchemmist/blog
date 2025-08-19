@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Title }}</title>
     <meta
       name="description"
       content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
@@ -21,6 +21,7 @@
       property="og:image"
       content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
     />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta
       property="og:type"
@@ -210,10 +211,10 @@
     <script>
       mermaid.initialize({ startOnLoad: true });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.css"
+      href="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/style.min.css"
     />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -311,7 +312,7 @@
         z-index: 999;
       "
     ></div>
-    {{ partial "header.html" . }} {{ block "main" . }}{{ end }} 
-    {{ partial "footer.html" . }}
+    {{ partial "header.html" . }} {{ block "main" . }}{{ end }} {{ partial
+    "footer.html" . }}
   </body>
 </html>

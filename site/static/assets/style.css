@@ -1,27 +1,27 @@
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps.ttf") format("truetype");
+  src: url("/assets/fonts/couriercyrps.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps_bold.ttf") format("truetype");
+  src: url("/assets/fonts/couriercyrps_bold.woff2") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps_inclined.ttf") format("truetype");
+  src: url("/assets/fonts/couriercyrps_inclined.woff2") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("/assets/fonts/couriercyrps_boldinclined.ttf") format("truetype");
+  src: url("/assets/fonts/couriercyrps_boldinclined.woff2") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
@@ -43,6 +43,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  opacity: 1;
 }
 
 body {
@@ -224,28 +225,28 @@ mjx-container[display="true"] {
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("/assets/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/JetBrainsMono-Regular.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Computer Modern Roman";
-  src: url("/assets/fonts/cmu.serif-roman.ttf") format("truetype");
+  src: url("/assets/fonts/cmu.serif-roman.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Computer Modern Roman";
-  src: url("/assets/fonts/cmu.serif-bold.ttf") format("truetype");
+  src: url("/assets/fonts/cmu.serif-bold.woff2") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Computer Modern Typewriter";
-  src: url("/assets/fonts/cmu.typewriter-text-regular.ttf") format("truetype");
+  src: url("/assets/fonts/cmu.typewriter-text-regular.woff2") format("truetype");
   font-weight: noraml;
   font-style: normal;
 }

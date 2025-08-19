@@ -1,0 +1,15 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{ range .Pages }}
+    <url>
+      <loc>{{ .Permalink }}</loc>
+      {{ if not .Lastmod.IsZero }}
+        <lastmod>{{ .Lastmod.UTC.Format "2006-01-02T15:04:05Z" | safeHTML }}</lastmod>
+      {{ end }}
+      {{ with .Sitemap.ChangeFreq }}
+        <changefreq>{{ . }}</changefreq>
+      {{ end }}
+    </url>
+  {{ end }}
+</urlset>
