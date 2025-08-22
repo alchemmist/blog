@@ -2,8 +2,8 @@
 <div class="base-container home-container{{ if and .IsHome (eq .Lang "ru") }} home-ru{{ end }}">
   <div class="base-container home-menu-container">
     <div class="home-title">
-      <img class="no-zoom header-logo" src="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/logo-nobackground.svg" 
-        loading="lazy" alt="logo"/>
+      {{ $svg := partial "logo-nobackground.html" . }}
+      <img class="no-zoom header-logo" alt="log" loading="lazy" src="data:image/svg+xml;base64,{{ $svg | base64Encode }}" class="icon">
       <a href="/"><h1>alchemmist</h1></a>
     </div>
     <div class="home-menu">
@@ -76,9 +76,8 @@
   name="description"
   content="Personal blog by alchemmist: STEM articles, essays about philosophy, career, psychology and so on."
 />
-<meta
-  property="og:description"
-  content="Personal blog by alchemmist: STEM articles, essays about philosophy, career, psychology and so on."
-/>
 <meta property="og:type" content="website" />
+    <title>alchemmist</title>
+    <meta property="og:title" content="{{ .Title }} - Personal blog" />
+    <meta property="og:description" content="Personal blog of alchemmist" />
 {{ end }}

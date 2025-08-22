@@ -11,22 +11,16 @@ alchemmist.xyz {
     encode gzip zstd
     file_server
 
-    header /*.js Cache-Control "public, max-age=31536000, immutable"
-    header /*.css Cache-Control "public, max-age=31536000, immutable"
-    header /_pagefind/*.js Cache-Control "public, max-age=31536000, immutable"
-    header /_pagefind/*.css Cache-Control "public, max-age=31536000, immutable"
-    header /favicon.ico Cache-Control "public, max-age=31536000, immutable"
-
-    header /assets/*.js Cache-Control "public, max-age=180000"
-    header /assets/*.css Cache-Control "public, max-age=1200"
-    header /assets/*.html Cache-Control "public, max-age=600"
-    header /assets/fonts/* Cache-Control "public, max-age=31536000, immutable"
-    header /assets/*.png Cache-Control "public, max-age=31536000, immutable"
-    header /assets/*.jpg Cache-Control "public, max-age=31536000, immutable"
-    header /assets/*.jpeg Cache-Control "public, max-age=31536000, immutable"
-    header /assets/*.webp Cache-Control "public, max-age=31536000, immutable"
-    header /assets/*.svg Cache-Control "public, max-age=31536000, immutable"
-    header /favicon.ico Cache-Control "public, max-age=31536000, immutable"
+    header *.js Cache-Control "public, max-age=180000"
+    header *.css Cache-Control "public, max-age=1200"
+    header *.html Cache-Control "public, max-age=600"
+    header *.woff2 Cache-Control "public, max-age=31536000, immutable"
+    header *.png Cache-Control "public, max-age=31536000, immutable"
+    header *.jpg Cache-Control "public, max-age=31536000, immutable"
+    header *.jpeg Cache-Control "public, max-age=31536000, immutable"
+    header *.webp Cache-Control "public, max-age=31536000, immutable"
+    header *.svg Cache-Control "public, max-age=31536000, immutable"
+    header *.ico Cache-Control "public, max-age=31536000, immutable"
     
     header /sitemap.xml Content-Type application/xml
     header /en/sitemap.xml Content-Type application/xml

@@ -4,17 +4,15 @@
     <meta charset="UTF-8" />
 
     <link href="https://umami.alchemmist.xyz" rel="preconnect" crossorigin />
-    <link
-      href="https://www.googletagmanager.com"
-      rel="preconnect"
-      crossorigin
-    />
     <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin />
 
+    {{ $umami := resources.Get "umami.js" | resources.Minify |
+    resources.Fingerprint }}
     <script
-      src="https://umami.alchemmist.xyz/script.js"
+      src="{{ $umami.Permalink }}"
       data-website-id="10c310bd-96d9-4521-a366-c7ff4a78bce4"
-      async
+      integrity="{{ $umami.Data.Integrity }}"
+      defer
     ></script>
 
     {{ $js := resources.Get "main.js" | resources.Minify | resources.Fingerprint
@@ -56,6 +54,11 @@
       property="og:description"
       content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
     />
+    {{ $logo := partial "logo-nobackground.html" . }}
+    <meta
+      property="og:logo"
+      content="data:image/svg+xml;base64,{{ $logo | base64Encode }}"
+    />
     <meta
       property="og:image"
       content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
@@ -89,10 +92,11 @@
     />
 
     <!-- Favicons -->
+    {{ $svg := partial "logo-nobackground.html" . }}
     <link
       rel="icon"
-      href="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/favicon.ico"
-      type="image/x-icon"
+      href="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
+      type="image/svg+xml"
     />
 
     <!-- RSS -->

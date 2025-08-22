@@ -251,7 +251,8 @@ mjx-container[display="true"] {
 
 @font-face {
   font-family: "Computer Modern Roman";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-bold.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-bold.woff2")
+    format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -259,7 +260,8 @@ mjx-container[display="true"] {
 
 @font-face {
   font-family: "Computer Modern Typewriter";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.typewriter-text-regular.woff2") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.typewriter-text-regular.woff2")
+    format("truetype");
   font-weight: noraml;
   font-style: normal;
   font-display: swap;
@@ -1248,7 +1250,8 @@ li {
 }
 
 ul {
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 1.5em;
 }
 
 .mustreads-container li::marker {
@@ -1258,6 +1261,10 @@ ul {
 .mustreads-container li {
   display: flex;
   align-items: center;
+}
+
+.mustreads-container ul {
+  padding-left: 0;
 }
 
 .mustread-item-bullet {

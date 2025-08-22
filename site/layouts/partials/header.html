@@ -2,22 +2,25 @@
 <header>
   <!-- Кнопка‑бургер -->
   <button class="burger" aria-label="Открыть меню">
+    {{ $svg := partial "logo-nobackground.html" . }}
     <img
       class="no-zoom"
-      src="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/logo-nobackground.svg"
-      alt="logo"
+      alt="log"
       loading="lazy"
+      src="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
+      class="icon"
     />
   </button>
 
   <div class="header-inner">
     <div class="header-container" id="header-left">
+      {{ $svg := partial "logo-nobackground.html" . }}
       <img
-        width="3rem"
-        class="no-zoom header-logo"
-        src="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/logo-nobackground.svg"
-        alt="logo"
+        class="header-logo no-zoom"
+        alt="log"
         loading="lazy"
+        src="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
+        class="icon"
       />
       <h1><a href="/">alchemmist</a></h1>
     </div>

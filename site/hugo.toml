@@ -33,7 +33,6 @@ disableKinds = ["taxonomy"]
 
 [params]
   math = true
-  googleAnalytics = "G-11CS0ECH9L"
 
 [taxonomies]
   tag = "tags"
