@@ -1,11 +1,4 @@
-// Google Analytics
 window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-gtag("config", "G-11CS0ECH9L");
-
 // Burger menu initial style
 const currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
 document.write(`

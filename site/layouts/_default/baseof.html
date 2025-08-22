@@ -88,16 +88,6 @@
       integrity="{{ $style.Data.Integrity }}"
     />
 
-    {{ $syntax := resources.Get "syntax.css" | resources.Minify |
-    resources.Fingerprint }}
-    <link
-      rel="stylesheet"
-      href="{{ $syntax.Permalink }}"
-      integrity="{{ $syntax.Data.Integrity }}"
-      media="print"
-      onload="this.media='all'"
-    />
-
     <!-- Favicons -->
     <link
       rel="icon"
@@ -112,12 +102,6 @@
       href="{{ .Site.BaseURL }}index.xml"
       title="{{ .Site.Title }} RSS Feed"
     />
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-11CS0ECH9L"
-    ></script>
 
     <!-- External Libraries -->
     <link
