@@ -72,7 +72,6 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
-
     <meta
       name="twitter:description"
       content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
@@ -81,6 +80,7 @@
       name="twitter:image"
       content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
     />
+    <meta name="twitter:site" content="@alchemmist_blog">
 
     <!-- Styles -->
     {{ $style := resources.Get "style.css" | resources.Minify |
