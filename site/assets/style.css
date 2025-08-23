@@ -1156,6 +1156,7 @@ mjx-container[display="true"] {
   align-items: center;
   gap: 0.4em; /* расстояние между иконкой и текстом */
   font-size: 1rem;
+  height: 2rem;
 }
 
 .subscribe-banner .icon-user {
