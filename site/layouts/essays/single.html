@@ -14,8 +14,8 @@
     {{ end }}
 
     {{ .Content }}
-    {{ partial "go-back-button" (dict "context" . "url" "/essays" ) }}
     {{ partial "artical-finish.html" }}
+    {{ partial "go-back-button" (dict "context" . "url" "/essays" ) }}
   </article>
 </main>
 {{ end }}

@@ -6,8 +6,8 @@
     </h1>
     <p class="article-date"><em>{{ .Date.Format "2006-01-02" }}</em></p>
     <pre class="poetry-text">{{ .Content | safeHTML }}</pre>
-    {{ partial "go-back-button" (dict "context" . "url" "/poetry" ) }}
     {{ partial "artical-finish.html" }}
+    {{ partial "go-back-button" (dict "context" . "url" "/poetry" ) }}
   </div>
 </main>
 {{ end }} {{ define "head" }}

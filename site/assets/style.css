@@ -470,7 +470,7 @@ p code * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1cm 0 2cm 0;
+  padding: 0.8cm 0 0.25cm 0;
 }
 
 .thanks-container * {
@@ -506,6 +506,7 @@ p code * {
 
 .poetry h1 {
   margin-bottom: 0;
+  font-size: 1.3rem;
 }
 
 .poetry img {
@@ -1306,6 +1307,7 @@ ul {
 
 .go-back-button {
   text-align: center;
+  margin: 1em 0em 3em 0 !important;
 }
 .go-back-button a {
   text-decoration: none;
