@@ -6,7 +6,7 @@ extra:
 type: teach
 tech_name: teach
 title: "Teach"
-layout: teach
+layout: teach-ru
 language: ru
 url: "/ru/teach"
 ---

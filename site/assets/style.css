@@ -354,6 +354,8 @@ article h2 {
   text-align: left;
   margin: 1.3em 0em 0.7em 0;
   font-size: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
 }
 
 article h3 {
@@ -1208,7 +1210,7 @@ mjx-container[display="true"] {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5em 1.5em;
-  max-width: 50%;
+  max-width: 60%;
 }
 
 @media (max-width: 868px) {
@@ -1446,13 +1448,15 @@ body.modal-open {
   white-space: nowrap;
 }
 
-
 .teach-container {
-  width: 25cm;
   max-width: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.teach-container .go-back-button {
+  margin: 3em !important;
 }
 
 #about-me-box {
@@ -1460,9 +1464,18 @@ body.modal-open {
   flex-direction: row;
   align-items: flex-start;
   gap: 2em;
-  max-width: 90rem;
-  width: 100%;
   box-sizing: border-box; /* Важно для правильного расчета ширины */
+}
+
+@media (max-width: 868px) {
+  #about-me-box {
+    flex-direction: column;
+    gap: 0;
+  }
+  #me-photo {
+    margin-bottom: 0;
+    margin-top: 1.5em;
+  }
 }
 
 #about-me-box span {
@@ -1472,6 +1485,60 @@ body.modal-open {
 }
 
 #me-photo {
-  width: 12em;
+  width: 10em;
   flex-shrink: 0; /* Предотвращает сжатие изображения */
+  transform: translateY(-1em);
+}
+
+#teach-preview img {
+  margin: 0;
+}
+
+.block-header h3 {
+  margin: 0.5em;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.block-header {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-right: 15px;
+  border-left: 4px solid black;
+  margin-top: 20px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.block-header:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.block-content {
+  display: none;
+  padding: 15px 20px;
+  border-left: 2px solid black;
+  margin-left: 10px;
+  background-color: #f9f9f9;
+  border-radius: 0 0 4px 4px;
+}
+.block-header::after {
+  content: "▼";
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+  text-decoration: none !important; /* Это свойство уберет подчеркивание */
+  display: inline-block; /* Это важно для правильного отображения */
+}
+.block-header.active::after {
+  transform: rotate(180deg);
+}
+
+.block-content h4 {
+  text-align: left;
+  margin: 1em;
+}
+
+#teach-tg {
+  text-underline-offset: 2px;
 }
