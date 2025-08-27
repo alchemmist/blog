@@ -1048,7 +1048,7 @@ mjx-container[display="true"] {
 }
 
 .medium-zoom-image {
-  z-index: 999;
+  z-index: 500;
   transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
 }
 
@@ -1444,4 +1444,34 @@ body.modal-open {
 
 .no-break {
   white-space: nowrap;
+}
+
+
+.teach-container {
+  width: 25cm;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#about-me-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2em;
+  max-width: 90rem;
+  width: 100%;
+  box-sizing: border-box; /* Важно для правильного расчета ширины */
+}
+
+#about-me-box span {
+  text-align: left;
+  flex: 1; /* Заставляет элемент занимать всё доступное пространство */
+  min-width: 0; /* Решает проблему с переполнением flex-контейнера */
+}
+
+#me-photo {
+  width: 12em;
+  flex-shrink: 0; /* Предотвращает сжатие изображения */
 }
