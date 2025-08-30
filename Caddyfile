@@ -13,7 +13,7 @@ alchemmist.xyz {
 
     header *.js Cache-Control "public, max-age=180000"
     header *.css Cache-Control "public, max-age=1200"
-    header *.html Cache-Control "public, max-age=600"
+    header *.html Cache-Control "public, max-age=100"
     header *.woff2 Cache-Control "public, max-age=31536000, immutable"
     header *.png Cache-Control "public, max-age=31536000, immutable"
     header *.jpg Cache-Control "public, max-age=31536000, immutable"

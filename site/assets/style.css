@@ -393,7 +393,7 @@ pre code {
   tab-size: 2;
   -moz-tab-size: 2;
   -o-tab-size: 2;
-  white-space: pre-wrap;
+  white-space: pre;
   background-clip: padding-box;
 }
 
