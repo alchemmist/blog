@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-09-01 11:09\]* New essay (Ru): [Фломастеры на обоях](/ru/essays/flamasters-on-wallpaper/) 
 - [ ] *\[2025-08-30 18:52\]* Added translation for the article (En): [Past the bottom](/essays/other-side-of-bottom/) 
 - [ ] *\[2025-08-28 14:44\]* Added translation for the article (Ru): [Безопасно делимся экраном в Hyprland](/ru/articles/hyrpland-noscreenshare/) 
 - [ ] *\[2025-08-27 22:50\]* Add [teach](/ru/teach) section!
