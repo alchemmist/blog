@@ -6,16 +6,19 @@
 
     {{ if .Params.tags }}
     <p class="article-topics">
+    <span id="tags-title">Tags:</span>
       {{ range $index, $tag := .Params.tags }}
           {{ $tagLower := $tag | lower }}
         <code><a class="{{ $tagLower }}" href="{{ (path.Join "tags" $tagLower) | relLangURL }}">{{ $tagLower }}</a></code>
       {{ end }}
     </p>
+    <hr/>
 
     {{ end }}
     {{ .Content }}
     {{ partial "artical-finish.html" }}
-    {{ partial "go-back-button" (dict "context" . "url" "/articles" ) }}
+    <hr class="end-splitter" />
+    {{ partial "share-buttons.html" . }}
   </article>
 </main>
 {{ end }}

@@ -1,0 +1,91 @@
+<div class="share-buttons">
+  <span> Share on: </span>
+  <div class="share-box">
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "prime:twitter" "size" "1.0em") }}
+      <a
+        href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Twitter
+      </a>
+    </div>
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "fontisto:reddit" "size" "1.1em")
+      }}
+      <a
+        href="https://www.reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Reddit
+      </a>
+    </div>
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "ic:baseline-telegram" "size"
+      "1.3em") }}
+      <a
+        href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram
+      </a>
+    </div>
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "ic:baseline-facebook" "size"
+      "1.3em") }}
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Facebook
+      </a>
+    </div>
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "mdi:linkedin" "size" "1.3em") }}
+      <a
+        href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+    </div>
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "ion:logo-hackernews" "size"
+      "1.1em") }}
+      <a
+        href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}&t={{ .Title }}"
+        target="_blank"
+        >Hacker News</a
+      >
+    </div>
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "simple-icons:bluesky" "size"
+      "1.0em") }}
+      <a
+        href="https://bsky.app/intent/post?text={{ .Title }}%20{{ .Permalink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Bluesky
+      </a>
+    </div>
+
+    <!-- Mastodon -->
+    <div class="subscribe-banner">
+      {{ partial "iconify.html" (dict "icon" "simple-icons:mastodon" "size"
+      "1.1em") }}
+      <a
+        href="https://mastodon.social/share?text={{ .Title }}%20{{ .Permalink }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Mastodon
+      </a>
+    </div>
+  </div>
+</div>

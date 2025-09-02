@@ -318,22 +318,33 @@ li::marker {
 }
 
 .essay-topics {
-  text-align: center !important;
+  text-align: left !important;
+  margin: 0.5em 0 1em !important;
 }
 
-.essay-topics a {
-  font-size: 15px !important;
-  font-family: "CourierCyr";
+.essay-topics code * {
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-size: 16px;
+}
+
+#topics-title {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+}
+
+#tags-title {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
 }
 
 .article-topics {
-  text-align: center !important;
+  text-align: left !important;
   margin: 0.5em 0 1em 0;
 }
 
 .article-topics code * {
   font-family:
     "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-size: 16px;
 }
 
 article * {
@@ -354,8 +365,6 @@ article h2 {
   text-align: left;
   margin: 1.3em 0em 0.7em 0;
   font-size: 20px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 5px;
 }
 
 article h3 {
@@ -1178,6 +1187,10 @@ mjx-container[display="true"] {
   height: 2rem;
 }
 
+.subscribe-banner a {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+}
+
 .subscribe-banner .icon-user {
   display: inline-flex;
   align-items: center;
@@ -1541,4 +1554,42 @@ body.modal-open {
 
 #teach-tg {
   text-underline-offset: 2px;
+}
+
+article hr {
+  background-color: #eee;
+  border: none;
+  height: 2px;
+}
+
+.end-splitter {
+  margin: 2em 0;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: row;
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+  align-items: flex-start;
+  gap: 1.5em;
+  margin-bottom: 3em;
+}
+
+.share-buttons span {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+  white-space: nowrap;
+}
+
+.share-buttons .subscribe-banner * {
+  font-size: 0.95em;
+}
+
+.share-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em 1em;
 }
