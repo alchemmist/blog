@@ -1,13 +1,12 @@
-window.dataLayer = window.dataLayer || [];
-// Burger menu initial style
-const currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
-document.write(`
-  <style>
-    header .burger img {
-      transform: rotate(${currentAngle}deg);
-    }
-  </style>
-`);
+let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
+
+const style = document.createElement("style");
+style.textContent = `
+  header .burger img {
+    transform: rotate(${currentAngle}deg);
+  }
+`;
+document.head.appendChild(style);
 
 // DOMContentLoaded event handler
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlay = header.querySelector(".overlay");
     const img = burger.querySelector("img");
 
-    let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
     let menuOpen = false;
 
     img.style.transform = `rotate(${currentAngle}deg)`;

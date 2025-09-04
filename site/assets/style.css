@@ -1059,7 +1059,7 @@ mjx-container[display="true"] {
 }
 
 .medium-zoom-image {
-  z-index: 500;
+  z-index: 400;
   transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
 }
 
@@ -1593,3 +1593,93 @@ article hr {
   align-items: center;
   gap: 0.5em 1em;
 }
+
+/* Ссылки изначально без подчеркивания и с цветом по умолчанию */
+.subscribe-banner a {
+  text-decoration: none;
+  color: inherit;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+}
+
+/* Иконки наследуют цвет ссылки */
+.subscribe-banner svg {
+  transition: color 0.3s;
+  color: inherit;
+}
+
+/* Цвета соцсетей */
+.subscribe-banner.twitter:hover a,
+.subscribe-banner.twitter:hover svg {
+  color: #1da1f2; /* Twitter blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.reddit:hover a,
+.subscribe-banner.reddit:hover svg {
+  color: #ff4500; /* Reddit orange */
+  text-decoration: underline;
+}
+
+.subscribe-banner.telegram:hover a,
+.subscribe-banner.telegram:hover svg {
+  color: #0088cc; /* Telegram blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.facebook:hover a,
+.subscribe-banner.facebook:hover svg {
+  color: #1877f2; /* Facebook blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.linkedin:hover a,
+.subscribe-banner.linkedin:hover svg {
+  color: #0a66c2; /* LinkedIn blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.hackernews:hover a,
+.subscribe-banner.hackernews:hover svg {
+  color: #ff6600; /* Hacker News orange */
+  text-decoration: underline;
+}
+
+.subscribe-banner.bluesky:hover a,
+.subscribe-banner.bluesky:hover svg {
+  color: #1da1f2; /* Bluesky blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.mastodon:hover a,
+.subscribe-banner.mastodon:hover svg {
+  color: #6364ff; /* Mastodon purple */
+  text-decoration: underline;
+}
+
+.subscribe-banner.rss:hover a,
+.subscribe-banner.rss:hover svg {
+  color: #ff6600;
+  text-decoration: underline;
+} /* оранжевый RSS */
+.subscribe-banner.github:hover a,
+.subscribe-banner.github:hover svg {
+  color: #181717;
+  text-decoration: underline;
+} /* GitHub чёрный */
+.subscribe-banner.habr:hover a,
+.subscribe-banner.habr:hover svg {
+  color: #548eaa;
+  text-decoration: underline;
+} /* Habr тёмный */
+.subscribe-banner.medium:hover a,
+.subscribe-banner.medium:hover svg {
+  color: #00ab6c;
+  text-decoration: underline;
+} /* Medium зелёный */
+.subscribe-banner.mastodon:hover a,
+.subscribe-banner.mastodon:hover svg {
+  color: #6364ff;
+  text-decoration: underline;
+} /* Mastodon фиолетовый */
