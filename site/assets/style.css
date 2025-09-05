@@ -46,6 +46,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;

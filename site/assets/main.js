@@ -1,5 +1,7 @@
 let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
 
+
+
 const style = document.createElement("style");
 style.textContent = `
   header .burger img {
@@ -179,4 +181,42 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+});
+
+
+document.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+
+    const vh = window.innerHeight;
+    const step = 100; // шаг для j/k
+
+    function smoothScroll(y) {
+        window.scrollTo({
+            top: y,
+            behavior: "smooth"
+        });
+    }
+
+    switch (e.key) {
+        case "j":
+            smoothScroll(window.scrollY + step);
+            e.preventDefault();
+            break;
+        case "k":
+            smoothScroll(window.scrollY - step);
+            e.preventDefault();
+            break;
+        case "f": // Ctrl+f
+            if (e.ctrlKey) {
+                smoothScroll(window.scrollY + vh);
+                e.preventDefault();
+            }
+            break;
+        case "b": // Ctrl+b
+            if (e.ctrlKey) {
+                smoothScroll(window.scrollY - vh);
+                e.preventDefault();
+            }
+            break;
+    }
 });
