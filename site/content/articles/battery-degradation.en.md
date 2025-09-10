@@ -132,6 +132,7 @@ Let’s see:
 {
   "modules-left": [...],
   "modules-center": [...],
+  "modules-left": [...],
   "modules-right": [
     "battery",
     "custom/battery-degradation",
