@@ -206,17 +206,5 @@ document.addEventListener("keydown", (e) => {
             smoothScroll(window.scrollY - step);
             e.preventDefault();
             break;
-        case "f": // Ctrl+f
-            if (e.ctrlKey) {
-                smoothScroll(window.scrollY + vh);
-                e.preventDefault();
-            }
-            break;
-        case "b": // Ctrl+b
-            if (e.ctrlKey) {
-                smoothScroll(window.scrollY - vh);
-                e.preventDefault();
-            }
-            break;
     }
 });

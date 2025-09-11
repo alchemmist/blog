@@ -422,9 +422,15 @@ pre code .tab::selection {
 
 pre code * {
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
-  font-size: 0.95em;
+  font-size: 0.96em;
   line-height: 1.2;
   text-align: left;
+}
+
+@media (max-width: 868px) {
+  pre code * {
+    font-size: 1em;
+  }
 }
 
 .tilde {
@@ -1054,7 +1060,8 @@ mjx-container[display="true"] {
 
 @media (max-width: 868px) {
   mjx-container svg {
-    max-width: 100%;
+    /* max-width: 100%; */
+    overflow-x: auto;
   }
 }
 
@@ -1687,3 +1694,4 @@ article hr {
   color: #6364ff;
   text-decoration: underline;
 } /* Mastodon фиолетовый */
+
