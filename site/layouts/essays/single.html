@@ -5,6 +5,7 @@
     <p class="article-date"><em>{{ .Date.Format "2006-01-02" }}</em></p>
 
     {{ if .Params.topics }}
+    <div class="article-header">
     <p class="essay-topics">
     <span id="topics-title">Topics:</span>
       {{ range $index, $topic := .Params.topics }}
@@ -12,6 +13,14 @@
         <code><a href="{{ (path.Join "topics" $topic) | relLangURL }}">{{ $topic }}</a></code>
       {{ end }}
     </p>
+    <div class="subscribe-header-block">
+        <span id="tags-title">Subscribe:</span>
+        <div class="subscribe-banner telegram">
+          {{ partial "iconify.html" (dict "icon" "ic:baseline-telegram" "size" "1.1em") }}
+          <a title="Join to my Telegram public channel" target="_blank" href="https://t.me/alchemmist_blog">Telegram</a>
+        </div>
+    </div>
+    </div>
     <hr />
     {{ end }}
 

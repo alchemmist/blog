@@ -342,7 +342,6 @@ li::marker {
 
 .article-topics {
   text-align: left !important;
-  margin: 0.5em 0 1em 0;
 }
 
 .article-topics code * {
@@ -1695,3 +1694,23 @@ article hr {
   text-decoration: underline;
 } /* Mastodon фиолетовый */
 
+.article-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5em 0 1em;
+  justify-content: space-between;
+}
+
+.subscribe-header-block {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1em;
+}
+
+
+.subscribe-header-block .subscribe-banner a {
+  font-size: 0.95em;
+}
