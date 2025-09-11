@@ -10,6 +10,7 @@ tech_name: updates
 title: Updates
 ---
 - [ ] *\[2025-09-11 12:33\]* New article (Ru, En): [Welford algorithm](/articles/welford-algorithm/) 
+- [ ] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!
 - [ ] *\[2025-09-01 11:09\]* New essay (Ru): [Фломастеры на обоях](/ru/essays/flamasters-on-wallpaper/) 
 - [ ] *\[2025-08-30 18:52\]* Added translation for the article (En): [Past the bottom](/essays/other-side-of-bottom/) 
 - [ ] *\[2025-08-28 14:44\]* Added translation for the article (Ru): [Безопасно делимся экраном в Hyprland](/ru/articles/hyrpland-noscreenshare/) 
@@ -17,7 +18,7 @@ title: Updates
 - [ ] *\[2025-08-25 14:40\]* New verse (Ru): [Воскресенье](/ru/poetry/resurrection/) 
 - [ ] *\[2025-08-23 19:46\]* New article: [Privacy screen share in Hyprland](/articles/hyrpland-noscreenshare/) 
 - [ ] *\[2025-08-23 09:54\]* Add the more follow options on home page.
-- [ ] *\[2025-08-22 22:53\]* Blog speed up! From 3.8 seconds to less than 700 milliseconds.
+- [x] *\[2025-08-22 22:53\]* Blog speed up! From 3.8 seconds to less than 700 milliseconds.
 - [x] *\[2025-08-18 21:06\]* New essay (Ru): [По ту сторону дна](/ru/essays/other-side-of-bottom) 
 - [x] *\[2025-08-17 23:28\]* Update blog design! Add home page, mobile version adaptive, easter eggs.
 - [x] *\[2025-08-14 12:08\]* Setup telegram [channel](https://t.me/alchemmist_blog) for blog subscribers!
