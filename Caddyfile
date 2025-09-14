@@ -1,3 +1,7 @@
+mail.alchemmist.xyz {
+    respond "Mail server endpoint" 200
+}
+
 umami.alchemmist.xyz {
     reverse_proxy umami:3000
 }
