@@ -149,6 +149,6 @@ Ready to eliminate manual file updates from your workflow? Installation is simpl
 go install github.com/alchemmist/devsyringe/cmd/dsy@latest
 ```
 
-Visit the GitHub [repository](github.com/alchemmist/devsyringe) for complete documentation, examples, and source code. The `README` contains practical examples you can adapt immediately for your use cases.
+Visit the GitHub [repository](https://github.com/alchemmist/devsyringe) for complete documentation, examples, and source code. The `README` contains practical examples you can adapt immediately for your use cases.
 
 Consider where in your workflow you're still copying values between terminal and editor. That's your starting point. Whether it's tunnel URLs, API keys, version numbers, or statistics — Devsyringe can probably automate it.
