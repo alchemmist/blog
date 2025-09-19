@@ -73,7 +73,7 @@ For more complex setups, Devsyringe shines in infrastructure automation. Conside
 - Pulling infrastructure IP addresses from cloud providers and updating security group rules
 - Extracting build metadata from CI systems and updating deployment manifests
 
-The pattern remains consistent: command → output extraction → file injection. This simplicity makes it adaptable to countless automation scenarios. If you want a plain value from your hands — no problem, use: `echo '<my-value>'` as command, devsyringe will do the rest himself.
+The pattern remains consistent: command  output extraction  file injection. This simplicity makes it adaptable to countless automation scenarios. If you want a plain value from your hands — no problem, use: `echo '<my-value>'` as command, devsyringe will do the rest himself.
 
 ## Technical Architecture and Implementation
 While Devsyringe's concept is simple, building a robust CLI tool requires careful architecture. The project leverages Go's strengths for concurrent processing and cross-platform compatibility while maintaining simplicity and reliability.
