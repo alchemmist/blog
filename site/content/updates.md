@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2025-09-19 20:07\]* New article: [Stop Copy-Pasting Tunnel URLs: Meet Devsyringe](/articles/the-devsyringe) 
+- [ ] *\[2025-09-19 20:07\]* New article: [Devsyringe: Stop Copy-Pasting Dynamic Values](/articles/the-devsyringe) 
 - [ ] *\[2025-09-11 12:33\]* New article (Ru, En): [Welford algorithm](/articles/welford-algorithm/) 
 - [ ] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!
 - [ ] *\[2025-09-01 11:09\]* New essay (Ru): [Фломастеры на обоях](/ru/essays/flamasters-on-wallpaper/) 

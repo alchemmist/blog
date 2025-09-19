@@ -1,6 +1,6 @@
 ---
 tech_name: the-devsyringe
-title: 'Stop Copy-Pasting Tunnel URLs: Meet Devsyringe'
+title: 'Devsyringe: Stop Copy-Pasting Dynamic Values'
 date: '2025-09-05T14:22:00+03:00'
 language: en
 description: Description and motivation of unix tool devsyringe for injecting dynamic
