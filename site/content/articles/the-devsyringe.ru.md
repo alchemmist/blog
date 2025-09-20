@@ -1,6 +1,6 @@
 ---
 tech_name: the-devsyringe
-title: 'Devsyringe: Хватит копировать динамические значения'
+title: 'Devsyringe: Хватит копипастить динамические значения'
 date: '2025-09-05T14:22:00+03:00'
 language: ru
 description: Описание и мотивация утилиты devsyringe для вставки динамических значений
