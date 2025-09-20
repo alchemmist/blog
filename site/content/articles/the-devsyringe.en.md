@@ -49,22 +49,21 @@ serums:
 
 This configuration defines a complete workflow: execute the tunnel command, extract the URL using regex, and inject it into both the `.env` file and JavaScript configuration. The entire process becomes a single command: `dsy inject`.
 
-**Dynamic Documentation and Résumé Automation**
-Here's a more sophisticated use case: keeping technical documentation or LaTeX-generated résumés updated with live statistics. Imagine your résumé.tex file contains a line like: `\newcommand{\githubstars}{\input{github_stats.txt}}`
+**Dynamic Documentation and Résumé Automation.**  
+Here's a more sophisticated use case: keeping technical documentation or LaTeX-generated résumés updated with live statistics. Imagine your résumé.tex file contains a line like: `\newcommand{\githubstars}{427}`
 
 With Devsyringe, you can automatically populate this with your current GitHub statistics:
 ```yaml
 serums:
   github_stats:
-    source: curl -s "https://api.github.com/users/yourusername/repos"
-    mask: "\"stargazers_count\":\s*(\d+)"
+    source: curl -s "https://api.github.com/users/yourusername/repos" | jq 'reduce .[] as $repo (0; . + $repo.stargazers_count)'
+    mask: "(\d+)"
     targets:
       resume:
         path: ./resume.tex
         clues: ["githubstars"]
 ```
-
-This setup calls the GitHub API, extracts your total star count, and updates the LaTeX source file. Your résumé maintains accurate, current statistics without manual intervention — perfect for job applications or portfolio updates.
+This setup calls the GitHub API, calculates your total star count across all repositories, and updates the LaTeX source file. Your résumé maintains accurate, current statistics without manual intervention — perfect for job applications or portfolio updates. But then you can set up CI for regular updates with each push if you use the resume repository.
 
 **Advanced Infrastructure Management.**
 For more complex setups, Devsyringe shines in infrastructure automation. Consider these scenarios:
@@ -119,7 +118,7 @@ The tool includes comprehensive error checking at every stage: configuration val
 A tool is only useful if it's easily installable. Devsyringe leverages modern Go tooling to provide seamless installation across all major platforms.
 
 **Automated Builds with Goreleaser.** 
-The project uses Goreleaser to automate the release process, generating: Cross-platform binaries for Windows, macOS, and Linux, Package manager support (Homebrew, AUR), Debian and RPM packages, GitHub releases with checksums and signatures
+The project uses Goreleaser to automate the release process, generating: Cross-platform binaries for Windows, macOS, and Linux, Package manager support (Homebrew, AUR), Debian and RPM packages in [GitHub releases](https://github.com/alchemmist/devsyringe/releases) with checksums and signatures. Windows support already in [backlog](https://github.com/alchemmist/devsyringe/issues/10).
 
 **Installation Simplicity.**  Users can install through multiple channels. For Go developers:
 ```sh
