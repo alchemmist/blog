@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-09-27 13:52\]* New verse (Ru): [Проблеск](/ru/poetry/glimmer/) 
 - [ ] *\[2025-09-19 20:07\]* New article (En, Ru): [Devsyringe: Stop Copy-Pasting Dynamic Values](/articles/the-devsyringe) 
 - [ ] *\[2025-09-11 12:33\]* New article (En, Ru): [Welford algorithm](/articles/welford-algorithm/) 
 - [ ] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!

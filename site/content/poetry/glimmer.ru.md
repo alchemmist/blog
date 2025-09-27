@@ -10,7 +10,8 @@ extra:
     status: finished
 ---
 
-![|400](/images/problesk.png)
+![|450](/images/problesk.png)
+
 Мы тонем в текстах, но нет слов.
 Живем в надежде на божков.
 Искали мир мы, без пустот
