@@ -1,7 +1,5 @@
 let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
 
-
-
 const style = document.createElement("style");
 style.textContent = `
   header .burger img {
@@ -183,28 +181,50 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 document.addEventListener("keydown", (e) => {
-    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
 
-    const vh = window.innerHeight;
-    const step = 100; // шаг для j/k
+  const vh = window.innerHeight;
+  const step = 100; // шаг для j/k
 
-    function smoothScroll(y) {
-        window.scrollTo({
-            top: y,
-            behavior: "smooth"
-        });
+  function smoothScroll(y) {
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+
+  switch (e.key) {
+    case "j":
+      smoothScroll(window.scrollY + step);
+      e.preventDefault();
+      break;
+    case "k":
+      smoothScroll(window.scrollY - step);
+      e.preventDefault();
+      break;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const githubIcon = document.querySelector(".subscribe-banner.github span");
+  const catPopup = document.getElementById("cat-popup");
+
+  githubIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    catPopup.style.display = "block"; // сначала делаем блок видимым
+    setTimeout(() => catPopup.classList.add("show"), 10); // плавное выдвижение
+  });
+
+  catPopup.addEventListener("click", function () {
+    window.location.href = "https://cats.alchemmist.xyz?utm_souce=easter-egg"; // твой URL
+  });
+
+  // Закрытие при клике вне кота
+  document.addEventListener("click", function (e) {
+    if (!catPopup.contains(e.target) && !githubIcon.contains(e.target)) {
+      catPopup.classList.remove("show");
+      setTimeout(() => (catPopup.style.display = "none"), 500); // скрываем после анимации
     }
-
-    switch (e.key) {
-        case "j":
-            smoothScroll(window.scrollY + step);
-            e.preventDefault();
-            break;
-        case "k":
-            smoothScroll(window.scrollY - step);
-            e.preventDefault();
-            break;
-    }
+  });
 });
