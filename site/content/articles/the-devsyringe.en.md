@@ -15,7 +15,7 @@ extra:
     status: writing
 ---
 
-Today I want to tell about Injecting Life into Static Files: Building Dynamic Configs with Devsyringe.
+Today I want to tell about Injecting Life into Static Files: Building Dynamic Configs with [Devsyringe](https://devsyringe.alchemmist.xyz).
 
 As developers, we live in a world of dynamic values. API tokens, temporary URLs from tunneling services like `ngrok` or `localtunnel`, database connection strings, and feature flags are the lifeblood of our modern applications. In compiled languages or Node.js environments, we have a rich ecosystem of tools like `dotenv` and configuration libraries to manage this dynamism seamlessly. They allow us to externalize configuration, injecting values from environment variables or secret managers at runtime.
 
