@@ -18,7 +18,7 @@ title: Updates
 - [ ] *\[2025-08-28 14:44\]* Added translation for the article (Ru): [Безопасно делимся экраном в Hyprland](/ru/articles/hyrpland-noscreenshare/) 
 - [ ] *\[2025-08-27 22:50\]* Add [teach](/ru/teach) section!
 - [ ] *\[2025-08-25 14:40\]* New verse (Ru): [Воскресенье](/ru/poetry/resurrection/) 
-- [ ] *\[2025-08-23 19:46\]* New article: [Privacy screen share in Hyprland](/articles/hyrpland-noscreenshare/) 
+- [x] *\[2025-08-23 19:46\]* New article: [Privacy screen share in Hyprland](/articles/hyrpland-noscreenshare/) 
 - [x] *\[2025-08-23 09:54\]* Add the more follow options on home page.
 - [x] *\[2025-08-22 22:53\]* Blog speed up! From 3.8 seconds to less than 700 milliseconds.
 - [x] *\[2025-08-18 21:06\]* New essay (Ru): [По ту сторону дна](/ru/essays/other-side-of-bottom) 
