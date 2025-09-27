@@ -16,7 +16,7 @@ jobs:
           script: |
             cd ${{ secrets.SSH_PROJECT_PATH }}
             git pull origin main --rebase
-      - name: Compose down
+      - name: Rebuild Hugo builder
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -24,22 +24,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ${{ secrets.SSH_PROJECT_PATH }}
-            docker compose down
-      - name: Compose pull
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ${{ secrets.SSH_PROJECT_PATH }}
-            docker compose pull
-      - name: Compose up
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ${{ secrets.SSH_PROJECT_PATH }}
-            docker compose up --build -d
+            docker compose up --no-deps --build -d hugo-builder
+
+
