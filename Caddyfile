@@ -10,6 +10,10 @@ cats.alchemmist.xyz {
     reverse_proxy cats:5173
 }
 
+devsyringe.alchemmist.xyz {
+    reverse_proxy devsyringe:5143
+}
+
 alchemmist.xyz {
     root * /srv
     encode gzip zstd
@@ -47,4 +51,5 @@ alchemmist.xyz {
     redir /ru/ / 301
     redir /ru / 301
 }
+
 
