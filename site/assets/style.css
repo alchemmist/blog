@@ -364,6 +364,7 @@ article h1 {
   font-size: 25px;
 }
 
+
 article h2 {
   text-align: left;
   margin: 1.3em 0em 0.7em 0;
@@ -371,11 +372,13 @@ article h2 {
 }
 
 article h3 {
-  margin: 0.5cm;
+  margin: 0.4cm 0;
+  text-align: left;
 }
 
 article h4 {
-  margin: 0.5cm;
+  margin: 0.4cm 0;
+  text-align: left;
 }
 
 .articles-container li {
