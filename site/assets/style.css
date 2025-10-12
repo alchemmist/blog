@@ -364,7 +364,6 @@ article h1 {
   font-size: 25px;
 }
 
-
 article h2 {
   text-align: left;
   margin: 1.3em 0em 0.7em 0;
@@ -1242,6 +1241,7 @@ mjx-container[display="true"] {
 @media (max-width: 868px) {
   .home-menu {
     max-width: 90%;
+    gap: .2em .1em;
   }
 }
 
@@ -1421,6 +1421,38 @@ svg {
   flex-direction: column;
   min-height: 0; /* Разрешаем сжатие */
   overflow-y: scroll; /* Скрываем переполнение */
+}
+
+.search-modal * {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif !important;
+}
+
+.pagefind-ui__result-excerpt.svelte-j9e30.svelte-j9e30 {
+  text-align: left;
+}
+
+.pagefind-ui__filter-label.svelte-1v2r7ls.svelte-1v2r7ls {
+  font-size: calc(18px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__filter-name.svelte-1v2r7ls.svelte-1v2r7ls {
+  font-size: calc(19px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__search-clear.svelte-e9gkc3 {
+  font-size: calc(16px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__result.svelte-j9e30.svelte-j9e30 {
+  padding: calc(20px * var(--pagefind-ui-scale)) 0 calc(30px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__message.svelte-e9gkc3 {
+  padding: calc(10px * var(--pagefind-ui-scale)) 0 !important;
+}
+
+.pagefind-ui__drawer.svelte-e9gkc3 {
+  gap: calc(20px * var(--pagefind-ui-scale)) !important;
 }
 
 .pagefind-ui__results-area {
