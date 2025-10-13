@@ -18,7 +18,6 @@ If you think this code is idiomatic, elegant and beautiful, read this article!
 FindProcess(ByTitle(title))
 FindProcess(ByPID(pid))
 ```
-
 This code is an example of the result of the predicate pattern. This example is synthetic, but here we’re trying to achieve a similar result here. Firstly, let’s figure out the predicate. **Predicate** is a function, that returns a boolean value — very simple! 
 
 Now, for example, we will write a method `findProcess` for `ProcManager` on Go with predicate pattern. The `ProcManager` has a field `processes []*Process`, which is slice of processes. And the `Process` has many unique fields, that we can use to searching. Our method will take a **predicate** and apply it to all items in the list until the predicate returns `true`, or the list ends and the search returns `hmm... nothing was found`.
