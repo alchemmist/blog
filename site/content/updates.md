@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-10-13 05:58\]* New article: [Note on SQL Basics](/articles/sql-basics-note).
 - [ ] *\[2025-10-10 13:06\]* Add search to blog! Use with Ctrl+k.
 - [ ] *\[2025-09-27 13:52\]* New verse (Ru): [Проблеск](/ru/poetry/glimmer/).
 - [ ] *\[2025-09-19 20:07\]* New article (En, Ru): [Devsyringe: Stop Copy-Pasting Dynamic Values](/articles/the-devsyringe).
