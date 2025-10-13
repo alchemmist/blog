@@ -19,7 +19,7 @@ This is my simple note about basic data types in SQL and foundation of SQL — r
 
 **Whole numbers:**
 - `TINYINT` — from $-128$ to $127$.
-- `SMALLINT` — from $-32 768$ to $32 767$>
+- `SMALLINT` — from $-32 768$ to $32 767$.
 - `INTAGER` — from $−2 147 483 648$ to $−2 147 483 647$.
 - `BIGINT` — very big!
 **Float numbers:**
