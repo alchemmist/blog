@@ -69,13 +69,13 @@ Let’s see on operators of relation algebra. You can try all of this examples i
 ```
 As result:
 ```plaintext
-+--+--+
++-----------------+-----------------------------+
 | author          | title                       |
-|--+--|
+|-----------------+-----------------------------|
 | Salinger        | The catcher in the Rye      |
 | Robert Martin   | Clean code                  |
 | Platon          | The State                   |
-+--+--+
++-----------------+-----------------------------+
 ```
 
 **`σ` (sigma)** — Operation, that create new relation contains only tuples, which satisfy specified condition. It’s similar as `WHERE` in SQL. This example give me the books only from Salinger:
@@ -116,33 +116,33 @@ books ⋈ reviews
 ```
 Here is two terms, first is `π title, author (σ status = 'available' (library))` and it’s return the available books with `title` and `author` attributes:
 ```plaintext
-+--+--+
++-----------------+-----------------------------+
 | author          | title                       |
-|--+--|
+|-----------------+-----------------------------|
 | Salinger        | The catcher in the Rye      |
 | Robert Martin   | Clean Code                  |
 | Platon          | The State                   |
 | Selinjer        | Advanced Algebra            |
 | Selinjer        | Linear Algebra              |
-+--+--+
++-----------------+-----------------------------+
 ```
 Second term `π title (σ publish_at = '2024-01-05' (books))` is return the list of `Selinjer` books:
 ```plaintext
-++
++------------------+
 | author           |
-||
+|------------------|
 | Selinjer         |
 | Stive Machonnel  |
-++
++------------------+
 ```
 Division of this two relations will return the list of titles where authors equals and drop author attribute:
 ```plaintext
-+--+
++-----------------------------+
 | title                       |
-|--|
+|-----------------------------|
 | Advanced Algebra            |
 | Linear Algebra              |
-+--+
++-----------------------------+
 ```
 This is the available books in library from author published it at `'2024-01-05'`. 
 

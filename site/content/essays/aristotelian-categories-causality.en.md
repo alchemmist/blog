@@ -10,7 +10,7 @@ extra:
     public: true
     type: essay
 ---
- 
+
 Prior to the premodern era, it was impossible to draw an absolute distinction between the physical and metaphysical categories of causality, or even between the material and the conditionally "spiritual." The universe was seen as a complex and even mysterious interweaving of immanent and transcendent mediations and forces.
 
 According to Aristotle, we can distinguish **four** categories of causality:

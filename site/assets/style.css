@@ -1772,6 +1772,6 @@ article hr {
   opacity: 1;
 }
 
-.chroma .err {
-  color: #333;
+pre code * .err {
+  color: #333 !important;
 }

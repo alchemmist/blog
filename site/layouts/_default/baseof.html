@@ -46,7 +46,8 @@
     />
     <meta name="author" content="alchemmist" />
 
-    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="canonical" href="{{ .RelPermalink | absURL }}">
+
 
     <!-- OpenGraph -->
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />

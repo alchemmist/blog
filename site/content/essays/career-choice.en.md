@@ -11,7 +11,6 @@ extra:
     type: essay
 ---
 
-
 There's a simple idea:
 
 > In youth, accumulate expertise, and later – implement it. If you start implementing your weak expertise while young, you'll waste time, earn almost no money, and end up with nothing.

@@ -13,7 +13,6 @@ extra:
     status: finished
 ---
 
-
 Recently, find the simple way to make anything at my servers in GitHub pipeline with Actions. And I love it’s very clear. I can control all operations, step and processes. Now I’ll show how to make clear depoly with it, but you can use similar for your goals.
 
 Let’s think! How we deploy manually? In the simple case, we connect to server, pull repository and then restart our app.

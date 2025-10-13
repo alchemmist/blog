@@ -11,7 +11,6 @@ extra:
     type: essay
 ---
 
-
 0. *(Premise)* The world is a unity of opposites. If there is `A`, then there is `not A` *([Law of Double Negation](https://en.wikipedia.org/wiki/Double_negation#:~:text=In%20propositional%20logic%2C%20double%20negation,is%20equivalent%20to%20A))*. If there is temporal, there is eternal; if there is changing, there is unchanging; if there is mortal, there is immortal.  
 Clarification: This isn't dividing all things into two categories ("here are changing things, there are unchanging ones"). The changing and unchanging are one *([Allegory of the Cave](https://en.wikipedia.org/wiki/Allegory_of_the_cave))*.
 
