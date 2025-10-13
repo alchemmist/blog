@@ -22,26 +22,32 @@ This is my simple note about basic data types in SQL and foundation of SQL — r
 - `SMALLINT` — from $-32 768$ to $32 767$.
 - `INTAGER` — from $−2 147 483 648$ to $−2 147 483 647$.
 - `BIGINT` — very big!
+
 **Float numbers:**
 - `FLOAT` — single precision, approximately 7-8 significant digits.
 - `DOUBLE` — double precision, approximately 15-16 significant digits.
 - `NUMERIC` / `DECIMAL` — fixed precision, use as `NUMERIC(precision, scale)`, where `precision` – total digits count, `scale` – count digits after dot.
+
 **Strings:**
 - `CHAR(n)` — string of fixed length. `n` defined maximum string length, if string less than `n` it sill be fill with spaces.
 - `VARCHAR(n)` — string of variable length. `n` defined maximum string length. It’s more optimized and effective, because keep only real string length.
 - `TEXT` — string of variable length, without limits (it depends on DBMS).
 - `ENUM` — enumerate. Keep only one from defined list values, for example `ENUM('male', 'female', 'other')`.
+
 **Date and time:**
 - `DATE` — store only date (year, month, day).
 - `TIME` — store only time (hours, minutes, seconds).
 - `DATETIME` — store time and date.
 - `TIMESTAMP` — store date and time, considering time zone. 
+
 **Logical data:**
 - `BOOLEAN` — store logical value: `TRUE` or `FALSE`. Some time can be represented as `TINYINT` with $1 = \texttt{TRUE}$ and $2 = \texttt{FALSE}$.
+
 **Binary data:**
 - `BLOB` (*Binary Large Object*) — store big binary data, like images, videos, audios and so on.
 - `BINARY(n)` — binary string with fixed length `n`.
 - `VARBINARY(n)` — binary string with variable length, but max length is `n`.
+
 **Other:**
 - `JSON` — store the json data.
 - `XML` — store xml data.

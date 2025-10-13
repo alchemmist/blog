@@ -1771,3 +1771,7 @@ article hr {
   transform: translateY(20%); /* выдвигаем вверх */
   opacity: 1;
 }
+
+.chroma .err {
+  color: #333;
+}
