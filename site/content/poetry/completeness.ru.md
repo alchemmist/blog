@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|450](/images/bodhisattva.png)
+![|450](/images/bodhisattva-1.png)
 
 дух искупаем в море грез 
 и покрестим в реках из слез
