@@ -206,6 +206,35 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+document.addEventListener('keydown', function(event) {
+    const tag = event.target.tagName.toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return;
+
+    switch(event.key) {
+        case 'p':
+            window.location.href = '/ru/poetry';
+            break;
+        case 'c':
+            window.location.href = '/cv';
+            break;
+        case 'a':
+            window.location.href = '/articles';
+            break;
+        case 'e':
+            window.location.href = '/essays';
+            break;
+        case 'u':
+            window.location.href = '/updates';
+            break;
+        case 't':
+            window.location.href = '/ru/teachingtal';
+            break;
+        case 'b':
+            window.location.href = '/books';
+            break;
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const githubIcon = document.querySelector(".subscribe-banner.github span");
   const catPopup = document.getElementById("cat-popup");
