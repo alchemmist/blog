@@ -259,31 +259,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const shortcuts = [
-  { key: "p", description: "Перейти в /ru/poetry" },
-  { key: "c", description: "Перейти в /cv" },
-  { key: "a", description: "Перейти в /articles" },
-  { key: "e", description: "Перейти в /essays" },
-  { key: "u", description: "Перейти в /updates" },
-  { key: "t", description: "Перейти в /ru/teachingtal" },
-  { key: "b", description: "Перейти в /books" },
+  { key: "h", description: "Go to home page", url: "/" },
+  { key: "?", description: "Open help" },
+  { key: "p", description: "Go to poetry (only Russian)", url: "/ru/poetry" },
+  { key: "c", description: "Go to CVs", url: "/cv" },
+  { key: "a", description: "Go to articles", url: "/articles" },
+  { key: "e", description: "Go to essays", url: "/essays" },
+  { key: "u", description: "Go to blog updates", url: "/updates" },
+  { key: "t", description: "Go to teach section", url: "/ru/teachingtal" },
+  { key: "b", description: "Go to book shelf", url: "/books" },
 ];
 
-// Ссылки для перехода
 const shortcutsMap = Object.fromEntries(
-  shortcuts.map((s) => [s.key, s.description.split(" ")[2]]),
+  shortcuts
+    .filter((s) => s.url) // только те, у которых есть URL
+    .map((s) => [s.key, s.url]),
 );
 
-// Элементы DOM
 const overlay = document.getElementById("shortcut-overlay");
 const modal = document.getElementById("shortcut-modal");
 const shortcutList = document.getElementById("shortcut-list");
 const closeBtn = modal.querySelector(".close-btn");
 
-// Функция открыть модалку
 function openModal() {
-  // Очистка списка
-  shortcutList.innerHTML = "";
-  // Добавление хоткеев в список
+  shortcutList.innerHTML = ""; // очистка списка
   shortcuts.forEach((s) => {
     const li = document.createElement("li");
     li.innerHTML = `<code>${s.key}</code> → ${s.description}`;
@@ -294,13 +293,11 @@ function openModal() {
   modal.style.display = "block";
 }
 
-// Закрыть модалку
 function closeModal() {
   overlay.style.display = "none";
   modal.style.display = "none";
 }
 
-// События
 closeBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
@@ -312,13 +309,14 @@ document.addEventListener("keydown", function (event) {
     openModal();
     return;
   }
+
   if (event.key === "Escape") {
     closeModal();
     return;
   }
 
-  // Навигация по сайту
   if (shortcutsMap[event.key]) {
-    window.location.href = shortcutsMap[event.key];
+    const url = new URL(shortcutsMap[event.key], window.location.origin);
+    window.location.href = url;
   }
 });
