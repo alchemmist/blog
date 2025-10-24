@@ -46,8 +46,7 @@
     />
     <meta name="author" content="alchemmist" />
 
-    <link rel="canonical" href="{{ .RelPermalink | absURL }}">
-
+    <link rel="canonical" href="{{ .RelPermalink | absURL }}" />
 
     <!-- OpenGraph -->
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
@@ -121,6 +120,13 @@
     {{ block "head" . }}{{ end }}
   </head>
   <body>
+    <div id="shortcut-overlay"></div>
+    <div id="shortcut-modal">
+      <h3>Keyboard Shortcuts</h3>
+      <ul id="shortcut-list">
+      </ul>
+      <div class="close-btn">Close</div>
+    </div>
     {{ if ne .RelPermalink "/search" }}
     <div id="search-modal" class="search-modal">
       <div class="search-modal-content">

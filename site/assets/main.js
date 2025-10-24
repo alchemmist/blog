@@ -206,33 +206,33 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-document.addEventListener('keydown', function(event) {
-    const tag = event.target.tagName.toLowerCase();
-    if (tag === 'input' || tag === 'textarea') return;
+document.addEventListener("keydown", function (event) {
+  const tag = event.target.tagName.toLowerCase();
+  if (tag === "input" || tag === "textarea") return;
 
-    switch(event.key) {
-        case 'p':
-            window.location.href = '/ru/poetry';
-            break;
-        case 'c':
-            window.location.href = '/cv';
-            break;
-        case 'a':
-            window.location.href = '/articles';
-            break;
-        case 'e':
-            window.location.href = '/essays';
-            break;
-        case 'u':
-            window.location.href = '/updates';
-            break;
-        case 't':
-            window.location.href = '/ru/teachingtal';
-            break;
-        case 'b':
-            window.location.href = '/books';
-            break;
-    }
+  switch (event.key) {
+    case "p":
+      window.location.href = "/ru/poetry";
+      break;
+    case "c":
+      window.location.href = "/cv";
+      break;
+    case "a":
+      window.location.href = "/articles";
+      break;
+    case "e":
+      window.location.href = "/essays";
+      break;
+    case "u":
+      window.location.href = "/updates";
+      break;
+    case "t":
+      window.location.href = "/ru/teachingtal";
+      break;
+    case "b":
+      window.location.href = "/books";
+      break;
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -256,4 +256,69 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => (catPopup.style.display = "none"), 500); // скрываем после анимации
     }
   });
+});
+
+const shortcuts = [
+  { key: "p", description: "Перейти в /ru/poetry" },
+  { key: "c", description: "Перейти в /cv" },
+  { key: "a", description: "Перейти в /articles" },
+  { key: "e", description: "Перейти в /essays" },
+  { key: "u", description: "Перейти в /updates" },
+  { key: "t", description: "Перейти в /ru/teachingtal" },
+  { key: "b", description: "Перейти в /books" },
+];
+
+// Ссылки для перехода
+const shortcutsMap = Object.fromEntries(
+  shortcuts.map((s) => [s.key, s.description.split(" ")[2]]),
+);
+
+// Элементы DOM
+const overlay = document.getElementById("shortcut-overlay");
+const modal = document.getElementById("shortcut-modal");
+const shortcutList = document.getElementById("shortcut-list");
+const closeBtn = modal.querySelector(".close-btn");
+
+// Функция открыть модалку
+function openModal() {
+  // Очистка списка
+  shortcutList.innerHTML = "";
+  // Добавление хоткеев в список
+  shortcuts.forEach((s) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<code>${s.key}</code> → ${s.description}`;
+    shortcutList.appendChild(li);
+  });
+
+  overlay.style.display = "block";
+  modal.style.display = "block";
+}
+
+// Закрыть модалку
+function closeModal() {
+  overlay.style.display = "none";
+  modal.style.display = "none";
+}
+
+// События
+closeBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function (event) {
+  const tag = event.target.tagName.toLowerCase();
+  if (tag === "input" || tag === "textarea") return;
+
+  if (event.key === "?") {
+    openModal();
+    return;
+  }
+  if (event.key === "Escape") {
+    closeModal();
+    return;
+  }
+
+  // Навигация по сайту
+  if (shortcutsMap[event.key]) {
+    window.location.href = shortcutsMap[event.key];
+  }
 });
