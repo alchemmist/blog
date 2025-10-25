@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2025-10-22 17:09\]* New verse (Ru): [Завершённость](/ru/poetry/completeness) 
 - [ ] *\[2025-10-22 16:09\]* New verse (Ru): [Жизнь](/ru/poetry/life) 
 - [ ] *\[2025-10-13 05:58\]* New article: [Note on SQL Basics](/articles/sql-basics-note).
 - [ ] *\[2025-10-10 13:06\]* Add search to blog! Use with Ctrl+k.
