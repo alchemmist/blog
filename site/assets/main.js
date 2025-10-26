@@ -134,8 +134,25 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     new PagefindUI({
       languages: ["ru", "en"],
+      locale: "en",
       element: "#search-hidden",
       showImages: false,
+      autoFocus: true,
+      translations: {
+        placeholder: "Search",
+        clear_search: "Clear",
+        load_more: "Load more results",
+        search_label: "Search this site",
+        filters_label: "Filters",
+        zero_results: "No results for [SEARCH_TERM]",
+        many_results: "[COUNT] results for [SEARCH_TERM]",
+        one_result: "[COUNT] result for [SEARCH_TERM]",
+        alt_search:
+          "No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead",
+        search_suggestion:
+          "No results for [SEARCH_TERM]. Try one of the following searches:",
+        searching: "Searching for [SEARCH_TERM]...",
+      },
     });
 
     const searchModal = document.getElementById("search-modal");
@@ -182,9 +199,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("keydown", (e) => {
+  // Игнорируем, если фокус в input или textarea
   if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
 
-  const vh = window.innerHeight;
+  // Игнорируем, если открыт поиск Pagefind (body содержит класс modal-open)
+  if (document.body.classList.contains("modal-open")) return;
+
   const step = 100; // шаг для j/k
 
   function smoothScroll(y) {
@@ -202,35 +222,6 @@ document.addEventListener("keydown", (e) => {
     case "k":
       smoothScroll(window.scrollY - step);
       e.preventDefault();
-      break;
-  }
-});
-
-document.addEventListener("keydown", function (event) {
-  const tag = event.target.tagName.toLowerCase();
-  if (tag === "input" || tag === "textarea") return;
-
-  switch (event.key) {
-    case "p":
-      window.location.href = "/ru/poetry";
-      break;
-    case "c":
-      window.location.href = "/cv";
-      break;
-    case "a":
-      window.location.href = "/articles";
-      break;
-    case "e":
-      window.location.href = "/essays";
-      break;
-    case "u":
-      window.location.href = "/updates";
-      break;
-    case "t":
-      window.location.href = "/ru/teachingtal";
-      break;
-    case "b":
-      window.location.href = "/books";
       break;
   }
 });
@@ -318,5 +309,45 @@ document.addEventListener("keydown", function (event) {
   if (shortcutsMap[event.key]) {
     const url = new URL(shortcutsMap[event.key], window.location.origin);
     window.location.href = url;
+  }
+});
+
+let links = [];
+
+const updateLinks = () => {
+  links = Array.from(document.querySelectorAll(".pagefind-ui__result-link"));
+};
+
+const observer = new MutationObserver(updateLinks);
+const results = document.querySelector(".pagefind-ui__results");
+if (results) observer.observe(results, { childList: true, subtree: true });
+
+updateLinks();
+
+document.addEventListener("keydown", (e) => {
+  const modal = document.querySelector(".search-modal-content");
+  if (!modal || modal.style.display === "none") return;
+
+  const links = Array.from(
+    document.querySelectorAll(".pagefind-ui__result-link"),
+  );
+  if (links.length === 0) return;
+
+  const activeIndex = links.findIndex(
+    (link) => link === document.activeElement,
+  );
+
+  // Alt + j → вниз
+  if (e.altKey && e.key.toLowerCase() === "j") {
+    e.preventDefault();
+    const next = (activeIndex + 1) % links.length;
+    links[next].focus();
+  }
+
+  // Alt + k → вверх
+  if (e.altKey && e.key.toLowerCase() === "k") {
+    e.preventDefault();
+    const prev = (activeIndex - 1 + links.length) % links.length;
+    links[prev].focus();
   }
 });

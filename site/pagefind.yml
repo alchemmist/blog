@@ -14,3 +14,4 @@ exclude_selectors:
   - ".books-container"
   - ".thanks-container"
   - ".go-back-button"
+  - ".tags-page-container"
