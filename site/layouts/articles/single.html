@@ -34,10 +34,9 @@
 </main>
 {{ end }}
 {{ define "head" }}
-{{ $custom := resources.Get "remark42-custom.js" | minify | fingerprint }}
-<script src="{{ $custom.RelPermalink }}" defer></script>
+  <script src="/assets/remark42-custom.js" defer></script>
 
-    <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
+  <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
   {{ if .Params.tags }}
     <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
   {{ end }}
