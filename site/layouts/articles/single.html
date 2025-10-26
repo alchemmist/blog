@@ -34,6 +34,7 @@
 </main>
 {{ end }}
 {{ define "head" }}
+  <meta http-equiv="Content-Security-Policy" content="font-src 'self' https://remark42.alchemmist.xyz;">
   <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
   {{ if .Params.tags }}
     <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
