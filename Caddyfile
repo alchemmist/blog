@@ -1,7 +1,5 @@
 remark42.alchemmist.xyz {
     reverse_proxy remark42:8080
-
-    header Content-Security-Policy "font-src 'self' data: https://remark42.alchemmist.xyz"
 }
 
 mail.alchemmist.xyz {
