@@ -34,8 +34,6 @@
 </main>
 {{ end }}
 {{ define "head" }}
-  <script src="/assets/remark42-custom.js" defer></script>
-
   <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
   {{ if .Params.tags }}
     <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
