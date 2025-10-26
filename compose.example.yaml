@@ -64,8 +64,8 @@ services:
       - SITE=alchemmist
       - SECRET=mossmossmoss
       - AUTH_ANON=true
-      - AUTH_GITHUB_CLIENT_ID=mossmossmoss
-      - AUTH_GITHUB_CLIENT_SECRET=mossmossmoss
+      - AUTH_GITHUB_CID=mossmossmoss
+      - AUTH_GITHUB_CSEC=mossmossmoss
     volumes:
       - ./data:/srv/var
       - ./remark42/custom.css:/srv/web/custom.css
