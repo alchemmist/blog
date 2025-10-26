@@ -39,7 +39,7 @@ services:
     container_name: umami
     environment:
       DATABASE_URL: postgres://umami:umami@umami-db:5432/umami
-      APP_SECRET: your_super_secret_value 
+      APP_SECRET: mossmossmoss
     depends_on:
       - umami-db
     ports:
@@ -62,8 +62,10 @@ services:
     environment:
       - REMARK_URL=https://remark42.alchemmist.xyz/
       - SITE=alchemmist
-      - SECRET=alchemmiststupiddeveloper
+      - SECRET=mossmossmoss
       - AUTH_ANON=true
+      - AUTH_GITHUB_CLIENT_ID=mossmossmoss
+      - AUTH_GITHUB_CLIENT_SECRET=mossmossmoss
     volumes:
       - ./data:/srv/var
       - ./remark42/custom.css:/srv/web/custom.css
