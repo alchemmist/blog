@@ -1,3 +1,7 @@
+remark42.alchemmist.xyz {
+    reverse_proxy remark42:8080
+}
+
 mail.alchemmist.xyz {
     respond "Mail server endpoint" 200
 }
