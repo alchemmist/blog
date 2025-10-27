@@ -1,7 +1,7 @@
 @font-face {
   font-family: "CourierCyr";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: "CourierCyr";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_bold.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: "CourierCyr";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_inclined.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -28,7 +28,7 @@
 @font-face {
   font-family: "CourierCyr";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_boldinclined.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -238,7 +238,7 @@ mjx-container[display="true"] {
 @font-face {
   font-family: "JetBrains Mono";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/JetBrainsMono-Regular.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -247,7 +247,7 @@ mjx-container[display="true"] {
 @font-face {
   font-family: "Computer Modern Roman";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-roman.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -256,7 +256,7 @@ mjx-container[display="true"] {
 @font-face {
   font-family: "Computer Modern Roman";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-bold.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -265,7 +265,7 @@ mjx-container[display="true"] {
 @font-face {
   font-family: "Computer Modern Typewriter";
   src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.typewriter-text-regular.woff2")
-    format("truetype");
+    format("woff2");
   font-weight: noraml;
   font-style: normal;
   font-display: swap;
