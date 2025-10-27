@@ -67,9 +67,9 @@
   --color31: #cbd5e1;
   --color21: #f1f5f9;
   --color29: #0e7e9d;
-  --color9: #0aa;
-  --color15: #099;
-  --color33: #06c5c5;
+  --color9: rgba(0, 0, 0, 0.8);
+  --color15: rgba(0, 0, 0, 0.6);
+  --color33: rgba(0, 0, 0, 0.4);
   --color40: #9cdddb;
   --color43: #b7dddd;
   --color42: #c6efef;
@@ -92,8 +92,8 @@
   --chroma-05: #859900;
   --chroma-06: #d33682;
   --chroma-07: #00aee2;
-  --primary-color: 0, 170, 170;
-  --primary-brighter-color: 0, 153, 153;
+  --primary-color: #777;
+  --primary-brighter-color: #aaa;
   --primary-darker-color: 0, 102, 102;
   --primary-text-color: 38, 38, 38;
   --secondary-text-color: 100, 116, 139;
@@ -108,6 +108,7 @@
   --text-color: var(--black-color);
   --transparent: transparent;
 }
+
 :root .dark {
   --line-color: var(--color36);
   --primary-color: 0, 153, 153;
@@ -232,7 +233,7 @@ button {
   cursor: pointer;
 }
 a {
-  color: var(--color9);
+  color: rgb(var(--secondary-text-color));
   text-decoration: none;
 }
 a:hover {
@@ -390,13 +391,13 @@ a:hover {
 .C_G {
   background-color: transparent;
   background-color: initial;
-  color: #0aa;
-  color: rgb(var(--primary-color));
+  color: #777;
   text-transform: none;
   width: auto;
 }
 .C_G:hover {
   background-color: rgba(0, 170, 170, 0.1);
+  color: #aaa !important;
   background-color: rgba(var(--primary-color), 0.1);
 }
 .C_H {
@@ -405,7 +406,7 @@ a:hover {
   padding: 2px;
 }
 .C_H:hover {
-  color: #099;
+  color: #aaa;
   color: rgb(var(--primary-brighter-color));
 }
 .C_H:hover,
@@ -531,7 +532,7 @@ a:hover {
 }
 .button_kind_link {
   background: transparent;
-  color: var(--color9);
+  color: rgb(var(--secondary-text-color));
   font-weight: 600;
 }
 .button_kind_link:hover {
@@ -1097,6 +1098,7 @@ a:hover {
   position: absolute;
   top: 0;
   width: 100%;
+  color: #777 !important;
 }
 .M_E {
   margin-left: 0.4em;
@@ -2582,4 +2584,32 @@ a:hover {
 
 body {
   font-family: "RemarkCourierCyr" !important;
+}
+
+.comment_view_user .comment__title-link {
+  color: #666 !important;
+}
+
+.select-element .M_D * {
+  color: #666 !important;
+}
+
+.root_theme_light {
+  color: #666 !important;
+}
+
+.C_A {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.C_A:hover {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.C_E {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.C_E:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
