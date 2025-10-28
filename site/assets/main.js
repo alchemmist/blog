@@ -257,7 +257,7 @@ const shortcuts = [
   { key: "a", description: "Go to articles", url: "/articles" },
   { key: "e", description: "Go to essays", url: "/essays" },
   { key: "u", description: "Go to blog updates", url: "/updates" },
-  { key: "t", description: "Go to teach section", url: "/ru/teachingtal" },
+  { key: "t", description: "Go to teach section", url: "/ru/teach" },
   { key: "b", description: "Go to book shelf", url: "/books" },
 ];
 

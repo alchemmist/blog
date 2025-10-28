@@ -1,15 +1,27 @@
 {{ define "main" }}
-<main class="base-container">
+<main class="base-container verse-container">
   <div class="poetry">
     <h1 data-pagefind-meta="title">
       {{ .Title }} {{ partial "allLanguages.html" . }}
     </h1>
     <p class="article-date"><em>{{ .Date.Format "2006-01-02" }}</em></p>
     <pre class="poetry-text">{{ .Content | safeHTML }}</pre>
-    {{ partial "artical-finish.html" }}
-    {{ partial "go-back-button" (dict "context" . "url" "/poetry" ) }}
   </div>
+  <hr class="end-splitter" />
+  <div id="remark42"></div>
+  <hr class="end-splitter" />
 </main>
 {{ end }} {{ define "head" }}
 <meta data-pagefind-filter="Language[lang]" lang="{{.Language.LanguageName}}" />
+
+<script>
+  window.remark_config = {
+    host: "https://remark42.alchemmist.xyz",
+    site_id: "alchemmist",
+    components: ["embed"],
+    no_footer: true,
+    simpe_view: true,
+  };
+</script>
+<script src="https://remark42.alchemmist.xyz/web/embed.js" defer></script>
 {{ partial "connect-medium-zoom.html" }} {{ end }}

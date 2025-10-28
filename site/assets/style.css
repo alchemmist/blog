@@ -520,6 +520,15 @@ p code * {
   margin-bottom: 2em;
 }
 
+.verse-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.verse-container #remark42 {
+  width: 100%;
+}
+
 .poetry {
   text-align: center;
   display: flex;
@@ -1610,6 +1619,7 @@ article hr {
 
 .end-splitter {
   margin: 2em 0;
+  width: 100%;
 }
 
 .share-buttons {

@@ -140,12 +140,12 @@
       "tags-list",
       "teach-container",
       "telegram",
-      "thanks-container",
       "tilde",
       "tools",
       "twitter",
       "updates-container",
-      "updates-page-container"
+      "updates-page-container",
+      "verse-container"
     ],
     "ids": [
       "1--clean-packages",
