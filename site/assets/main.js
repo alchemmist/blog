@@ -259,12 +259,13 @@ const shortcuts = [
   { key: "u", description: "Go to blog updates", url: "/updates" },
   { key: "t", description: "Go to teach section", url: "/ru/teach" },
   { key: "b", description: "Go to book shelf", url: "/books" },
+  { key: "j", description: "Scroll down" },
+  { key: "k", description: "Scroll up" },
 ];
 
+// только для переходов по URL
 const shortcutsMap = Object.fromEntries(
-  shortcuts
-    .filter((s) => s.url) // только те, у которых есть URL
-    .map((s) => [s.key, s.url]),
+  shortcuts.filter((s) => s.url).map((s) => [s.key, s.url]),
 );
 
 const overlay = document.getElementById("shortcut-overlay");
@@ -273,7 +274,7 @@ const shortcutList = document.getElementById("shortcut-list");
 const closeBtn = modal.querySelector(".close-btn");
 
 function openModal() {
-  shortcutList.innerHTML = ""; // очистка списка
+  shortcutList.innerHTML = "";
   shortcuts.forEach((s) => {
     const li = document.createElement("li");
     li.innerHTML = `<code>${s.key}</code> → ${s.description}`;
@@ -351,5 +352,3 @@ document.addEventListener("keydown", (e) => {
     links[prev].focus();
   }
 });
-
-
