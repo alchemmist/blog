@@ -261,6 +261,7 @@ const shortcuts = [
   { key: "b", description: "Go to book shelf", url: "/books" },
   { key: "j", description: "Scroll down" },
   { key: "k", description: "Scroll up" },
+  { key: "Ctrl+k", description: "Search" },
 ];
 
 // только для переходов по URL
