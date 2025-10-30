@@ -19,8 +19,8 @@ title: Updates
 - [ ] *\[2025-09-11 12:33\]* New article (En, Ru): [Welford algorithm](/articles/welford-algorithm/).
 - [ ] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!
 - [ ] *\[2025-09-01 11:09\]* New essay (Ru): [Фломастеры на обоях](/ru/essays/flamasters-on-wallpaper/).
-- [ ] *\[2025-08-30 18:52\]* Added translation for the article (En): [Past the bottom](/essays/other-side-of-bottom/).
-- [ ] *\[2025-08-28 14:44\]* Added translation for the article (Ru): [Безопасно делимся экраном в Hyprland](/ru/articles/hyrpland-noscreenshare/).
+- [x] *\[2025-08-30 18:52\]* Added translation for the article (En): [Past the bottom](/essays/other-side-of-bottom/).
+- [x] *\[2025-08-28 14:44\]* Added translation for the article (Ru): [Безопасно делимся экраном в Hyprland](/ru/articles/hyrpland-noscreenshare/).
 - [x] *\[2025-08-27 22:50\]* Add [teach](/ru/teach) section!
 - [x] *\[2025-08-25 14:40\]* New verse (Ru): [Воскресенье](/ru/poetry/resurrection/).
 - [x] *\[2025-08-23 19:46\]* New article: [Privacy screen share in Hyprland](/articles/hyrpland-noscreenshare/).
