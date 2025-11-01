@@ -298,6 +298,9 @@ document.addEventListener("keydown", function (event) {
   const tag = event.target.tagName.toLowerCase();
   if (tag === "input" || tag === "textarea") return;
 
+  if (event.ctrlKey || event.altKey || event.metaKey) return;
+
+
   if (event.key === "?") {
     openModal();
     return;
