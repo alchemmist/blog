@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|450](/images/devstation.png)
+![|500](/images/devstation.png)
 
 я открывал глаза в который раз
 сквозь сосны свет просачивался божий

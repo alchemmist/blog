@@ -19,7 +19,7 @@ title: Updates
 - [ ] *\[2025-09-27 13:52\]* New verse (Ru): [Проблеск](/ru/poetry/glimmer/).
 - [ ] *\[2025-09-19 20:07\]* New article (En, Ru): [Devsyringe: Stop Copy-Pasting Dynamic Values](/articles/the-devsyringe).
 - [ ] *\[2025-09-11 12:33\]* New article (En, Ru): [Welford algorithm](/articles/welford-algorithm/).
-- [ ] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!
+- [x] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!
 - [x] *\[2025-09-01 11:09\]* New essay (Ru): [Фломастеры на обоях](/ru/essays/flamasters-on-wallpaper/).
 - [x] *\[2025-08-30 18:52\]* Added translation for the article (En): [Past the bottom](/essays/other-side-of-bottom/).
 - [x] *\[2025-08-28 14:44\]* Added translation for the article (Ru): [Безопасно делимся экраном в Hyprland](/ru/articles/hyrpland-noscreenshare/).
