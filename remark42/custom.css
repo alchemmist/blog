@@ -381,8 +381,7 @@ a:hover {
 }
 .C_F,
 .C_F:hover {
-  color: #0aa;
-  color: rgb(var(--primary-color));
+  color: rgba(255, 255, 255, 1) !important;
 }
 .C_F:hover {
   background-color: rgba(0, 170, 170, 0.2);
@@ -2612,4 +2611,8 @@ body {
 
 .C_E:hover {
   background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.auth-back-button {
+  color: rgba(255, 255, 255, 1) !important;
 }
