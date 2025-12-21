@@ -73,6 +73,14 @@ services:
       - default
     ports:
       - "8080:8080"
+  moss:
+    build: ./soft-cu
+    container_name: moss
+    restart: unless-stopped
+    ports:
+      - "8080:8081"  
+    networks:
+      - default
 volumes:
   static_site:
   caddy_data:
