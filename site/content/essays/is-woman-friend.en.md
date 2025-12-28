@@ -16,7 +16,7 @@ There are relationships between people, and they are universal, the same for bot
 The most crucial property of a relationship is development; relationships either develop or stagnate at a certain stage. The ultimate goal of any relationship is building love. But not all relationships must strive toward a specific goal, nor must all relationships develop at all—this is absolutely normal.
 
 For example, relationships with colleagues at work are a fairly superficial level, which in most cases remains at the status of "acquaintances." But every person should have a small number of truly deep relationships in their life, which strive in their development toward eternity. The ultimate goal of such relationships, as already stated, is true, full-fledged love.
-
+![|400](/images/man-and-woman.png)
 However, the development of love between a man and a woman looks different.
 Same-sex relationships, firstly, have a limit in the degree of closeness because the participants are of the same sex, and consequently, they will occupy identical basic roles. At a sufficiently deep level of closeness, this naturally leads to conflicts or to the suppression (possibly quite conscious and acceptable) of the nature of one of the partners. Relationships between a man and a woman, however, have access to the maximum depth of closeness.
 
