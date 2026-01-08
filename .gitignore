@@ -3,3 +3,5 @@ site/public/*
 /site/public
 compose.yaml
 umami_backup.sql
+data
+soft-cu
