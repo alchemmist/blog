@@ -3,7 +3,9 @@ tech_name: Probabilistic hypothesis testing
 title: Probabilistic hypothesis testing
 date: '2025-12-13T14:47:00+03:00'
 language: en
-description: '...'
+aliases:
+- /200729
+description: Balance between types of error in testing probability hypotheses
 tags:
 - math
 extra:
