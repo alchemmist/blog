@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|400](./images/sorry.png)
+![|400](/images/sorry.png)
 
 мы думаем, что вздох последний  
 зальёт огнём открытый в нём же мир:  
