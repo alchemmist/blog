@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2026-01-14 17:07\]* New verse: [Прости](/poetry/sorry) 
+- [ ] *\[2026-01-14 17:07\]* New verse: [Прости](/ru/poetry/sorry) 
 - [ ] *\[2025-11-06 16:33\]* New verse: [Опустошение](/ru/poetry/devastation) 
 - [ ] *\[2025-11-04 20:25\]* New verse: [Молчание](/ru/poetry/hush) 
 - [ ] *\[2025-10-29 10:57\]* Add comments to articles, essays and verse. Also, add hotkeys.
