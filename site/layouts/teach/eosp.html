@@ -1,5 +1,55 @@
 {{ define "main" }}
 <div class="base-container article-continers">
-<h1>Hello, EOSP</h1>
+  <article>
+    <h1>Engineering Open Soruce Projects</h1>
+    <p>
+      Practice-driven course, was designed by Anton Grishin, where students
+      builds a system to evaluate developer contributions based on GitHub
+      activity, implemented as a Python library, a CLI, and a Telegram bot.
+      Students practice modular design, testing, CI/CD, documentation, and
+      real-world Open Source workflows, focusing on usability and clean,
+      extensible solutions. The lectures are given in Russian, but all materials
+      are available in English. Russia, Moscow, Central University campus.
+    </p>
+    <p>
+      Syllbaus of coruse avialable in
+      <a href="https://alchemmist.github.io/eosp/pdf/00-syllabus.en.pdf"
+        >English</a
+      >
+      and
+      <a href="https://alchemmist.github.io/eosp/pdf/00-syllabus.ru.pdf"
+        >Russian</a
+      >.
+    </p>
+    <p>
+        <a href="/tags/eosp">List</a> of articles, that will be helpful on course.
+    </p>
+    <section class="course-lectures">
+      <h2>Lectures materials</h2>
+      <div class="lectures-grid">
+        {{ range .Params.lectures }}
+        <div class="lecture-card">
+          <p>{{ .title }}</p>
+
+          <div class="links-container">
+            {{ with .pdf }}
+            <p>
+              {{ partial "iconify.html" (dict "icon" "teenyicons:pdf-solid"
+              "size" "1.2em")}} {{ with .en }}<a href="{{ . }}">En</a>{{ end
+              }}|{{ with .ru }}<a href="{{ . }}">Ru</a>{{ end }}
+            </p>
+            {{ end }} {{ with .web }}
+            <p>
+              {{ partial "iconify.html" (dict "icon" "logos:slidev" "size"
+              "1.2em")}} {{ with .en }}<a href="{{ . }}">En</a>{{ end }}|{{ with
+              .ru }}<a href="{{ . }}">Ru</a>{{ end }}
+            </p>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </section>
+  </article>
 </div>
 {{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }} {{ end }}

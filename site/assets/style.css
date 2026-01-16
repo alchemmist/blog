@@ -1516,7 +1516,6 @@ body.modal-open {
   white-space: nowrap;
 }
 
-
 .teach-container .go-back-button {
   margin: 3em !important;
 }
@@ -1848,7 +1847,7 @@ pre code * .err {
   display: flex;
   gap: 1rem;
   margin-bottom: 3rem;
-  align-items: stretch
+  align-items: stretch;
 }
 
 .lecture-thumb {
@@ -1923,4 +1922,29 @@ pre code * .err {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.lectures-grid * {
+  font-family: "Computer Modern Typewriter";
+}
+
+.lectures-grid {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.lecture-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2em;
 }

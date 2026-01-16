@@ -9,5 +9,40 @@ title: "EOSP"
 layout: eosp
 display_date: "February, 2026"
 thumbnail: "/images/eosp-preview.png"
-description: 'Practice-dirven course. Evaluating developers contributions. Lectures are in Russian; materials also in English. Moscow, Central University'
+description: 'Engineering Open Source Projects. Practice-dirven course. Lectures are in Russian; materials also in English. Moscow, Central University.'
+lectures:
+  - id: 01-lecture
+    title: "Lecture 01"
+    pdf:
+      en: "https://alchemmist.github.io/eosp/pdf/01-lecture.en.pdf"
+      ru: "https://alchemmist.github.io/eosp/pdf/01-lecture.ru.pdf"
+    web:
+      en: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
+      ru: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
+  - id: 02-lecture
+    title: "Lecture 02"
+    pdf:
+      en: "https://alchemmist.github.io/eosp/pdf/01-lecture.en.pdf"
+      ru: "https://alchemmist.github.io/eosp/pdf/01-lecture.ru.pdf"
+    web:
+      en: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
+      ru: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
+  - id: 03-lecture
+    title: "Lecture 03"
+    pdf:
+      en: "https://alchemmist.github.io/eosp/pdf/01-lecture.en.pdf"
+      ru: "https://alchemmist.github.io/eosp/pdf/01-lecture.ru.pdf"
+    web:
+      en: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
+      ru: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
+  - id: 04-lecture
+    title: "Lecture 04"
+  - id: 05-lecture
+    title: "Lecture 05"
+  - id: 06-lecture
+    title: "Lecture 06"
+  - id: 07-lecture
+    title: "Lecture 07"
+  - id: 08-lecture
+    title: "Lecture 08"
 ---
