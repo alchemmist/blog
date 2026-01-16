@@ -1,6 +1,14 @@
 {{ define "main" }}
 <main class="base-container teach-container">
   <h2 data-pagefind-meta="title">Teaching</h2>
+  <div class="base-container about-blog-container">
+    <p>
+      As a side-track activity, I’m teaching in a few universities, mostly the
+      courses about software development and project management. As far as
+      possible, I’m trying to video-record all lectures. Most lectures are in
+      English, but some of them are in Russian too.
+    </p>
+  </div>
   <div class="archive-container">
     {{ range .Pages.GroupByDate "2006" }}
     <div class="lectures-list">
@@ -8,15 +16,19 @@
       <div class="lecture-item">
         {{ if .Params.thumbnail }}
         <div class="lecture-thumb">
-          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" />
+          <a href="{{ .RelPermalink }}">
+            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}"
+          /></a>
         </div>
         {{ end }}
         <div class="lecture-content">
-          {{ with .Params.display_date }}
-          <div class="lecture-date">{{ . }}</div>
-          {{ end }}
-          <div class="lecture-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <div class="lecture-head">
+            {{ with .Params.display_date }}
+            <div class="lecture-date">{{ . }}</div>
+            {{ end }}
+            <div class="lecture-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
           </div>
           {{ with .Params.description }}
           <div class="lecture-desc">{{ . | safeHTML }}</div>

@@ -1860,16 +1860,35 @@ pre code * .err {
 .lecture-item {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.lecture-thumb {
+  width: 17rem;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, box-shadow;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lecture-thumb:hover {
+  transform: scale(1.06);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
 }
 
 .lecture-thumb img {
-  width: 200px;
+  display: block;
+  width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.3s ease;
+  border-radius: 7px; /* совпадает с контейнером */
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .lecture-content {
@@ -1886,7 +1905,7 @@ pre code * .err {
 }
 
 .lecture-title a {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
   color: #222;
@@ -1904,4 +1923,14 @@ pre code * .err {
   color: #1a73e8;
   text-decoration: underline;
   font-size: 0.9rem;
+}
+
+.teach-container .about-blog-container {
+  margin-bottom: 3rem;
+}
+
+.lecture-content .lecture-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
