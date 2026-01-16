@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main class="base-container teach-container">
+  <h2 data-pagefind-meta="title">Teaching</h2>
+  <div class="archive-container">
+    {{ range .Pages.GroupByDate "2006" }}
+    <div class="lectures-list">
+      {{ range .Pages }}
+      <div class="lecture-item">
+        {{ if .Params.thumbnail }}
+        <div class="lecture-thumb">
+          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" />
+        </div>
+        {{ end }}
+        <div class="lecture-content">
+          {{ with .Params.display_date }}
+          <div class="lecture-date">{{ . }}</div>
+          {{ end }}
+          <div class="lecture-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+          {{ with .Params.description }}
+          <div class="lecture-desc">{{ . | safeHTML }}</div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</main>
+{{ end }}
