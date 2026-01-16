@@ -9,5 +9,5 @@ title: "Individual education"
 layout: individual-education
 display_date: "March, 2022 - Today"
 thumbnail: "/images/individual-edu-preview.png"
-description: 'Python courses with individual education, where lessons combine theory, exercises, and guided projects, with support available via Telegram. The courses aim to give practical skills, build understanding of IT concepts, and help students work independently on projects while learning modern development tools and techniques. So far, its only in Russian.'
+description: 'Python courses with personalized lessons combining theory, exercises, and guided projects, supported via Telegram. They teach practical skills, IT concepts, and independent project work using modern development tools. Currently only in Russian.'
 ---

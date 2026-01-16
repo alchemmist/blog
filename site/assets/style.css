@@ -231,13 +231,6 @@ footer p {
   gap: 2em;
 }
 
-.teach-continer {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2em;
-  gap: 2em;
-}
-
 mjx-container[display="true"] {
   pointer-events: none;
 }
@@ -1523,12 +1516,6 @@ body.modal-open {
   white-space: nowrap;
 }
 
-.teach-container {
-  max-width: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .teach-container .go-back-button {
   margin: 3em !important;
@@ -1861,12 +1848,14 @@ pre code * .err {
   display: flex;
   gap: 1rem;
   margin-bottom: 3rem;
+  align-items: flex-start;
 }
 
 .lecture-thumb {
-  width: 17rem;
   display: inline-block;
+  min-width: 17rem;
   border-radius: 8px;
+  background: transparent;
   overflow: hidden;
   transition:
     transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),

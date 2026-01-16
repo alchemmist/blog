@@ -9,5 +9,5 @@ title: "EOSP"
 layout: eosp
 display_date: "February, 2026"
 thumbnail: "/images/eosp-preview.png"
-description: 'Practice-driven course, where students builds a system to evaluate developer contributions based on GitHub activity, implemented as a Python library, a CLI, and a Telegram bot. Students practice modular design, testing, CI/CD, documentation, and real-world Open Source workflows, focusing on usability and clean, extensible solutions. The lectures are given in Russian, but all materials are available in English.'
+description: 'Practice-focused course where students build a system to evaluate GitHub contributions as a Python library, CLI, and Telegram bot. Covers modular design, testing, CI/CD, documentation, and Open Source workflows. Lectures in Russian; materials in English. Moscow, Central University'
 ---
