@@ -37,12 +37,22 @@ lectures:
       ru: "https://alchemmist.github.io/eosp/slides-dist/01-lecture"
   - id: 04-lecture
     title: "Lecture 04"
+    pdf:
+    web:
   - id: 05-lecture
     title: "Lecture 05"
+    pdf:
+    web:
   - id: 06-lecture
     title: "Lecture 06"
+    pdf:
+    web:
   - id: 07-lecture
     title: "Lecture 07"
+    pdf:
+    web:
   - id: 08-lecture
     title: "Lecture 08"
+    pdf:
+    web:
 ---
