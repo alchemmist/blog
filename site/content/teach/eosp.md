@@ -11,6 +11,11 @@ display_date: "February, 2026"
 thumbnail: "/images/eosp-preview.png"
 description: 'Engineering Open Source Projects. Practice-dirven course. Lectures are in Russian; materials also in English. Moscow, Central University.'
 lectures:
+  - id: 00-syllabus
+    title: "Syllabus"
+    pdf:
+      en: "https://alchemmist.github.io/eosp/pdf/00-syllabus.en.pdf"
+      ru: "https://alchemmist.github.io/eosp/pdf/00-syllabus.ru.pdf"
   - id: 01-lecture
     title: "Lecture 01"
     pdf:
