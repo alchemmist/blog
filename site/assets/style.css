@@ -1848,12 +1848,13 @@ pre code * .err {
   display: flex;
   gap: 1rem;
   margin-bottom: 3rem;
-  align-items: flex-start;
+  align-items: stretch
 }
 
 .lecture-thumb {
   display: inline-block;
   min-width: 17rem;
+  max-width: 17rem;
   border-radius: 8px;
   background: transparent;
   overflow: hidden;

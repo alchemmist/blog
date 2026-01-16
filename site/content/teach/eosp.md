@@ -9,5 +9,5 @@ title: "EOSP"
 layout: eosp
 display_date: "February, 2026"
 thumbnail: "/images/eosp-preview.png"
-description: 'Practice-dirven course. System to evaluate GitHub developers contributions. Lectures are in Russian; materials also in English. Moscow, Central University'
+description: 'Practice-dirven course. Evaluating developers contributions. Lectures are in Russian; materials also in English. Moscow, Central University'
 ---
