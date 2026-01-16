@@ -21,8 +21,8 @@ We have a coin, with $p - \text{probability of 1 (head)}$ and $(1 - p) - \text{p
 Firstly, let’s make a little speculations, using our intuition. We, sure, if $\sum\limits_{i = 1}^{n}{x_i} = n$, that $H_0$ is false, because we haven’t reason for assume, that coin can be $0$, therefore $p = 1$. But, what about case, when we have $n = 20$ and $\sum{x_i} = 15$? In this case, we can’t be sure. Our questions, it’s, how to make a decision in such situations. In this decision we may make a one of two types of errors:
 $$
 \begin{align*}
-&Type \ 1: \text{In actual fact }H_0\text{ is \textbf{true}, but we told is \textbf{false}.}\\
-&Type \ 2: \text{In actual fact }H_0\text{ is \textbf{false}, but we told is \textbf{true}.}\\
+&Type \ 1: \text{In actual fact }H_0\text{ is true, but we told is false.}\\
+&Type \ 2: \text{In actual fact }H_0\text{ is false, but we told is true.}\\
 \end{align*}
 $$
 And in statistics our default predisposition it’s minimization errors of type 1. For example, if we made a medicine drug and after testing we checking $H_0$: “Our medicine drug is effective.”. If we make error of type 1, we will put broken drug to many peoples — it’s not good. In business, if make first type error we need to spend more many for new model. That’s the reason, for:
