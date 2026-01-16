@@ -9,5 +9,5 @@ title: "Individual education"
 layout: individual-education
 display_date: "March, 2022 - Today"
 thumbnail: "/images/individual-edu-preview.png"
-description: 'in <a href="https://innopolis.university/" class="external">Innopolis University</a> (Kazan, Russia)<br>8 lectures: <a href="https://github.com/yegor256/osbp" class="external">slides</a>, <a href="https://www.youtube.com/playlist?list=PLaIsQH4uc08zjutyoBOtoa6fnxzrCQK2Q" class="external">videos</a>'
+description: 'Python courses with individual education, where lessons combine theory, exercises, and guided projects, with support available via Telegram. The courses aim to give practical skills, build understanding of IT concepts, and help students work independently on projects while learning modern development tools and techniques. So far, its only in Russian.'
 ---
