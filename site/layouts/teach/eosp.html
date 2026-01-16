@@ -1,18 +1,19 @@
 {{ define "main" }}
 <div class="base-container article-container">
   <article>
-    <h1>Engineering Open Source Projects</h1>
+    <h1 style="margin-bottom: 1em">Engineering Open Source Projects</h1>
+    <blockquote>
+      <p>
+        Practice-driven course, was designed by Anton Grishin, that was started
+        at winter 2026 for high school students. The lectures are given in
+        Russian, but all materials are available in English. Educational project
+        created with <a href="https://цпм.рф">CPM</a> and
+        <a href="https://cu.ru">CU</a>.
+      </p>
+    </blockquote>
+    <p>On this page will be contained all course materials</p>
     <p>
-      Practice-driven course, was designed by Anton Grishin, where students
-      build a system to evaluate developer contributions based on GitHub
-      activity, implemented as a Python library, a CLI, and a Telegram bot.
-      Students practice modular design, testing, CI/CD, documentation, and
-      real-world Open Source workflows, focusing on usability and clean,
-      extensible solutions. The lectures are given in Russian, but all materials
-      are available in English. Russia, Moscow, Central University campus.
-    </p>
-    <p>
-      Syllabus of course available in
+      <b>Syllabus</b> of course available in
       <a href="https://alchemmist.github.io/eosp/pdf/00-syllabus.en.pdf"
         >English</a
       >
@@ -22,9 +23,10 @@
       >.
     </p>
     <p>
-      <a href="/tags/eosp">List</a> of articles that will be helpful on the
-      course.
+      <a href="/tags/eosp">List</a> of <b>articles</b> that will be helpful on
+      the course.
     </p>
+    <p>The <a href="">currucilum</a> of the coruse.</p>
 
     <section class="course-lectures">
       <h2>Lectures materials</h2>
@@ -61,13 +63,39 @@
               >{{ end }}
             </p>
             {{ end }} {{ if not (or .pdf .web .longread) }}
-            <p class="no-materials">No materials available yet</p>
+            <p class="no-materials"><i>coming soon</i></p>
             {{ end }}
           </div>
         </div>
         {{ end }}
       </div>
     </section>
+    <p>
+      Slide decks was created with <a href="https://sli.dev">Slidev</a>. Syllbus
+      was compiled with LaTeX (<a href="https://www.tug.org/texlive/">texlive</a
+      >).
+    </p>
+    <p>
+      All sources you can find in the
+      <a href="https://github.com/alchemmist/eosp"
+        ><code>alchemmist/eosp</code></a
+      >
+      GitHub repository.
+    </p>
+    <p>
+      Videos (<i>I hope</i>) will be available on
+      <a href="https://www.youtube.com/@alchemmist_blog">YouTube</a>.
+    </p>
+    <p>
+      All photo and video materials used in the slides were taken from public
+      websites. If you believe that a mistake was made, please, don't hesitate
+      and <a href="mailto:anton.ingrish@gmail.com">email</a> me or simply
+      <a href="https://github.com/alchemmist/eosp/issues/new">submit</a>
+      a ticket with the necessary changes.
+    </p>
+    <hr class="end-splitter" />
+    {{ partial "share-buttons.html" . }}
+    <hr class="end-splitter" />
   </article>
 </div>
 {{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }} {{ end }}
