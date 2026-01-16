@@ -37,25 +37,31 @@
             {{ with .pdf }}
             <p>
               {{ partial "iconify.html" (dict "icon" "teenyicons:pdf-solid"
-              "size" "1.2em") }} {{ with .en }}<a href="{{ . }}">En</a>{{ end }}
-              {{ if and .en .ru }} | {{ end }} {{ with .ru }}<a href="{{ . }}"
+              "size" "1.2em") }} {{ if .en }}<a href="{{ .en }}">En</a>{{ end }}
+              {{ if and .en .ru }} | {{ end }} {{ if .ru }}<a href="{{ .ru }}"
                 >Ru</a
               >{{ end }}
             </p>
             {{ end }} {{ with .web }}
             <p>
               {{ partial "iconify.html" (dict "icon" "logos:slidev" "size"
-              "1.2em") }} {{ with .en }}<a href="{{ . }}">En</a>{{ end }} {{ if
-              and .en .ru }} | {{ end }} {{ with .ru }}<a href="{{ . }}">Ru</a
+              "1.2em") }} {{ if .en }}<a href="{{ .en }}">En</a>{{ end }} {{ if
+              and .en .ru }} | {{ end }} {{ if .ru }}<a href="{{ .ru }}">Ru</a
               >{{ end }}
             </p>
             {{ end }} {{ with .longread }}
             <p>
               {{ partial "iconify.html" (dict "icon"
-              "teenyicons:document-text-solid" "size" "1.2em") }} {{ with .en
-              }}<a href="{{ . }}">En</a>{{ end }} {{ if and .en .ru }} | {{ end
-              }} {{ with .ru }}<a href="{{ . }}">Ru</a>{{ end }}
+              "teenyicons:document-text-solid" "size" "1.2em") }} {{ if .en }}<a
+                href="{{ .en }}"
+                >En</a
+              >{{ end }} {{ if and .en .ru }} | {{ end }} {{ if .ru }}<a
+                href="{{ .ru }}"
+                >Ru</a
+              >{{ end }}
             </p>
+            {{ end }} {{ if not (or .pdf .web .longread) }}
+            <p class="no-materials">No materials available yet</p>
             {{ end }}
           </div>
         </div>
