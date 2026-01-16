@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="base-container article-continers">
+<div class="base-container article-container">
   <article>
-    <h1>Engineering Open Soruce Projects</h1>
+    <h1>Engineering Open Source Projects</h1>
     <p>
       Practice-driven course, was designed by Anton Grishin, where students
-      builds a system to evaluate developer contributions based on GitHub
+      build a system to evaluate developer contributions based on GitHub
       activity, implemented as a Python library, a CLI, and a Telegram bot.
       Students practice modular design, testing, CI/CD, documentation, and
       real-world Open Source workflows, focusing on usability and clean,
@@ -12,7 +12,7 @@
       are available in English. Russia, Moscow, Central University campus.
     </p>
     <p>
-      Syllbaus of coruse avialable in
+      Syllabus of course available in
       <a href="https://alchemmist.github.io/eosp/pdf/00-syllabus.en.pdf"
         >English</a
       >
@@ -22,30 +22,42 @@
       >.
     </p>
     <p>
-        <a href="/tags/eosp">List</a> of articles, that will be helpful on course.
+      <a href="/tags/eosp">List</a> of articles that will be helpful on the
+      course.
     </p>
+
     <section class="course-lectures">
       <h2>Lectures materials</h2>
       <div class="lectures-grid">
         {{ range .Params.lectures }}
         <div class="lecture-card">
-          <p>{{ .title }}</p>
+          <p class="lecture-title">{{ .title }}</p>
 
           <div class="links-container">
             {{ with .pdf }}
             <p>
               {{ partial "iconify.html" (dict "icon" "teenyicons:pdf-solid"
-              "size" "1.2em")}} {{ with .en }}<a href="{{ . }}">En</a>{{ end
-              }}|{{ with .ru }}<a href="{{ . }}">Ru</a>{{ end }}
+              "size" "1.2em") }} {{ with .en }}<a href="{{ . }}">En</a>{{ end }}
+              {{ if and .en .ru }} | {{ end }} {{ with .ru }}<a href="{{ . }}"
+                >Ru</a
+              >{{ end }}
             </p>
             {{ end }} {{ with .web }}
             <p>
               {{ partial "iconify.html" (dict "icon" "logos:slidev" "size"
-              "1.2em")}} {{ with .en }}<a href="{{ . }}">En</a>{{ end }}|{{ with
-              .ru }}<a href="{{ . }}">Ru</a>{{ end }}
+              "1.2em") }} {{ with .en }}<a href="{{ . }}">En</a>{{ end }} {{ if
+              and .en .ru }} | {{ end }} {{ with .ru }}<a href="{{ . }}">Ru</a
+              >{{ end }}
             </p>
+            {{ end }} {{ with .longread }}
+            <p>
+              {{ partial "iconify.html" (dict "icon"
+              "teenyicons:document-text-solid" "size" "1.2em") }} {{ with .en
+              }}<a href="{{ . }}">En</a>{{ end }} {{ if and .en .ru }} | {{ end
+              }} {{ with .ru }}<a href="{{ . }}">Ru</a>{{ end }}
+            </p>
+            {{ end }}
           </div>
-          {{ end }}
         </div>
         {{ end }}
       </div>
