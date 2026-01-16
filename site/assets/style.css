@@ -1854,7 +1854,6 @@ pre code * .err {
   display: inline-block;
   min-width: 17rem;
   max-width: 17rem;
-  border-radius: 8px;
   background: transparent;
   overflow: hidden;
   transition:
@@ -1874,7 +1873,6 @@ pre code * .err {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 7px; /* совпадает с контейнером */
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

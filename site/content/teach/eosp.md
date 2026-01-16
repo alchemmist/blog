@@ -15,7 +15,7 @@ lectures:
     title: "Lecture 01"
     pdf:
       en: "https://alchemmist.github.io/eosp/pdf/01-lecture.en.pdf"
-      web: "https://alchemmist.github.io/eosp/lectures/01-lecture"
+      web: "https://alchemmist.github.io/eosp/lectures/01-lecture-en"
   - id: 02-lecture
     title: "Lecture 02"
   - id: 03-lecture
