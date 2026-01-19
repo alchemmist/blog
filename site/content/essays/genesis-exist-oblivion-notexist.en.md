@@ -32,3 +32,4 @@ extra:
 — Some omnipotent being. I suppose that’s the simplest definition. — replied Akuan  
 
 — And I agree with that — nodded Anselm and continued — Akuan, doesn’t it seem logical to you that if, even for an instant, such an omnipotent being were to attain Being—in any form: be it at the ocean’s depths, in a star’s core, between protons in an atom, or in some eccentric’s fantasy—if this being is truly omnipotent, that infinitely small moment of time would suffice for it to break free from any confinement, to appear at every point in space, to destroy the entire universe, and to do what we cannot even conceive. A single drop of Being falling on the cold cheek of God sleeping in Nothingness would be enough to awaken Him for eternity. At the very least, today we’ve spilled that drop.  
+![|500](/images/light.png)
