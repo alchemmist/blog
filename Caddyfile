@@ -1,5 +1,19 @@
-api.alchemmist.xyz {
-   reverse_proxy localhost:70
+img.alchemmist.xyz {
+    encode zstd gzip
+
+    reverse_proxy * https://images.weserv.nl {
+        transport http {
+            tls
+        }
+        header_up Host images.weserv.nl
+        header_up User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+        header_up Accept "image/webp,image/apng,image/*,*/*;q=0.8"
+        header_up Referer "https://images.weserv.nl/"
+    }
+
+    header {
+        Access-Control-Allow-Origin *
+    }
 }
 
 wg-easy.alchemmist.xyz {
@@ -67,5 +81,3 @@ alchemmist.xyz {
     redir /ru/ / 301
     redir /ru / 301
 }
-
-
