@@ -8,9 +8,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// DOMContentLoaded event handler
 document.addEventListener("DOMContentLoaded", function () {
-  // Image width from alt attribute
   document.querySelectorAll("img[alt^='|']").forEach(function (img) {
     const width = img.alt.match(/^\|(\d+)/)?.[1];
     if (width) {
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Burger menu functionality
   const header = document.querySelector("header");
   if (header) {
     const burger = header.querySelector(".burger");
@@ -50,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.addEventListener("click", toggleMenu);
   }
 
-  // Logo rotation and Moss secret
   const headerLogo = document.querySelector(".header-logo");
   if (headerLogo) {
     let logoAngle = 0;
@@ -102,12 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Mermaid initialization
   if (typeof mermaid !== "undefined") {
     mermaid.initialize({ startOnLoad: true });
   }
 
-  // Medium zoom initialization
   if (typeof mediumZoom !== "undefined") {
     let marginValue = window.innerWidth < 868 ? 25 : 50;
 
@@ -127,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Pagefind initialization for non-search pages
   if (
     window.location.pathname !== "/search" &&
     typeof PagefindUI !== "undefined"
@@ -199,10 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("keydown", (e) => {
-  // Игнорируем, если фокус в input или textarea
   if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
 
-  // Игнорируем, если открыт поиск Pagefind (body содержит класс modal-open)
   if (document.body.classList.contains("modal-open")) return;
 
   const step = 100; // шаг для j/k
@@ -232,19 +223,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   githubIcon.addEventListener("click", function (e) {
     e.preventDefault();
-    catPopup.style.display = "block"; // сначала делаем блок видимым
-    setTimeout(() => catPopup.classList.add("show"), 10); // плавное выдвижение
+    catPopup.style.display = "block"; 
+    setTimeout(() => catPopup.classList.add("show"), 10);
   });
 
   catPopup.addEventListener("click", function () {
-    window.location.href = "https://cats.alchemmist.xyz?utm_souce=easter-egg"; // твой URL
+    window.location.href = "https://cats.alchemmist.xyz?utm_souce=easter-egg";
   });
 
-  // Закрытие при клике вне кота
   document.addEventListener("click", function (e) {
     if (!catPopup.contains(e.target) && !githubIcon.contains(e.target)) {
       catPopup.classList.remove("show");
-      setTimeout(() => (catPopup.style.display = "none"), 500); // скрываем после анимации
+      setTimeout(() => (catPopup.style.display = "none"), 500);
     }
   });
 });
@@ -264,7 +254,6 @@ const shortcuts = [
   { key: "Ctrl+k", description: "Search" },
 ];
 
-// только для переходов по URL
 const shortcutsMap = Object.fromEntries(
   shortcuts.filter((s) => s.url).map((s) => [s.key, s.url]),
 );
@@ -299,7 +288,6 @@ document.addEventListener("keydown", function (event) {
   if (tag === "input" || tag === "textarea") return;
 
   if (event.ctrlKey || event.altKey || event.metaKey) return;
-
 
   if (event.key === "?") {
     openModal();
@@ -342,17 +330,55 @@ document.addEventListener("keydown", (e) => {
     (link) => link === document.activeElement,
   );
 
-  // Alt + j → вниз
   if (e.altKey && e.key.toLowerCase() === "j") {
     e.preventDefault();
     const next = (activeIndex + 1) % links.length;
     links[next].focus();
   }
 
-  // Alt + k → вверх
   if (e.altKey && e.key.toLowerCase() === "k") {
     e.preventDefault();
     const prev = (activeIndex - 1 + links.length) % links.length;
     links[prev].focus();
   }
 });
+
+const typoBtn = document.getElementById('report-typo');
+const repo = 'alchemmist/blog';
+
+document.addEventListener('mouseup', (e) => {
+    const selection = window.getSelection();
+    const text = selection.toString().trim();
+
+    if (text.length > 0) {
+        const range = selection.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+        typoBtn.style.top = `${window.scrollY + rect.top - 30}px`;
+        typoBtn.style.left = `${window.scrollX + rect.left}px`;
+        typoBtn.style.display = 'block';
+    } else {
+        typoBtn.style.display = 'none';
+    }
+});
+
+function getHighlightLink(selectionText) {
+    if (!selectionText) return window.location.href;
+    const encoded = encodeURIComponent(selectionText);
+    return `${window.location.href}#:~:text=${encoded}`;
+}
+
+typoBtn.addEventListener('click', () => {
+    const selection = window.getSelection().toString().trim();
+    if (!selection) return;
+    const title = encodeURIComponent('Typo report');
+    const body = encodeURIComponent(`Found typo:\n\n"${selection}"\n\nURL: ${getHighlightLink(selection)}`);
+    const labels = 'typo';
+    const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}&labels=${labels}`;
+    window.open(url, '_blank');
+    typoBtn.style.display = 'none';
+});
+
+document.addEventListener('mousedown', (e) => {
+    if (!typoBtn.contains(e.target)) typoBtn.style.display = 'none';
+});
+
