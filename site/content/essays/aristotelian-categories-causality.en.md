@@ -12,14 +12,13 @@ extra:
 ---
 
 Prior to the premodern era, it was impossible to draw an absolute distinction between the physical and metaphysical categories of causality, or even between the material and the conditionally "spiritual." The universe was seen as a complex and even mysterious interweaving of immanent and transcendent mediations and forces.
-
+![|500](/images/arisotel.png)
 According to Aristotle, we can distinguish **four** categories of causality:
 1. Material
 2. Formal
 3. Efficient
 4. Final
 
-![|500](/images/arisotel.png)
 The first is the prime matter from which everything is formed, the substratum, the bearer—like the glass from which a bottle is blown. This material substratum is so undefined that it contains nothing but pure potentiality and is devoid of any actuality.
 
 The formal cause is what makes a particular substance what it is, including all the attributes pertaining to that bottle: coldness, static hardness, fragility, transparency, and so on.
