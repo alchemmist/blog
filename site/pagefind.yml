@@ -8,6 +8,7 @@ exclude_selectors:
   - ".logo-symbolism-page"
   - ".poetry-container"
   - ".updates-page-container"
+  - ".updates-page-container"
   - ".home-ru"
   - ".genre-container"
   - ".status-container"
@@ -15,3 +16,5 @@ exclude_selectors:
   - ".thanks-container"
   - ".go-back-button"
   - ".tags-page-container"
+  - ".updates-container"
+  - ".mustreads-container"
