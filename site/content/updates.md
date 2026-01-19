@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-01-19 12:30\]* Update teaching section []()
 - [ ] *\[2026-01-14 17:07\]* New verse (Ru): [Прости](/ru/poetry/sorry) 
 - [ ] *\[2025-11-06 16:33\]* New verse (Ru): [Опустошение](/ru/poetry/devastation) 
 - [ ] *\[2025-11-04 20:25\]* New verse (Ru): [Молчание](/ru/poetry/hush) 
