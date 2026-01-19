@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       languages: ["ru", "en"],
       locale: "en",
       element: "#search-hidden",
-      showImages: false,
+      showImages: true,
       autoFocus: true,
       translations: {
         placeholder: "Search",

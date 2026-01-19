@@ -684,6 +684,10 @@ blockquote {
   .footer-link {
     margin: 10px;
   }
+
+  .lecture-item {
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1516,10 +1520,6 @@ body.modal-open {
   white-space: nowrap;
 }
 
-.teach-container .go-back-button {
-  margin: 3em !important;
-}
-
 #about-me-box {
   display: flex;
   flex-direction: row;
@@ -1912,10 +1912,6 @@ pre code * .err {
   font-size: 0.9rem;
 }
 
-.teach-container .about-blog-container {
-  margin-bottom: 3rem;
-}
-
 .lecture-content .lecture-head {
   display: flex;
   flex-direction: column;
@@ -1930,7 +1926,7 @@ pre code * .err {
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  width: 70%;
+  max-width: 450px;
 }
 
 .lecture-card {
