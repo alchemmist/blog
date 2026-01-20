@@ -371,7 +371,7 @@ typoBtn.addEventListener('click', () => {
     const selection = window.getSelection().toString().trim();
     if (!selection) return;
     const title = encodeURIComponent('Typo report');
-    const body = encodeURIComponent(`Found typo:\n\n"${selection}"\n\nURL: ${getHighlightLink(selection)}`);
+    const body = encodeURIComponent(`Found typo:\n\n"${selection}"\n\n[URL](${getHighlightLink(selection)})`);
     const labels = 'typo';
     const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}&labels=${labels}`;
     window.open(url, '_blank');
