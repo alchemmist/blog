@@ -1670,6 +1670,12 @@ article hr {
   text-decoration: underline;
 }
 
+.subscribe-banner.leetcode:hover a,
+.subscribe-banner.leetcode:hover svg {
+  color: #FFA116; /* Reddit orange */
+  text-decoration: underline;
+}
+
 .subscribe-banner.telegram:hover a,
 .subscribe-banner.telegram:hover svg {
   color: #0088cc; /* Telegram blue */
