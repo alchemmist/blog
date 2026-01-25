@@ -9,6 +9,8 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-01-20 22:15\]* Add leetcode follow button to main page
+- [ ] *\[2026-01-19 08:13\]* Add report button on text selection
 - [ ] *\[2026-01-19 12:30\]* Update teaching section []()
 - [ ] *\[2026-01-14 17:07\]* New verse (Ru): [Прости](/ru/poetry/sorry) 
 - [ ] *\[2025-11-06 16:33\]* New verse (Ru): [Опустошение](/ru/poetry/devastation) 
