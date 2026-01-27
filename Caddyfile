@@ -44,7 +44,7 @@ devsyringe.alchemmist.xyz {
     reverse_proxy devsyringe:5143
 }
 
-alchemmist.xyz {
+alchemmist.xyz, www.alchemmist.xyz {
     root * /srv
     encode gzip zstd
     file_server
