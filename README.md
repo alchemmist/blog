@@ -11,6 +11,7 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 - Aesthetic minimalistic typography.
 - Search (_with [pagefind](https://pagefind.app/)_).
 - Comments (_with [remark42](https://remark42.com/)_).
+- Notifications about comments in Telegram.
 - Easter eggs (_try to find it_).
 - Share buttons .
 - Updates log.
