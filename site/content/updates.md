@@ -18,12 +18,12 @@ title: Updates
 - [ ] *\[2025-11-06 16:33\]* New verse (Ru): [Опустошение](/ru/poetry/devastation) 
 - [ ] *\[2025-11-04 20:25\]* New verse (Ru): [Молчание](/ru/poetry/hush) 
 - [ ] *\[2025-10-29 10:57\]* Add comments to articles, essays and verse. Also, add hotkeys.
-- [ ] *\[2025-10-22 17:09\]* New verse (Ru): [Завершённость](/ru/poetry/completeness) 
-- [ ] *\[2025-10-22 16:09\]* New verse (Ru): [Жизнь](/ru/poetry/life) 
-- [ ] *\[2025-10-13 05:58\]* New article: [Note on SQL Basics](/articles/sql-basics-note).
-- [ ] *\[2025-10-10 13:06\]* Add search to blog! Use with Ctrl+k.
-- [ ] *\[2025-09-27 13:52\]* New verse (Ru): [Проблеск](/ru/poetry/glimmer/).
-- [ ] *\[2025-09-19 20:07\]* New article (En, Ru): [Devsyringe: Stop Copy-Pasting Dynamic Values](/articles/the-devsyringe).
+- [x] *\[2025-10-22 17:09\]* New verse (Ru): [Завершённость](/ru/poetry/completeness) 
+- [x] *\[2025-10-22 16:09\]* New verse (Ru): [Жизнь](/ru/poetry/life) 
+- [x] *\[2025-10-13 05:58\]* New article: [Note on SQL Basics](/articles/sql-basics-note).
+- [x] *\[2025-10-10 13:06\]* Add search to blog! Use with Ctrl+k.
+- [x] *\[2025-09-27 13:52\]* New verse (Ru): [Проблеск](/ru/poetry/glimmer/).
+- [x] *\[2025-09-19 20:07\]* New article (En, Ru): [Devsyringe: Stop Copy-Pasting Dynamic Values](/articles/the-devsyringe).
 - [x] *\[2025-09-11 12:33\]* New article (En, Ru): [Welford algorithm](/articles/welford-algorithm/).
 - [x] *\[2025-09-03 18:36\]* Add share buttons to every article and essay!
 - [x] *\[2025-09-01 11:09\]* New essay (Ru): [Фломастеры на обоях](/ru/essays/flamasters-on-wallpaper/).
