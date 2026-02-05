@@ -41,7 +41,7 @@ cats.alchemmist.xyz {
 }
 
 devsyringe.alchemmist.xyz {
-    reverse_proxy devsyringe:5143
+    redir https://devsyringe.xyz{uri} 301
 }
 
 alchemmist.xyz, www.alchemmist.xyz {
