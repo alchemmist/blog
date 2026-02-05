@@ -1,5 +1,6 @@
 ---
 id: eosp
+no-header: true
 extra:
   custom_props:
     public: true

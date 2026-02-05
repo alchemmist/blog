@@ -119,7 +119,7 @@
       href="/_pagefind/pagefind-ui.css"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <script src="/_pagefind/pagefind-ui.js" defer></script>
     {{ block "head" . }}{{ end }}
@@ -129,8 +129,7 @@
     <div id="shortcut-overlay"></div>
     <div id="shortcut-modal">
       <h3>Keyboard Shortcuts</h3>
-      <ul id="shortcut-list">
-      </ul>
+      <ul id="shortcut-list"></ul>
       <div class="close-btn">Close</div>
     </div>
     {{ if ne .RelPermalink "/search" }}
@@ -152,7 +151,7 @@
         z-index: 999;
       "
     ></div>
-    {{ partial "header.html" . }} {{ block "main" . }}{{ end }} {{ partial
-    "footer.html" . }}
+    {{ if not (index .Params "no-header") }} {{ partial "header.html" . }} {{
+    end }} {{ block "main" . }}{{ end }} {{ partial "footer.html" . }}
   </body>
 </html>
