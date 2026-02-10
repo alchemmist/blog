@@ -1,0 +1,26 @@
+{{ $svgs := dict
+  "note" "info"
+  "tip" "light-bulb"
+  "important" "report"
+  "warning" "alert"
+  "caution" "stop"
+}}
+
+{{ $icon := index $svgs .AlertType }}
+{{ $svg := resources.GetMatch (printf "svg/octicons/%s-16.svg" $icon) }}
+
+<blockquote class="markdown-alert markdown-alert--{{ .AlertType }}">
+  <div class="markdown-alert__title">
+    {{ with $svg }}
+      {{ .Content | safeHTML }}
+    {{ end }}
+
+    {{ with .AlertTitle }}
+      {{ . }}
+    {{ else }}
+      {{ title .AlertType }}
+    {{ end }}
+  </div>
+
+  {{ .Text }}
+</blockquote>

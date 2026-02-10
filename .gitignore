@@ -5,3 +5,5 @@ compose.yaml
 umami_backup.sql
 data
 soft-cu
+node_modules
+package-lock.json

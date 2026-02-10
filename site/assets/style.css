@@ -327,8 +327,7 @@ li::marker {
 }
 
 .essay-topics code * {
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
   font-size: 16px;
 }
 
@@ -345,8 +344,7 @@ li::marker {
 }
 
 .article-topics code * {
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
   font-size: 16px;
 }
 
@@ -453,15 +451,13 @@ blockquote code {
   padding: 0.1em 0.3em;
   margin: 0 0.1em;
   border-radius: 3px;
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
   font-size: 0.95em;
   color: #333;
 }
 
 p code * {
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
 }
 
 .arhive-containter {
@@ -1360,8 +1356,7 @@ ul {
 }
 
 .go-back-button * {
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
 }
 
 svg {
@@ -1457,8 +1452,7 @@ svg {
 }
 
 .pagefind-ui__result.svelte-j9e30.svelte-j9e30 {
-  padding: calc(20px * var(--pagefind-ui-scale)) 0
-    calc(30px * var(--pagefind-ui-scale)) !important;
+  padding: calc(20px * var(--pagefind-ui-scale)) 0 calc(30px * var(--pagefind-ui-scale)) !important;
 }
 
 .pagefind-ui__message.svelte-e9gkc3 {
@@ -1672,7 +1666,7 @@ article hr {
 
 .subscribe-banner.leetcode:hover a,
 .subscribe-banner.leetcode:hover svg {
-  color: #FFA116; /* Reddit orange */
+  color: #ffa116; /* Reddit orange */
   text-decoration: underline;
 }
 
@@ -1951,12 +1945,2082 @@ pre code * .err {
 }
 
 #report-typo {
-    position: absolute;
+  position: absolute;
+  display: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 9999;
+  border: none;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.gh-alert {
+  border-left: 4px solid;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  background: var(--bg);
+}
+
+.gh-alert.note {
+  border-color: #0969da;
+  background: #ddf4ff;
+}
+
+.gh-alert.tip {
+  border-color: #1a7f37;
+  background: #dafbe1;
+}
+
+.gh-alert.warning {
+  border-color: #9a6700;
+  background: #fff8c5;
+}
+
+.gh-alert.important {
+  border-color: #8250df;
+  background: #fbefff;
+}
+
+.gh-alert.caution {
+  border-color: #cf222e;
+  background: #ffebe9;
+}
+@font-face {
+  font-family: "CourierCyr";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CourierCyr";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_bold.woff2")
+    format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CourierCyr";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_inclined.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CourierCyr";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_boldinclined.woff2")
+    format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
+
+body {
+  font-size: 1em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link {
+  font-size: 18px;
+}
+
+.link a {
+  color: #0d47a1;
+  font-size: 1.1em;
+}
+
+.link:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 5px rgba(13, 71, 161, 0.2);
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header h1 a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+#header-left {
+  gap: 0.5em;
+}
+
+.updates-page-container h2 {
+  margin: 25px 0;
+}
+
+.ascii-art {
+  white-space: pre;
+  font-size: 12px;
+  color: #444;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.updates-container * {
+  text-align: left;
+}
+
+.updates-container li {
+  margin: 10px 0;
+}
+
+.base-container {
+  max-width: 40em;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-container .lang-switcher {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home-container {
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: self-start;
+  gap: 2em;
+  margin: 3em 0;
+}
+
+.home-title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.home-title a {
+  text-decoration: none;
+  cursor: default;
+}
+
+h1 a {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-container li {
+  text-align: left;
+  margin: 5px 0;
+}
+
+.cv-container h3 {
+  margin: 10px;
+}
+
+footer {
+  width: 100%;
+  height: 1cm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1cm;
+}
+
+footer p {
+  color: lightgray;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.footer-info-box {
+  display: flex;
+}
+
+.footer-link {
+  font-size: 15px;
+  margin: 15px;
+}
+
+.footer-link:hover {
+  transform: scale(1.1);
+}
+
+.footer-link a {
+  color: lightgray;
+}
+
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  gap: 2em;
+}
+
+mjx-container[display="true"] {
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/JetBrainsMono-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Computer Modern Roman";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-roman.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Computer Modern Roman";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-bold.woff2")
+    format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Computer Modern Typewriter";
+  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.typewriter-text-regular.woff2")
+    format("woff2");
+  font-weight: noraml;
+  font-style: normal;
+  font-display: swap;
+}
+
+article {
+  width: 50%;
+  min-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+article p {
+  text-align: left;
+  margin: 0.5em 0;
+}
+
+article img {
+  display: block;
+  margin: 15px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+article img[src$=".gif"] {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+article ol li {
+  margin: 0.5em 0;
+}
+
+article ul,
+ol {
+  text-align: left;
+  padding-left: 1.5em;
+  margin-left: 0;
+}
+
+li::marker {
+  font-size: 1em;
+}
+
+.article-date {
+  text-align: center !important;
+  margin: 0.5em 0;
+}
+
+.article-date em {
+  font-size: 15px !important;
+}
+
+.essay-topics {
+  text-align: left !important;
+  margin: 0.5em 0 1em !important;
+}
+
+.essay-topics code * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-size: 16px;
+}
+
+#topics-title {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+}
+
+#tags-title {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+}
+
+.article-topics {
+  text-align: left !important;
+}
+
+.article-topics code * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-size: 16px;
+}
+
+article * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
+  font-size: 18px;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+article h1 {
+  margin-bottom: 0;
+  font-size: 25px;
+}
+
+article h2 {
+  text-align: left;
+  margin: 1.3em 0em 0.7em 0;
+  font-size: 20px;
+}
+
+article h3 {
+  margin: 0.4cm 0;
+  text-align: left;
+}
+
+article h4 {
+  margin: 0.4cm 0;
+  text-align: left;
+}
+
+.articles-container li {
+  text-align: left;
+  margin: 0.3cm;
+}
+
+.poetry-container li {
+  text-align: left;
+  margin: 0.3cm;
+}
+
+.poetry-container h2 {
+  margin: 20px 0;
+}
+
+pre code {
+  display: block;
+  /* background-color: #f9f9f9; */
+  background-color: rgba(0, 0, 0, 0.02);
+  color: #333;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3em;
+  overflow-x: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  white-space: pre;
+  background-clip: padding-box;
+}
+
+pre code .tab {
+  display: inline-block;
+  width: 2em;
+  content: "";
+}
+
+pre code .tab::selection {
+  color: rgba(0, 0, 0, 0);
+}
+
+pre code * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
+  font-size: 0.96em;
+  line-height: 1.2;
+  text-align: left;
+}
+
+@media (max-width: 868px) {
+  pre code * {
+    font-size: 1em;
+  }
+}
+
+.tilde {
+  font-family: "JetBrains Mono";
+}
+
+pre code * .err {
+  background-color: transparent !important;
+}
+
+pre {
+  margin: 0;
+}
+
+p code,
+li code,
+blockquote code {
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 0.1em 0.3em;
+  margin: 0 0.1em;
+  border-radius: 3px;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-size: 0.95em;
+  color: #333;
+}
+
+p code * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+}
+
+.arhive-containter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.arhive-containter ul {
+  width: 100%;
+}
+
+.arhive-containter h4 {
+  margin-top: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.tags-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+}
+
+.thanks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8cm 0 0.25cm 0;
+}
+
+.thanks-container * {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.thanks-container p {
+  margin: 0 !important;
+}
+
+.tag {
+  display: inline-block;
+  margin: 5px 10px 5px 0;
+}
+
+.tags-list h3 {
+  margin: 15px 0;
+}
+
+.poetry-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin-bottom: 2em;
+}
+
+.verse-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.verse-container #remark42 {
+  width: 100%;
+}
+
+.poetry {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.poetry h1 {
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.poetry img {
+  max-width: 100%;
+}
+
+.poetry * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
+  font-size: 18px;
+}
+
+.poetry img {
+  display: block;
+}
+
+.poetry p {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+}
+
+.poetry-text {
+  text-align: cetner;
+}
+
+.updates-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.updates-page-container * {
+  text-align: left;
+}
+
+.updates-page-container p {
+  margin: 10px 0;
+}
+
+.essay-container p {
+  margin: 0.5em 0;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #333;
+  border-left: 4px solid #aaa;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  quotes: "“" "”" "‘" "’";
+}
+
+/* ===== АДАПТИВНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+@media (max-width: 868px) {
+  /* Общие корректировки */
+  body {
+    padding: 0;
+  }
+
+  .link {
+    font-size: 16px;
+    margin: 15px;
+  }
+
+  /* Шапка */
+  header {
+    flex-direction: column;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Основной контент */
+  .base-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .home-container {
+    width: 100%;
+    gap: 1cm;
+    margin: 1rem 0 2rem 0;
+  }
+
+  /* Статьи и контент */
+  article {
+    width: 100%;
+    min-width: unset;
+    padding: 0 10px;
+  }
+
+  article * {
+    font-size: 16px;
+  }
+
+  article h1 {
+    font-size: 22px;
+  }
+
+  article h2 {
+    font-size: 18px;
+  }
+
+  article ul,
+  article ol {
+    padding-left: 1em;
+  }
+
+  /* Поэзия */
+  .poetry * {
+    font-size: 17px;
+  }
+
+  /* Футер */
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .footer-info-box {
+    margin-top: 15px;
+    order: 2;
+  }
+
+  /* ASCII-арт */
+  .ascii-art {
+    font-size: 10px;
+    overflow-x: auto;
+  }
+
+  /* Блоки кода */
+  pre code {
+    padding: 0.8rem;
+    font-size: 0.85em;
+  }
+
+  /* Навигационные ссылки */
+  .footer-link {
+    margin: 10px;
+  }
+
+  .lecture-item {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Дополнительные корректировки для маленьких экранов */
+  .link {
+    margin: 10px;
+  }
+
+  article h1 {
+    font-size: 20px;
+  }
+
+  blockquote {
+    padding: 0.3em 0.8em;
+    font-size: 1rem;
+  }
+}
+
+/* Обёртка header */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+/* Бургер‑иконка */
+.burger {
+  display: none; /* скрываем на больших экранах */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  padding: 6px;
+  background-color: white;
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  z-index: 800;
+  position: fixed;
+  left: 100%;
+  top: 0%;
+  transform: translateY(20px) translateX(calc(-100% - 20px));
+}
+
+/* Сайд‑меню (спрятано вправо) */
+.side-menu {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  max-width: 80%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 700;
+  flex-direction: column;
+  justify-content: center;
+}
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.side-menu li + li {
+  margin-top: 1em;
+}
+.side-menu a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-size: 18px;
+}
+
+/* Оверлей */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 600;
+}
+
+/* Класс открытия */
+header.is-open .side-menu {
+  transform: translateX(0);
+}
+header.is-open .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Показываем бургер на мобильных */
+@media (max-width: 868px) {
+  .burger {
+    display: flex;
+  }
+  .header-container {
     display: none;
-    padding: 4px 8px;
-    font-size: 12px;
-    cursor: pointer;
-    z-index: 9999;
-    border: none;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1cm 2cm;
+  background: #fafafa; /* или ваш фон */
+}
+
+footer p {
+  color: #969696;
+  margin: 0;
+}
+
+.footer-info-box {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-link a {
+  font-size: 15px;
+  color: #969696;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.footer-link:hover {
+  transform: scale(1.1);
+}
+
+/* ========== АДАПТИВ ========== */
+@media (max-width: 868px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer p {
+    margin-bottom: 15px;
+  }
+
+  .footer-info-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-link a {
+    font-size: 16px;
+  }
+  .base-container.home-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .ascii-art {
+    font-size: 0.65rem;
+  }
+
+  .updates-container h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.moss-trigger-zone {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  margin: 20% 0 20% 0;
+  z-index: 10;
+}
+
+.moss-trigger-zone.left {
+  left: 0;
+}
+
+.moss-trigger-zone.right {
+  right: 0;
+}
+
+/* Моховый слой */
+.moss-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+/* Слой с мхом */
+.moss-layer {
+  position: absolute;
+  height: auto;
+  max-width: 30vw;
+}
+
+.moss-left {
+  transform: translateX(-100%);
+  left: -10%;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.moss-right {
+  transform: translateX(100%);
+  right: -10%;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Когда активен - мох выдвигается */
+.moss-overlay.active {
+  opacity: 1;
+}
+
+.moss-overlay.active .moss-left {
+  transform: translateX(0);
+}
+
+.moss-overlay.active .moss-right {
+  transform: translateX(0);
+}
+
+@media (max-width: 868px) {
+  .moss-layer {
+    max-width: 100vw; /* или любое большее значение, чтобы мох стал плотнее */
+  }
+
+  .moss-right {
+    right: -60%;
+  }
+
+  .moss-left {
+    left: -60%;
+  }
+}
+
+#moss-left-1 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s !important;
+  top: 2%;
+}
+
+@media (max-width: 868px) {
+  #moss-left-1 {
+    left: -48%;
+    top: -13%;
+  }
+}
+#moss-left-2 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s !important;
+  top: 21%;
+}
+
+@media (max-width: 868px) {
+  #moss-left-2 {
+    left: -70%;
+    top: 11%;
+  }
+}
+#moss-left-3 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s !important;
+  top: 40%;
+}
+
+@media (max-width: 868px) {
+  #moss-left-3 {
+    left: -70%;
+    top: 31%;
+  }
+}
+
+#moss-left-4 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s !important;
+  top: 65%;
+}
+
+@media (max-width: 868px) {
+  #moss-left-4 {
+    top: 60%;
+    left: -70%;
+  }
+}
+
+#moss-left-5 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s !important;
+  top: 71%;
+}
+
+@media (max-width: 868px) {
+  #moss-left-5 {
+    top: 63%;
+    left: -65%;
+  }
+}
+
+#moss-right-1 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s !important;
+  top: -5%;
+  right: -15%;
+}
+
+@media (max-width: 868px) {
+  #moss-right-1 {
+    top: -12%;
+    right: -76%;
+  }
+}
+
+#moss-right-2 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s !important;
+  top: 10%;
+}
+
+@media (max-width: 868px) {
+  #moss-right-2 {
+    top: 2%;
+    right: -72%;
+  }
+}
+
+#moss-right-3 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s !important;
+  top: 39%;
+}
+
+@media (max-width: 868px) {
+  #moss-right-3 {
+    top: 32%;
+    right: -65%;
+  }
+}
+
+#moss-right-4 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s !important;
+  top: 50%;
+}
+
+@media (max-width: 868px) {
+  #moss-right-4 {
+    right: -45%;
+  }
+}
+
+#moss-right-5 {
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s !important;
+  top: 72%;
+}
+
+@media (max-width: 868px) {
+  #moss-right-5 {
+  }
+}
+mjx-container,
+mjx-container svg {
+  font-family: "Times New Roman", serif !important;
+}
+mjx-container[display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px; /* место под скролл */
+  pointer-events: auto; /* разрешаем взаимодействие */
+}
+
+@media (max-width: 868px) {
+  mjx-container svg {
+    /* max-width: 100%; */
+    overflow-x: auto;
+  }
+}
+
+.medium-zoom-overlay {
+  z-index: 1000; /* Поверх навигации */
+}
+
+.medium-zoom-image {
+  z-index: 400;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1001;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.lang-switcher {
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.books-container {
+  flex-direction: column;
+  text-align: left;
+  margin: 5rem 0;
+  max-width: 50%;
+}
+
+.book-container {
+  flex-direction: column;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  margin: 2rem 0 5rem 0;
+}
+
+.book-cover {
+  background-color: #f0f0f0;
+  background-image: url("/assets/cover-placeholder.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 900px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+  }
+}
+
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: 1fr; /* 1 колонка на мобильных */
+  }
+}
+
+.book-card {
+  min-width: 140px;
+  max-width: 180px;
+  width: 100%;
+  max-width: 180px; /* Максимальная ширина карточки */
+  box-sizing: border-box;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease; /* Анимация при наведении */
+
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.book-card:hover {
+  transform: translateY(-5px); /* Эффект подъема */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3; /* Сохраняем пропорции обложки */
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
+}
+
+.book-title {
+  font-weight: 600;
+  text-align: center;
+  margin: 0.2rem 0;
+}
+
+.book-author {
+  color: #666;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.book-status {
+  font-size: 1.2rem;
+}
+
+.book-cover::before {
+  content: "Загрузка...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  color: #666;
+}
+.book-cover[src]::before {
+  display: none;
+}
+
+.header-logo {
+  width: 3rem;
+}
+
+.subscribe-banner {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 0.4em 0.6em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em; /* расстояние между иконкой и текстом */
+  font-size: 1rem;
+  height: 2rem;
+}
+
+.subscribe-banner a {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+}
+
+.subscribe-banner .icon-user {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.subscribe-banner .icon-user svg {
+  vertical-align: middle; /* корректное выравнивание */
+  fill: currentColor; /* иконка наследует цвет текста */
+}
+
+.subscribe-banner span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.home-menu-container {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.5em;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em 1.5em;
+  max-width: 60%;
+}
+
+@media (max-width: 868px) {
+  .home-menu {
+    max-width: 90%;
+    gap: 0.2em 0.1em;
+  }
+}
+
+.follow-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  flex: none;
+  gap: 0.5em;
+}
+
+.follow-options-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em 0.8em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+li {
+  margin-bottom: 0.7em;
+  padding-left: 0.4em; /* Дополнительный отступ для текста */
+  text-align: left;
+}
+
+/* Для мобильной адаптации */
+@media (max-width: 868px) {
+  .updates-list {
+    padding-left: 1.5rem;
+  }
+
+  .update-item {
+    padding-left: 0.8rem;
+  }
+}
+
+.about-blog-container {
+  display: flex;
+  flex: none;
+  gap: 0.5em;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-blog-container p {
+  text-align: left;
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
+  font-size: 1.1em;
+}
+
+ul {
+  list-style-position: outside;
+  padding-left: 1.5em;
+}
+
+.mustreads-container li::marker {
+  content: "";
+}
+
+.mustreads-container li {
+  display: flex;
+  align-items: center;
+}
+
+.mustreads-container ul {
+  padding-left: 0;
+}
+
+.mustread-item-bullet {
+  margin-right: 0.6em;
+  display: flex;
+  align-items: center;
+}
+
+.mustreads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.updates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.go-back-button {
+  text-align: center;
+  margin: 1em 0em 3em 0 !important;
+}
+.go-back-button a {
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.go-back-button a:hover {
+  text-decoration: underline;
+}
+
+.go-back-button * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+.search-page-container {
+  padding: 1rem;
+}
+
+.search-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 500;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5%;
+  overflow-y: scroll;
+  overflow: auto;
+}
+
+/* Исправления для контейнера модалки */
+.search-modal-content {
+  position: relative;
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh; /* Максимальная высота окна */
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+
+  /* Ключевые исправления: */
+  box-sizing: border-box; /* Учитываем padding в общей высоте */
+  overflow-y: scroll; /* Скрываем переполнение */
+}
+
+.search-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+  line-height: 1;
+}
+
+/* Исправления для контейнера поиска */
+#search-hidden {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: srcoll; /* Важно для работы flex-сжатия */
+}
+
+.pagefind-ui {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Разрешаем сжатие */
+  overflow-y: scroll; /* Скрываем переполнение */
+}
+
+.search-modal * {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif !important;
+}
+
+.pagefind-ui__result-excerpt.svelte-j9e30.svelte-j9e30 {
+  text-align: left;
+}
+
+.pagefind-ui__filter-label.svelte-1v2r7ls.svelte-1v2r7ls {
+  font-size: calc(18px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__filter-name.svelte-1v2r7ls.svelte-1v2r7ls {
+  font-size: calc(19px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__search-clear.svelte-e9gkc3 {
+  font-size: calc(16px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__result.svelte-j9e30.svelte-j9e30 {
+  padding: calc(20px * var(--pagefind-ui-scale)) 0 calc(30px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__message.svelte-e9gkc3 {
+  padding: calc(10px * var(--pagefind-ui-scale)) 0 !important;
+}
+
+.pagefind-ui__drawer.svelte-e9gkc3 {
+  gap: calc(20px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__results-area {
+  flex: 1;
+  overflow-y: scroll; /* Скролл для области результатов */
+  min-height: 0; /* Ключевое свойство для flex-потомков */
+}
+
+/* Остальные стили без изменений */
+.pagefind-ui__results {
+  max-height: none !important;
+}
+
+.pagefind-ui__form {
+  flex-shrink: 0;
+  overflow: scroll !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relateive;
+}
+
+.pagefind-ui__form::-webkit-scrollbar {
+  display: none;
+}
+
+.search-modal-content {
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.pagefind-ui__search-input {
+  position: sticky !important;
+  z-index: 510;
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+#about-me-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2em;
+  box-sizing: border-box; /* Важно для правильного расчета ширины */
+}
+
+@media (max-width: 868px) {
+  #about-me-box {
+    flex-direction: column;
+    gap: 0;
+  }
+  #me-photo {
+    margin-bottom: 0;
+    margin-top: 1.5em;
+  }
+}
+
+#about-me-box span {
+  text-align: left;
+  flex: 1; /* Заставляет элемент занимать всё доступное пространство */
+  min-width: 0; /* Решает проблему с переполнением flex-контейнера */
+}
+
+#me-photo {
+  width: 10em;
+  flex-shrink: 0; /* Предотвращает сжатие изображения */
+  transform: translateY(-1em);
+}
+
+#teach-preview img {
+  margin: 0;
+}
+
+.block-header h3 {
+  margin: 0.5em;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.block-header {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-right: 15px;
+  border-left: 4px solid black;
+  margin-top: 20px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.block-header:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.block-content {
+  display: none;
+  padding: 15px 20px;
+  border-left: 2px solid black;
+  margin-left: 10px;
+  background-color: #f9f9f9;
+  border-radius: 0 0 4px 4px;
+}
+.block-header::after {
+  content: "▼";
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+  text-decoration: none !important; /* Это свойство уберет подчеркивание */
+  display: inline-block; /* Это важно для правильного отображения */
+}
+.block-header.active::after {
+  transform: rotate(180deg);
+}
+
+.block-content h4 {
+  text-align: left;
+  margin: 1em;
+}
+
+#teach-tg {
+  text-underline-offset: 2px;
+}
+
+article hr {
+  background-color: #eee;
+  border: none;
+  height: 2px;
+}
+
+.end-splitter {
+  margin: 2em 0;
+  width: 100%;
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: row;
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+  align-items: flex-start;
+  gap: 1.5em;
+}
+
+.share-buttons span {
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+  white-space: nowrap;
+}
+
+.share-buttons .subscribe-banner * {
+  font-size: 0.95em;
+}
+
+.share-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em 1em;
+}
+
+/* Ссылки изначально без подчеркивания и с цветом по умолчанию */
+.subscribe-banner a {
+  text-decoration: none;
+  color: inherit;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+}
+
+/* Иконки наследуют цвет ссылки */
+.subscribe-banner svg {
+  transition: color 0.3s;
+  color: inherit;
+}
+
+/* Цвета соцсетей */
+.subscribe-banner.twitter:hover a,
+.subscribe-banner.twitter:hover svg {
+  color: #1da1f2; /* Twitter blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.reddit:hover a,
+.subscribe-banner.reddit:hover svg {
+  color: #ff4500; /* Reddit orange */
+  text-decoration: underline;
+}
+
+.subscribe-banner.leetcode:hover a,
+.subscribe-banner.leetcode:hover svg {
+  color: #ffa116; /* Reddit orange */
+  text-decoration: underline;
+}
+
+.subscribe-banner.telegram:hover a,
+.subscribe-banner.telegram:hover svg {
+  color: #0088cc; /* Telegram blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.facebook:hover a,
+.subscribe-banner.facebook:hover svg {
+  color: #1877f2; /* Facebook blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.linkedin:hover a,
+.subscribe-banner.linkedin:hover svg {
+  color: #0a66c2; /* LinkedIn blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.hackernews:hover a,
+.subscribe-banner.hackernews:hover svg {
+  color: #ff6600; /* Hacker News orange */
+  text-decoration: underline;
+}
+
+.subscribe-banner.bluesky:hover a,
+.subscribe-banner.bluesky:hover svg {
+  color: #1da1f2; /* Bluesky blue */
+  text-decoration: underline;
+}
+
+.subscribe-banner.mastodon:hover a,
+.subscribe-banner.mastodon:hover svg {
+  color: #6364ff; /* Mastodon purple */
+  text-decoration: underline;
+}
+
+.subscribe-banner.rss:hover a,
+.subscribe-banner.rss:hover svg {
+  color: #ff6600;
+  text-decoration: underline;
+} /* оранжевый RSS */
+.subscribe-banner.github:hover a,
+.subscribe-banner.github:hover svg {
+  color: #181717;
+  text-decoration: underline;
+} /* GitHub чёрный */
+.subscribe-banner.habr:hover a,
+.subscribe-banner.habr:hover svg {
+  color: #548eaa;
+  text-decoration: underline;
+} /* Habr тёмный */
+.subscribe-banner.medium:hover a,
+.subscribe-banner.medium:hover svg {
+  color: #00ab6c;
+  text-decoration: underline;
+} /* Medium зелёный */
+.subscribe-banner.mastodon:hover a,
+.subscribe-banner.mastodon:hover svg {
+  color: #6364ff;
+  text-decoration: underline;
+} /* Mastodon фиолетовый */
+
+.article-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5em 0 1em;
+  justify-content: space-between;
+}
+
+.subscribe-header-block {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.subscribe-header-block .subscribe-banner a {
+  font-size: 0.95em;
+}
+
+.cat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  cursor: pointer;
+
+  /* начальное состояние — спрятан снизу */
+  transform: translateY(100%);
+  opacity: 0;
+
+  /* плавный переход */
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.cat-popup.show {
+  display: block;
+  transform: translateY(20%); /* выдвигаем вверх */
+  opacity: 1;
+}
+
+pre code * .err {
+  color: #333 !important;
+}
+
+#shortcut-overlay {
+  display: none; /* изначально скрыт */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Окошко помощи */
+#shortcut-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  padding: 20px 30px;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+/* Список хоткеев */
+#shortcut-modal h3 {
+  margin: 0.5cm 0;
+}
+
+#shortcut-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#shortcut-modal li {
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+/* Кнопка закрытия */
+#shortcut-modal .close-btn {
+  margin-top: 15px;
+  display: inline-block;
+  cursor: pointer;
+  color: #555;
+  font-weight: bold;
+}
+
+.pagefind-ui__result-link:focus {
+  outline: none;
+  background-color: rgba(100, 150, 255, 0.15);
+  border-radius: 6px;
+}
+
+.teach-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lecture-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+.lecture-thumb {
+  display: inline-block;
+  min-width: 17rem;
+  max-width: 17rem;
+  background: transparent;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, box-shadow;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lecture-thumb:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+.lecture-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.lecture-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.lecture-date {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.lecture-title a {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.lecture-desc {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.lecture-links a.external {
+  color: #1a73e8;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.lecture-content .lecture-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lectures-grid * {
+  font-family: "Computer Modern Typewriter";
+}
+
+.lectures-grid {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  max-width: 450px;
+}
+
+.lecture-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+#report-typo {
+  position: absolute;
+  display: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 9999;
+  border: none;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+:root {
+  --c-done: #622cbc;
+  --c-success: #055d20;
+  --c-danger: #a0111f;
+  --c-warning: #744500;
+  --c-info: #0349b4;
+  --c-muted: #636c76;
+  --c-text-default: #222;
+}
+
+.markdown-blockquote p {
+  margin: 0.5em;
+}
+
+.markdown-blockquote,
+.markdown-alert {
+  padding: 0 1rem;
+  border-left: 4px solid var(--c-muted);
+}
+
+.markdown-alert--note {
+  border-left-color: var(--c-info);
+  color: var(--c-info);
+}
+
+.markdown-alert--tip {
+  border-left-color: var(--c-success);
+  color: var(--c-success);
+}
+
+.markdown-alert--important {
+  border-left-color: var(--c-done);
+  color: var(--c-done);
+}
+
+.markdown-alert--warning {
+  border-left-color: var(--c-warning);
+  color: var(--c-warning);
+}
+
+.markdown-alert--caution {
+  border-left-color: var(--c-danger);
+  color: var(--c-danger);
+}
+
+.markdown-alert > p {
+  color: var(--c-text-default);
+}
+
+.markdown-alert__title {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.markdown-alert__title > svg {
+  fill: currentColor;
+  padding-right: 0.5rem;
+  height: 1.4em;
+  width: 1.4em;
+  display: block;
+}
+
+.markdown-alert--foldable .markdown-alert__body {
+  display: none;
+}
+
+.markdown-alert--foldable.open .markdown-alert__body {
+  display: block;
+  margin-top: 0.5em;
+}
+
+.markdown-alert--foldable .markdown-alert__title {
+  cursor: pointer;
+  user-select: none;
 }
