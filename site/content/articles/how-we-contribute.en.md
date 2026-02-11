@@ -275,6 +275,26 @@ an issue, an enhanced test system, and a fixed bug. This will be
 an excellent example of implementing the TDD (Test Driven
 Development) approach.
 
+<br>
+
+___
+
+<br>
+
+Thus, you and I have gone through the full cycle from the problem to the contribution
+to the master branch.:
+
+```mermaid
+flowchart LR
+    BUG["Find a bug / Need feature"] --> ISSUE["Create Issue"]
+    ISSUE --> DISCUSS["Discussion / Planning"]
+    DISCUSS --> PR["Open Pull Request"]
+    PR --> CI["PR Checks with CI"]
+    CI --> REVIEW["Reviewer Reviews PR"]
+    REVIEW --> MERGE["Merge PR into main"]
+    MERGE --> BUG
+```
+
 You can test your strength right now by finding a suitable issue
 using these wonderful services:
 

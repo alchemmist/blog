@@ -343,6 +343,12 @@ article h2 {
   font-size: 20px;
 }
 
+@media (max-width: 868px) {
+  article h2 {
+    margin: 0;
+  }
+}
+
 article h3 {
   margin: 0.4cm 0;
   text-align: left;
@@ -1419,8 +1425,11 @@ article hr {
   background-color: #eee;
   border: none;
   height: 2px;
-  margin: 2em 0;
   width: 100%;
+}
+
+.end-splitter {
+  margin: 2em 0;
 }
 
 /* ===== Share / Social ===== */
@@ -2049,6 +2058,20 @@ footer p {
 .mermaid * {
   font-family: "Computer Modern Typewriter";
   font-size: 1rem;
+}
+
+.mermaid {
+  display: block;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mermaid svg {
+  display: block;
+  max-width: none;
 }
 
 /* ===== Heading Anchors ===== */

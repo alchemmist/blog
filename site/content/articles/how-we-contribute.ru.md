@@ -272,21 +272,13 @@ ___
 
 ```mermaid
 flowchart LR
-  subgraph A["Problem"]
-    BUG --> ISSUE
-  end
-
-  subgraph B["Planning"]
-    ISSUE --> DISCUSS
-  end
-
-  subgraph C["Implementation"]
-    DISCUSS --> PR --> CI --> REVIEW
-  end
-
-  subgraph D["Finish"]
-    REVIEW --> MERGE --> BUG
-  end
+    BUG["Find a bug / Need feature"] --> ISSUE["Create Issue"]
+    ISSUE --> DISCUSS["Discussion / Planning"]
+    DISCUSS --> PR["Open Pull Request"]
+    PR --> CI["PR Checks with CI"]
+    CI --> REVIEW["Reviewer Reviews PR"]
+    REVIEW --> MERGE["Merge PR into main"]
+    MERGE --> BUG
 ```
 
 Вы можете проверить свои силы уже сейчас, найдя подходящий issue
