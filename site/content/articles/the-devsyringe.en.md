@@ -12,7 +12,7 @@ extra:
     public: true
     type: synopsis
     theme: linux
-    status: writing
+    status: finished
 ---
 
 Today I want to tell about Injecting Life into Static Files: Building Dynamic Configs with [Devsyringe](https://devsyringe.alchemmist.xyz).
