@@ -123,6 +123,7 @@
       "linux",
       "logo-symbolism-page",
       "markdown-alert",
+      "markdown-alert--caution",
       "markdown-alert--note",
       "markdown-alert__title",
       "markdown-blockquote",

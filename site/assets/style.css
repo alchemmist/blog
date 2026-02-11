@@ -2568,7 +2568,7 @@ p code * {
 }
 
 blockquote {
-  font-style: italic;
+  font-style: normal;
   text-align: left;
   color: #333;
   border-left: 4px solid #aaa;

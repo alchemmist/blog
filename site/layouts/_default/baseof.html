@@ -130,15 +130,6 @@
     />
     <script src="/_pagefind/pagefind-ui.js" defer></script>
     {{ block "head" . }}{{ end }}
-    {{ if .Store.Get "hasMermaid" }}
-      <script type="module">
-        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
-        mermaid.initialize({
-          startOnLoad: true,
-          theme: "base",
-        });
-      </script>
-    {{ end }}
   </head>
   <body>
     <button id="report-typo">Report</button>
@@ -170,5 +161,14 @@
     {{ if not (index .Params "no-header") }}{{ partial "header.html" . }}{{ end }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
+    {{ if .Store.Get "hasMermaid" }}
+      <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: "base",
+        });
+      </script>
+    {{ end }}
   </body>
 </html>
