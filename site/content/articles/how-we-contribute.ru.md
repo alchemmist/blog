@@ -68,7 +68,7 @@ gh issue list --search "app crashed is:open label:bug created:>2024-01-01"
 
 ```mermaid
 graph LR
-    A[Excepted] ---> B("action (run, click, etc)")
+    A[Excepted] ---> B("Action (run/click/etc)")
     B ---> C[Got]
 ```
 

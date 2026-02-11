@@ -4023,3 +4023,8 @@ pre code * .err {
   cursor: pointer;
   user-select: none;
 }
+
+.mermaid * {
+  font-family: "Computer Modern Typewriter";
+  font-size: 1rem;
+}

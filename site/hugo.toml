@@ -33,7 +33,7 @@ disableKinds = ["taxonomy"]
 
 [params]
   math = true
-  mermaidTheme = "base"
+  themeVariant = "base"
 
 [taxonomies]
   tag = "tags"

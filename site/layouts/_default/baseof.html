@@ -7,7 +7,8 @@
     <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin />
 
     {{ $umami := resources.Get "umami.js" | resources.Minify |
-    resources.Fingerprint }}
+      resources.Fingerprint
+    }}
     <script
       src="{{ $umami.Permalink }}"
       data-website-id="10c310bd-96d9-4521-a366-c7ff4a78bce4"
@@ -15,13 +16,8 @@
       defer
     ></script>
 
-    {{ $js := resources.Get "main.js" | resources.Minify | resources.Fingerprint
-    }}
-    <script
-      src="{{ $js.Permalink }}"
-      integrity="{{ $js.Data.Integrity }}"
-      defer
-    ></script>
+    {{ $js := resources.Get "main.js" | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 
     <link
       rel="preload"
@@ -49,7 +45,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ .Summary | plainify | truncate 160 }}
+      {{ end }}"
     />
     <meta name="author" content="alchemmist" />
 
@@ -59,44 +59,51 @@
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
     <meta
       property="og:description"
-      content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ .Summary | plainify | truncate 160 }}
+      {{ end }}"
     />
     {{ $logo := partial "logo-nobackground.html" . }}
-    <meta
-      property="og:logo"
-      content="data:image/svg+xml;base64,{{ $logo | base64Encode }}"
-    />
+    <meta property="og:logo" content="data:image/svg+xml;base64,{{ $logo | base64Encode }}" />
     <meta
       property="og:image"
-      content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
+      content="{{ if .Params.image }}
+        {{ .Params.image }}
+      {{ else }}
+        /assets/preview.png
+      {{ end }}"
     />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content="{{ .Permalink }}" />
-    <meta
-      property="og:type"
-      content="{{ if .IsPage }}article{{ else }}website{{ end }}"
-    />
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
     <meta
       name="twitter:description"
-      content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ .Summary | plainify | truncate 160 }}
+      {{ end }}"
     />
     <meta
       name="twitter:image"
-      content="{{ if .Params.image }}{{ .Params.image }}{{ else }}/assets/preview.png{{ end }}"
+      content="{{ if .Params.image }}
+        {{ .Params.image }}
+      {{ else }}
+        /assets/preview.png
+      {{ end }}"
     />
     <meta name="twitter:site" content="@alchemmist_blog" />
 
     <!-- Styles -->
     {{ $style := resources.Get "style.css" | resources.Minify |
-    resources.Fingerprint }}
-    <link
-      rel="stylesheet"
-      href="{{ $style.Permalink }}"
-      integrity="{{ $style.Data.Integrity }}"
-    />
+      resources.Fingerprint
+    }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
 
     <!-- Favicons -->
     {{ $svg := partial "logo-nobackground.html" . }}
@@ -123,6 +130,15 @@
     />
     <script src="/_pagefind/pagefind-ui.js" defer></script>
     {{ block "head" . }}{{ end }}
+    {{ if .Store.Get "hasMermaid" }}
+      <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: "base",
+        });
+      </script>
+    {{ end }}
   </head>
   <body>
     <button id="report-typo">Report</button>
@@ -133,11 +149,11 @@
       <div class="close-btn">Close</div>
     </div>
     {{ if ne .RelPermalink "/search" }}
-    <div id="search-modal" class="search-modal">
-      <div class="search-modal-content">
-        <div id="search-hidden"></div>
+      <div id="search-modal" class="search-modal">
+        <div class="search-modal-content">
+          <div id="search-hidden"></div>
+        </div>
       </div>
-    </div>
     {{ end }}
     <div
       id="moss-loader"
@@ -151,7 +167,8 @@
         z-index: 999;
       "
     ></div>
-    {{ if not (index .Params "no-header") }} {{ partial "header.html" . }} {{
-    end }} {{ block "main" . }}{{ end }} {{ partial "footer.html" . }}
+    {{ if not (index .Params "no-header") }}{{ partial "header.html" . }}{{ end }}
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
   </body>
 </html>
