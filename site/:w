@@ -4032,9 +4032,8 @@ pre code * .err {
 h1 a.link, h2 a.link, h3 a.link, h4 a.link, h5 a.link, h6 a.link {
   font-family: "Computer Modern Typewriter", "CourierCyr";
   font-weight: 300;
-  font-size: 1.6em;
   text-decoration: none;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 h1 a.link:hover, h2 a.link:hover,

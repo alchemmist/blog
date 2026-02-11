@@ -3,14 +3,12 @@
 {{- $size := .size | default "1em" -}}
 
 {{- $url := printf "https://api.iconify.design/%s.svg?width=%s&height=%s" $icon $size $size -}}
-
 {{- $result := try (resources.GetRemote $url) -}}
 
-{{- if $result.Err -}}
-    {{- errorf "Не удалось загрузить иконку %s: %s" $icon $result.Err -}}
-{{- else -}}
+{{- if and (not $result.Err) $result.Value -}}
     <span class="{{ $class }}">
         {{ $result.Value.Content | safeHTML }}
     </span>
+{{- else -}}
+    <!-- Ошибка загрузки иконки {{ $icon }} -->
 {{- end -}}
-
