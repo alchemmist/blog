@@ -332,7 +332,7 @@ article * {
   background: rgba(0, 0, 0, 0.1);
 }
 
-article h1 {
+article h1, article h1 * {
   margin-bottom: 0;
   font-size: 25px;
 }
@@ -2097,6 +2097,14 @@ h4 a.link:hover,
 h5 a.link:hover,
 h6 a.link:hover {
   opacity: 0.7;
+}
+
+.link-h1 {
+  text-decoration: none;
+}
+
+.link-h1:hover {
+  text-decoration: none;
 }
 
 article h2 {

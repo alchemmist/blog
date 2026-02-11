@@ -1,4 +1,14 @@
+{{ if eq .Level 1 }}
+<h1 id="{{ .Anchor | safeURL }}">
+  <a class="link-h1" href="#{{ .Anchor }}">
+    {{ .Text | safeHTML }}
+  </a>
+</h1>
+{{ else }}
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">
-  <a class="link" href="#{{ .Anchor }}">#</a>
+  <a class="link" href="#{{ .Anchor }}">
+    {{ range seq 1 (sub .Level 1) }}#{{ end }}
+  </a>
   {{ .Text | safeHTML }}
 </h{{ .Level }}>
+{{ end }}
