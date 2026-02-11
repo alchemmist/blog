@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute) 
 - [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight) 
 - [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me) 
 - [ ] *\[2026-01-20 22:15\]* Add leetcode follow button to main page
