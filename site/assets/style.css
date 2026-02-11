@@ -4029,15 +4029,33 @@ pre code * .err {
   font-size: 1rem;
 }
 
-h1 a.link, h2 a.link, h3 a.link, h4 a.link, h5 a.link, h6 a.link {
+h1 a.link,
+h2 a.link,
+h3 a.link,
+h4 a.link,
+h5 a.link,
+h6 a.link {
   font-family: "Computer Modern Typewriter", "CourierCyr";
   font-weight: 300;
-  font-size: 1.6em;
+  font-size: 1.4em;
   text-decoration: none;
   opacity: 0.3;
+  text-decoration: none;
+  color: inherit;
 }
 
-h1 a.link:hover, h2 a.link:hover,
-h3 a.link:hover, h4 a.link:hover {
-  opacity: 8;
+h1 a.link:hover,
+h2 a.link:hover,
+h3 a.link:hover,
+h4 a.link:hover,
+h5 a.link:hover,
+h6 a.link:hover {
+  opacity: 0.7;
 }
+
+article h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
