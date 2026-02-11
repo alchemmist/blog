@@ -1,56 +1,55 @@
 {{ if ne .RelPermalink "/" }}
-<header>
-  <!-- Кнопка‑бургер -->
-  <button class="burger" aria-label="Открыть меню">
-    {{ $svg := partial "logo-nobackground.html" . }}
-    <img
-      class="no-zoom"
-      alt="log"
-      loading="lazy"
-      src="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
-      class="icon"
-    />
-  </button>
-
-  <div class="header-inner">
-    <div class="header-container" id="header-left">
+  <header>
+    <!-- Кнопка‑бургер -->
+    <button class="burger" aria-label="Открыть меню">
       {{ $svg := partial "logo-nobackground.html" . }}
       <img
-        class="header-logo no-zoom"
+        class="no-zoom"
         alt="log"
         loading="lazy"
         src="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
         class="icon"
       />
-      <h1><a href="/">alchemmist</a></h1>
+    </button>
+
+    <div class="header-inner">
+      <a href="/">
+        <div class="header-container" id="header-left">
+          {{ $svg := partial "logo-nobackground.html" . }}
+          <img
+            class="header-logo no-zoom"
+            alt="log"
+            loading="lazy"
+            src="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
+            class="icon"
+          />
+        </div>
+      </a>
+
+      <div class="header-container">
+        <!-- <div class="link"><a href="/cv">CV</a></div> -->
+        <!-- <div class="link"><a href="/books">Books</a></div> -->
+        <!-- <div class="link"><a href="/articles">Articles</a></div> -->
+        <!-- <div class="link"><a href="/essays">Essays</a></div> -->
+        <!-- <div class="link"><a href="/ru/poetry">Poetry</a></div> -->
+        <!-- <div class="link"><a href="/updates">Updates</a></div> -->
+      </div>
     </div>
 
-    <!-- Основные ссылки (для больших экранов) -->
-    <div class="header-container">
-      <div class="link"><a href="/cv">CV</a></div>
-      <div class="link"><a href="/books">Books</a></div>
-      <div class="link"><a href="/articles">Articles</a></div>
-      <div class="link"><a href="/essays">Essays</a></div>
-      <div class="link"><a href="/ru/poetry">Poetry</a></div>
-      <div class="link"><a href="/updates">Updates</a></div>
-    </div>
-  </div>
+    <nav class="side-menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/essays">Essays</a></li>
+        <li><a href="/cv">CV</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/ru/poetry">Poetry</a></li>
+        <li><a href="/updates">Updates</a></li>
+      </ul>
+    </nav>
 
-  <!-- Сайд‑меню -->
-  <nav class="side-menu">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/search">Search</a></li>
-      <li><a href="/articles">Articles</a></li>
-      <li><a href="/essays">Essays</a></li>
-      <li><a href="/cv">CV</a></li>
-      <li><a href="/books">Books</a></li>
-      <li><a href="/ru/poetry">Poetry</a></li>
-      <li><a href="/updates">Updates</a></li>
-    </ul>
-  </nav>
-
-  <!-- Затеняющий фон -->
-  <div class="overlay"></div>
-</header>
+    <!-- Затеняющий фон -->
+    <div class="overlay"></div>
+  </header>
 {{ end }}
