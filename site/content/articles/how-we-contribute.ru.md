@@ -285,12 +285,11 @@ request-а.
 этих ресурсах, чтобы привлекать к себе новых разработчиков!
 
 > [!NOTE] GitHub CLI
-> If you are interested in productive work with GitHub from the
-> console using the `gh' utility, pay attention to it
-> [documentation](https://cli.github.com/manual/). And also for
-> that, that `gh` supports extensions that you can familiarize
-> yourself with you can use the `gh ext browse` command or write
-> your own!
+> Если вас заинтересовала продуктивная работа с GitHub из консоли
+> с помощью утилиты `gh`, обратите внимание на её
+> [документацию](https://cli.github.com/manual/). А так же на то,
+> что `gh` поддерживает расширения, ознакомиться с которыми вы
+> можете с помощью команды `gh ext browse` или написать своё!
 
 Так же можно почитать по теме:
 
