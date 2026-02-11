@@ -265,6 +265,30 @@ request-а.
 и исправленный баг. Это будет отличным примером реализации TDD
 (Test Driven Development) подхода.
 
+___
+
+Таким образом мы с вами прошли полный цикл от проблемы до вклада
+в master-ветку:
+
+```mermaid
+flowchart LR
+  subgraph A["Problem"]
+    BUG --> ISSUE
+  end
+
+  subgraph B["Planning"]
+    ISSUE --> DISCUSS
+  end
+
+  subgraph C["Implementation"]
+    DISCUSS --> PR --> CI --> REVIEW
+  end
+
+  subgraph D["Finish"]
+    REVIEW --> MERGE --> BUG
+  end
+```
+
 Вы можете проверить свои силы уже сейчас, найдя подходящий issue
 с помощью этих прекрасных сервисов:
 

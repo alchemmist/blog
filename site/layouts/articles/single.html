@@ -1,49 +1,71 @@
 {{ define "main" }}
-<main class="base-container">
-  <article>
-    <h1 data-pagefind-meta="title">{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
-    <p class="article-date">{{ .Date.Format "02-01-2006" }}</p>
+  <main class="base-container">
+    <article>
+      <h1 data-pagefind-meta="title">{{ .Title }} {{ partial "allLanguages.html" . }}</h1>
+      <p class="article-date">{{ .Date.Format "02-01-2006" }}</p>
 
-    {{ if .Params.tags }}
-    <div class="article-header">
-    <p class="article-topics">
-      <span id="tags-title">Tags:</span>
-      {{ range $index, $tag := .Params.tags }}
-          {{ $tagLower := $tag | lower }}
-        <code><a class="{{ $tagLower }}" href="{{ (path.Join "tags" $tagLower) | relLangURL }}">{{ $tagLower }}</a></code>
-      {{ end }}
-    </p>
-    <div class="subscribe-header-block">
-        <span id="tags-title">Subscribe:</span>
-        <div class="subscribe-banner telegram">
-          {{ partial "iconify.html" (dict "icon" "ic:baseline-telegram" "size" "1.1em") }}
-          <a title="Join to my Telegram public channel" target="_blank" href="https://t.me/alchemmist_blog">Telegram</a>
+      {{ if .Params.tags }}
+        <div class="article-header">
+          <p class="article-topics">
+            <span id="tags-title">Tags:</span>
+            {{ range $index, $tag := .Params.tags }}
+              {{ $tagLower := $tag | lower }}
+              <code>
+                <a class="{{ $tagLower }}" href="{{ (path.Join "tags" $tagLower) | relLangURL }}">
+                  {{ $tagLower }}
+                </a>
+              </code>
+            {{ end }}
+          </p>
+          <div class="subscribe-header-block">
+            <span id="tags-title">Subscribe:</span>
+            <div class="subscribe-banner telegram">
+              {{ partial "iconify.html" (dict "icon" "ic:baseline-telegram" "size" "1.1em") }}
+              <a
+                title="Join to my Telegram public channel"
+                target="_blank"
+                href="https://t.me/alchemmist_blog"
+              >
+                Telegram
+              </a>
+            </div>
+          </div>
         </div>
-    </div>
-    </div>
-    <hr/>
-
-    {{ end }}
-    {{ .Content }}
-    <hr class="end-splitter" />
-    {{ partial "share-buttons.html" . }}
-    <hr class="end-splitter" />
-    <div id="remark42"></div>
-    <hr class="end-splitter" />
-  </article>
-</main>
+        <hr />
+      {{ end }}
+      {{ .Content }}
+      <hr class="end-splitter" />
+      {{ partial "share-buttons.html" . }}
+      <hr class="end-splitter" />
+      <div id="remark42"></div>
+      <hr class="end-splitter" />
+    </article>
+  </main>
+  {{ if .Store.Get "hasMermaid" }}
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        flowchart: {
+          useMaxWidth: false,
+        },
+      });
+    </script>
+  {{ end }}
 {{ end }}
 {{ define "head" }}
-  <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
+  <meta data-pagefind-filter="Language[lang]" lang="{{ .Language.LanguageName }}" />
   {{ if .Params.tags }}
-    <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+    <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
   {{ end }}
   {{ partial "connect-medium-zoom.html" }}
   {{ partial "connect-mathjax.html" }}
   {{ partial "connect-nerdfont.html" }}
 
   {{ $syntax := resources.Get "syntax.css" | resources.Minify |
-  resources.Fingerprint }}
+    resources.Fingerprint
+  }}
   <link
     rel="stylesheet"
     href="{{ $syntax.Permalink }}"
@@ -51,14 +73,14 @@
     media="print"
     onload="this.media='all'"
   />
-<script>
-  window.remark_config = {
-    host: "https://remark42.alchemmist.xyz",
-    site_id: "alchemmist",
-    components: ["embed"],
-    no_footer: true,
-    simpe_view: true,
-  };
-</script>
-<script src="https://remark42.alchemmist.xyz/web/embed.js" defer></script>
+  <script>
+    window.remark_config = {
+      host: "https://remark42.alchemmist.xyz",
+      site_id: "alchemmist",
+      components: ["embed"],
+      no_footer: true,
+      simpe_view: true,
+    };
+  </script>
+  <script src="https://remark42.alchemmist.xyz/web/embed.js" defer></script>
 {{ end }}
