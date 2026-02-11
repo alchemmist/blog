@@ -248,7 +248,7 @@ issues.
 
 If you understand that your pull request completely closes the
 issue you were solving, then in the PR messages you can specify
-`Close \#49`, and then the issue will be automatically closed
+`Close #49`, and then the issue will be automatically closed
 after the pull request is merged.
 
 ## 4. Merge

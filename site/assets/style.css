@@ -1952,7 +1952,7 @@ pre code * .err {
   cursor: pointer;
   z-index: 9999;
   border: none;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 .gh-alert {
@@ -3955,6 +3955,7 @@ pre code * .err {
 
 .markdown-blockquote p {
   margin: 0.5em;
+  font-style: italic;
 }
 
 .markdown-blockquote,
