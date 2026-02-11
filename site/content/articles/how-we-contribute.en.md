@@ -296,7 +296,7 @@ on these resources to attract new developers!
 
 > [!NOTE] GitHub CLI
 > If you are interested in productive work with GitHub from the
-> console using the `gh' utility, pay attention to it
+> console using the `gh` utility, pay attention to it
 > [documentation](https://cli.github.com/manual/). And also for
 > that, that `gh` supports extensions that you can familiarize
 > yourself with you can use the `gh ext browse` command or write
