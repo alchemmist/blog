@@ -1029,11 +1029,11 @@ a:hover {
   display: inline-flex;
   margin: 0;
   padding: 4px;
-  transition: transfrom 0.15s ease-out;
+  transition: transform 0.15s ease-out;
 }
 .D_A:hover {
   transform: scale(1.06);
-  transition: transfrom 0.15s ease-in;
+  transition: transform 0.15s ease-in;
 }
 .D_A:active {
   transform: scale(1);

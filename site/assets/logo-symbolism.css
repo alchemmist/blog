@@ -8,13 +8,13 @@ body {
 
 body {
   display: flex;
-  justify-content: center; /* горизонтальное центрирование */
-  align-items: center; /* вертикальное центрирование */
-  background: #0f1509; /* более глубокий тёмный фон */
+  justify-content: center; 
+  align-items: center; 
+  background: #0f1509; 
   color: #fffbf7;
   box-sizing: border-box;
 
-  background-image: url("/assets/background-light.svg"); /* накладываем svg */
+  background-image: url("/assets/background-light.svg"); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-image: url("/assets/background-light-mobile.svg"); /* накладываем svg */
+    background-image: url("/assets/background-light-mobile.svg"); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -58,7 +58,7 @@ article {
   left: 30%;
   transform: translate(-50%, -50%);
   animation: spin 15s linear infinite;
-  opacity: 0.05; /* делаем символ чуть прозрачным */
+  opacity: 0.05; 
   margin-left: 0.5em;
 }
 
@@ -72,7 +72,7 @@ article {
 }
 
 .lang-switcher {
-  color: #fffbf7; /* тёплый бежевый */
+  color: #fffbf7; 
   text-decoration: underline;
 }
 
