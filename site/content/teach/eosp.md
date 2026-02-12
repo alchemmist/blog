@@ -1,6 +1,6 @@
 ---
 id: eosp
-no-header: true
+no-header: false
 extra:
   custom_props:
     public: true
@@ -27,6 +27,10 @@ lectures:
       ru: "https://alchemmist.github.io/eosp/lectures/01-lecture-ru"
   - id: 02-lecture
     title: "Lecture 02"
+    pdf:
+      en: "https://alchemmist.github.io/eosp/pdf/02-lecture.en.pdf"
+    web: 
+      en: "https://alchemmist.github.io/eosp/lectures/02-lecture-en"
   - id: 03-lecture
     title: "Lecture 03"
   - id: 04-lecture
