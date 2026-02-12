@@ -31,7 +31,7 @@ extra:
 
 Итак, что же такое типизация? Новым это понятие может оказаться
 только для питонистов, ведь большинство классических языков таких
-как C, Java, Rust и многие другие исходно были созданы как языки
+как C, Java, Rust и многие другие исходно были созданы, как языки
 со статической типизацией. Но что это означает? Давайте рассмотрим
 небольшой пример на C:
 
@@ -61,11 +61,11 @@ error: passing argument 1 of ‘sum’ makes integer from pointer without cast
 note: expected ‘int’ but argument is of type ‘char *’
 ```
 
-Он сообщает нам, что параметр функции, ожидая `int`, получил
+Лог сообщает нам, что параметр функции, ожидая `int`, получил
 аргумент типа `char *` (_для упрощения можем считать это
 эквивалентом строки_). На первый взгляд ничего удивительного, для
-нас с вами — питонистов, в этом нет. Ведь вот такой код на
-Python тоже упал бы с ошибкой:
+нас с вами — питонистов, в этом нет. Ведь вот такой код на Python
+тоже упал бы с ошибкой:
 
 ```python
 def sum(a, b):
@@ -92,10 +92,10 @@ int main() {
 }
 ```
 
-Но такую программу не выйдет даже скомпилировать. Мы опять
-получим точно такой же лог ошибки, который был ранее. Обратите
-внимание на то, как мы определяли функцию `sum` в языке C. Там мы
-явно указали типы входных аргументов как `int`. Это означает, что
+Такую программу не выйдет даже скомпилировать. Мы опять получим
+точно такой же лог ошибки, который был ранее. Обратите внимание
+на то, как мы определяли функцию `sum` в языке C. Там мы явно
+указали типы входных аргументов как `int`. Это означает, что
 аргумент любого другого типа нельзя передать в эту функцию. Это
 и называется статической типизацией. Также статическая типизация
 обязывает указать тип для каждой переменной и запрещает менять
@@ -114,8 +114,8 @@ Python всё и так работает отлично. Во-первых, эт
 низком уровне (_чем бы он ни был представлен_) нам в любом случае
 нужно знать типы переменных. А тот факт, что мы можем позволить
 себе, их не выставлять, лишь означает, что кто-то делает это за
-нас (_например, виртуальная машина_), а это в свою очередь требует
-больших ресурсов. Отсюда и картина, которую мы наблюдаем
+нас (_например, виртуальная машина_), а это в свою очередь
+требует ресурсов. Отсюда и картина, которую мы наблюдаем
 в рейтингах языков по скорости:
 
 ![|900](/images/pl-rating.png)
@@ -124,10 +124,14 @@ Python в этом
 [рейтинге](https://github.com/niklas-heer/speed-comparison),
 кстати говоря, на последнем месте. Может быть типизированный
 Python как раз поможет нам исправить этот печальный факт?
-К сожалению, нет. Поскольку Python как не был исконно, так по сей
-день остается, **не** статически типизированным языком.
+К сожалению,
+[нет](https://bernsteinbear.com/blog/typed-python/#fnref:simple-annotations).
+Поскольку Python как не был исконно, так по сей день остается,
+**не** статически типизированным языком. Аннотации типов в Python
+остаются опциональными, их можно не указывать. И сам
+интерпритатор Python в runtime не проверят их.
 
-Тут мы переходим ко второму преимуществу, которое открывают для
+Тут мы переходим ко второму приемуществу, которое открывают для
 нас типы. И это качество кода.
 
 > «Цель типизации в Python — помочь инструментам разработки искать
@@ -204,99 +208,6 @@ def multi_string(string: str, n: int) -> str:
 
 Таким образом можно проаннотировать все классические примитивы
 — `str`, `int`, `bytes`, `float`, `Decimal`, `bool`.
-
-### Статические анализаторы
-
-Типизация в Python живёт за счёт инструментов статического
-анализа. Они читают аннотации, сопоставляют их с кодом и
-подсвечивают ошибки до запуска. Самые популярные варианты сейчас
-такие:
-
-- `mypy` — опциональный статический тип-чекер, который позволяет
-  постепенно внедрять типизацию. Плюс: удобно стартовать с малого
-  и повышать строгость. Отдельная фишка — система плагинов, через
-  которую можно расширять поведение чекера (например, у
-  `pydantic` есть официальный плагин). Минус: плагины нужно
-  подключать и настраивать через конфиг.
-- `pyright` — статический тип-чекер, доступный как Python CLI
-  wrapper. Плюс: простой запуск через CLI. Минус: для надёжной
-  установки рекомендуют вариант с `nodejs` extra.
-- `pyrefly` — быстрый тип-чекер и language server на Rust. Плюс:
-  тип-чекинг и LSP в одном инструменте. Минус: проект всё ещё
-  активно развивается, хоть и уже в статусе beta.
-- `ty` — новый тип-чекер и language server на Rust. Плюс: ставка
-  на очень быструю проверку и современную архитектуру. Минус:
-  проект молодой, сейчас это pre-release (alpha) версии и API
-  может меняться.
-
-Установить и запускать их можно через `uv`:
-
-```sh
-uv tool install mypy
-uv tool install pyright
-uv tool install pyrefly
-uv tool install ty
-```
-
-```sh
-uvx mypy .
-uvx pyright .
-uvx pyrefly check
-uvx ty check
-```
-
-Ниже небольшой бизнес-ориентированный пример. В коде специально
-есть несколько типовых ошибок — ровно таких, которые ловят
-тип-чекеры.
-
-```python
-from dataclasses import dataclass
-from typing import NewType
-
-UserId = NewType("UserId", int)
-
-@dataclass
-class User:
-    id: UserId
-    email: str
-    is_active: bool
-
-def discount(total: int, percent: int) -> int:
-    return total - total * (percent / 100)
-
-def send_invoice(user: User, amount: int) -> str:
-    if not user.is_active:
-        return None
-    return f"invoice for {user.email}: {amount}"
-
-def main() -> None:
-    user = User(id=42, email=123, is_active="yes")
-    total = discount("1000", 10)
-    send_invoice(user, "500")
-```
-
-Если натравить на этот файл `pyright`, он выдаст примерно такой
-вывод (формат может немного отличаться, но смысл будет тем же):
-
-```plaintext
-example.py:15:9 - error: Return type "None" is not compatible with "str"
-example.py:12:5 - error: Return type "float" is not compatible with return type "int"
-example.py:19:18 - error: Argument of type "int" cannot be assigned to parameter "id" of type "UserId"
-example.py:19:27 - error: Argument of type "int" cannot be assigned to parameter "email" of type "str"
-example.py:19:39 - error: Argument of type "str" cannot be assigned to parameter "is_active" of type "bool"
-example.py:20:22 - error: Argument of type "str" cannot be assigned to parameter "total" of type "int"
-example.py:21:23 - error: Argument of type "str" cannot be assigned to parameter "amount" of type "int"
-```
-
-Комментарии по делу:
-- `discount` возвращает `int`, но внутри появляется `float` из
-  деления процентов.
-- `send_invoice` обещает `str`, но при неактивном пользователе
-  возвращает `None`.
-- `UserId` — это `NewType`, так что туда нельзя просто положить
-  `int` без явного приведения.
-- В `main` явно видно, где мы перепутали типы параметров — ровно
-  это и ловит тип-чекер.
 
 ### Объединение типов
 
@@ -386,7 +297,7 @@ def patch_config(cfg: MutableMapping[str, str]) -> None:
 
 Если функция только читает данные, указывайте `Mapping`. Если
 меняет — `MutableMapping`. Это маленькая, но важная подсказка для
-читателя и тип-чекера.
+читателя и статического анализатора.
 
 ### NamedTuple
 
@@ -645,6 +556,113 @@ def mode(data: Iterable[HashableT]) -> HashableT:
     ...
 ```
 
+### Literal
+
+`Literal` позволяет зафиксировать конкретные допустимые значения,
+а не просто базовый тип. Это полезно, когда у параметра есть
+закрытый набор режимов, статусов или ключей.
+
+```python
+from typing import Literal
+
+def export_report(format: Literal["csv", "json"]) -> bytes:
+    ...
+```
+
+Сигнатура выше сразу задаёт контракт: третьего формата тут нет.
+Это делает API понятнее и позволяет анализатору ловить опечатки
+вроде `"jsno"` до запуска.
+
+### Статические анализаторы
+
+И наконец пришло время познакомиться с тем, кто "оживляет"
+типизацию в Python: со статическими анализаторами. Они читают
+аннотации, сопоставляют их с кодом и подсвечивают ошибки до
+runtime.
+
+- `mypy` - классический статический анализатор типов для
+  постепенного внедрения типизации. Сильная сторона: экосистема
+  плагинов и тонкая настройка строгости по модулям. Слабая
+  сторона: без настройки может быть либо слишком мягким, либо
+  слишком шумным.
+- `pyright` - быстрый и понятный чекер. Сильная сторона: хорошие
+  диагностические сообщения и быстрый feedback. Слабая сторона:
+  расширяемость через плагины хуже, чем в `mypy`.
+- `pyrefly` - новый быстрый анализатор на Rust. Сильная сторона:
+  высокая скорость и интеграция с LSP. Слабая сторона: проект
+  ещё молодой, поэтому часть поведения может меняться.
+- `ty` - новый Rust-инструмент от Astral (пока beta).
+  Сильная сторона: скорость и современная архитектура. Слабая
+  сторона: pre-release стадия, часть возможностей ещё догоняет
+  зрелые чекеры.
+
+Установить и запускать их можно через `uv`:
+
+```sh
+uv tool install mypy
+uv tool install pyright
+uv tool install pyrefly
+uv tool install ty
+```
+
+```sh
+uvx mypy .
+uvx pyright .
+uvx pyrefly check
+uvx ty check
+```
+
+Ниже бизнес-пример с намеренными ошибками типизации:
+
+```python
+from dataclasses import dataclass
+from typing import NewType
+
+UserId = NewType("UserId", int)
+
+@dataclass
+class User:
+    id: UserId
+    email: str
+    is_active: bool
+
+def discount(total: int, percent: int) -> int:
+    return total - total * (percent / 100)
+
+def send_invoice(user: User, amount: int) -> str:
+    if not user.is_active:
+        return None
+    return f"invoice for {user.email}: {amount}"
+
+def main() -> None:
+    user = User(id=42, email=123, is_active="yes")
+    total = discount("1000", 10)
+    send_invoice(user, "500")
+```
+
+Проверка `pyright` даст сообщения примерно такого вида:
+
+```plaintext
+error: Type "float" is not assignable to return type "int"
+error: Type "None" is not assignable to return type "str"
+error: "Literal[42]" is not assignable to "UserId"
+error: "Literal[123]" is not assignable to "str"
+error: "Literal['yes']" is not assignable to "bool"
+error: "Literal['1000']" is not assignable to "int"
+error: "Literal['500']" is not assignable to "int"
+```
+
+Что важно в этом выводе:
+
+- Ошибки в `discount` и `send_invoice` показывают нарушение
+  контракта функции: сигнатура обещает одно, реализация делает
+  другое.
+- Ошибки в `main` показывают, что граничный слой (ввод/DTO) передаёт
+  неверные типы в доменную логику.
+- Сообщение про `UserId` демонстрирует, зачем `NewType` полезен в
+  бизнес-коде: `id` пользователя нельзя случайно подменить обычным
+  `int` без явного решения разработчика.
+
 ### Stub файлы (.pyi)
 
 Иногда хочется типизировать код, к которому нельзя или неудобно
@@ -801,33 +819,18 @@ Python, знают, что типизация опциональна. И это 
 > Функция должна более ясно говорить о том, какой конкретный тип
 > она возвращает, чем принимает.
 
-### Практика и паттерны
+<br>
 
-Ниже набор советов, которые помогают держать типизацию в рабочем
-состоянии и не превращать её в формальность:
+---
 
-- Начинайте типизировать с границ: входы, выходы, публичные API.
-- Старайтесь описывать поведение минимальными интерфейсами:
-  `Iterable` вместо `list`, `Mapping` вместо `dict`.
-- Избегайте `Any` в бизнес-логике. Лучше точный тип или `object`,
-  чем невидимая дыра в типовой модели.
-- Используйте `TypedDict` для данных из JSON, чтобы сразу ловить
-  отсутствие обязательных полей.
-- Для фабрик и репозиториев используйте дженерики, чтобы
-  сохранялась связь между входом и выходом.
-- Для проверок исчерпываемости используйте `assert_never` и
-  `Literal`, чтобы анализатор подсказывал пропущенные ветки.
+<br>
 
-## Дополнительные источники
+Если вы хотите углубиться в тему, ниже — отличные материалы,
+которые помогут настроить инструменты и разобраться в деталях
+типовой системы Python.
 
-Если вы хотите углубиться в тему, ниже — официальные источники и
-справочники, которые помогут настроить инструменты и разобраться
-в деталях типовой системы Python.
-
-- [Typing: Documentation](https://docs.python.org/3/library/typing.html)
-- [Python Typing Spec](https://typing.python.org/en/latest/spec/index.html)
-- [mypy documentation](https://mypy-lang.org/)
-- [pyright documentation](https://github.com/microsoft/pyright)
-- [pyrefly documentation](https://pyrefly.org/docs/)
-- [ty documentation](https://docs.astral.sh/ty/)
-- [uv documentation](https://docs.astral.sh/uv/)
+- [Типизированный Python для профессиональной
+  разработчки](https://to.digital/typed-python/intro/intro.html)
+- [FastAPI type hints guide (helpful for web
+  developers)](https://fastapi.tiangolo.com/python-types/#type-hints-with-metadata-annotations)
+- [RealPython, Type Checking Guide](https://realpython.com/python-type-checking/)
