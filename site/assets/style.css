@@ -302,7 +302,8 @@ li::marker {
 }
 
 .essay-topics code * {
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
   font-size: 16px;
 }
 
@@ -319,7 +320,8 @@ li::marker {
 }
 
 .article-topics code * {
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
   font-size: 16px;
 }
 
@@ -434,13 +436,15 @@ blockquote code {
   padding: 0.1em 0.3em;
   margin: 0 0.1em;
   border-radius: 3px;
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
   font-size: 0.9em;
   color: #333;
 }
 
 p code * {
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
 }
 
 /* ===== Archive / Tags ===== */
@@ -1180,7 +1184,8 @@ ul {
 }
 
 .go-back-button * {
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
+  font-family:
+    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
 }
 
 svg {
@@ -1274,7 +1279,8 @@ svg {
 }
 
 .pagefind-ui__result.svelte-j9e30.svelte-j9e30 {
-  padding: calc(20px * var(--pagefind-ui-scale)) 0 calc(30px * var(--pagefind-ui-scale)) !important;
+  padding: calc(20px * var(--pagefind-ui-scale)) 0
+    calc(30px * var(--pagefind-ui-scale)) !important;
 }
 
 .pagefind-ui__message.svelte-e9gkc3 {
@@ -2113,4 +2119,9 @@ article h2 {
   display: flex;
   align-items: center;
   gap: 0.5em;
+}
+
+a {
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
 }
