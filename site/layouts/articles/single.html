@@ -10,12 +10,7 @@
             <span id="tags-title">Tags:</span>
             {{ range $index, $tag := .Params.tags }}
               {{ $tagLower := $tag | lower }}
-              <code>
-                <a class="{{ $tagLower }}" href="{{ (path.Join "tags" $tagLower) | relLangURL }}">
-                  {{ $tagLower }}
-                </a>
-              </code>
-            {{ end }}
+              <code><a class="{{ $tagLower }}" href="{{ (path.Join "tags" $tagLower) | relLangURL }}">{{ $tagLower }}</a></code>{{ end }}
           </p>
           <div class="subscribe-header-block">
             <span id="tags-title">Subscribe:</span>

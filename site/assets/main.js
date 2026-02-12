@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   githubIcon.addEventListener("click", function (e) {
     e.preventDefault();
-    catPopup.style.display = "block"; 
+    catPopup.style.display = "block";
     setTimeout(() => catPopup.classList.add("show"), 10);
   });
 
@@ -343,42 +343,47 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-const typoBtn = document.getElementById('report-typo');
-const repo = 'alchemmist/blog';
+const typoBtn = document.getElementById("report-typo");
+const repo = "alchemmist/blog";
 
-document.addEventListener('mouseup', (e) => {
-    const selection = window.getSelection();
-    const text = selection.toString().trim();
+document.addEventListener("selectionchange", () => {
+  const selection = window.getSelection();
+  const text = selection.toString().trim();
 
-    if (text.length > 0) {
-        const range = selection.getRangeAt(0);
-        const rect = range.getBoundingClientRect();
-        typoBtn.style.top = `${window.scrollY + rect.top - 30}px`;
-        typoBtn.style.left = `${window.scrollX + rect.left}px`;
-        typoBtn.style.display = 'block';
-    } else {
-        typoBtn.style.display = 'none';
-    }
+  if (!text) {
+    typoBtn.style.display = "none";
+    return;
+  }
+
+  if (selection.rangeCount === 0) return;
+
+  const range = selection.getRangeAt(0);
+  const rect = range.getBoundingClientRect();
+
+  typoBtn.style.top = `${window.scrollY + rect.top - 30}px`;
+  typoBtn.style.left = `${window.scrollX + rect.left}px`;
+  typoBtn.style.display = "block";
 });
 
 function getHighlightLink(selectionText) {
-    if (!selectionText) return window.location.href;
-    const encoded = encodeURIComponent(selectionText);
-    return `${window.location.href}#:~:text=${encoded}`;
+  if (!selectionText) return window.location.href;
+  const encoded = encodeURIComponent(selectionText);
+  return `${window.location.href}#:~:text=${encoded}`;
 }
 
-typoBtn.addEventListener('click', () => {
-    const selection = window.getSelection().toString().trim();
-    if (!selection) return;
-    const title = encodeURIComponent('Typo report');
-    const body = encodeURIComponent(`Found typo:\n\n"${selection}"\n\n[URL](${getHighlightLink(selection)})`);
-    const labels = 'typo';
-    const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}&labels=${labels}`;
-    window.open(url, '_blank');
-    typoBtn.style.display = 'none';
+typoBtn.addEventListener("click", () => {
+  const selection = window.getSelection().toString().trim();
+  if (!selection) return;
+  const title = encodeURIComponent("Typo report");
+  const body = encodeURIComponent(
+    `Found typo:\n\n"${selection}"\n\n[URL](${getHighlightLink(selection)})`,
+  );
+  const labels = "typo";
+  const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}&labels=${labels}`;
+  window.open(url, "_blank");
+  typoBtn.style.display = "none";
 });
 
-document.addEventListener('mousedown', (e) => {
-    if (!typoBtn.contains(e.target)) typoBtn.style.display = 'none';
+document.addEventListener("mousedown", (e) => {
+  if (!typoBtn.contains(e.target)) typoBtn.style.display = "none";
 });
-
