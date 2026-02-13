@@ -1,26 +1,8 @@
 {{ define "main" }}
 <div class="base-container article-container">
   <article>
-    <h1>Engineering Open Source Projects</h1>
-    <blockquote>
-      <p>
-        Practice-driven course, was designed by Anton Grishin, that was started
-        at winter 2026 for high school students. The lectures are given in
-        Russian, but all materials are available in English. Educational project
-        created with <a href="https://цпм.рф">CPM</a> and
-        <a href="https://cu.ru">CU</a>.
-      </p>
-    </blockquote>
-    <p>On this page will be contained all course materials.</p>
-    <p>
-      <a href="/tags/eosp">List</a> of <b>articles</b> that will be helpful on
-      the course.
-    </p>
-    <p>
-      The
-      <a href="https://alchemmist.github.io/eosp/curriculum/">currucilum</a> of
-      the coruse.
-    </p>
+
+    {{ .Content }}
 
     <section class="course-lectures">
       <h2>Lectures materials</h2>
@@ -64,30 +46,9 @@
         {{ end }}
       </div>
     </section>
-    <p>
-      Slide decks was created with <a href="https://sli.dev">Slidev</a>. Syllbus
-      was compiled with LaTeX (<a href="https://www.tug.org/texlive/">texlive</a
-      >).
-    </p>
-    <p>
-      All sources you can find in the
-      <a href="https://github.com/alchemmist/eosp"
-        ><code>alchemmist/eosp</code></a
-      >
-      GitHub repository.
-    </p>
-    <p>
-      Videos (<i>I hope</i>) will be available on
-      <a href="https://www.youtube.com/playlist?list=PLulYQxU2TA-WXzrODjuxnQlOepIUW85Sc">YouTube</a>.
-    </p>
-    <p>
-      All photo and video materials used in the slides were taken from public
-      websites. If you believe that a mistake was made, please, don't hesitate
-      and <a href="mailto:anton.ingrish@gmail.com">email</a> me or simply
-      <a href="https://github.com/alchemmist/eosp/issues/new">submit</a>
-      a ticket with the necessary report.
-    </p>
-    <hr class="end-splitter" />
+    <br />
+    <br />
+    <br />
   </article>
 </div>
 {{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }} {{ end }}

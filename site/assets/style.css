@@ -346,7 +346,7 @@ article h2 {
   font-size: 20px;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   article h2 {
     margin: 0;
   }
@@ -411,7 +411,7 @@ pre code * {
   text-align: left;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   pre code * {
     font-size: 1em;
   }
@@ -582,7 +582,7 @@ blockquote {
 
 /* ===== Responsive (Base) ===== */
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   body {
     padding: 0;
   }
@@ -669,7 +669,7 @@ blockquote {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 650px) {
   .link {
     margin: 10px;
   }
@@ -745,7 +745,7 @@ blockquote {
   transform: translateX(0);
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   .moss-layer {
     max-width: 100vw;
   }
@@ -764,7 +764,7 @@ blockquote {
   top: 2%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-left-1 {
     left: -48%;
     top: -13%;
@@ -775,7 +775,7 @@ blockquote {
   top: 21%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-left-2 {
     left: -70%;
     top: 11%;
@@ -786,7 +786,7 @@ blockquote {
   top: 40%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-left-3 {
     left: -70%;
     top: 31%;
@@ -798,7 +798,7 @@ blockquote {
   top: 65%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-left-4 {
     top: 60%;
     left: -70%;
@@ -810,7 +810,7 @@ blockquote {
   top: 71%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-left-5 {
     top: 63%;
     left: -65%;
@@ -823,7 +823,7 @@ blockquote {
   right: -15%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-right-1 {
     top: -12%;
     right: -76%;
@@ -835,7 +835,7 @@ blockquote {
   top: 10%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-right-2 {
     top: 2%;
     right: -72%;
@@ -847,7 +847,7 @@ blockquote {
   top: 39%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-right-3 {
     top: 32%;
     right: -65%;
@@ -859,7 +859,7 @@ blockquote {
   top: 50%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-right-4 {
     right: -45%;
   }
@@ -870,7 +870,7 @@ blockquote {
   top: 72%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #moss-right-5 {
   }
 }
@@ -892,7 +892,7 @@ mjx-container[display="true"] {
   pointer-events: auto;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   mjx-container svg {
     /* max-width: 100%; */
     overflow-x: auto;
@@ -1072,7 +1072,7 @@ mjx-container[display="true"] {
   max-width: 60%;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   .home-menu {
     max-width: 90%;
     gap: 0.2em 0.1em;
@@ -1106,7 +1106,7 @@ li {
   text-align: left;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   .updates-list {
     padding-left: 1.5rem;
   }
@@ -1350,7 +1350,7 @@ body.modal-open {
   box-sizing: border-box;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   #about-me-box {
     flex-direction: column;
     gap: 0;
@@ -1892,7 +1892,7 @@ header.is-open .overlay {
   visibility: visible;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   .burger {
     display: flex;
   }
@@ -1942,7 +1942,7 @@ footer p {
   transform: scale(1.1);
 }
 
-@media (max-width: 868px) {
+@media (max-width: 650px) {
   footer {
     flex-direction: column;
     align-items: center;

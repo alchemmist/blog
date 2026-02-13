@@ -44,3 +44,20 @@ lectures:
   - id: 08-lecture
     title: "Lecture 08"
 ---
+# Engineering Open Source Projects
+
+> Practice-driven course, designed by Anton Grishin, that was started in winter 2026 for high school students. The lectures are given in Russian, but all materials are available in English. Educational project created with [CPM](https://цпм.рф) and [CU](https://cu.ru).
+
+On this page, all course materials will be collected.
+
+[List](/tags/eosp) of **articles** that will be helpful for the course.
+
+The [curriculum](https://alchemmist.github.io/eosp/curriculum/) of the course.
+
+Slide decks were created with [Slidev](https://sli.dev). The syllabus was compiled with LaTeX ([texlive](https://www.tug.org/texlive/)).
+
+All sources can be found in the [`alchemmist/eosp`](https://github.com/alchemmist/eosp) GitHub repository.
+
+Videos will be available on [YouTube](https://www.youtube.com/playlist?list=PLulYQxU2TA-WXzrODjuxnQlOepIUW85Sc).
+
+All photo and video materials used in the slides were taken from public websites. If you believe that a mistake was made, please don’t hesitate to [email](mailto:anton.ingrish@gmail.com) me or simply [submit](https://github.com/alchemmist/eosp/issues/new) a ticket with the necessary report.
