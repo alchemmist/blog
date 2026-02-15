@@ -22,6 +22,7 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 - Hotkeys. See help with pressing `?`.
 - Code syntax hilighting with GitHub ligth [theme](https://gohugo.io/quick-reference/syntax-highlighting-styles/#github).
 - Analytics platform of trafic (_with [umami](https://umami.is/)_)
+- Supporting markdown quotes as GitHub style callouts.
 
 You are welcome to forking it for you personal blogs or contributing here. In this case it will be great if you put link to my blog `:)`. Or you can contribute here, report and fix bugs, sugest and implement new improvments. In order to do that, you need [Hugo](https://gohugo.io/) and [Pagefind](https://pagefind.app/), just for running locally:
 ```sh
