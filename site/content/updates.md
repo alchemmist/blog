@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-02-16 12:11\]* New verse (Ru): [Кинцуги](/ru/poetry/kintsugi) 
 - [ ] *\[2026-02-13 07:55\]* New article (En, Ru): [Typing in Python](/articles/typing-python) 
 - [ ] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute) 
 - [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight) 
