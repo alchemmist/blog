@@ -1,7 +1,7 @@
 ---
 date: '2026-02-16T12:10:00+03:00'
 tech_name: kintsugi
-title: Кинуги
+title: Кинцуги
 language: ru
 extra:
   custom_props:
