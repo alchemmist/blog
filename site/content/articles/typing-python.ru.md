@@ -831,6 +831,8 @@ Python, знают, что типизация опциональна. И это 
 
 - [Типизированный Python для профессиональной
   разработчки](https://to.digital/typed-python/intro/intro.html)
-- [FastAPI type hints guide (helpful for web
-  developers)](https://fastapi.tiangolo.com/python-types/#type-hints-with-metadata-annotations)
-- [RealPython, Type Checking Guide](https://realpython.com/python-type-checking/)
+- [FastAPI type hints guide (Полезно для
+  web-разрботчиков)](https://fastapi.tiangolo.com/python-types/#type-hints-with-metadata-annotations)
+- [RealPython, Type Checking
+  Guide](https://realpython.com/python-type-checking/)
+- [Упражнения](https://python-type-challenges.zeabur.app/)
