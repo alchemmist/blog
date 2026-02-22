@@ -9,23 +9,23 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2026-02-22 07:46\]* New verse (Ru): [Монастырь](/ru/poetry/monastery) 
-- [ ] *\[2026-02-20 08:28\]* New verse (Ru): [Сердце](/ru/poetry/heart) 
-- [ ] *\[2026-02-18 07:51\]* New verse (Ru): [Полынь](/ru/poetry/wormwood) 
-- [ ] *\[2026-02-16 12:11\]* New verse (Ru): [Кинцуги](/ru/poetry/kintsugi) 
-- [ ] *\[2026-02-13 07:55\]* New article (En, Ru): [Typing in Python](/articles/typing-python) 
-- [ ] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute) 
-- [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight) 
-- [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me) 
-- [ ] *\[2026-01-20 22:15\]* Add leetcode follow button to main page
-- [ ] *\[2026-01-19 08:13\]* Add report button on text selection
-- [ ] *\[2026-01-19 12:30\]* Update teaching section []()
-- [ ] *\[2026-01-14 17:07\]* New verse (Ru): [Прости](/ru/poetry/sorry) 
-- [ ] *\[2025-11-06 16:33\]* New verse (Ru): [Опустошение](/ru/poetry/devastation) 
-- [ ] *\[2025-11-04 20:25\]* New verse (Ru): [Молчание](/ru/poetry/hush) 
-- [ ] *\[2025-10-29 10:57\]* Add comments to articles, essays and verse. Also, add hotkeys.
-- [x] *\[2025-10-22 17:09\]* New verse (Ru): [Завершённость](/ru/poetry/completeness) 
-- [x] *\[2025-10-22 16:09\]* New verse (Ru): [Жизнь](/ru/poetry/life) 
+- [ ] *\[2026-02-22 07:46\]* New verse (Ru): [Монастырь](/ru/poetry/monastery).
+- [ ] *\[2026-02-20 08:28\]* New verse (Ru): [Сердце](/ru/poetry/heart).
+- [ ] *\[2026-02-18 07:51\]* New verse (Ru): [Полынь](/ru/poetry/wormwood).
+- [ ] *\[2026-02-16 12:11\]* New verse (Ru): [Кинцуги](/ru/poetry/kintsugi).
+- [ ] *\[2026-02-13 07:55\]* New article (En, Ru): [Typing in Python](/articles/typing-python).
+- [ ] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute).
+- [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight).
+- [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me).
+- [ ] *\[2026-01-20 22:15\]* Add leetcode follow button to main page.
+- [ ] *\[2026-01-19 08:13\]* Add report button on text selection.
+- [ ] *\[2026-01-19 12:30\]* Update teaching section.
+- [x] *\[2026-01-14 17:07\]* New verse (Ru): [Прости](/ru/poetry/sorry).
+- [x] *\[2025-11-06 16:33\]* New verse (Ru): [Опустошение](/ru/poetry/devastation).
+- [x] *\[2025-11-04 20:25\]* New verse (Ru): [Молчание](/ru/poetry/hush).
+- [x] *\[2025-10-29 10:57\]* Add comments to articles, essays and verse. Also, add hotkeys.
+- [x] *\[2025-10-22 17:09\]* New verse (Ru): [Завершённость](/ru/poetry/completeness).
+- [x] *\[2025-10-22 16:09\]* New verse (Ru): [Жизнь](/ru/poetry/life).
 - [x] *\[2025-10-13 05:58\]* New article: [Note on SQL Basics](/articles/sql-basics-note).
 - [x] *\[2025-10-10 13:06\]* Add search to blog! Use with Ctrl+k.
 - [x] *\[2025-09-27 13:52\]* New verse (Ru): [Проблеск](/ru/poetry/glimmer/).
