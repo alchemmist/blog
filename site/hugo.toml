@@ -2,46 +2,49 @@ baseURL = 'https://alchemmist.xyz/'
 languageCode = 'en-us'
 title = 'alchemmist'
 
+[author]
+name = "alchemmist"
+email = "anton.ingrish@gmail.com"
+
 [build]
-  writeStats = true
+writeStats = true
 
 [minify]
-  minifyOutput = true
-  disableCSS = false
-  disableJS = false
-  disableHTML = false
+minifyOutput = true
+disableCSS = false
+disableJS = false
+disableHTML = false
 
 
 disableKinds = ["taxonomy"]
 
 [markup]
-  [markup.highlight]
-    style = "github"
-    noClasses = false
-    lineNos = false
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-    [markup.goldmark.parser]
-      attribute = true
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['$$', '$$']]
-          inline = [['$', '$']]
+[markup.highlight]
+style = "github"
+noClasses = false
+lineNos = false
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.parser]
+attribute = true
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['$$', '$$']]
+inline = [['$', '$']]
 
 [params]
-  math = true
-  themeVariant = "base"
+math = true
+themeVariant = "base"
 
 [taxonomies]
-  tag = "tags"
-  topic = "topics"
-  genre = "genre"
-  author = "author"
-  status = "status"
-
+tag = "tags"
+topic = "topics"
+genre = "genre"
+author = "author"
+status = "status"
 
 
 defaultContentLanguage = 'en'
@@ -49,19 +52,17 @@ defaultContentLanguageInSubdir = true
 disableDefaultLanguageRedirect = false
 
 [languages]
-  [languages.en]
-    languageName = "English"
-    weight = 1
-  [languages.ru]
-    languageName = "Русский"
-    weight = 2
+[languages.en]
+languageName = "English"
+weight = 1
+[languages.ru]
+languageName = "Русский"
+weight = 2
 
 [outputs]
 home = ["HTML", "RSS"]
 
 [sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
-
-
+changefreq = "monthly"
+priority = 0.5
+filename = "sitemap.xml"
