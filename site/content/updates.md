@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2026-02-24 07:02\]* New verse (Ru): [Там](/ru/poetry/there) 
+- [ ] *\[2026-02-24 07:02\]* New verse (Ru): [Там](/ru/poetry/there).
 - [ ] *\[2026-02-22 07:46\]* New verse (Ru): [Монастырь](/ru/poetry/monastery).
 - [ ] *\[2026-02-20 08:28\]* New verse (Ru): [Сердце](/ru/poetry/heart).
 - [ ] *\[2026-02-18 07:51\]* New verse (Ru): [Полынь](/ru/poetry/wormwood).
