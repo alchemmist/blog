@@ -44,7 +44,7 @@ devsyringe.alchemmist.xyz {
     redir https://devsyringe.xyz{uri} 301
 }
 
-alchemmist.xyz, www.alchemmist.xyz {
+alchemmist.xyz {
     root * /srv
     encode gzip zstd
     file_server
