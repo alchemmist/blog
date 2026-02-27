@@ -2064,7 +2064,7 @@ footer p {
 
 /* ===== Mermaid ===== */
 .mermaid * {
-  font-family: "Computer Modern Typewriter";
+  font-family: "Computer Modern Typewriter", "NerdFontsSymbols Nerd Font";
   font-size: 1rem;
 }
 

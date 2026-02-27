@@ -286,12 +286,12 @@ to the master branch.:
 
 ```mermaid
 flowchart LR
-    BUG["Find a bug / Need feature"] --> ISSUE["Create Issue"]
-    ISSUE --> DISCUSS["Discussion / Planning"]
-    DISCUSS --> PR["Open Pull Request"]
-    PR --> CI["PR Checks with CI"]
-    CI --> REVIEW["Reviewer Reviews PR"]
-    REVIEW --> MERGE["Merge PR into main"]
+    BUG["Find a bug / feature   "] --> ISSUE["Create Issue  "]
+    ISSUE --> DISCUSS["Discussion  "]
+    DISCUSS --> PR["Open Pull Request  "]
+    PR --> CI["PR Checks with CI 󰦕 "]
+    CI --> REVIEW["Reviewer Reviews PR  "]
+    REVIEW --> MERGE["Merge PR into main  "]
     MERGE --> BUG
 ```
 
