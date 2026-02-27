@@ -9,6 +9,8 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-02-28 06:14\]* New verse (Ru): [Чёрный](/ru/poetry/black) 
+- [ ] *\[2026-02-27 06:44\]* New verse (Ru): [Страх](/ru/poetry/fear) 
 - [ ] *\[2026-02-24 07:02\]* New verse (Ru): [Там](/ru/poetry/there).
 - [ ] *\[2026-02-22 07:46\]* New verse (Ru): [Монастырь](/ru/poetry/monastery).
 - [ ] *\[2026-02-20 08:28\]* New verse (Ru): [Сердце](/ru/poetry/heart).
@@ -19,8 +21,8 @@ title: Updates
 - [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight).
 - [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me).
 - [ ] *\[2026-01-20 22:15\]* Add leetcode follow button to main page.
-- [ ] *\[2026-01-19 08:13\]* Add report button on text selection.
-- [ ] *\[2026-01-19 12:30\]* Update teaching section.
+- [x] *\[2026-01-19 08:13\]* Add report button on text selection.
+- [x] *\[2026-01-19 12:30\]* Update teaching section.
 - [x] *\[2026-01-14 17:07\]* New verse (Ru): [Прости](/ru/poetry/sorry).
 - [x] *\[2025-11-06 16:33\]* New verse (Ru): [Опустошение](/ru/poetry/devastation).
 - [x] *\[2025-11-04 20:25\]* New verse (Ru): [Молчание](/ru/poetry/hush).
