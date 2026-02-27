@@ -10,7 +10,7 @@ tech_name: updates
 title: Updates
 ---
 - [ ] *\[2026-02-28 06:14\]* New verse (Ru): [Чёрный](/ru/poetry/black).
-- [ ] *\[2026-02-27 06:44\]* New verse (Ru): [Страх](/ru/poetry/fear).
+<!-- - [ ] *\[2026-02-27 06:44\]* New verse (Ru): [Страх](/ru/poetry/fear). -->
 - [ ] *\[2026-02-24 07:02\]* New verse (Ru): [Там](/ru/poetry/there).
 - [ ] *\[2026-02-22 07:46\]* New verse (Ru): [Монастырь](/ru/poetry/monastery).
 - [ ] *\[2026-02-20 08:28\]* New verse (Ru): [Сердце](/ru/poetry/heart).
