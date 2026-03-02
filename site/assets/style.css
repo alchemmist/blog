@@ -417,10 +417,6 @@ pre code * {
   }
 }
 
-.tilde {
-  font-family: "JetBrains Mono";
-}
-
 pre code * .err {
   background-color: transparent !important;
 }

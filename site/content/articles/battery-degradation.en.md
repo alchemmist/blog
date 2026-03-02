@@ -122,7 +122,7 @@ echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
 Here `-d'.'` means we split by dot and `-f1` means we take first part.
 
 ## Waybar module
-In my waybar config <code><span class="tilde">~</span>/.config/waybar/config.json</code> I’m add two modules on right section, but you can do as you want. Finally i’m got this:
+In my waybar config `~/.config/waybar/config.json` I’m add two modules on right section, but you can do as you want. Finally i’m got this:
 ![](/images/battery-waybar-module.png)
 > If you like my wallpaper you can find [this](https://github.com/alchemmist/dotfiles/blob/main/wallpapers/anime/images/wallhaven-9mv6ew.jpg) and more very good stuff in my `dotfiles` repository on [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Don’f forget: I love your stars!
 
@@ -172,7 +172,7 @@ chmod +x ~/scripts/battery-degradation.sh
 
 In module we define the format with nerd icon and percent, turn off tooltip and set run once on waybar start *(because this parameter changing very long)*. 
 
-And finish this modules with css style in <code><span class="tilde">~</span>/.config/waybar/style.css</code>:
+And finish this modules with css style in `~/.config/waybar/style.css`:
 ```css
 #battery,
 #custom-battery-degradation {

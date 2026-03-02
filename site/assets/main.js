@@ -9,14 +9,6 @@ style.textContent = `
 document.head.appendChild(style);
 
 document.addEventListener("DOMContentLoaded", function () {
-  // document.querySelectorAll("img[alt^='|']").forEach(function (img) {
-  //   const width = img.alt.match(/^\|(\d+)/)?.[1];
-  //   if (width) {
-  //     img.style.width = `${width / 20}` + "rem";
-  //     img.alt = "";
-  //   }
-  // });
-
   const header = document.querySelector("header");
   if (header) {
     const burger = header.querySelector(".burger");

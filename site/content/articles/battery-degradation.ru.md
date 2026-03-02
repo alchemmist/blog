@@ -121,7 +121,7 @@ echo "(1 - $(upower -i $(upower -e | grep BAT) | awk '\
 ```
 
 ## Модуль для Waybar
-В моём конфиге waybar <code><span class="tilde">~</span>/.config/waybar/config.json</code> я добавил два модуля в правую секцию, но вы можете сделать как вам удобно. В итоге я получил это:
+В моём конфиге waybar `~/.config/waybar/config.json` я добавил два модуля в правую секцию, но вы можете сделать как вам удобно. В итоге я получил это:
 ![](/images/battery-waybar-module.png)
 > Если вам нравятся мои обои, вы можете найти их и другие классные штуки в моём репозитории `dotfiles` на [GitHub](https://github.com/alchemmist/dotfiles/tree/main/wallpapers). Не забывайте: я люблю ваши звёзды!
 

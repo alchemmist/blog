@@ -27,7 +27,7 @@ windowrulev2 = noscreenshare, class:^(org.telegram.desktop|obsidian|discord)$
 ```
 This option will tell Hyprland to draw a black rectangle instead of window content (*even if this window isn’t in focus or int the background*). This works perfect and protects our privacy. But, I’ve found two inconvenient cases: **1.** When we want to make screenshot (*in my case, with flameshot*) Hyprland interpret it as try to share our screen and hide all privacy windows. **2.** Sometimes, I want to share something from my Obsidian, for example, and dive into configs in this moment — not so good.
 ## CLI control noscreenshare option
-To fix this experience, let’s write a script for control window rule in config. If you don’t have time, the full version of the script [here](https://github.com/alchemmist/dotfiles/blob/main/scripts/toggle_noscreenshare.sh). Script will comment or uncomment line in config file with rule and save info about current rule state in maker-file <code><span class="tilde">~</span>/.config/hypr/.screenshare_rule_disabled</code>. And script can be run with command `toggle` to change state to the opposite:
+To fix this experience, let’s write a script for control window rule in config. If you don’t have time, the full version of the script [here](https://github.com/alchemmist/dotfiles/blob/main/scripts/toggle_noscreenshare.sh). Script will comment or uncomment line in config file with rule and save info about current rule state in maker-file `~/.config/hypr/.screenshare_rule_disabled`. And script can be run with command `toggle` to change state to the opposite:
 ```bash
 #!/bin/bash
 
