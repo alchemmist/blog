@@ -1,7 +1,6 @@
 {{ define "main" }}
 <div class="base-container article-container">
   <article>
-
     {{ .Content }}
 
     <section class="course-lectures">
@@ -10,7 +9,6 @@
         {{ range .Params.lectures }}
         <div class="lecture-card">
           <p class="lecture-title">{{ .title }}</p>
-
           <div class="links-container">
             {{ with .pdf }}
             <p>
@@ -46,9 +44,24 @@
         {{ end }}
       </div>
     </section>
-    <br />
-    <br />
-    <br />
+
+    <section class="eosp-gallery">
+      <h2>Moments</h2>
+      <div class="masonry-grid">
+        {{ $images := readDir "static/images/eosp" }} {{ range $images }} {{ if
+        or (in (lower .Name) ".jpg") (in (lower .Name) ".jpeg") (in (lower
+        .Name) ".png") (in (lower .Name) ".webp") }}
+        <div class="masonry-item">
+          <img
+            src="/images/eosp/{{ .Name }}"
+            alt="{{ .Name }}"
+            data-zoom
+            loading="lazy"
+          />
+        </div>
+        {{ end }} {{ end }}
+      </div>
+    </section>
   </article>
 </div>
 {{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }} {{ end }}

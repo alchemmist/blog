@@ -2121,3 +2121,45 @@ a {
   text-decoration-line: underline;
   text-underline-offset: 3px;
 }
+
+.eosp-gallery {
+  margin-bottom: 5rem;
+}
+
+.masonry-grid {
+  column-width: 280px;
+  column-gap: 12px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.3s;
+  margin: 0;
+}
+
+.masonry-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Адаптация для узких экранов */
+@media (max-width: 600px) {
+  .masonry-grid {
+    column-width: 150px;
+  }
+}
