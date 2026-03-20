@@ -2157,9 +2157,43 @@ a {
   transform: scale(1.02);
 }
 
+.masonry-item--video {
+  aspect-ratio: auto;
+  position: relative;
+}
+
+.masonry-item--video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.masonry-video-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  font-family: "NerdFontsSymbols Nerd Font", "CourierCyr", serif;
+}
+
 /* Адаптация для узких экранов */
 @media (max-width: 600px) {
   .masonry-grid {
     column-width: 150px;
   }
+}
+
+.course-lectures h2,
+.eosp-gallery h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }

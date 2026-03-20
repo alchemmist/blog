@@ -48,6 +48,19 @@
     <section class="eosp-gallery">
       <h2>Moments</h2>
       <div class="masonry-grid">
+        <div class="masonry-item masonry-item--video">
+          <video
+            src="/images/eosp/video.mp4"
+            class="masonry-video"
+            muted
+            loop
+            autoplay
+            playsinline
+            preload="metadata"
+            aria-label="Toggle sound"
+          ></video>
+          <div class="masonry-video-badge" aria-hidden="true">&#xf026;</div>
+        </div>
         {{ $images := readDir "static/images/eosp" }} {{ range $images }} {{ if
         or (in (lower .Name) ".jpg") (in (lower .Name) ".jpeg") (in (lower
         .Name) ".png") (in (lower .Name) ".webp") }}
@@ -64,4 +77,22 @@
     </section>
   </article>
 </div>
-{{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }} {{ end }}
+{{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }}
+{{ partial "connect-nerdfont.html" }}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll(".masonry-video");
+    videos.forEach((video) => {
+      const badge = video.parentElement?.querySelector(".masonry-video-badge");
+      video.volume = 0.2;
+
+      video.addEventListener("click", () => {
+        video.muted = !video.muted;
+        if (badge) {
+          badge.textContent = video.muted ? "\uf026" : "\uf028";
+        }
+      });
+    });
+  });
+</script>
+{{ end }}
