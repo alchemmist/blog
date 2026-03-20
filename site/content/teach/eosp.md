@@ -43,6 +43,10 @@ lectures:
     title: "Lecture 05"
   - id: 06-lecture
     title: "Lecture 06"
+    pdf:
+      en: "https://alchemmist.github.io/eosp/pdf/06-lecture.en.pdf"
+    web: 
+      en: "https://alchemmist.github.io/eosp/lectures/06-lecture-en"
   - id: 07-lecture
     title: "Lecture 07"
   - id: 08-lecture
