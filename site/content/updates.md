@@ -9,6 +9,8 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-03-31 08:43\]* New verse (Ru): [Между](/ru/poetry/between) 
+- [ ] *\[2026-03-19 19:23\]* Add photos to EOSP page
 - [ ] *\[2026-02-28 06:14\]* New verse (Ru): [Чёрный](/ru/poetry/black).
 - [ ] *\[2026-02-24 07:02\]* New verse (Ru): [Там](/ru/poetry/there).
 - [ ] *\[2026-02-22 07:46\]* New verse (Ru): [Монастырь](/ru/poetry/monastery).
@@ -18,8 +20,8 @@ title: Updates
 - [ ] *\[2026-02-13 07:55\]* New article (En, Ru): [Typing in Python](/articles/typing-python).
 - [ ] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute).
 - [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight).
-- [ ] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me).
-- [ ] *\[2026-01-20 22:15\]* Add leetcode follow button to main page.
+- [x] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me).
+- [x] *\[2026-01-20 22:15\]* Add leetcode follow button to main page.
 - [x] *\[2026-01-19 08:13\]* Add report button on text selection.
 - [x] *\[2026-01-19 12:30\]* Update teaching section.
 - [x] *\[2026-01-14 17:07\]* New verse (Ru): [Прости](/ru/poetry/sorry).
