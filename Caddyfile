@@ -44,6 +44,10 @@ devsyringe.alchemmist.xyz {
     redir https://devsyringe.xyz{uri} 301
 }
 
+rooms.alchemmist.xyz {
+    reverse_proxy rooms_frontend:80
+}
+
 alchemmist.xyz {
     root * /srv
     encode gzip zstd
