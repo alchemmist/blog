@@ -79,6 +79,7 @@ alchemmist.xyz {
     redir /cv/ru/short https://alchemmist.github.io/CV/pdf/short-rus.pdf
     redir /cv/ru/go https://alchemmist.github.io/CV/pdf/go-rus.pdf
     redir /cv/ru/python https://alchemmist.github.io/CV/pdf/python-rus.pdf
+    redir /cv/ru/devops https://alchemmist.github.io/CV/pdf/devops-rus.pdf
 
     redir /rss /index.xml
     redir /feed /index.xml
