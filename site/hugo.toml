@@ -66,3 +66,9 @@ home = ["HTML", "RSS"]
 changefreq = "monthly"
 priority = 0.5
 filename = "sitemap.xml"
+
+# Свежий Hugo (0.160+) по умолчанию запрещает HTML-файлы как контент
+# (allowContent = ['! ^text/html$']), из-за чего content/cv.html ломал сборку.
+# Разрешаем любой тип контента — возвращаем прежнее поведение.
+[security]
+allowContent = ['.']

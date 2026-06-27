@@ -1433,6 +1433,13 @@ article hr {
 
 .end-splitter {
   margin: 2em 0;
+  /* Линию задаём прямо здесь, а не через `article hr`: на странице стихов
+     splitter лежит вне <article>, во flex-колонке с align-items:center, и без
+     явной ширины схлопывается в точку. Самодостаточный класс работает везде. */
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: #eee;
 }
 
 /* ===== Share / Social ===== */
