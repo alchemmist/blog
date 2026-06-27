@@ -9,6 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
+- [ ] *\[2026-06-28 12:00\]* New verse (Ru): [Сосуд опустошенный](ru/poetry/vessel-is-empty) 
 - [ ] *\[2026-04-21 14:09\]* New verse (Ru): [Турка](/ru/poetry/turk) 
 - [ ] *\[2026-03-31 08:43\]* New verse (Ru): [Между](/ru/poetry/between) 
 - [ ] *\[2026-03-19 19:23\]* Add photos to EOSP page
@@ -19,7 +20,7 @@ title: Updates
 - [ ] *\[2026-02-18 07:51\]* New verse (Ru): [Полынь](/ru/poetry/wormwood).
 - [ ] *\[2026-02-16 12:11\]* New verse (Ru): [Кинцуги](/ru/poetry/kintsugi).
 - [ ] *\[2026-02-13 07:55\]* New article (En, Ru): [Typing in Python](/articles/typing-python).
-- [ ] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute).
+- [x] *\[2026-02-11 09:29\]* New article (En, Ru): [How to contribute](/articles/how-we-contribute).
 - [x] *\[2026-01-28 21:42\]* New verse (Ru): [Час сумарочи](/ru/poetry/hour-of-twilight).
 - [x] *\[2026-01-28 21:42\]* New verse (Ru): [Я](/ru/poetry/me).
 - [x] *\[2026-01-20 22:15\]* Add leetcode follow button to main page.
