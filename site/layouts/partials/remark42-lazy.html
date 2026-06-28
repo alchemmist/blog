@@ -1,0 +1,57 @@
+{{/* Лениво подгружает комментарии remark42 — embed.js загружается только
+     когда блок #remark42 приближается к вьюпорту. Иначе на загрузке страницы
+     виджет дёргает layout (несколько сдвигов в первые ~600мс) — #33.
+     Требует <div id="remark42"></div> где-то на странице. */}}
+<script>
+  window.remark_config = {
+    host: "https://remark42.alchemmist.xyz",
+    site_id: "alchemmist",
+    components: ["embed"],
+    no_footer: true,
+    simpe_view: true,
+  };
+
+  (function () {
+    function loadRemark() {
+      if (window.__remark42Loaded) return;
+      window.__remark42Loaded = true;
+      var s = document.createElement("script");
+      s.src = "https://remark42.alchemmist.xyz/web/embed.js";
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+
+    function init() {
+      var el = document.getElementById("remark42");
+      if (!el) return;
+      // Нет IntersectionObserver — грузим сразу, поведение как раньше.
+      if (!("IntersectionObserver" in window)) {
+        loadRemark();
+        return;
+      }
+      var io = new IntersectionObserver(
+        function (entries) {
+          if (
+            entries.some(function (e) {
+              return e.isIntersecting;
+            })
+          ) {
+            io.disconnect();
+            loadRemark();
+          }
+        },
+        // rootMargin 0 — грузим строго когда блок реально входит во вьюпорт.
+        // Любой положительный нижний отступ растянул бы корень вниз и заставил
+        // комментарии под сгибом грузиться уже на старте — ровно тот лаг (#33).
+        { rootMargin: "0px" },
+      );
+      io.observe(el);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
