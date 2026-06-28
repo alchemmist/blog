@@ -125,6 +125,18 @@
     {{ block "head" . }}{{ end }}
   </head>
   <body>
+    <!-- Pagefind: картинка для результатов поиска (#13). Pagefind 1.x не
+         достаёт картинки сам и читает data-pagefind-meta только из <body>,
+         поэтому отдаём ему OG-карточку страницы явно скрытым элементом —
+         иначе showImages в поиске показывать нечего. -->
+    <span
+      data-pagefind-meta="image[data-src]"
+      data-src="{{ $ogImage }}"
+    ></span>
+    <span
+      data-pagefind-meta="image_alt[data-alt]"
+      data-alt="{{ .Title }}"
+    ></span>
     <button id="report-typo">Report</button>
     <div id="shortcut-overlay"></div>
     <div id="shortcut-modal">
