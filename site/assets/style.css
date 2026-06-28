@@ -411,15 +411,29 @@ pre code .tab::selection {
   color: rgba(0, 0, 0, 0);
 }
 
+/* Блоки без указанного языка (#25) рендерятся как <pre><code>текст</code></pre>
+   без дочерних span — поэтому шрифт/выравнивание вешаем и на сам pre code,
+   иначе такой текст наследует серифный центрированный article *. */
+pre code,
 pre code * {
   font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
-  font-size: 0.96em;
   line-height: 1.2;
   text-align: left;
 }
 
+/* Размер задаём на самом code (нужно для блоков без языка, где нет дочерних
+   span); у потомков 1em, чтобы em не умножался дважды и язык-блоки не меняли
+   размер. */
+pre code {
+  font-size: 0.96em;
+}
+
+pre code * {
+  font-size: 1em;
+}
+
 @media (max-width: 650px) {
-  pre code * {
+  pre code {
     font-size: 1em;
   }
 }
