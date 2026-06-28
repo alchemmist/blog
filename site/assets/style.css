@@ -86,11 +86,14 @@ body::-webkit-scrollbar {
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  /* Цвет футера: виден только в зоне macOS overscroll-bounce (под футером),
+     чтобы там не появлялась белая полоса. На самом сайте перекрыт белым body. */
+  background-color: #fafafa;
 }
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   opacity: 1;
@@ -102,6 +105,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* min-height вместо height:100% — чтобы белый фон body покрывал весь контент
+     (а не только первый экран) и серый html был виден лишь при отскоке. */
+  min-height: 100vh;
+  background-color: #fff;
 }
 
 /* ===== Typography & Links ===== */
@@ -715,18 +722,18 @@ blockquote {
   position: absolute;
   height: auto;
   max-width: 30vw;
+  top: var(--top);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) var(--delay, 0s);
 }
 
 .moss-left {
+  left: var(--off, -10%);
   transform: translateX(-100%);
-  left: -10%;
-  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .moss-right {
+  right: var(--off, -10%);
   transform: translateX(100%);
-  right: -10%;
-  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .moss-overlay.active {
@@ -744,130 +751,15 @@ blockquote {
 @media (max-width: 650px) {
   .moss-layer {
     max-width: 100vw;
-  }
-
-  .moss-right {
-    right: -60%;
+    top: var(--top-m, var(--top));
   }
 
   .moss-left {
-    left: -60%;
+    left: var(--off-m, -60%);
   }
-}
 
-#moss-left-1 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s !important;
-  top: 2%;
-}
-
-@media (max-width: 650px) {
-  #moss-left-1 {
-    left: -48%;
-    top: -13%;
-  }
-}
-#moss-left-2 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s !important;
-  top: 21%;
-}
-
-@media (max-width: 650px) {
-  #moss-left-2 {
-    left: -70%;
-    top: 11%;
-  }
-}
-#moss-left-3 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s !important;
-  top: 40%;
-}
-
-@media (max-width: 650px) {
-  #moss-left-3 {
-    left: -70%;
-    top: 31%;
-  }
-}
-
-#moss-left-4 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s !important;
-  top: 65%;
-}
-
-@media (max-width: 650px) {
-  #moss-left-4 {
-    top: 60%;
-    left: -70%;
-  }
-}
-
-#moss-left-5 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s !important;
-  top: 71%;
-}
-
-@media (max-width: 650px) {
-  #moss-left-5 {
-    top: 63%;
-    left: -65%;
-  }
-}
-
-#moss-right-1 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s !important;
-  top: -5%;
-  right: -15%;
-}
-
-@media (max-width: 650px) {
-  #moss-right-1 {
-    top: -12%;
-    right: -76%;
-  }
-}
-
-#moss-right-2 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s !important;
-  top: 10%;
-}
-
-@media (max-width: 650px) {
-  #moss-right-2 {
-    top: 2%;
-    right: -72%;
-  }
-}
-
-#moss-right-3 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s !important;
-  top: 39%;
-}
-
-@media (max-width: 650px) {
-  #moss-right-3 {
-    top: 32%;
-    right: -65%;
-  }
-}
-
-#moss-right-4 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.1s !important;
-  top: 50%;
-}
-
-@media (max-width: 650px) {
-  #moss-right-4 {
-    right: -45%;
-  }
-}
-
-#moss-right-5 {
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s !important;
-  top: 72%;
-}
-
-@media (max-width: 650px) {
-  #moss-right-5 {
+  .moss-right {
+    right: var(--off-m, -60%);
   }
 }
 

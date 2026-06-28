@@ -42,67 +42,26 @@
   });
 </script>
 
+{{/* Декоративный мох по краям. Позиции/задержки — в данных, а не в 30 CSS-id-
+     правилах: каждый слой задаёт свои координаты через CSS-переменные.
+     top/delay/off — десктоп, topM/offM — мобайл (<650px). off по умолчанию -10%. */}}
+{{ $moss := slice
+  (dict "src" "moss1-2" "side" "left"  "top" "2%"  "delay" ".1s" "topM" "-13%" "offM" "-48%")
+  (dict "src" "moss3"   "side" "left"  "top" "21%" "delay" ".5s" "topM" "11%"  "offM" "-70%")
+  (dict "src" "moss8"   "side" "left"  "top" "40%" "delay" ".4s" "topM" "31%"  "offM" "-70%")
+  (dict "src" "moss2"   "side" "left"  "top" "65%" "delay" ".2s" "topM" "60%"  "offM" "-70%")
+  (dict "src" "moss1"   "side" "left"  "top" "71%" "delay" ".4s" "topM" "63%"  "offM" "-65%")
+  (dict "src" "moss2"   "side" "right" "top" "-5%" "delay" ".2s" "topM" "-12%" "offM" "-76%" "off" "-15%")
+  (dict "src" "moss8"   "side" "right" "top" "10%" "delay" ".4s" "topM" "2%"   "offM" "-72%")
+  (dict "src" "moss7"   "side" "right" "top" "39%" "delay" ".3s" "topM" "32%"  "offM" "-65%")
+  (dict "src" "moss1-1" "side" "right" "top" "50%" "delay" ".1s" "topM" "50%"  "offM" "-45%")
+  (dict "src" "moss3"   "side" "right" "top" "72%" "delay" ".3s" "topM" "72%"  "offM" "-60%")
+}}
 <div class="moss-overlay">
-  <img
-    src="/assets/moss1-2.webp"
-    class="moss-layer moss-left"
-    id="moss-left-1"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss3.webp"
-    class="moss-layer moss-left"
-    id="moss-left-2"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss8.webp"
-    class="moss-layer moss-left"
-    id="moss-left-3"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss2.webp"
-    class="moss-layer moss-left"
-    id="moss-left-4"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss1.webp"
-    class="moss-layer moss-left"
-    id="moss-left-5"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss2.webp"
-    class="moss-layer moss-right"
-    id="moss-right-1"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss8.webp"
-    class="moss-layer moss-right"
-    id="moss-right-2"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss7.webp"
-    class="moss-layer moss-right"
-    id="moss-right-3"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss1-1.webp"
-    class="moss-layer moss-right"
-    id="moss-right-4"
-    loading="lazy"
-  />
-  <img
-    src="/assets/moss3.webp"
-    class="moss-layer moss-right"
-    id="moss-right-5"
-    loading="lazy"
-  />
+  {{ range $moss }}
+  <img src="/assets/{{ .src }}.webp" class="moss-layer moss-{{ .side }}" loading="lazy"
+    style="--top: {{ .top }}; --delay: {{ .delay }}; --top-m: {{ .topM }}; --off-m: {{ .offM }};{{ with .off }} --off: {{ . }};{{ end }}" />
+  {{ end }}
 </div>
 
 <div class="moss-trigger-zone left"></div>
