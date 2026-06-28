@@ -763,6 +763,37 @@ blockquote {
   }
 }
 
+/* ===== 404 ===== */
+.notfound-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6em;
+  min-height: 60vh;
+}
+
+.notfound-code {
+  font-size: 6rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.notfound-text {
+  font-size: 1.2rem;
+  margin: 0.3em 0 0;
+}
+
+.notfound-sub {
+  color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+.notfound-home {
+  margin-top: 1.2em;
+}
+
 /* ===== MathJax ===== */
 mjx-container[display="true"] {
   pointer-events: none;

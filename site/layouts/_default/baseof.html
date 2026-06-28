@@ -55,6 +55,8 @@
 
     <link rel="canonical" href="{{ .RelPermalink | absURL }}" />
 
+    {{ $ogImage := partial "og-image.html" . }}
+
     <!-- OpenGraph -->
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
     <meta
@@ -67,14 +69,7 @@
     />
     {{ $logo := partial "logo-nobackground.html" . }}
     <meta property="og:logo" content="data:image/svg+xml;base64,{{ $logo | base64Encode }}" />
-    <meta
-      property="og:image"
-      content="{{ if .Params.image }}
-        {{ .Params.image }}
-      {{ else }}
-        /assets/preview.png
-      {{ end }}"
-    />
+    <meta property="og:image" content="{{ $ogImage }}" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
@@ -89,14 +84,7 @@
         {{ .Summary | plainify | truncate 160 }}
       {{ end }}"
     />
-    <meta
-      name="twitter:image"
-      content="{{ if .Params.image }}
-        {{ .Params.image }}
-      {{ else }}
-        /assets/preview.png
-      {{ end }}"
-    />
+    <meta name="twitter:image" content="{{ $ogImage }}" />
     <meta name="twitter:site" content="@alchemmist_blog" />
 
     <!-- Styles -->
@@ -129,6 +117,9 @@
       onload="this.media = 'all'"
     />
     <script src="/_pagefind/pagefind-ui.js" defer></script>
+
+    <!-- Structured data (JSON-LD) -->
+    {{ partial "schema.html" (dict "page" . "image" $ogImage) }}
     {{ block "head" . }}{{ end }}
   </head>
   <body>

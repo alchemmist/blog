@@ -1,6 +1,7 @@
 public
 site/public/*
 /site/public
+site/resources/_gen
 compose.yaml
 umami_backup.sql
 data

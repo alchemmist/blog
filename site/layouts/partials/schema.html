@@ -1,0 +1,34 @@
+{{/* JSON-LD структурированные данные. Принимает (dict "page" . "image" url). */}}
+{{ $p := .page }}
+{{ $img := .image }}
+{{ $desc := cond (ne (string $p.Description) "") (string $p.Description) ($p.Summary | plainify | truncate 160) }}
+{{ if $p.IsPage }}
+  {{ $data := dict
+    "@context" "https://schema.org"
+    "@type" "BlogPosting"
+    "headline" $p.Title
+    "description" $desc
+    "datePublished" ($p.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" ($p.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "image" $img
+    "inLanguage" $p.Site.Language.Lang
+    "url" $p.Permalink
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" $p.Permalink)
+    "author" (dict "@type" "Person" "name" "alchemmist" "url" $p.Site.BaseURL)
+    "publisher" (dict "@type" "Person" "name" "alchemmist" "url" $p.Site.BaseURL)
+  }}
+  <script type="application/ld+json">
+{{ jsonify (dict "indent" "  ") $data | safeJS }}
+  </script>
+{{ else }}
+  {{ $data := dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "name" $p.Site.Title
+    "url" $p.Site.BaseURL
+    "author" (dict "@type" "Person" "name" "alchemmist" "url" $p.Site.BaseURL)
+  }}
+  <script type="application/ld+json">
+{{ jsonify (dict "indent" "  ") $data | safeJS }}
+  </script>
+{{ end }}

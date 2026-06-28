@@ -1,0 +1,43 @@
+{{/* Возвращает URL OG-картинки для текущей страницы.
+     Для контентных страниц (articles/essays/moss/teach/poetry) генерирует
+     карточку с заголовком на фоне; иначе — дефолтный preview.png или
+     .Params.image, если задан вручную. */}}
+{{ $default := "/assets/preview.png" | absURL }}
+{{ with .Params.image }}{{ $default = . }}{{ end }}
+{{ $result := $default }}
+
+{{ $sections := slice "articles" "essays" "moss" "teach" "poetry" }}
+{{ if and .IsPage (in $sections .Section) (not .Params.image) }}
+  {{ $bg := resources.Get "og/bg.png" }}
+  {{ $font := resources.Get "og/font-bold.ttf" }}
+  {{ if and $bg $font }}
+    {{/* Перенос заголовка по словам, лимит по числу рун (кириллица учтена). */}}
+    {{ $max := 26 }}
+    {{ $lines := slice }}
+    {{ $cur := "" }}
+    {{ range (split .Title " ") }}
+      {{ $try := cond (eq $cur "") . (printf "%s %s" $cur .) }}
+      {{ if le (strings.RuneCount $try) $max }}
+        {{ $cur = $try }}
+      {{ else }}
+        {{ if ne $cur "" }}{{ $lines = $lines | append $cur }}{{ end }}
+        {{ $cur = . }}
+      {{ end }}
+    {{ end }}
+    {{ if ne $cur "" }}{{ $lines = $lines | append $cur }}{{ end }}
+    {{ $lines = first 5 $lines }}
+
+    {{ $img := $bg }}
+    {{/* Раздел сверху */}}
+    {{ $img = $img.Filter (images.Text (upper .Section) (dict
+      "size" 26 "color" "#8a8a8a" "x" 72 "y" 64 "font" $font)) }}
+    {{/* Строки заголовка */}}
+    {{ range $i, $line := $lines }}
+      {{ $img = $img.Filter (images.Text $line (dict
+        "size" 64 "color" "#1a1a1a" "x" 72 "y" (add 150 (mul $i 82)) "font" $font)) }}
+    {{ end }}
+    {{ $result = $img.Permalink }}
+  {{ end }}
+{{ end }}
+
+{{ return $result }}
