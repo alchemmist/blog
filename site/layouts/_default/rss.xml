@@ -1,30 +1,39 @@
 {{- $pctx := . -}}
 {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
 {{- $pages := $pctx.RegularPages -}}
-{{- $limit := .Site.Config.Services.RSS.Limit -}}
-{{- if ge $limit 1 -}}
-{{- $pages = $pages | first $limit -}}
+{{/* На общем фиде главной не показываем книги — это список чтения (render:link, без контента), а не записи */}}
+{{- if .IsHome -}}
+  {{- $pages = where $pages "Section" "!=" "books" -}}
 {{- end -}}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+{{/* Служебная страница поиска — не запись, в фид не нужна */}}
+{{- $pages = where $pages "Layout" "!=" "search" -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}{{- $pages = $pages | first $limit -}}{{- end -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }}{{ if not .IsHome }} — {{ .Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Последние обновления в блоге alchemmist</description>
+    <description>Последние записи в блоге alchemmist</description>
     <generator>Hugo {{ hugo.Version }}</generator>
-    <language>ru</language>
+    <language>{{ .Site.Language.Lang }}</language>
     {{ with .Site.Copyright }}<copyright>{{ . }}</copyright>{{ end }}
-    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
+    {{ with .OutputFormats.Get "RSS" }}<atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />{{ end }}
+    <lastBuildDate>{{ range first 1 $pages }}{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}{{ else }}{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}{{ end }}</lastBuildDate>
     {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ with .Params.author }}<dc:creator>{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}</dc:creator>{{ else }}<dc:creator>alchemmist</dc:creator>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Summary | html }}</description>
-      {{ if .Params.tags }}
-      <category>{{ delimit .Params.tags ", " }}</category>
-      {{ end }}
+      {{ with .Summary | plainify | htmlUnescape }}<description>{{ . | htmlEscape }}</description>{{ end }}
+      <content:encoded>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</content:encoded>
+      {{ range .Params.tags }}<category>{{ . }}</category>{{ end }}
     </item>
     {{ end }}
   </channel>

@@ -102,12 +102,14 @@
     />
 
     <!-- RSS -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      href="{{ .Site.BaseURL }}index.xml"
-      title="{{ .Site.Title }} RSS Feed"
-    />
+    {{ with .OutputFormats.Get "RSS" }}
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="{{ .Permalink }}"
+        title="{{ $.Site.Title }} RSS Feed"
+      />
+    {{ end }}
 
     <!-- External Libraries -->
     <link

@@ -62,6 +62,10 @@ weight = 2
 [outputs]
 home = ["HTML", "RSS"]
 
+[services]
+[services.rss]
+limit = 30
+
 [sitemap]
 changefreq = "monthly"
 priority = 0.5
