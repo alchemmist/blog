@@ -1,0 +1,40 @@
+name: Build
+
+# Проверяет, что сайт вообще собирается, до того как изменения попадут в main
+# и сервер дёрнет deploy.yaml. Падение Hugo/pagefind тут блокирует merge.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HUGO_VERSION: 0.163.3
+  PAGEFIND_VERSION: 1.5.2
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo (extended)
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build with Hugo
+        working-directory: site
+        run: hugo --minify --gc
+
+      - name: Build search index (pagefind)
+        working-directory: site
+        run: npx -y pagefind@${{ env.PAGEFIND_VERSION }} --site public --output-subdir _pagefind --force-language all
