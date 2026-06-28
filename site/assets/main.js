@@ -256,6 +256,42 @@ const shortcutsMap = Object.fromEntries(
   shortcuts.filter((s) => s.url).map((s) => [s.key, s.url]),
 );
 
+// Подсказка шортката при наведении на кнопки разделов (#29).
+// Сопоставляем ссылки навигации с шорткатами по их URL и вешаем бейдж с клавишей.
+const normalizePath = (path) => {
+  try {
+    path = new URL(path, window.location.origin).pathname;
+  } catch (e) {
+    /* оставляем как есть, если href не парсится */
+  }
+  return path === "/" ? "/" : path.replace(/\/$/, "");
+};
+
+const urlToShortcutKey = Object.fromEntries(
+  shortcuts
+    .filter((s) => s.url)
+    .map((s) => [normalizePath(s.url), s.key]),
+);
+
+function decorateShortcutHints() {
+  // Только навигационные кнопки разделов, не ссылки в тексте.
+  document.querySelectorAll(".side-menu a, .link a").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href) return;
+    const key = urlToShortcutKey[normalizePath(href)];
+    if (!key) return;
+    a.classList.add("has-shortcut");
+    a.dataset.shortcut = key;
+    a.setAttribute("title", `Shortcut: ${key}`);
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", decorateShortcutHints);
+} else {
+  decorateShortcutHints();
+}
+
 const overlay = document.getElementById("shortcut-overlay");
 const modal = document.getElementById("shortcut-modal");
 const shortcutList = document.getElementById("shortcut-list");
