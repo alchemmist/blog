@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {{ range .Pages }}
+    {{/* Книги рендерятся как render:link (без HTML-файла) — в sitemap им не место */}}
+    {{ if and (eq .Kind "page") (eq .Section "books") }}{{ continue }}{{ end }}
     <url>
       <loc>{{ .Permalink }}</loc>
       {{ if not .Lastmod.IsZero }}
