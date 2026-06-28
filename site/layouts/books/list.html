@@ -1,36 +1,30 @@
 {{ define "main" }}
-<div class="base-container books-container">
-<h2 data-pagefind-meta="title">Books library</h2>
-  <div class="tags-list">
-  <h3>Genres</h3>
-    <ul>
-      {{ range $key, $value := site.Taxonomies.genre }}
-        <span class="tag">
-          <a href="{{ "/genre/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>({{ len $value }})
-        </span>
-      {{ end }}
-    </ul>
-  </div>
-  <div class="tags-list">
-  <h3>Statuses</h3>
-    <ul>
-      {{ range $key, $value := site.Taxonomies.status }}
-        <span class="tag">
-          <a href="{{ "/status/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>({{ len $value }})
-        </span>
-      {{ end }}
-    </ul>
-  </div>
-  <div class="tags-list">
-  <h3>Authors</h3>
-    <ul>
-      {{ range $key, $value := site.Taxonomies.author }}
-        <span class="tag">
-          <a href="{{ "/author/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>({{ len $value }})
-        </span>
-      {{ end }}
-    </ul>
-  </div>
+<div class="base-container books-container shelf-container">
+  <h2 data-pagefind-meta="title">Books library</h2>
+
+  <nav class="shelf-filters">
+    <div class="shelf-filters__row">
+      <span class="shelf-filters__label">genres</span>
+      <div class="shelf-filters__chips">
+        {{ range $key, $value := site.Taxonomies.genre }}
+          <a class="shelf-chip" href="{{ "/genre/" | relLangURL }}{{ $key | urlize }}">{{ $key }}<span class="shelf-chip__n">{{ len $value }}</span></a>
+        {{ end }}
+      </div>
+    </div>
+    <div class="shelf-filters__row">
+      <span class="shelf-filters__label">status</span>
+      <div class="shelf-filters__chips">
+        {{ range $key, $value := site.Taxonomies.status }}
+          <a class="shelf-chip" href="{{ "/status/" | relLangURL }}{{ $key | urlize }}">{{ $key }}<span class="shelf-chip__n">{{ len $value }}</span></a>
+        {{ end }}
+      </div>
+    </div>
+  </nav>
+
+  {{ partial "books-shelf.html" (.Pages.ByDate.Reverse) }}
 </div>
 {{ end }}
 
+{{ define "head" }}
+{{ partial "connect-medium-zoom.html" }}
+{{ end }}

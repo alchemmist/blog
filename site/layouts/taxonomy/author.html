@@ -1,45 +1,10 @@
 {{ define "main" }}
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Путь к изображению-заглушке
-    const placeholder = "/assets/book-cover.png";
-
-    // Обработка ошибок загрузки обложек
-    document.querySelectorAll(".book-cover").forEach((img) => {
-      img.addEventListener("error", function () {
-        if (this.src !== placeholder) {
-          this.src = placeholder;
-          this.alt = "Обложка недоступна";
-        }
-      });
-    });
-  });
-</script>
-
-<div class="base-container book-container">
+<div class="base-container book-container author-container shelf-container">
   <h1 data-pagefind-meta="title">Books from: {{ .Title }}</h1>
-  <div class="book-grid">
-    {{ range .Pages }}
-    <div class="book-card">
-      {{ with .Params.cover }}
-      <img
-        class="book-cover"
-        src="{{ . }}"
-        alt="Cover preview"
-        loading="lazy"
-      />
-      {{ end }} {{ with .Params.title }}
-      <div class="book-title">{{ . }}</div>
-      {{ end }} {{ with .Params.author }}
-      <div class="book-author">{{ . }}</div>
-      {{ end }} {{ $status := .Params.status }}
-      <div class="book-status">
-        {{ if eq $status "reading" }} {{ partial "iconify" (dict "icon" "material-symbols:menu-book-outline-rounded")}} {{ else if eq $status "readed" }} {{ partial "iconify" (dict "icon" "ion:checkmark-done-outline")}} {{
-        else if eq $status "future" }} {{ partial "iconify" (dict "icon" "wi:time-4") }} {{ end }}
-      </div>
-    </div>
-    {{ end }}
-  </div>
+  {{ partial "books-shelf.html" .Pages }}
 </div>
-{{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.heml" }} {{ end }}
+{{ end }}
+
+{{ define "head" }}
+{{ partial "connect-medium-zoom.html" }}
+{{ end }}

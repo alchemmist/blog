@@ -1,0 +1,25 @@
+{{/* Полка книг: единый вид для главной /books/ и страниц таксономий.
+     Контекст (.) — коллекция страниц-книг. */}}
+<div class="shelf-grid">
+  {{ range . }}
+    {{ $title := .Title }}
+    <figure class="shelf-book" title="{{ .Title }}{{ with .Params.author }} — {{ . }}{{ end }}">
+      {{ $status := .Params.status }}
+      <span class="shelf-book__status shelf-book__status--{{ $status | default "none" }}">
+        {{ if eq $status "reading" }}{{ partial "iconify" (dict "icon" "material-symbols:menu-book-outline-rounded") }}
+        {{ else if eq $status "readed" }}{{ partial "iconify" (dict "icon" "ion:checkmark-done-outline") }}
+        {{ else if eq $status "future" }}{{ partial "iconify" (dict "icon" "wi:time-4") }}{{ end }}
+      </span>
+      {{ with .Params.cover }}
+        <img class="shelf-book__cover" src="{{ . }}" alt="{{ $title }}" loading="lazy"
+             onerror="this.onerror=null;this.src='/assets/book-cover.png';this.alt='Обложка недоступна'" />
+      {{ else }}
+        <div class="shelf-book__cover shelf-book__cover--empty"><span>{{ .Title }}</span></div>
+      {{ end }}
+      <figcaption class="shelf-book__meta">
+        <span class="shelf-book__title">{{ .Title }}</span>
+        {{ with .Params.author }}<span class="shelf-book__author">{{ . }}</span>{{ end }}
+      </figcaption>
+    </figure>
+  {{ end }}
+</div>
