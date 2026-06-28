@@ -53,7 +53,7 @@
   {{ end }}
 {{ end }}
 {{ define "head" }}
-  <meta data-pagefind-filter="Language[lang]" lang="{{ .Language.LanguageName }}" />
+  <meta data-pagefind-filter="Language[lang]" lang="{{ .Language.Label }}" />
   {{ if .Params.tags }}
     <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
   {{ end }}

@@ -1,5 +1,5 @@
 baseURL = 'https://alchemmist.xyz/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'alchemmist'
 
 [author]
@@ -53,10 +53,10 @@ disableDefaultLanguageRedirect = false
 
 [languages]
 [languages.en]
-languageName = "English"
+label = "English"
 weight = 1
 [languages.ru]
-languageName = "Русский"
+label = "Русский"
 weight = 2
 
 [outputs]

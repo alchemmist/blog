@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (header) {
     const burger = header.querySelector(".burger");
     const overlay = header.querySelector(".overlay");
-    const img = burger.querySelector("img");
+    const img = burger ? burger.querySelector("img") : null;
 
+    if (burger && overlay && img) {
     let menuOpen = false;
 
     img.style.transform = `rotate(${currentAngle}deg)`;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     burger.addEventListener("click", toggleMenu);
     overlay.addEventListener("click", toggleMenu);
+    }
   }
 
   const headerLogo = document.querySelector(".header-logo");
@@ -213,6 +215,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const githubIcon = document.querySelector(".subscribe-banner.github span");
   const catPopup = document.getElementById("cat-popup");
 
+  // Блок github-пасхалки есть не на всех страницах (например, в эссе блок
+  // подписки только telegram) — без этой проверки скрипт падал на null.
+  if (!githubIcon || !catPopup) return;
+
   githubIcon.addEventListener("click", function (e) {
     e.preventDefault();
     catPopup.style.display = "block";
@@ -253,9 +259,10 @@ const shortcutsMap = Object.fromEntries(
 const overlay = document.getElementById("shortcut-overlay");
 const modal = document.getElementById("shortcut-modal");
 const shortcutList = document.getElementById("shortcut-list");
-const closeBtn = modal.querySelector(".close-btn");
+const closeBtn = modal ? modal.querySelector(".close-btn") : null;
 
 function openModal() {
+  if (!overlay || !modal || !shortcutList) return;
   shortcutList.innerHTML = "";
   shortcuts.forEach((s) => {
     const li = document.createElement("li");
@@ -268,12 +275,13 @@ function openModal() {
 }
 
 function closeModal() {
+  if (!overlay || !modal) return;
   overlay.style.display = "none";
   modal.style.display = "none";
 }
 
-closeBtn.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+if (closeBtn) closeBtn.addEventListener("click", closeModal);
+if (overlay) overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (event) {
   const tag = event.target.tagName.toLowerCase();
@@ -338,44 +346,48 @@ document.addEventListener("keydown", (e) => {
 const typoBtn = document.getElementById("report-typo");
 const repo = "alchemmist/blog";
 
-document.addEventListener("selectionchange", () => {
-  const selection = window.getSelection();
-  const text = selection.toString().trim();
-
-  if (!text) {
-    typoBtn.style.display = "none";
-    return;
-  }
-
-  if (selection.rangeCount === 0) return;
-
-  const range = selection.getRangeAt(0);
-  const rect = range.getBoundingClientRect();
-
-  typoBtn.style.top = `${window.scrollY + rect.top - 30}px`;
-  typoBtn.style.left = `${window.scrollX + rect.left}px`;
-  typoBtn.style.display = "block";
-});
-
 function getHighlightLink(selectionText) {
   if (!selectionText) return window.location.href;
   const encoded = encodeURIComponent(selectionText);
   return `${window.location.href}#:~:text=${encoded}`;
 }
 
-typoBtn.addEventListener("click", () => {
-  const selection = window.getSelection().toString().trim();
-  if (!selection) return;
-  const title = encodeURIComponent("Typo report");
-  const body = encodeURIComponent(
-    `Found typo:\n\n"${selection}"\n\n[URL](${getHighlightLink(selection)})`,
-  );
-  const labels = "typo";
-  const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}&labels=${labels}`;
-  window.open(url, "_blank");
-  typoBtn.style.display = "none";
-});
+// Кнопка report-typo есть не на всех шаблонах — регистрируем обработчики
+// только когда она реально присутствует, иначе скрипт падал на null.
+if (typoBtn) {
+  document.addEventListener("selectionchange", () => {
+    const selection = window.getSelection();
+    const text = selection.toString().trim();
 
-document.addEventListener("mousedown", (e) => {
-  if (!typoBtn.contains(e.target)) typoBtn.style.display = "none";
-});
+    if (!text) {
+      typoBtn.style.display = "none";
+      return;
+    }
+
+    if (selection.rangeCount === 0) return;
+
+    const range = selection.getRangeAt(0);
+    const rect = range.getBoundingClientRect();
+
+    typoBtn.style.top = `${window.scrollY + rect.top - 30}px`;
+    typoBtn.style.left = `${window.scrollX + rect.left}px`;
+    typoBtn.style.display = "block";
+  });
+
+  typoBtn.addEventListener("click", () => {
+    const selection = window.getSelection().toString().trim();
+    if (!selection) return;
+    const title = encodeURIComponent("Typo report");
+    const body = encodeURIComponent(
+      `Found typo:\n\n"${selection}"\n\n[URL](${getHighlightLink(selection)})`,
+    );
+    const labels = "typo";
+    const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}&labels=${labels}`;
+    window.open(url, "_blank");
+    typoBtn.style.display = "none";
+  });
+
+  document.addEventListener("mousedown", (e) => {
+    if (!typoBtn.contains(e.target)) typoBtn.style.display = "none";
+  });
+}

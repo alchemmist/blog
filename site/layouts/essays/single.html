@@ -34,7 +34,7 @@
 </main>
 {{ end }}
 {{ define "head" }}
-    <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.LanguageName }} />
+    <meta  data-pagefind-filter="Language[lang]" lang={{ .Language.Label }} />
   {{ if .Params.topics }}
     <meta name="keywords" content="{{ delimit .Params.topics ", " }}">
   {{ end }}
