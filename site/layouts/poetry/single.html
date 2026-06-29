@@ -14,14 +14,5 @@
 {{ end }} {{ define "head" }}
 <meta data-pagefind-filter="Language[lang]" lang="{{.Language.Label}}" />
 
-<script>
-  window.remark_config = {
-    host: "https://remark42.alchemmist.xyz",
-    site_id: "alchemmist",
-    components: ["embed"],
-    no_footer: true,
-    simpe_view: true,
-  };
-</script>
-<script src="https://remark42.alchemmist.xyz/web/embed.js" defer></script>
+{{ partial "remark42-lazy.html" . }}
 {{ partial "connect-medium-zoom.html" }} {{ end }}
