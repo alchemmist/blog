@@ -257,7 +257,9 @@ const shortcutsMap = Object.fromEntries(
 );
 
 // Подсказка шортката при наведении на кнопки разделов (#29).
-// Сопоставляем ссылки навигации с шорткатами по их URL и вешаем бейдж с клавишей.
+// Сопоставляем ссылки навигации с шорткатами по URL и вешаем всплывающее
+// облачко (CSS-тултип через data-hint) — оно position:absolute и не влияет на
+// раскладку, поэтому пункты меню не разъезжаются.
 const normalizePath = (path) => {
   try {
     path = new URL(path, window.location.origin).pathname;
@@ -267,10 +269,10 @@ const normalizePath = (path) => {
   return path === "/" ? "/" : path.replace(/\/$/, "");
 };
 
-const urlToShortcutKey = Object.fromEntries(
+const urlToShortcut = Object.fromEntries(
   shortcuts
     .filter((s) => s.url)
-    .map((s) => [normalizePath(s.url), s.key]),
+    .map((s) => [normalizePath(s.url), s]),
 );
 
 function decorateShortcutHints() {
@@ -278,11 +280,12 @@ function decorateShortcutHints() {
   document.querySelectorAll(".side-menu a, .link a").forEach((a) => {
     const href = a.getAttribute("href");
     if (!href) return;
-    const key = urlToShortcutKey[normalizePath(href)];
-    if (!key) return;
+    const sc = urlToShortcut[normalizePath(href)];
+    if (!sc) return;
+    const desc = sc.description.charAt(0).toLowerCase() + sc.description.slice(1);
     a.classList.add("has-shortcut");
-    a.dataset.shortcut = key;
-    a.setAttribute("title", `Shortcut: ${key}`);
+    a.dataset.hint = `Press ${sc.key.toUpperCase()} to ${desc}`;
+    a.setAttribute("aria-keyshortcuts", sc.key);
   });
 }
 
