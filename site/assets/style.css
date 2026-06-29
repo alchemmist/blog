@@ -550,12 +550,26 @@ p code * {
   justify-content: center;
 }
 
+/* Комментарии и разделители под стихом — той же ширины, что под статьями/эссе
+   (article: width 50% / min-width 700px, на мобиле 100%). Стих остаётся узким,
+   а блок комментариев под сгибом шире. */
+.verse-container #remark42,
+.verse-container hr {
+  width: 50%;
+  min-width: 700px;
+}
 .verse-container #remark42 {
-  width: 100%;
   /* Резервируем место под виджет комментариев (#33): он лениво подгружается и
      без брони на ~316px дёргает layout, когда iframe вставляется при скролле.
      Пустой виджет ≈ 311px; пишущих под стихами комментариев почти нет. */
   min-height: 320px;
+}
+@media (max-width: 650px) {
+  .verse-container #remark42,
+  .verse-container hr {
+    width: 100%;
+    min-width: unset;
+  }
 }
 
 .poetry {
