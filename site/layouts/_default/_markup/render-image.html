@@ -1,7 +1,19 @@
-{{- /* Контентные картинки из markdown оптимизируются через общий партиал (#1):
-       ресайз/WebP/srcset/lazy + data-zoom-src. GIF/SVG/удалённые — как есть. */ -}}
+{{- /* Контентные картинки из markdown оптимизируются через общий партиал (#1).
+       Поддерживаем obsidian-синтаксис размера ![alt|400](src) / ![|400](src):
+       часть после "|" — ширина показа в px. */ -}}
+{{- $alt := .Text -}}
+{{- $maxw := 0 -}}
+{{- if strings.Contains $alt "|" -}}
+  {{- $parts := split $alt "|" -}}
+  {{- $alt = index $parts 0 -}}
+  {{- $size := index $parts (sub (len $parts) 1) -}}
+  {{- with (findRE "^[0-9]+" $size) -}}
+    {{- $maxw = int (index . 0) -}}
+  {{- end -}}
+{{- end -}}
 {{- partial "responsive-img.html" (dict
   "src" .Destination
-  "alt" .Text
+  "alt" $alt
   "title" .Title
+  "maxw" $maxw
 ) -}}

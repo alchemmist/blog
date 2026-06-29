@@ -1,15 +1,19 @@
 {{- /* Адаптивная картинка с оптимизацией (#1). Принимает dict:
-       src (обяз.), alt, title, class, id, loading (по умолч. lazy), sizes.
+       src (обяз.), alt, title, class, id, loading (по умолч. lazy), sizes,
+       maxw (ширина показа в px — из obsidian-синтаксиса ![|400]).
        Локальные растры (png/jpg/webp) режет под ширину показа, отдаёт WebP +
        srcset + width/height (против CLS) + data-zoom-src покрупнее для
-       medium-zoom. GIF/SVG/удалённые — отдаёт как есть. */ -}}
+       medium-zoom. GIF/SVG/удалённые — отдаёт как есть. Класс content-img
+       гарантирует height:auto + max-width:100% (против растягивания). */ -}}
 {{- $src := .src -}}
 {{- $alt := .alt | default "" -}}
 {{- $title := .title -}}
-{{- $class := .class -}}
+{{- $class := trim (printf "content-img %s" (.class | default "")) " " -}}
 {{- $id := .id -}}
 {{- $loading := .loading | default "lazy" -}}
-{{- $sizes := .sizes | default "(max-width: 760px) 92vw, 700px" -}}
+{{- $maxw := int (.maxw | default 0) -}}
+{{- $sizes := .sizes | default (cond (gt $maxw 0) (printf "%dpx" $maxw) "(max-width: 760px) 92vw, 700px") -}}
+{{- $style := cond (gt $maxw 0) (printf "width:%dpx" $maxw) "" -}}
 {{- $ext := lower (strings.TrimPrefix "." (path.Ext $src)) -}}
 {{- $isLocal := and (hasPrefix $src "/") (not (hasPrefix $src "//")) -}}
 {{- $raster := in (slice "png" "jpg" "jpeg" "webp") $ext -}}
@@ -43,8 +47,9 @@
     {{- if gt (len $variants) 1 }} srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}"{{ end }}
     width="{{ $fallback.Width }}"
     height="{{ $fallback.Height }}"
-    {{- with $class }} class="{{ . }}"{{ end }}
+    class="{{ $class }}"
     {{- with $id }} id="{{ . }}"{{ end }}
+    {{- with $style }} style="{{ . | safeCSS }}"{{ end }}
     alt="{{ $alt }}"
     {{- with $title }} title="{{ . }}"{{ end }}
     loading="{{ $loading }}"
@@ -52,5 +57,5 @@
     data-zoom-src="{{ $largest.RelPermalink }}"
   />
 {{- else -}}
-  <img src="{{ $src }}"{{ with $class }} class="{{ . }}"{{ end }}{{ with $id }} id="{{ . }}"{{ end }} alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async" />
+  <img src="{{ $src }}" class="{{ $class }}"{{ with $id }} id="{{ . }}"{{ end }}{{ with $style }} style="{{ . | safeCSS }}"{{ end }} alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async" />
 {{- end -}}
