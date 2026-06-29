@@ -13,12 +13,16 @@
   {{ if and $bg $font }}
     {{ $img := $bg }}
 
-    {{/* Иллюстрация — первая локальная картинка из контента страницы */}}
+    {{/* Иллюстрация — первая картинка из РЕАЛЬНОЙ разметки контента: markdown
+         ![..](/images/..) или <img src="/images/..">. Сканировать весь RawContent
+         нельзя — путь, упомянутый в прозе или код-блоке, дал бы ложное совпадение. */}}
     {{ $ill := "" }}
-    {{ range (findRE `/images/[^)\s"']+\.(?i:png|jpe?g|webp)` .RawContent) }}
+    {{ range (findRE `(?:!\[[^\]]*\]\(|<img[^>]*\bsrc=["']?)\s*/images/[^)\s"'>]+\.(?i:png|jpe?g|webp)` .RawContent) }}
       {{ if eq $ill "" }}
-        {{ $p := strings.TrimPrefix "/" (replace . "%20" " ") }}
-        {{ with (resources.Get $p) }}{{ $ill = . }}{{ end }}
+        {{ with (index (findRE `/images/[^)\s"'>]+\.(?i:png|jpe?g|webp)` .) 0) }}
+          {{ $p := strings.TrimPrefix "/" (replace . "%20" " ") }}
+          {{ with (resources.Get $p) }}{{ $ill = . }}{{ end }}
+        {{ end }}
       {{ end }}
     {{ end }}
     {{ $hasIll := ne $ill "" }}
