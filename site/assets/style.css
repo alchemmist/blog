@@ -527,6 +527,15 @@ p code * {
   flex-direction: column;
 }
 
+/* Стихотворение занимает первый экран целиком, по центру по вертикали (#24).
+   Комментарии и футер уходят за сгиб — открываются скроллом. svh, чтобы на
+   мобильных адресная строка не выталкивала комментарии в зону видимости. */
+.verse-container .poetry {
+  min-height: calc(100vh - 2rem);
+  min-height: calc(100svh - 2rem);
+  justify-content: center;
+}
+
 .verse-container #remark42 {
   width: 100%;
 }
