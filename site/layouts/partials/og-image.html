@@ -11,7 +11,9 @@
   {{ $bg := resources.Get "og/bg.png" }}
   {{ $font := resources.Get "og/font-bold.ttf" }}
   {{ if and $bg $font }}
-    {{ $img := $bg }}
+    {{/* У bg.png сверху ~12px чёрная полоса — срезаем её (берём нижние 616px) и
+         тянем обратно до 1200x630 (фон-паттерн, растяжение незаметно). */}}
+    {{ $img := ($bg.Crop "1200x616 Bottom").Resize "1200x630" }}
 
     {{/* Иллюстрация — первая картинка из РЕАЛЬНОЙ разметки контента: markdown
          ![..](/images/..) или <img src="/images/..">. Сканировать весь RawContent
@@ -27,10 +29,13 @@
     {{ end }}
     {{ $hasIll := ne $ill "" }}
 
-    {{/* Иллюстрация заливает правую половину */}}
+    {{/* Иллюстрацию вписываем целиком (Fit, не Fill) — чтобы не срезать её тень
+         по бокам. Центрируем в правой половине с полями вокруг для тени. */}}
     {{ if $hasIll }}
-      {{ $cover := $ill.Fill "600x630 Center" }}
-      {{ $img = $img.Filter (images.Overlay $cover 600 0) }}
+      {{ $fit := $ill.Fit "520x540" }}
+      {{ $ox := add 600 (div (sub 600 $fit.Width) 2) }}
+      {{ $oy := div (sub 630 $fit.Height) 2 }}
+      {{ $img = $img.Filter (images.Overlay $fit $ox $oy) }}
     {{ end }}
 
     {{/* Зона текста: левая половина (если есть илл.) или вся карточка */}}
