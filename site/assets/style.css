@@ -1994,31 +1994,37 @@ pre code * .err {
   font-size: 18px;
 }
 
-/* Подсказка клавиши-шортката при наведении на кнопку раздела (#29) */
-.side-menu a.has-shortcut,
-.link a.has-shortcut {
+/* Подсказка-шортката при наведении на кнопку раздела (#29): серое всплывающее
+   облачко над пунктом. position:absolute — не влияет на раскладку меню. */
+.has-shortcut {
   position: relative;
 }
-.side-menu a.has-shortcut::after,
-.link a.has-shortcut::after {
-  content: attr(data-shortcut);
-  display: inline-block;
-  margin-left: 0.5em;
-  padding: 0 0.4em;
-  border: 1px solid currentColor;
-  border-radius: 4px;
+.has-shortcut::after {
+  content: attr(data-hint);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 6px);
+  z-index: 50;
+  background: #333;
+  color: #fff;
   font-family: monospace;
-  font-size: 0.75em;
-  line-height: 1.5;
-  vertical-align: middle;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   opacity: 0;
-  transition: opacity 0.15s ease;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
-.side-menu a.has-shortcut:hover::after,
-.side-menu a.has-shortcut:focus-visible::after,
-.link a.has-shortcut:hover::after,
-.link a.has-shortcut:focus-visible::after {
-  opacity: 0.6;
+.has-shortcut:hover::after,
+.has-shortcut:focus-visible::after {
+  opacity: 0.97;
+  transform: translateY(0);
 }
 
 .overlay {
