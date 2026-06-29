@@ -5,7 +5,7 @@
   <article>
     <h2>Обо мне</h2>
     <div id="about-me-box">
-      <img class="medium-zoom-image" src="/images/me2.png" id="me-photo" />
+      {{ partial "responsive-img.html" (dict "src" "/images/me2.png" "id" "me-photo" "class" "medium-zoom-image" "alt" "Антон") }}
       <p>
         Меня зовут Антон, я практикующий разработчик и студент Центрального
         Университета на направлении «Математика и компьютерные науки» (2028).
@@ -49,8 +49,8 @@
       прохождения на платформе:
     </p>
     <div id="teach-preview">
-      <img src="/images/teach1.png" />
-      <img src="/images/teach2.png" />
+      {{ partial "responsive-img.html" (dict "src" "/images/teach1.png" "alt" "Превью платформы") }}
+      {{ partial "responsive-img.html" (dict "src" "/images/teach2.png" "alt" "Превью платформы") }}
     </div>
     <h2>Что будете делать вы</h2>
     <p>

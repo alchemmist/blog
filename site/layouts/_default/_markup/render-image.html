@@ -1,0 +1,7 @@
+{{- /* Контентные картинки из markdown оптимизируются через общий партиал (#1):
+       ресайз/WebP/srcset/lazy + data-zoom-src. GIF/SVG/удалённые — как есть. */ -}}
+{{- partial "responsive-img.html" (dict
+  "src" .Destination
+  "alt" .Text
+  "title" .Title
+) -}}

@@ -76,3 +76,32 @@ filename = "sitemap.xml"
 # Разрешаем любой тип контента — возвращаем прежнее поведение.
 [security]
 allowContent = ['.']
+
+# Монтируем static/images ещё и в assets/images, чтобы Hugo мог обрабатывать
+# контентные картинки (ресайз/WebP/srcset) через resources.Get в render hook
+# (#1). Объявление mounts заменяет дефолтные — поэтому перечисляем их все.
+[module]
+[[module.mounts]]
+source = "content"
+target = "content"
+[[module.mounts]]
+source = "data"
+target = "data"
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
+[[module.mounts]]
+source = "i18n"
+target = "i18n"
+[[module.mounts]]
+source = "archetypes"
+target = "archetypes"
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = "static/images"
+target = "assets/images"

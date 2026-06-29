@@ -65,12 +65,7 @@
         or (in (lower .Name) ".jpg") (in (lower .Name) ".jpeg") (in (lower
         .Name) ".png") (in (lower .Name) ".webp") }}
         <div class="masonry-item">
-          <img
-            src="/images/eosp/{{ .Name }}"
-            alt="{{ .Name }}"
-            data-zoom
-            loading="lazy"
-          />
+          {{ partial "responsive-img.html" (dict "src" (printf "/images/eosp/%s" .Name) "alt" .Name) }}
         </div>
         {{ end }} {{ end }}
       </div>

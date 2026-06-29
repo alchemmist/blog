@@ -1,0 +1,56 @@
+{{- /* Адаптивная картинка с оптимизацией (#1). Принимает dict:
+       src (обяз.), alt, title, class, id, loading (по умолч. lazy), sizes.
+       Локальные растры (png/jpg/webp) режет под ширину показа, отдаёт WebP +
+       srcset + width/height (против CLS) + data-zoom-src покрупнее для
+       medium-zoom. GIF/SVG/удалённые — отдаёт как есть. */ -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $title := .title -}}
+{{- $class := .class -}}
+{{- $id := .id -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $sizes := .sizes | default "(max-width: 760px) 92vw, 700px" -}}
+{{- $ext := lower (strings.TrimPrefix "." (path.Ext $src)) -}}
+{{- $isLocal := and (hasPrefix $src "/") (not (hasPrefix $src "//")) -}}
+{{- $raster := in (slice "png" "jpg" "jpeg" "webp") $ext -}}
+{{- $res := "" -}}
+{{- if and $isLocal $raster -}}
+  {{- $path := strings.TrimPrefix "/" $src -}}
+  {{- with (resources.Get $path) -}}
+    {{- $res = . -}}
+  {{- else -}}
+    {{- with (resources.Get (replace $path "%20" " ")) -}}{{- $res = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if $res -}}
+  {{- $widths := slice 360 720 1080 1440 -}}
+  {{- $variants := slice -}}
+  {{- range $w := $widths -}}
+    {{- if le $w $res.Width -}}
+      {{- $variants = $variants | append ($res.Resize (printf "%dx webp q80" $w)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $variants -}}
+    {{- $variants = $variants | append ($res.Resize (printf "%dx webp q80" $res.Width)) -}}
+  {{- end -}}
+  {{- $largest := index $variants (sub (len $variants) 1) -}}
+  {{- $fallback := index $variants 0 -}}
+  {{- range $v := $variants -}}{{- if le $v.Width 760 -}}{{- $fallback = $v -}}{{- end -}}{{- end -}}
+  {{- $srcset := slice -}}
+  {{- range $v := $variants -}}{{- $srcset = $srcset | append (printf "%s %dw" $v.RelPermalink $v.Width) -}}{{- end -}}
+  <img
+    src="{{ $fallback.RelPermalink }}"
+    {{- if gt (len $variants) 1 }} srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}"{{ end }}
+    width="{{ $fallback.Width }}"
+    height="{{ $fallback.Height }}"
+    {{- with $class }} class="{{ . }}"{{ end }}
+    {{- with $id }} id="{{ . }}"{{ end }}
+    alt="{{ $alt }}"
+    {{- with $title }} title="{{ . }}"{{ end }}
+    loading="{{ $loading }}"
+    decoding="async"
+    data-zoom-src="{{ $largest.RelPermalink }}"
+  />
+{{- else -}}
+  <img src="{{ $src }}"{{ with $class }} class="{{ . }}"{{ end }}{{ with $id }} id="{{ . }}"{{ end }} alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async" />
+{{- end -}}
