@@ -273,6 +273,15 @@ article img {
   height: auto;
 }
 
+/* Контентные картинки (render hook / партиал, #1): всегда сохраняем пропорции.
+   Без height:auto явная высота из width/height-атрибутов растягивала картинки
+   там, где нет правила article img (например в стихах). max-width:100% — чтобы
+   заданная ширина (![|400]) уменьшалась на узких экранах. */
+.content-img {
+  max-width: 100%;
+  height: auto;
+}
+
 article img[src$=".gif"] {
   border-radius: 0.5rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
