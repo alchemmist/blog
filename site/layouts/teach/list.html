@@ -16,8 +16,8 @@
         {{ if .Params.thumbnail }}
         <div class="lecture-thumb">
           <a href="{{ .RelPermalink }}">
-            <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}"
-          /></a>
+            {{ partial "responsive-img.html" (dict "src" .Params.thumbnail "alt" .Title) }}
+          </a>
         </div>
         {{ end }}
         <div class="lecture-content">
