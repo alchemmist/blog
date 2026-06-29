@@ -1,3 +1,20 @@
+// Высота хедера в CSS-переменную --header-h: нужна, чтобы центрировать стих
+// по экрану с учётом хедера (#24). Обновляем на загрузке и при ресайзе.
+function updateHeaderHeightVar() {
+  const header = document.querySelector("header");
+  const h = header ? header.offsetHeight : 0;
+  document.documentElement.style.setProperty("--header-h", h + "px");
+}
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", updateHeaderHeightVar);
+} else {
+  updateHeaderHeightVar();
+}
+// ещё раз после полной загрузки — к этому моменту лого-картинка уже задала
+// итоговую высоту хедера (на DOMContentLoaded она ещё не загружена).
+window.addEventListener("load", updateHeaderHeightVar);
+window.addEventListener("resize", updateHeaderHeightVar);
+
 let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
 
 const style = document.createElement("style");
