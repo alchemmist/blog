@@ -1,7 +1,7 @@
-{{/* Возвращает URL OG-картинки для текущей страницы.
-     Для контентных страниц (articles/essays/moss/teach/poetry) генерирует
-     карточку с заголовком на фоне; иначе — дефолтный preview.png или
-     .Params.image, если задан вручную. */}}
+{{/* Возвращает URL OG-картинки. Для контентных страниц генерит карточку 1200x630:
+     слева раздел + заголовок (центрированы по своей зоне), справа — иллюстрация
+     со страницы, если она есть. Заголовок центрируется, чтобы квадратный кроп
+     мессенджеров (MAX и т.п.) его не срезал. Иначе — preview/Params.image. (#3) */}}
 {{ $default := "/assets/preview.png" | absURL }}
 {{ with .Params.image }}{{ $default = . }}{{ end }}
 {{ $result := $default }}
@@ -11,8 +11,33 @@
   {{ $bg := resources.Get "og/bg.png" }}
   {{ $font := resources.Get "og/font-bold.ttf" }}
   {{ if and $bg $font }}
-    {{/* Перенос заголовка по словам, лимит по числу рун (кириллица учтена). */}}
-    {{ $max := 26 }}
+    {{ $img := $bg }}
+
+    {{/* Иллюстрация — первая локальная картинка из контента страницы */}}
+    {{ $ill := "" }}
+    {{ range (findRE `/images/[^)\s"']+\.(?i:png|jpe?g|webp)` .RawContent) }}
+      {{ if eq $ill "" }}
+        {{ $p := strings.TrimPrefix "/" (replace . "%20" " ") }}
+        {{ with (resources.Get $p) }}{{ $ill = . }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ $hasIll := ne $ill "" }}
+
+    {{/* Иллюстрация заливает правую половину */}}
+    {{ if $hasIll }}
+      {{ $cover := $ill.Fill "600x630 Center" }}
+      {{ $img = $img.Filter (images.Overlay $cover 600 0) }}
+    {{ end }}
+
+    {{/* Зона текста: левая половина (если есть илл.) или вся карточка */}}
+    {{ $cx := cond $hasIll 300 600 }}
+    {{ $titleSize := 60 }}
+    {{ $sectionSize := 28 }}
+    {{ $lineH := 76 }}
+    {{ $gap := 22 }}
+    {{ $max := cond $hasIll 14 28 }}
+
+    {{/* Перенос заголовка по словам (кириллица учтена) */}}
     {{ $lines := slice }}
     {{ $cur := "" }}
     {{ range (split .Title " ") }}
@@ -25,17 +50,31 @@
       {{ end }}
     {{ end }}
     {{ if ne $cur "" }}{{ $lines = $lines | append $cur }}{{ end }}
-    {{ $lines = first 5 $lines }}
+    {{ $lines = first 4 $lines }}
 
-    {{ $img := $bg }}
-    {{/* Раздел сверху */}}
-    {{ $img = $img.Filter (images.Text (upper .Section) (dict
-      "size" 26 "color" "#8a8a8a" "x" 72 "y" 64 "font" $font)) }}
-    {{/* Строки заголовка */}}
+    {{/* Вертикальное центрирование блока (раздел + зазор + строки) */}}
+    {{ $blockH := add (add $sectionSize $gap) (mul (len $lines) $lineH) }}
+    {{ $startY := div (sub 630 $blockH) 2 }}
+    {{ if lt $startY 48 }}{{ $startY = 48 }}{{ end }}
+
+    {{/* Раздел — по центру зоны */}}
+    {{ $sec := upper .Section }}
+    {{ $secW := int (mul (mul (strings.RuneCount $sec) $sectionSize) 0.62) }}
+    {{ $secX := sub $cx (div $secW 2) }}
+    {{ if lt $secX 24 }}{{ $secX = 24 }}{{ end }}
+    {{ $img = $img.Filter (images.Text $sec (dict
+      "size" $sectionSize "color" "#8a8a8a" "x" $secX "y" $startY "font" $font)) }}
+
+    {{/* Заголовок — каждая строка центрируется по cx */}}
     {{ range $i, $line := $lines }}
+      {{ $w := int (mul (mul (strings.RuneCount $line) $titleSize) 0.56) }}
+      {{ $x := sub $cx (div $w 2) }}
+      {{ if lt $x 24 }}{{ $x = 24 }}{{ end }}
+      {{ $y := add (add $startY $sectionSize) (add $gap (mul $i $lineH)) }}
       {{ $img = $img.Filter (images.Text $line (dict
-        "size" 64 "color" "#1a1a1a" "x" 72 "y" (add 150 (mul $i 82)) "font" $font)) }}
+        "size" $titleSize "color" "#1a1a1a" "x" $x "y" $y "font" $font)) }}
     {{ end }}
+
     {{ $result = $img.Permalink }}
   {{ end }}
 {{ end }}
