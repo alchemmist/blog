@@ -1,9 +1,10 @@
-{{- /* Адаптивная картинка с оптимизацией (#1). Принимает dict:
-       src (обяз.), alt, title, class, id, loading (по умолч. lazy), sizes,
+{{- /* Картинка с оптимизацией (#1). Принимает dict:
+       src (обяз.), alt, title, class, id, loading (по умолч. lazy),
        maxw (ширина показа в px — из obsidian-синтаксиса ![|400]).
-       Локальные растры (png/jpg/webp) режет под ширину показа, отдаёт WebP +
-       srcset + width/height (против CLS) + data-zoom-src покрупнее для
-       medium-zoom. GIF/SVG/удалённые — отдаёт как есть. Класс content-img
+       Локальные растры (png/jpg/webp) конвертит в WebP q80 (с потолком 1600px)
+       и отдаёт одним файлом + width/height (против CLS). Ширину показа задаёт
+       CSS, а не srcset — иначе medium-zoom не увеличивает картинку при зуме
+       (см. ниже). GIF/SVG/удалённые — отдаёт как есть. Класс content-img
        гарантирует height:auto + max-width:100% (против растягивания). */ -}}
 {{- $src := .src -}}
 {{- $alt := .alt | default "" -}}
@@ -12,7 +13,6 @@
 {{- $id := .id -}}
 {{- $loading := .loading | default "lazy" -}}
 {{- $maxw := int (.maxw | default 0) -}}
-{{- $sizes := .sizes | default (cond (gt $maxw 0) (printf "%dpx" $maxw) "(max-width: 760px) 92vw, 700px") -}}
 {{- $style := cond (gt $maxw 0) (printf "width:%dpx" $maxw) "" -}}
 {{- $ext := lower (strings.TrimPrefix "." (path.Ext $src)) -}}
 {{- $isLocal := and (hasPrefix $src "/") (not (hasPrefix $src "//")) -}}
@@ -27,26 +27,21 @@
   {{- end -}}
 {{- end -}}
 {{- if $res -}}
-  {{- $widths := slice 360 720 1080 1440 -}}
-  {{- $variants := slice -}}
-  {{- range $w := $widths -}}
-    {{- if le $w $res.Width -}}
-      {{- $variants = $variants | append ($res.Resize (printf "%dx webp q80" $w)) -}}
-    {{- end -}}
-  {{- end -}}
-  {{- if not $variants -}}
-    {{- $variants = $variants | append ($res.Resize (printf "%dx webp q80" $res.Width)) -}}
-  {{- end -}}
-  {{- $largest := index $variants (sub (len $variants) 1) -}}
-  {{- $fallback := index $variants 0 -}}
-  {{- range $v := $variants -}}{{- if le $v.Width 760 -}}{{- $fallback = $v -}}{{- end -}}{{- end -}}
-  {{- $srcset := slice -}}
-  {{- range $v := $variants -}}{{- $srcset = $srcset | append (printf "%s %dw" $v.RelPermalink $v.Width) -}}{{- end -}}
+  {{- /* Один оптимизированный WebP, БЕЗ srcset/sizes. Ширину показа задаём через
+         CSS (style width / max-width), браузер сам масштабирует. Почему не srcset:
+         при srcset+sizes браузер отдаёт naturalWidth, скорректированный по
+         density до ширины показа, а medium-zoom считает по нему масштаб зума —
+         из-за этого зум переставал увеличивать картинку (регрессия #1). Плюс
+         density «прилипает» к HD-клону, так что data-zoom-src это не лечит.
+         Отдаём полноразмерный кадр (с потолком 1600px) — зум открывает его в
+         исходном качестве, а payload всё равно мал: WebP q80 + даунскейл. */ -}}
+  {{- $cap := 1600 -}}
+  {{- $targetW := cond (gt $res.Width $cap) $cap $res.Width -}}
+  {{- $img := $res.Resize (printf "%dx webp q80" $targetW) -}}
   <img
-    src="{{ $fallback.RelPermalink }}"
-    {{- if gt (len $variants) 1 }} srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}"{{ end }}
-    width="{{ $fallback.Width }}"
-    height="{{ $fallback.Height }}"
+    src="{{ $img.RelPermalink }}"
+    width="{{ $img.Width }}"
+    height="{{ $img.Height }}"
     class="{{ $class }}"
     {{- with $id }} id="{{ . }}"{{ end }}
     {{- with $style }} style="{{ . | safeCSS }}"{{ end }}
@@ -54,7 +49,6 @@
     {{- with $title }} title="{{ . }}"{{ end }}
     loading="{{ $loading }}"
     decoding="async"
-    data-zoom-src="{{ $largest.RelPermalink }}"
   />
 {{- else -}}
   <img src="{{ $src }}" class="{{ $class }}"{{ with $id }} id="{{ . }}"{{ end }}{{ with $style }} style="{{ . | safeCSS }}"{{ end }} alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async" />
