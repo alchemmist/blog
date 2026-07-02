@@ -69,7 +69,7 @@
     />
     {{ $logo := partial "logo-nobackground.html" . }}
     <meta property="og:logo" content="data:image/svg+xml;base64,{{ $logo | base64Encode }}" />
-    <meta property="og:image" content="{{ $ogImage }}" />
+    <meta property="og:image" content="{{ $ogImage | absURL }}" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
@@ -84,7 +84,7 @@
         {{ .Summary | plainify | truncate 160 }}
       {{ end }}"
     />
-    <meta name="twitter:image" content="{{ $ogImage }}" />
+    <meta name="twitter:image" content="{{ $ogImage | absURL }}" />
     <meta name="twitter:site" content="@alchemmist_blog" />
 
     <!-- Styles -->
@@ -121,7 +121,7 @@
     <script src="/_pagefind/pagefind-ui.js" defer></script>
 
     <!-- Structured data (JSON-LD) -->
-    {{ partial "schema.html" (dict "page" . "image" $ogImage) }}
+    {{ partial "schema.html" (dict "page" . "image" ($ogImage | absURL)) }}
     {{ block "head" . }}{{ end }}
   </head>
   <body>

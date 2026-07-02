@@ -2,7 +2,11 @@
      слева раздел + заголовок (центрированы по своей зоне), справа — иллюстрация
      со страницы, если она есть. Заголовок центрируется, чтобы квадратный кроп
      мессенджеров (MAX и т.п.) его не срезал. Иначе — preview/Params.image. (#3) */}}
-{{ $default := "/assets/preview.png" | absURL }}
+{{/* Возвращаем КОРНЕ-ОТНОСИТЕЛЬНЫЙ URL (/og/... или /assets/...). Абсолютным его
+     делает вызывающий (absURL) для og:image/twitter/JSON-LD, а Pagefind получает
+     относительный — чтобы превью в поиске грузилось и локально, и на проде, а не
+     всегда с продакшена (иначе не задеплоенные карточки дают 404). (#13) */}}
+{{ $default := "/assets/preview.png" }}
 {{ with .Params.image }}{{ $default = . }}{{ end }}
 {{ $result := $default }}
 
@@ -82,7 +86,7 @@
         "size" $titleSize "color" "#1a1a1a" "x" $x "y" $y "font" $font)) }}
     {{ end }}
 
-    {{ $result = $img.Permalink }}
+    {{ $result = $img.RelPermalink }}
   {{ end }}
 {{ end }}
 
