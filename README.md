@@ -12,7 +12,9 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Aesthetic minimalistic typography.</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-typography.png" />
+Serif body text, monospace UI accents and a lot of air — nothing distracts from reading.
+
+<img width="900" alt="Essay page typography" src="./.github/readme/typography.png" />
 
 </details>
 
@@ -20,7 +22,9 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Search (<i>with <a href="https://pagefind.app/">pagefind</a>)</i>).</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-search.png" />
+Fully static full-text search over both languages with page previews — no backend needed. Available on every page via <kbd>Ctrl</kbd>+<kbd>K</kbd>.
+
+<img width="900" alt="Search results with previews" src="./.github/readme/search.png" />
 
 </details>
 
@@ -28,7 +32,9 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Comments (<i>with <a href="https://remark42.com/">remark42</a>)</i>).</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-comments.png" />
+Self-hosted, privacy-friendly comments with markdown support on articles, essays and poetry.
+
+<img width="900" alt="remark42 comment form" src="./.github/readme/comments.png" />
 
 </details>
 
@@ -36,7 +42,7 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Notifications about comments in Telegram.</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-telegram-notifications.png" />
+Every new comment lands in a private Telegram chat via the remark42 Telegram integration — so no comment stays unanswered for long.
 
 </details>
 
@@ -44,7 +50,7 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Easter eggs (<i>try to find it</i>).</summary>
 
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/placeholder-easter-eggs.png" />
+No screenshots here — that would be spoilers. Explore the site with curiosity `;)`
 
 </details>
 
@@ -52,7 +58,17 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Share buttons.</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-share-buttons.png" />
+<img width="700" alt="Share buttons under a post" src="./.github/readme/share-buttons.png" />
+
+</details>
+
+<details>
+
+<summary>Auto-generated OpenGraph cards.</summary>
+
+Every post gets a 1200×630 social preview card generated at build time by Hugo itself — no headless browser, no external service. The card takes the title and section, wraps long titles by words (Cyrillic included), and if the post contains an illustration, it is placed on the right half of the card.
+
+<img width="800" alt="Generated OpenGraph card with an illustration" src="./.github/readme/opengraph.png" />
 
 </details>
 
@@ -60,7 +76,9 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Updates log.</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-updates-log.png" />
+A public changelog of the blog itself: new posts, translations and features, kept as a simple dated checklist.
+
+<img width="900" alt="Updates archive page" src="./.github/readme/updates.png" />
 
 </details>
 
@@ -68,7 +86,9 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Support of <a href="https://www.nerdfonts.com/cheat-sheet">NerdFonts icons</a>.</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-nerdfonts.png" />
+Glyphs render right inside text and code blocks — handy for articles about ricing and terminal tooling.
+
+<img width="800" alt="NerdFont glyphs inside a code block" src="./.github/readme/nerdfonts.png" />
 
 </details>
 
@@ -76,7 +96,13 @@ This repository contains the sources of my blog: [alchemmist.xyz](https://alchem
 
 <summary>Easy to use icons with <a href="https://iconify.design/">iconify</a> and partials.</summary>
 
-<img width="900" alt="TODO" src="https://github.com/user-attachments/assets/placeholder-iconify.png" />
+Any icon from the iconify catalog is one partial call away: SVG is fetched at build time and inlined into the page, so there is no client-side icon runtime.
+
+```html
+{{ partial "iconify.html" (dict "icon" "prime:twitter" "size" "1.0em") }}
+```
+
+<img width="800" alt="Follow block built with iconify icons" src="./.github/readme/iconify.png" />
 
 </details>
 
