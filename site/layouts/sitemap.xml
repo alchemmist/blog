@@ -4,6 +4,15 @@
   {{ range .Pages }}
     {{/* Книги рендерятся как render:link (без HTML-файла) — в sitemap им не место */}}
     {{ if and (eq .Kind "page") (eq .Section "books") }}{{ continue }}{{ end }}
+    {{/* Индексы таксономий отключены (disableKinds) — их HTML не существует */}}
+    {{ if eq .Kind "taxonomy" }}{{ continue }}{{ end }}
+    {{/* Термы author/status ниоткуда не слинкованы — поисковики считают их
+         малоценными сиротами; в sitemap оставляем только term-страницы,
+         на которые реально ведут ссылки (tags/topics/genre) */}}
+    {{ if and (eq .Kind "term") (in (slice "author" "status") .Data.Plural) }}{{ continue }}{{ end }}
+    {{/* Единственная каноничная главная — корень; /ru/ редиректится Caddy на /,
+         редиректу в sitemap не место */}}
+    {{ if and (eq .Kind "home") (ne .Permalink ("/" | absURL)) }}{{ continue }}{{ end }}
     <url>
       <loc>{{ .Permalink }}</loc>
       {{ if not .Lastmod.IsZero }}
