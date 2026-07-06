@@ -835,4 +835,4 @@ Python, знают, что типизация опциональна. И это 
   web-разработчиков)](https://fastapi.tiangolo.com/python-types/#type-hints-with-metadata-annotations)
 - [RealPython, Type Checking
   Guide](https://realpython.com/python-type-checking/)
-- [Упражнения](https://python-type-challenges.zeabur.app/)
+- [Упражнения](https://github.com/laike9m/Python-Type-Challenges)

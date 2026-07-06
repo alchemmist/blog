@@ -89,4 +89,4 @@ proc, err := pm.findProcess(filter.ByTitle(title))
 And my workflow in my code editor is very comfortable:
 ![](/images/predicate-pattern-demo.gif)
 
->If you like my code editor view you can use my Neovim theme: [nothing](https://github.com/alchemmist/nothing.nvim). And you can use my nvim config, find it in my [dotfiles](https://github.com/alchemmist/dotfiles)
+>If you like my code editor view you can use my nvim config, find it in my [dotfiles](https://github.com/alchemmist/dotfiles)

@@ -9,7 +9,7 @@ layout: updates
 tech_name: updates
 title: Updates
 ---
-- [ ] *\[2026-06-28 12:00\]* New verse (Ru): [Сосуд опустошенный](ru/poetry/vessel-is-empty) 
+- [ ] *\[2026-06-28 12:00\]* New verse (Ru): [Сосуд опустошенный](/ru/poetry/vessel-is-empty) 
 - [ ] *\[2026-04-21 14:09\]* New verse (Ru): [Турка](/ru/poetry/turk) 
 - [ ] *\[2026-03-31 08:43\]* New verse (Ru): [Между](/ru/poetry/between) 
 - [ ] *\[2026-03-19 19:23\]* Add photos to EOSP page

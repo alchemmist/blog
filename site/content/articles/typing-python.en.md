@@ -756,4 +756,4 @@ tools and understand Python typing in detail:
   developers)](https://fastapi.tiangolo.com/python-types/#type-hints-with-metadata-annotations)
 - [RealPython, Type Checking
   Guide](https://realpython.com/python-type-checking/)
-- [Exercises](https://python-type-challenges.zeabur.app/)
+- [Exercises](https://github.com/laike9m/Python-Type-Challenges)

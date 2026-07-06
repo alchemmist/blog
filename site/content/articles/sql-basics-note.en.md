@@ -61,7 +61,7 @@ Key concepts:
 - **Tuple** — row in relation.
 - **Relation Schema** — description structure of relation, which include attributes names and data types.
 
-Let’s see on operators of relation algebra. You can try all of this examples in [RealX](https://dbis-uibk.github.io/relax/calc/local/uibk/local/0).
+Let’s see on operators of relation algebra. You can try all of this examples in [RealX](https://dbis-uibk.github.io/relax/).
 
 **π (pi)** — Operation, that create new relation, selecting specified attributes from source relation. It’s similar as `SELECT` in SQL. For example we can get the list of all books titles and authors:
 ```sql
