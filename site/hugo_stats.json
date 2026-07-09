@@ -170,6 +170,7 @@
       "shelf-book",
       "shelf-book__author",
       "shelf-book__cover",
+      "shelf-book__cover--empty",
       "shelf-book__meta",
       "shelf-book__status",
       "shelf-book__status--future",
