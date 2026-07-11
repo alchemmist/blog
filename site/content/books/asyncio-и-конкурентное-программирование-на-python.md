@@ -4,7 +4,7 @@ author: Мэтью Фаулер
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/s3/multimedia-m/wc1000/6730996738.jpg
+cover: /images/covers/asyncio-и-конкурентное-программирование-на-python.webp
 date: 2025-01-23
 ---
 

@@ -4,7 +4,7 @@ author: Эл Свейгарт
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/s3/multimedia-l/c700/6369390693.jpg
+cover: /images/covers/python-для-продвинутых.jpg
 date: 2023-05-18
 ---
 

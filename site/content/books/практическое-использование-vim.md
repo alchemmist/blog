@@ -4,7 +4,7 @@ author: Нейл Дрю
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/multimedia/wc1000/1015838525.jpg
+cover: /images/covers/практическое-использование-vim.webp
 date: 2025-01-23
 ---
 

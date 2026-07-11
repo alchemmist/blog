@@ -4,7 +4,7 @@ author: Фримен Эрик
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/s3/multimedia-i/wc1000/6412395714.jpg
+cover: /images/covers/head-first.webp
 date: 2025-01-23
 ---
 

@@ -4,7 +4,7 @@ author: Джейсон Фрайд
 genre:
 - business
 status: future
-cover: https://ir.ozone.ru/s3/multimedia-h/wc1000/6064794761.jpg
+cover: /images/covers/rework-бизнес-без-предрасудков.webp
 date: 2025-01-23
 ---
 

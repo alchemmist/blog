@@ -4,7 +4,7 @@ author: Персиваль Гарри
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/multimedia/wc1000/1023228491.jpg
+cover: /images/covers/python-разработка-на-основе-тестирования.webp
 date: 2025-01-23
 ---
 

@@ -4,7 +4,7 @@ author: Уильям Шоттс
 genre:
 - IT
 status: future
-cover: https://cdn1.ozone.ru/s3/multimedia-p/6413700217.jpg
+cover: /images/covers/командная-строка-linux.jpg
 date: 2024-12-04
 ---
 

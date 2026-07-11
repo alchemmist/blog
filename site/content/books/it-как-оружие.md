@@ -4,7 +4,7 @@ author: Брэд Смит
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/s3/multimedia-h/wc1000/6132076133.jpg
+cover: /images/covers/it-как-оружие.webp
 date: 2025-01-23
 ---
 

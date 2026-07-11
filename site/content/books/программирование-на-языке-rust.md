@@ -4,7 +4,7 @@ author: Орендорф Джейсон
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/multimedia/wc1000/1021961798.jpg
+cover: /images/covers/программирование-на-языке-rust.webp
 date: 2025-01-23
 ---
 

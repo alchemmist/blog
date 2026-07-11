@@ -25,8 +25,13 @@
           {{ with (resources.Get $p) }}{{ $res = . }}
           {{ else }}{{ with (resources.Get (replace $p "%20" " ")) }}{{ $res = . }}{{ end }}{{ end }}
         {{ end }}
-        {{ if $res }}
-          {{ $thumb := $res.Resize "320x webp q80" }}
+        {{/* try: битая/неподдерживаемая обложка не должна валить всю сборку —
+             на ошибке ресайза откатываемся на исходник с плейсхолдером. */}}
+        {{ $thumb := "" }}
+        {{ if $res }}{{ with try ($res.Resize "320x webp q80") }}
+          {{ if .Err }}{{ warnf "cover resize failed for %s: %s" $cover .Err }}{{ else }}{{ $thumb = .Value }}{{ end }}
+        {{ end }}{{ end }}
+        {{ if $thumb }}
           <img class="shelf-book__cover" src="{{ $thumb.RelPermalink }}"
                width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
                data-zoom-src="{{ $cover }}" alt="{{ $title }}" loading="lazy" decoding="async" />

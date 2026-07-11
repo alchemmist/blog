@@ -4,7 +4,7 @@ author: Брайан Кенниган
 genre:
 - IT
 status: future
-cover: https://ir.ozone.ru/s3/multimedia-9/wc1000/6656490405.jpg
+cover: /images/covers/язык-программирования-go.webp
 date: 2025-01-23
 ---
 
