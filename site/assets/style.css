@@ -1047,30 +1047,34 @@ img.medium-zoom-image--opened {
   font-size: 0.72em;
   line-height: 1.3;
   text-align: left;
-  opacity: 0;
-  transition: opacity 0.25s ease;
 }
 
-.shelf-book:hover .shelf-book__meta {
-  opacity: 1;
-}
-
+/* Подписи видны всегда бледно-серыми, при наведении становятся чёткими —
+   чтобы книгу, найденную через Cmd+F по странице, было видно на полке. */
 .shelf-book__title {
   display: block;
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.25s ease;
 }
 
 .shelf-book__author {
   display: block;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.3);
+  transition: color 0.25s ease;
 }
 
-/* На тач-устройствах нет hover — подписи показываем всегда */
+.shelf-book:hover .shelf-book__title {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.shelf-book:hover .shelf-book__author {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* На тач-устройствах нет hover — обложки всегда цветные */
 @media (hover: none) {
   .shelf-book__cover {
     filter: none;
-  }
-  .shelf-book__meta {
-    opacity: 1;
   }
 }
 

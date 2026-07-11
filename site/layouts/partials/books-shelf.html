@@ -11,8 +11,29 @@
         {{ else if eq $status "future" }}{{ partial "iconify" (dict "icon" "wi:time-4") }}{{ end }}
       </span>
       {{ with .Params.cover }}
-        <img class="shelf-book__cover" src="{{ . }}" alt="{{ $title }}" loading="lazy"
-             onerror="this.onerror=null;this.src='/assets/book-cover.png';this.alt='Обложка недоступна'" />
+        {{/* Локальные растровые обложки (скачаны sync_public_notes.py в
+             static/images/covers) прогоняем через Hugo: WebP ~320px q80 на
+             полку, а полный оригинал отдаём в зум через data-zoom-src.
+             Внешние URL и прочее — как есть, с фолбэком на плейсхолдер. */}}
+        {{ $cover := . }}
+        {{ $ext := lower (strings.TrimPrefix "." (path.Ext $cover)) }}
+        {{ $isLocal := and (hasPrefix $cover "/") (not (hasPrefix $cover "//")) }}
+        {{ $raster := in (slice "png" "jpg" "jpeg" "webp") $ext }}
+        {{ $res := "" }}
+        {{ if and $isLocal $raster }}
+          {{ $p := strings.TrimPrefix "/" $cover }}
+          {{ with (resources.Get $p) }}{{ $res = . }}
+          {{ else }}{{ with (resources.Get (replace $p "%20" " ")) }}{{ $res = . }}{{ end }}{{ end }}
+        {{ end }}
+        {{ if $res }}
+          {{ $thumb := $res.Resize "320x webp q80" }}
+          <img class="shelf-book__cover" src="{{ $thumb.RelPermalink }}"
+               width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+               data-zoom-src="{{ $cover }}" alt="{{ $title }}" loading="lazy" decoding="async" />
+        {{ else }}
+          <img class="shelf-book__cover" src="{{ $cover }}" alt="{{ $title }}" loading="lazy"
+               onerror="this.onerror=null;this.src='/assets/book-cover.png';this.alt='Обложка недоступна'" />
+        {{ end }}
       {{ else }}
         <div class="shelf-book__cover shelf-book__cover--empty"><span>{{ .Title }}</span></div>
       {{ end }}
