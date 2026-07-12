@@ -111,3 +111,15 @@ monori.alchemmist.xyz {
         reverse_proxy monori:8000
     }
 }
+
+sync.alchemmist.xyz {
+    basic_auth {
+        alchemmist $2a$14$sXF0OEOB4ZDwyR2pUwgdNuNLOv2KKq9bXkEHaTz7ehaA9Bo/sGGym
+    }
+    reverse_proxy https://172.18.0.1:8384 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+        header_up Host {upstream_hostport}
+    }
+}
