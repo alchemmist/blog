@@ -114,7 +114,7 @@ monori.alchemmist.xyz {
 
 sync.alchemmist.xyz {
     basic_auth {
-        alchemmist $2a$14$sXF0OEOB4ZDwyR2pUwgdNuNLOv2KKq9bXkEHaTz7ehaA9Bo/sGGym
+        alchemmist $2a$14$xjv1nyHQOjqXPKRCLINOYu4AyLdulJ7HlgTjkycYcuZ.eCbAFPyje
     }
     reverse_proxy https://172.18.0.1:8384 {
         transport http {
