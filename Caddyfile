@@ -112,6 +112,11 @@ monori.alchemmist.xyz {
     }
 }
 
+lms.alchemmist.xyz {
+    encode zstd gzip
+    reverse_proxy lms:8000
+}
+
 sync.alchemmist.xyz {
     basic_auth {
         alchemmist $2a$14$xjv1nyHQOjqXPKRCLINOYu4AyLdulJ7HlgTjkycYcuZ.eCbAFPyje
