@@ -95,21 +95,7 @@ vpn.alchemmist.xyz {
 
 monori.alchemmist.xyz {
     encode zstd gzip
-
-    # public: the /demo page and the SPA bundle it loads (no real data — demo
-    # mode runs entirely on bundled sample data and never calls /api)
-    @public path /demo /demo/* /assets/* /favicon.svg
-    handle @public {
-        reverse_proxy monori:8000
-    }
-
-    # everything else (the real app + /api) stays behind basic-auth
-    handle {
-        basic_auth {
-            alchemmist $2a$14$CPw9N2OR9QlHV.Kdu60i7O/qC5OOAzZ7sdshSo4HTtoZzfAmnbnIe
-        }
-        reverse_proxy monori:8000
-    }
+    reverse_proxy monori:8000
 }
 
 lms.alchemmist.xyz {
