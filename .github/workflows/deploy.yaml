@@ -32,5 +32,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker exec caddy caddy reload --config /etc/caddy/Caddyfile
+            set -e
+            cd ${{ secrets.SSH_PROJECT_PATH }}
+            docker compose up -d --force-recreate --no-deps caddy
 
