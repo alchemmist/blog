@@ -105,7 +105,7 @@ lms.alchemmist.xyz {
 
 sync.alchemmist.xyz {
     basic_auth {
-        alchemmist $2a$14$xjv1nyHQOjqXPKRCLINOYu4AyLdulJ7HlgTjkycYcuZ.eCbAFPyje
+        alchemmist $2a$14$.6reKTTepEtEtvlJo0zoSe2ovUpztiSyMdstdgDdfHshpd6WiPYBy
     }
     reverse_proxy https://172.18.0.1:8384 {
         transport http {
