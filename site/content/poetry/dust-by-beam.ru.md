@@ -10,7 +10,7 @@ extra:
     status: finished
 ---
 
-![|400](/images/dust-sun.png)
+![|350](/images/dust-sun.png)
 
 здесь спертый воздух кабинетов
 на улице — бетонный склеп
