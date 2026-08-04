@@ -36,6 +36,10 @@ umami.alchemmist.xyz {
     reverse_proxy umami:3000
 }
 
+fq.alchemmist.xyz {
+    reverse_proxy 172.18.0.1:30001
+}
+
 cats.alchemmist.xyz {
     reverse_proxy cats:5173
 }
