@@ -984,6 +984,7 @@ mjx-container[display="true"] {
 
 .shelf-book__cover {
   width: 100%;
+  height: auto;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   display: block;
