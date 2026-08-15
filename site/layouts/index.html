@@ -7,13 +7,13 @@
       <a href="/"><h1>alchemmist</h1></a>
     </div>
     <div class="home-menu">
-      <div class="link"><a href="/articles">Articles</a></div>
-      <div class="link"><a href="/essays">Essays</a></div>
-      <div class="link"><a href="/cv">CV</a></div>
-      <div class="link"><a href="/books">Books</a></div>
-      <div class="link"><a href="/ru/poetry">Poetry</a></div>
-      <div class="link"><a href="/updates">Updates</a></div>
-      <div class="link"><a href="/teach">Teaching</a></div>
+      <div class="link"><a href="/articles/">Articles</a></div>
+      <div class="link"><a href="/essays/">Essays</a></div>
+      <div class="link"><a href="/cv/">CV</a></div>
+      <div class="link"><a href="/books/">Books</a></div>
+      <div class="link"><a href="/ru/poetry/">Poetry</a></div>
+      <div class="link"><a href="/updates/">Updates</a></div>
+      <div class="link"><a href="/teach/">Teaching</a></div>
     </div>
   </div>
   <div class="follow-container base-container">
@@ -86,7 +86,7 @@
     <ul>
       <li>
         {{ partial "iconify" (dict "icon" "material-symbols:star-rounded" "class" "mustread-item-bullet") }}
-        <span>If your friend is a woman <span class="no-break">(<a href="/essays/is-woman-friend">En</a> | <a href="/ru/essays/is-woman-friend">Ru</a>)</span></span>
+        <span>If your friend is a woman <span class="no-break">(<a href="/essays/is-woman-friend/">En</a> | <a href="/ru/essays/is-woman-friend/">Ru</a>)</span></span>
       </li>
       <li>
         {{ partial "iconify" (dict "icon" "material-symbols:star-rounded" "class" "mustread-item-bullet") }}
@@ -112,12 +112,7 @@
 </div>
 
 {{ end }} {{ define "head" }}
-<meta
-  name="description"
-  content="Personal blog by alchemmist: STEM articles, essays about philosophy, career, psychology and so on."
-/>
 <meta property="og:type" content="website" />
-    <title>alchemmist</title>
     <meta property="og:title" content="{{ .Title }} - Personal blog" />
     <meta property="og:description" content="Personal blog of alchemmist" />
     <meta name="twitter:title" content="alchemmist" />

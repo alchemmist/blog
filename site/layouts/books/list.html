@@ -7,7 +7,7 @@
       <span class="shelf-filters__label">genres</span>
       <div class="shelf-filters__chips">
         {{ range $key, $value := site.Taxonomies.genre }}
-          <a class="shelf-chip" href="{{ "/genre/" | relLangURL }}{{ $key | urlize }}">{{ $key }}<span class="shelf-chip__n">{{ len $value }}</span></a>
+          <a class="shelf-chip" href="{{ printf "%s%s/" ("/genre/" | relLangURL) ($key | urlize) }}">{{ $key }}<span class="shelf-chip__n">{{ len $value }}</span></a>
         {{ end }}
       </div>
     </div>
@@ -15,7 +15,7 @@
       <span class="shelf-filters__label">status</span>
       <div class="shelf-filters__chips">
         {{ range $key, $value := site.Taxonomies.status }}
-          <a class="shelf-chip" href="{{ "/status/" | relLangURL }}{{ $key | urlize }}">{{ $key }}<span class="shelf-chip__n">{{ len $value }}</span></a>
+          <a class="shelf-chip" href="{{ printf "%s%s/" ("/status/" | relLangURL) ($key | urlize) }}">{{ $key }}<span class="shelf-chip__n">{{ len $value }}</span></a>
         {{ end }}
       </div>
     </div>

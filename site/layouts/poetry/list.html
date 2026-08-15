@@ -59,7 +59,7 @@
 }}
 <div class="moss-overlay">
   {{ range $moss }}
-  <img src="/assets/{{ .src }}.webp" class="moss-layer moss-{{ .side }}" loading="lazy"
+  <img src="/assets/{{ .src }}.webp" class="moss-layer moss-{{ .side }}" alt="Moss illustration" loading="lazy"
     style="--top: {{ .top }}; --delay: {{ .delay }}; --top-m: {{ .topM }}; --off-m: {{ .offM }};{{ with .off }} --off: {{ . }};{{ end }}" />
   {{ end }}
 </div>

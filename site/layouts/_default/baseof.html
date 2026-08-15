@@ -41,15 +41,11 @@
       crossorigin
     />
 
-    <title>{{ .Title }}</title>
+    <title>{{ if .IsHome }}Personal blog of Anton Grishin{{ else }}{{ .Title }} — personal blog of Anton Grishin{{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="{{ with .Description }}
-        {{ . }}
-      {{ else }}
-        {{ .Summary | plainify | truncate 160 }}
-      {{ end }}"
+      content="{{- if .IsHome -}}Personal blog by alchemmist: STEM articles and essays on philosophy, career, psychology, and more.{{- else -}}{{ with .Description }}{{ . | plainify | truncate 150 }}{{ else }}{{ .Summary | plainify | truncate 150 }}{{ end }}{{- end -}}"
     />
     <meta name="author" content="alchemmist" />
 
@@ -62,9 +58,9 @@
     <meta
       property="og:description"
       content="{{ with .Description }}
-        {{ . }}
+        {{ . | plainify | truncate 155 }}
       {{ else }}
-        {{ .Summary | plainify | truncate 160 }}
+        {{ .Summary | plainify | truncate 155 }}
       {{ end }}"
     />
     {{ $logo := partial "logo-nobackground.html" . }}

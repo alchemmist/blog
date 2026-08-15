@@ -11,6 +11,9 @@
     {{- $maxw = int (index . 0) -}}
   {{- end -}}
 {{- end -}}
+{{- if not $alt -}}
+  {{- $alt = printf "Illustration for %s" .Page.Title -}}
+{{- end -}}
 {{- partial "responsive-img.html" (dict
   "src" .Destination
   "alt" $alt

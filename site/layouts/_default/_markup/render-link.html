@@ -1,0 +1,5 @@
+{{- $href := .Destination -}}
+{{- if and (strings.HasPrefix $href "/") (not (strings.HasSuffix $href "/")) (not (strings.Contains $href "#")) (not (strings.Contains $href "?")) (not (path.Ext $href)) -}}
+  {{- $href = printf "%s/" $href -}}
+{{- end -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

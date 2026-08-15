@@ -68,7 +68,7 @@
       {{ partial "iconify.html" (dict "icon" "simple-icons:bluesky" "size"
       "1.0em") }}
       <a
-        href="https://bsky.app/intent/post?text={{ .Title }}%20{{ .Permalink }}"
+        href="https://bsky.app/intent/compose?text={{ printf "%s %s" .Title .Permalink | urlquery }}"
         target="_blank"
         rel="noopener noreferrer"
         >Bluesky</a
