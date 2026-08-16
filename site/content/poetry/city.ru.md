@@ -7,7 +7,7 @@ extra:
   custom_props:
     type: poetry
     public: true
-    status: writing
+    status: finished
 ---
 
 ![|300](/images/city-2.png)

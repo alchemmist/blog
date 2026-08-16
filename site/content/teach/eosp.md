@@ -23,14 +23,14 @@ lectures:
       en: "https://alchemmist.github.io/eosp/pdf/01-lecture.en.pdf"
       ru: "https://alchemmist.github.io/eosp/pdf/01-lecture.ru.pdf"
     web: 
-      en: "https://alchemmist.github.io/eosp/lectures/01-lecture-en/"
-      ru: "https://alchemmist.github.io/eosp/lectures/01-lecture-ru/"
+      en: "https://alchemmist.github.io/eosp/lectures/01-lecture-en"
+      ru: "https://alchemmist.github.io/eosp/lectures/01-lecture-ru"
   - id: 02-lecture
     title: "Lecture 02"
     pdf:
       en: "https://alchemmist.github.io/eosp/pdf/02-lecture.en.pdf"
     web: 
-      en: "https://alchemmist.github.io/eosp/lectures/02-lecture-en/"
+      en: "https://alchemmist.github.io/eosp/lectures/02-lecture-en"
   - id: 03-lecture
     title: "Lecture 03"
   - id: 04-lecture
@@ -38,7 +38,7 @@ lectures:
     pdf:
       en: "https://alchemmist.github.io/eosp/pdf/04-lecture.en.pdf"
     web: 
-      en: "https://alchemmist.github.io/eosp/lectures/04-lecture-en/"
+      en: "https://alchemmist.github.io/eosp/lectures/04-lecture-en"
   - id: 05-lecture
     title: "Lecture 05"
   - id: 06-lecture
@@ -46,7 +46,7 @@ lectures:
     pdf:
       en: "https://alchemmist.github.io/eosp/pdf/06-lecture.en.pdf"
     web: 
-      en: "https://alchemmist.github.io/eosp/lectures/06-lecture-en/"
+      en: "https://alchemmist.github.io/eosp/lectures/06-lecture-en"
   - id: 07-lecture
     title: "Lecture 07"
   - id: 08-lecture
