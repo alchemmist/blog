@@ -904,7 +904,9 @@ mjx-container[display="true"] {
 
 /* ===== Books library: полка обложек ===== */
 .shelf-container {
+  width: min(100%, 60em);
   max-width: 60em;
+  box-sizing: border-box;
   margin: 3rem 0;
   align-items: stretch;
 }
