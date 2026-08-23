@@ -77,13 +77,21 @@ alchemmist.xyz {
     header /index.xml Content-Type application/rss+xml
 
     redir /cv/en/long https://alchemmist.github.io/CV/pdf/long-eng.pdf
+    redir /cv/en/long/ https://alchemmist.github.io/CV/pdf/long-eng.pdf
     redir /cv/en/go https://alchemmist.github.io/CV/pdf/go-eng.pdf
+    redir /cv/en/go/ https://alchemmist.github.io/CV/pdf/go-eng.pdf
     redir /cv/en/python https://alchemmist.github.io/CV/pdf/python-eng.pdf
+    redir /cv/en/python/ https://alchemmist.github.io/CV/pdf/python-eng.pdf
     redir /cv/ru/long https://alchemmist.github.io/CV/pdf/long-rus.pdf
+    redir /cv/ru/long/ https://alchemmist.github.io/CV/pdf/long-rus.pdf
     redir /cv/ru/short https://alchemmist.github.io/CV/pdf/short-rus.pdf
+    redir /cv/ru/short/ https://alchemmist.github.io/CV/pdf/short-rus.pdf
     redir /cv/ru/go https://alchemmist.github.io/CV/pdf/go-rus.pdf
+    redir /cv/ru/go/ https://alchemmist.github.io/CV/pdf/go-rus.pdf
     redir /cv/ru/python https://alchemmist.github.io/CV/pdf/python-rus.pdf
+    redir /cv/ru/python/ https://alchemmist.github.io/CV/pdf/python-rus.pdf
     redir /cv/ru/devops https://alchemmist.github.io/CV/pdf/devops-rus.pdf
+    redir /cv/ru/devops/ https://alchemmist.github.io/CV/pdf/devops-rus.pdf
 
     redir /rss /index.xml
     redir /feed /index.xml
