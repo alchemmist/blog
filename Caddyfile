@@ -86,6 +86,8 @@ alchemmist.xyz {
     redir /cv/ru/long/ https://alchemmist.github.io/CV/pdf/long-rus.pdf
     redir /cv/ru/short https://alchemmist.github.io/CV/pdf/short-rus.pdf
     redir /cv/ru/short/ https://alchemmist.github.io/CV/pdf/short-rus.pdf
+    redir /cv/ru/yandex https://alchemmist.github.io/CV/pdf/short-yandex.pdf
+    redir /cv/ru/yandex/ https://alchemmist.github.io/CV/pdf/short-yandex.pdf
     redir /cv/ru/go https://alchemmist.github.io/CV/pdf/go-rus.pdf
     redir /cv/ru/go/ https://alchemmist.github.io/CV/pdf/go-rus.pdf
     redir /cv/ru/python https://alchemmist.github.io/CV/pdf/python-rus.pdf
