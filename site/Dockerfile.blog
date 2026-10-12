@@ -1,4 +1,4 @@
-FROM ghcr.io/gohugoio/hugo:v0.151.2 AS builder
+FROM ghcr.io/gohugoio/hugo:v0.163.3 AS builder
 WORKDIR /src
 COPY --chown=0:0 . .
 USER root
