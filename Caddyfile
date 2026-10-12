@@ -20,10 +20,6 @@ wg-easy.alchemmist.xyz {
    reverse_proxy wg-easy:51821
 }
 
-soft.alchemmist.xyz {
-    reverse_proxy moss:8081
-}
-
 remark42.alchemmist.xyz {
     reverse_proxy remark42:8080
 }
