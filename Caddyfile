@@ -98,8 +98,11 @@ alchemmist.xyz {
 }
 
 vpn.alchemmist.xyz {
+    @happ_trojan path /connect-4e15326936f20a7a4f2cac67
+    reverse_proxy @happ_trojan 172.18.0.1:10443
+
     @sub path /16a19nq48vtd/* /16a19nq48vtd-json/*
-    reverse_proxy @sub 172.18.0.1:2096
+    reverse_proxy @sub 172.18.0.1:12096
     reverse_proxy 172.18.0.1:16582
 }
 
