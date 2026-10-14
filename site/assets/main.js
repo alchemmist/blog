@@ -109,29 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  if (typeof mermaid !== "undefined") {
-    mermaid.initialize({ startOnLoad: true });
-  }
-
-  if (typeof mediumZoom !== "undefined") {
-    let marginValue = window.innerWidth < 868 ? 25 : 50;
-
-    const zoom = mediumZoom("img", {
-      background: "rgba(0, 0, 0, 0.7)",
-      margin: marginValue,
-      scrollOffset: 50,
-      animationDuration: 300,
-    });
-
-    const noZoomImages = document.querySelectorAll("img.no-zoom");
-    noZoomImages.forEach((img) => zoom.detach(img));
-
-    window.addEventListener("resize", () => {
-      let newMargin = window.innerWidth < 868 ? 25 : 50;
-      zoom.update({ margin: newMargin });
-    });
-  }
-
   if (
     window.location.pathname !== "/search" &&
     typeof PagefindUI !== "undefined"

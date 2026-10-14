@@ -1,7 +1,7 @@
 /* ===== Fonts ===== */
 @font-face {
   font-family: "CourierCyr";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps.woff2")
+  src: url("/assets/fonts/couriercyrps.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_bold.woff2")
+  src: url("/assets/fonts/couriercyrps_bold.woff2")
     format("woff2");
   font-weight: bold;
   font-style: normal;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_inclined.woff2")
+  src: url("/assets/fonts/couriercyrps_inclined.woff2")
     format("woff2");
   font-weight: normal;
   font-style: italic;
@@ -28,48 +28,13 @@
 
 @font-face {
   font-family: "CourierCyr";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_boldinclined.woff2")
+  src: url("/assets/fonts/couriercyrps_boldinclined.woff2")
     format("woff2");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/JetBrainsMono-Regular.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Computer Modern Roman";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-roman.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Computer Modern Roman";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-bold.woff2")
-    format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Computer Modern Typewriter";
-  src: url("https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.typewriter-text-regular.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* ===== Base ===== */
 * {
@@ -261,46 +226,10 @@ article {
   overflow-x: hidden;
 }
 
-article p {
-  text-align: left;
-  margin: 0.5em 0;
-}
-
-article img {
-  display: block;
-  margin: 15px auto;
-  max-width: 100%;
-  height: auto;
-}
-
 /* Контентные картинки (render hook / партиал, #1): всегда сохраняем пропорции.
    Без height:auto явная высота из width/height-атрибутов растягивала картинки
    там, где нет правила article img (например в стихах). max-width:100% — чтобы
    заданная ширина (![|400]) уменьшалась на узких экранах. */
-.content-img {
-  max-width: 100%;
-  height: auto;
-}
-
-article img[src$=".gif"] {
-  border-radius: 0.5rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-article ol li {
-  margin: 0.5em 0;
-}
-
-article ul,
-ol {
-  text-align: left;
-  padding-left: 1.5em;
-  margin-left: 0;
-}
-
-li::marker {
-  font-size: 1em;
-}
 
 .article-date {
   text-align: center !important;
@@ -341,41 +270,8 @@ li::marker {
   font-size: 16px;
 }
 
-article * {
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
-  font-size: 18px;
-}
-
 ::selection {
   background: rgba(0, 0, 0, 0.1);
-}
-
-article h1,
-article h1 * {
-  margin-bottom: 0;
-  font-size: 25px;
-}
-
-article h2 {
-  text-align: left;
-  margin: 1.3em 0em 0.7em 0;
-  font-size: 20px;
-}
-
-@media (max-width: 650px) {
-  article h2 {
-    margin: 0;
-  }
-}
-
-article h3 {
-  margin: 0.2em 0;
-  text-align: left;
-}
-
-article h4 {
-  margin: 0.4cm 0;
-  text-align: left;
 }
 
 .articles-container li {
@@ -393,85 +289,14 @@ article h4 {
 }
 
 /* ===== Code Blocks ===== */
-pre code {
-  display: block;
-  /* background-color: #f9f9f9; */
-  background-color: rgba(0, 0, 0, 0.02);
-  color: #333;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  border-radius: 0.3em;
-  overflow-x: auto;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  tab-size: 2;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  white-space: pre;
-  background-clip: padding-box;
-}
-
-pre code .tab {
-  display: inline-block;
-  width: 2em;
-  content: "";
-}
-
-pre code .tab::selection {
-  color: rgba(0, 0, 0, 0);
-}
 
 /* Блоки без указанного языка (#25) рендерятся как <pre><code>текст</code></pre>
    без дочерних span — поэтому шрифт/выравнивание вешаем и на сам pre code,
    иначе такой текст наследует серифный центрированный article *. */
-pre code,
-pre code * {
-  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter";
-  line-height: 1.2;
-  text-align: left;
-}
 
 /* Размер задаём на самом code (нужно для блоков без языка, где нет дочерних
    span); у потомков 1em, чтобы em не умножался дважды и язык-блоки не меняли
    размер. */
-pre code {
-  font-size: 0.96em;
-}
-
-pre code * {
-  font-size: 1em;
-}
-
-@media (max-width: 650px) {
-  pre code {
-    font-size: 1em;
-  }
-}
-
-pre code * .err {
-  background-color: transparent !important;
-}
-
-pre {
-  margin: 0;
-}
-
-p code,
-li code,
-blockquote code {
-  background-color: rgba(0, 0, 0, 0.04);
-  padding: 0.1em 0.3em;
-  margin: 0 0.1em;
-  border-radius: 3px;
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
-  font-size: 0.9em;
-  color: #333;
-}
-
-p code * {
-  font-family:
-    "NerdFontsSymbols Nerd Font", "Computer Modern Typewriter", serif;
-}
 
 /* ===== Archive / Tags ===== */
 .archive-container {
@@ -627,16 +452,6 @@ p code * {
 }
 
 /* ===== Blockquote ===== */
-blockquote {
-  font-style: normal;
-  font-size: 1.1rem;
-  text-align: left;
-  color: #333;
-  border-left: 4px solid #aaa;
-  padding: 0.5em 1em;
-  margin: 0.5em 0;
-  quotes: "“" "”" "‘" "’";
-}
 
 /* ===== Responsive (Base) ===== */
 
@@ -676,23 +491,6 @@ blockquote {
     padding: 0 10px;
   }
 
-  article * {
-    font-size: 16px;
-  }
-
-  article h1 {
-    font-size: 22px;
-  }
-
-  article h2 {
-    font-size: 18px;
-  }
-
-  article ul,
-  article ol {
-    padding-left: 1em;
-  }
-
   .poetry * {
     font-size: 17px;
   }
@@ -713,11 +511,6 @@ blockquote {
     overflow-x: auto;
   }
 
-  pre code {
-    padding: 0.8rem;
-    font-size: 0.85em;
-  }
-
   .footer-link {
     margin: 10px;
   }
@@ -730,15 +523,6 @@ blockquote {
 @media (max-width: 650px) {
   .link {
     margin: 10px;
-  }
-
-  article h1 {
-    font-size: 20px;
-  }
-
-  blockquote {
-    padding: 0.3em 0.8em;
-    font-size: 1rem;
   }
 }
 
@@ -850,43 +634,8 @@ blockquote {
 }
 
 /* ===== MathJax ===== */
-mjx-container[display="true"] {
-  pointer-events: none;
-}
-
-mjx-container,
-mjx-container svg {
-  font-family: "Times New Roman", serif !important;
-}
-mjx-container[display="true"] {
-  display: block;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 8px;
-  pointer-events: auto;
-}
-
-@media (max-width: 650px) {
-  mjx-container svg {
-    /* max-width: 100%; */
-    overflow-x: auto;
-  }
-}
 
 /* ===== Medium Zoom ===== */
-.medium-zoom-overlay {
-  z-index: 1000;
-}
-
-.medium-zoom-image {
-  z-index: 400;
-  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
-}
-
-.medium-zoom-image--opened {
-  z-index: 1001;
-  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1) !important;
-}
 
 /* ===== Language Switcher ===== */
 .lang-switcher {
@@ -1581,12 +1330,6 @@ body.modal-open {
 }
 
 /* ===== Article Separators ===== */
-article hr {
-  background-color: #eee;
-  border: none;
-  height: 2px;
-  width: 100%;
-}
 
 .end-splitter {
   margin: 2em 0;
@@ -1755,10 +1498,6 @@ article hr {
   display: block;
   transform: translateY(20%);
   opacity: 1;
-}
-
-pre code * .err {
-  color: #333 !important;
 }
 
 /* ===== Shortcuts Modal ===== */
@@ -1937,38 +1676,6 @@ pre code * .err {
 }
 
 /* ===== GitHub Alerts ===== */
-.gh-alert {
-  border-left: 4px solid;
-  padding: 0.75em 1em;
-  margin: 1em 0;
-  border-radius: 6px;
-  background: var(--bg);
-}
-
-.gh-alert.note {
-  border-color: #0969da;
-  background: #ddf4ff;
-}
-
-.gh-alert.tip {
-  border-color: #1a7f37;
-  background: #dafbe1;
-}
-
-.gh-alert.warning {
-  border-color: #9a6700;
-  background: #fff8c5;
-}
-
-.gh-alert.important {
-  border-color: #8250df;
-  background: #fbefff;
-}
-
-.gh-alert.caution {
-  border-color: #cf222e;
-  background: #ffebe9;
-}
 
 /* ===== Header (Mobile Menu) ===== */
 .header-inner {
@@ -2138,148 +1845,12 @@ footer p {
 }
 
 /* ===== CSS Variables ===== */
-:root {
-  --c-done: #622cbc;
-  --c-success: #055d20;
-  --c-danger: #a0111f;
-  --c-warning: #744500;
-  --c-info: #0349b4;
-  --c-muted: #636c76;
-  --c-text-default: #222;
-}
 
 /* ===== Markdown Alerts ===== */
-.markdown-blockquote p {
-  margin: 0.5em;
-  font-style: italic;
-}
-
-.markdown-blockquote,
-.markdown-alert {
-  padding: 0 1rem;
-  border-left: 4px solid var(--c-muted);
-}
-
-.markdown-alert--note {
-  border-left-color: var(--c-info);
-  color: var(--c-info);
-}
-
-.markdown-alert--tip {
-  border-left-color: var(--c-success);
-  color: var(--c-success);
-}
-
-.markdown-alert--important {
-  border-left-color: var(--c-done);
-  color: var(--c-done);
-}
-
-.markdown-alert--warning {
-  border-left-color: var(--c-warning);
-  color: var(--c-warning);
-}
-
-.markdown-alert--caution {
-  border-left-color: var(--c-danger);
-  color: var(--c-danger);
-}
-
-.markdown-alert > p {
-  color: var(--c-text-default);
-}
-
-.markdown-alert__title {
-  margin-bottom: 0.7rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  font-size: 1.1rem;
-  font-style: normal;
-  font-weight: 600;
-  font-family: "CourierCyr";
-}
-
-.markdown-alert__title > svg {
-  fill: currentColor;
-  padding-right: 0.5rem;
-  height: 1.4em;
-  width: 1.4em;
-  display: block;
-}
-
-.markdown-alert--foldable .markdown-alert__body {
-  display: none;
-}
-
-.markdown-alert--foldable.open .markdown-alert__body {
-  display: block;
-  margin-top: 0.5em;
-}
-
-.markdown-alert--foldable .markdown-alert__title {
-  cursor: pointer;
-  user-select: none;
-}
 
 /* ===== Mermaid ===== */
-.mermaid * {
-  font-family: "Computer Modern Typewriter", "NerdFontsSymbols Nerd Font";
-  font-size: 1rem;
-}
-
-.mermaid {
-  display: block;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  border-radius: 0.3em;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mermaid svg {
-  display: block;
-  max-width: none;
-}
 
 /* ===== Heading Anchors ===== */
-h1 a.link,
-h2 a.link,
-h3 a.link,
-h4 a.link,
-h5 a.link,
-h6 a.link {
-  font-family: "Computer Modern Typewriter", "CourierCyr";
-  font-weight: 300;
-  font-size: 1.4em;
-  text-decoration: none;
-  opacity: 0.3;
-  text-decoration: none;
-  color: inherit;
-}
-
-h1 a.link:hover,
-h2 a.link:hover,
-h3 a.link:hover,
-h4 a.link:hover,
-h5 a.link:hover,
-h6 a.link:hover {
-  opacity: 0.7;
-}
-
-.link-h1 {
-  text-decoration: none;
-}
-
-.link-h1:hover {
-  text-decoration: none;
-}
-
-article h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
 
 a {
   text-decoration-line: underline;
@@ -2361,3 +1932,18 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+
+article > :where(:not(.hc-content)), article > :where(:not(.hc-content)) * {
+  font-family: "NerdFontsSymbols Nerd Font", "Computer Modern Roman", serif;
+  font-size: 18px;
+}
+article > h1, article > h1 * {font-size:25px;margin-bottom:0;}
+article > .article-header p {text-align:left;margin:0.5em 0;}
+.article-topics code, .essay-topics code {background:rgba(0,0,0,0.04);padding:0.1em 0.3em;margin:0 0.1em;border-radius:3px;}
+body .hc-content {--hc-font-ui:"CourierCyr",monospace;}
+@media (max-width:650px) {
+  article > :where(:not(.hc-content)), article > :where(:not(.hc-content)) * {font-size:16px;}
+  article > h1 {font-size:22px;}
+}
+
+article > hr {background-color:#eee;border:none;height:2px;width:100%;}

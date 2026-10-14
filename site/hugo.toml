@@ -81,6 +81,9 @@ allowContent = ['.']
 # контентные картинки (ресайз/WebP/srcset) через resources.Get в render hook
 # (#1). Объявление mounts заменяет дефолтные — поэтому перечисляем их все.
 [module]
+[[module.imports]]
+path = "github.com/alchemmist/hugo-content"
+
 [[module.mounts]]
 source = "content"
 target = "content"

@@ -21,21 +21,14 @@
 
     <link
       rel="preload"
-      href="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps.woff2"
+      href="/assets/fonts/couriercyrps.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/couriercyrps_bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/cmu.serif-roman.woff2"
+      href="/assets/fonts/couriercyrps_bold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -82,6 +75,8 @@
     />
     <meta name="twitter:image" content="{{ $ogImage | absURL }}" />
     <meta name="twitter:site" content="@alchemmist_blog" />
+
+    {{ partial "content/head.html" . }}
 
     <!-- Styles -->
     {{ $style := resources.Get "style.css" | resources.Minify |
@@ -162,5 +157,6 @@
     {{ if not (index .Params "no-header") }}{{ partial "header.html" . }}{{ end }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
+    {{ partial "content/scripts.html" . }}
   </body>
 </html>

@@ -28,7 +28,7 @@
         </div>
         <hr />
       {{ end }}
-      {{ .Content }}
+      {{ partial "content/body.html" . }}
       <hr class="end-splitter" />
       {{ partial "share-buttons.html" . }}
       <hr class="end-splitter" />
@@ -36,41 +36,15 @@
       <hr class="end-splitter" />
     </article>
   </main>
-  {{ if .Store.Get "hasMermaid" }}
-    <script type="module">
-      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
-      mermaid.initialize({
-        startOnLoad: true,
-        theme: "base",
-        flowchart: {
-          useMaxWidth: false,
-        },
-        gitGraph: {
-          useMaxWidth: false,
-        },
-      });
-    </script>
-  {{ end }}
 {{ end }}
 {{ define "head" }}
   <meta data-pagefind-filter="Language[lang]" lang="{{ .Language.Label }}" />
   {{ if .Params.tags }}
     <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
   {{ end }}
-  {{ partial "connect-medium-zoom.html" }}
-  {{ partial "connect-mathjax.html" }}
-  {{ partial "connect-nerdfont.html" }}
 
-  {{ $syntax := resources.Get "syntax.css" | resources.Minify |
-    resources.Fingerprint
-  }}
-  <link
-    rel="stylesheet"
-    href="{{ $syntax.Permalink }}"
-    integrity="{{ $syntax.Data.Integrity }}"
-    media="print"
-    onload="this.media='all'"
-  />
+
+
   <script>
     window.remark_config = {
       host: "https://remark42.alchemmist.xyz",

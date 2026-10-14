@@ -24,7 +24,7 @@
     <hr />
     {{ end }}
 
-    {{ .Content }}
+    {{ partial "content/body.html" . }}
     <hr class="end-splitter" />
     {{ partial "share-buttons.html" . }}
     <hr class="end-splitter" />
@@ -38,8 +38,7 @@
   {{ if .Params.topics }}
     <meta name="keywords" content="{{ delimit .Params.topics ", " }}">
   {{ end }}
-  {{ partial "connect-medium-zoom.html" }}
-  {{ partial "connect-mathjax.html" }}
+
   <script>
     window.remark_config = {
       host: "https://remark42.alchemmist.xyz",

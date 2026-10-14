@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{ .Language.Lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="{{ .Description }}" />
+    <title>{{ .Title }} — {{ .Site.Title }}</title>
+    {{ $style := resources.Get "style.css" }}
+    {{ $base := $style | minify | fingerprint }}
+    {{ partial "content/head.html" . }}
+    {{ $demo := resources.Get "content-demo.css" | minify | fingerprint }}
+    {{ range slice $base $demo }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
+    {{ end }}
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}" />
+
+    {{ $script := resources.Get "content-demo.js" | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+  </head>
+  <body class="content-demo">
+    <a class="demo-skip" href="#demo-title">Перейти к содержанию</a>
+    <header class="demo-header">
+      <a class="demo-brand" href="{{ "/" | relLangURL }}">
+        <img src="{{ "assets/logo-nobackground.svg" | relURL }}" alt="" width="28" height="28" />
+        <span>alchemmist</span>
+      </a>
+      <span class="demo-status">Образец контента</span>
+    </header>
+    <div class="demo-layout">
+      <aside class="demo-sidebar" aria-label="Оглавление">
+        <details open>
+          <summary>На этой странице</summary>
+          {{ .TableOfContents }}
+        </details>
+      </aside>
+      <main id="demo-main">
+        <article class="demo-article">
+          <h1 id="demo-title" tabindex="-1">{{ .Title }}</h1>
+          {{ partial "content/body.html" . }}
+        </article>
+        <footer class="demo-footer">
+          <a href="#demo-title">К началу ↑</a>
+          <span>Типографика и компоненты блога</span>
+        </footer>
+      </main>
+    </div>
+    {{ partial "content/scripts.html" . }}
+  </body>
+</html>
