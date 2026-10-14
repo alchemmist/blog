@@ -7,16 +7,14 @@
     <meta name="description" content="{{ .Description }}" />
     <title>{{ .Title }} — {{ .Site.Title }}</title>
     {{ $style := resources.Get "style.css" }}
-    {{ $localStyle := replace $style.Content "https://cdn.jsdelivr.net/gh/alchemmist/personal-site@main/site/static/assets/fonts/" ("assets/fonts/" | relURL) }}
-    {{ $base := resources.FromString "content-demo/blog.css" $localStyle | minify | fingerprint }}
-    {{ $syntax := resources.Get "syntax.css" | minify | fingerprint }}
+    {{ $base := $style | minify | fingerprint }}
+    {{ partial "content/head.html" . }}
     {{ $demo := resources.Get "content-demo.css" | minify | fingerprint }}
-    {{ range slice $base $syntax $demo }}
+    {{ range slice $base $demo }}
       <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
     {{ end }}
     <link rel="icon" href="{{ "favicon.ico" | relURL }}" />
-    {{ partial "connect-mathjax.html" . }}
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" defer></script>
+
     {{ $script := resources.Get "content-demo.js" | minify | fingerprint }}
     <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
   </head>
@@ -39,7 +37,7 @@
       <main id="demo-main">
         <article class="demo-article">
           <h1 id="demo-title" tabindex="-1">{{ .Title }}</h1>
-          {{ .Content }}
+          {{ partial "content/body.html" . }}
         </article>
         <footer class="demo-footer">
           <a href="#demo-title">К началу ↑</a>
@@ -47,16 +45,6 @@
         </footer>
       </main>
     </div>
-    {{ if .Store.Get "hasMermaid" }}
-      <script type="module">
-        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs";
-        mermaid.initialize({
-          startOnLoad: true,
-          theme: "base",
-          flowchart: { useMaxWidth: false },
-          sequence: { useMaxWidth: false },
-        });
-      </script>
-    {{ end }}
+    {{ partial "content/scripts.html" . }}
   </body>
 </html>

@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 env:
-  HUGO_VERSION: 0.163.3
+  HUGO_VERSION: 0.167.0
   PAGEFIND_VERSION: 1.5.2
 
 jobs:
@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Setup Go for Hugo modules
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: false
 
       - name: Setup Hugo (extended)
         uses: peaceiris/actions-hugo@v3
@@ -38,3 +44,11 @@ jobs:
       - name: Build search index (pagefind)
         working-directory: site
         run: npx -y pagefind@${{ env.PAGEFIND_VERSION }} --site public --output-subdir _pagefind --force-language all
+
+      - name: Verify content module assets
+        working-directory: site
+        run: |
+          test -f public/hugo-content/lib/mermaid.js
+          test -f public/hugo-content/lib/zoom.js
+          test -f public/hugo-content/lib/mathjax/tex-svg.js
+          test ! -e public/ru/content-demo/index.html

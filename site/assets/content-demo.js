@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof mediumZoom !== "undefined") {
-    mediumZoom(".demo-article img", {
-      background: "rgba(0, 0, 0, 0.7)",
-      margin: 24,
-      scrollOffset: 50,
-    });
-  }
-
   const contents = document.querySelector(".demo-sidebar details");
   const compact = window.matchMedia("(max-width: 760px)");
   const updateContents = () => {
@@ -16,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   compact.addEventListener("change", updateContents);
 
   const links = [...document.querySelectorAll(".demo-sidebar nav a")];
-  const headings = [...document.querySelectorAll(".demo-article > h2")];
+  const headings = [...document.querySelectorAll(".demo-article .hc-content > h2")];
   let scheduled = false;
 
   const updateCurrent = () => {

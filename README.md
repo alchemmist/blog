@@ -167,8 +167,7 @@ This draft page brings together typography, Markdown, code, alerts, Mermaid,
 mathematics, images, video, and Nerd Font icons using the blog's existing styles
 and render hooks. It is excluded from normal production builds.
 
-The preview requires Hugo and does not need Pagefind. Fonts are served locally;
-Mermaid, MathJax, and image zoom currently require an internet connection.
+The preview requires Hugo and does not need Pagefind. Fonts, Mermaid, MathJax, and image zoom are served locally by the content module.
 Edit `site/content/content-demo.ru.md` to extend the specimen.
 
 If you want to up all infrostruture, please, use docker compose:
@@ -178,3 +177,24 @@ docker compose up -d
 But befor it, you need to feel the gaps in compose.yaml with secrets, that you will use.
 
 
+
+### Shared content module
+
+Article and essay rendering uses `github.com/alchemmist/hugo-content`, pinned in
+`site/go.mod` and verified by `site/go.sum`. Install Go as well as Hugo before
+building; the Docker builder includes both. Node.js is not required.
+
+The module owns Markdown hooks, content typography, syntax highlighting,
+media, math, diagrams, and zoom. Blog navigation, comments, analytics, and the
+poetry layout remain here. `responsive-img.html` is a compatibility adapter to
+`content/image.html` for the blog's existing gallery templates.
+
+To work on the sibling module locally, temporarily add this to `site/go.mod`:
+
+```go
+replace github.com/alchemmist/hugo-content => ../../hugo-content
+```
+
+Remove the replacement before publishing. To adopt another release, run
+`hugo mod get github.com/alchemmist/hugo-content@VERSION` from `site/`, then
+verify the specimen and representative articles, essays, poetry, and galleries.

@@ -1,20 +1,27 @@
-FROM archlinux:latest AS builder
+FROM golang:1.25-bookworm AS builder
 
-# Установка зависимостей
-RUN pacman -Syu --noconfirm \
-    hugo \
-    python \
-    python-pip \
-    git \
-    curl
+ARG HUGO_VERSION=0.167.0
+ARG TARGETARCH
 
-# Установка Pagefind с расширенной поддержкой
-RUN pip install 'pagefind[extended]' --break-system-packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 python3-venv ca-certificates curl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN architecture="${TARGETARCH:-$(dpkg --print-architecture)}" \
+    && archive="hugo_${HUGO_VERSION}_linux-${architecture}.tar.gz" \
+    && curl -fsSL -o "/tmp/${archive}" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${archive}" \
+    && curl -fsSL -o /tmp/hugo_checksums.txt "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt" \
+    && cd /tmp \
+    && grep " ${archive}$" hugo_checksums.txt | sha256sum --check \
+    && tar -xzf "${archive}" -C /usr/local/bin hugo \
+    && rm "${archive}" hugo_checksums.txt
+
+RUN python3 -m venv /opt/pagefind \
+    && /opt/pagefind/bin/pip install --no-cache-dir 'pagefind[extended]'
+
+ENV PATH="/opt/pagefind/bin:${PATH}"
 
 WORKDIR /usr/src/app
 COPY . .
 
-# Команда сборки. /output чистим перед копированием: иначе файлы, которые
-# свежая сборка больше не генерит (старые страницы, dev-артефакты с livereload),
-# навсегда остаются в томе и продолжают отдаваться с прода.
-CMD ["sh", "-c", "rm -rf public && hugo --minify --gc --ignoreCache && python -m pagefind  --site public --output-subdir _pagefind --verbose --force-language all && rm -rf /output/* && cp -r public/* /output"]
+CMD ["sh", "-c", "rm -rf public && hugo --minify --gc --ignoreCache && python -m pagefind --site public --output-subdir _pagefind --verbose --force-language all && rm -rf /output/* && cp -r public/* /output"]

@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "NerdFontsSymbols Nerd Font";
-  src: url("/assets/fonts/Symbols-2048-em%20Nerd%20Font%20Complete.woff2") format("woff2");
-  font-display: swap;
-}
 
 .content-demo {
   --demo-muted: #595959;
@@ -134,7 +129,7 @@
   text-wrap: balance;
 }
 
-.demo-article > h2 {
+.demo-article .hc-content > h2 {
   margin: 2.5rem 0 0.8rem;
 }
 
@@ -143,11 +138,11 @@
   text-align: left;
 }
 
-.demo-article > :is(h3, h4, h5, h6) {
+.demo-article .hc-content > :is(h3, h4, h5, h6) {
   margin-top: 1.5rem;
 }
 
-.demo-article > p:first-of-type {
+.demo-article .hc-content > p:first-of-type {
   margin-top: 0;
 }
 
@@ -278,3 +273,5 @@
     scroll-behavior: auto;
   }
 }
+
+.demo-article .hc-content {--hc-line-height:1.55;}

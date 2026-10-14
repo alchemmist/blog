@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="base-container verse-container">
-  <div class="poetry">
+  <div class="poetry" data-content-zoom>
     <h1 data-pagefind-meta="title">
       {{ .Title }} {{ partial "allLanguages.html" . }}
     </h1>
@@ -15,4 +15,4 @@
 <meta data-pagefind-filter="Language[lang]" lang="{{.Language.Label}}" />
 
 {{ partial "remark42-lazy.html" . }}
-{{ partial "connect-medium-zoom.html" }} {{ end }}
+ {{ end }}

@@ -1,6 +1,6 @@
 {{/* Полка книг: единый вид для главной /books/ и страниц таксономий.
      Контекст (.) — коллекция страниц-книг. */}}
-<div class="shelf-grid">
+<div class="shelf-grid" data-content-zoom>
   {{ range . }}
     {{ $title := .Title }}
     <figure class="shelf-book" title="{{ .Title }}{{ with .Params.author }} — {{ . }}{{ end }}">

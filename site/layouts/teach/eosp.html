@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="base-container article-container">
   <article>
-    {{ .Content }}
+    {{ partial "content/body.html" . }}
 
     <section class="course-lectures">
       <h2>Lectures materials</h2>
@@ -72,8 +72,8 @@
     </section>
   </article>
 </div>
-{{ end }} {{ define "head" }} {{ partial "connect-medium-zoom.html" }}
-{{ partial "connect-nerdfont.html" }}
+{{ end }} {{ define "head" }}
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const videos = document.querySelectorAll(".masonry-video");
