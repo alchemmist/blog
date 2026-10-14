@@ -282,6 +282,14 @@ article img {
   height: auto;
 }
 
+.content-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+}
+
 article img[src$=".gif"] {
   border-radius: 0.5rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);

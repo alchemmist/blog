@@ -160,6 +160,17 @@ make dev
 ```
 After that on `localhost:1313` will up my blog.
 
+### Content specimen
+
+Run `make content-demo` and open `http://localhost:1314/ru/content-demo/`.
+This draft page brings together typography, Markdown, code, alerts, Mermaid,
+mathematics, images, video, and Nerd Font icons using the blog's existing styles
+and render hooks. It is excluded from normal production builds.
+
+The preview requires Hugo and does not need Pagefind. Fonts are served locally;
+Mermaid, MathJax, and image zoom currently require an internet connection.
+Edit `site/content/content-demo.ru.md` to extend the specimen.
+
 If you want to up all infrostruture, please, use docker compose:
 ```sh
 docker compose up -d
