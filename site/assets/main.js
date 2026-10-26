@@ -327,8 +327,7 @@ document.addEventListener("keydown", function (event) {
   }
 
   if (shortcutsMap[event.key]) {
-    const url = new URL(shortcutsMap[event.key], window.location.origin);
-    window.location.href = url;
+    window.location.href = shortcutsMap[event.key];
   }
 });
 
