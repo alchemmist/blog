@@ -7,7 +7,7 @@ RUN hugo --minify --gc \
     && test -f public/hugo-content/lib/mathjax/tex-svg.js \
     && test -f public/hugo-content/lib/zoom.js
 
-FROM node:22-alpine AS pagefind
+FROM node:24-alpine AS pagefind
 WORKDIR /src
 COPY --from=builder /src/public ./public
 RUN npx -y pagefind@1.5.2 --site public --output-subdir _pagefind --force-language all
