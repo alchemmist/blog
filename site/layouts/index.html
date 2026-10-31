@@ -105,7 +105,7 @@
           {{ $recentUpdates = $recentUpdates | append $line }}
         {{ end }}
       {{ end }}
-      {{ range $line := first 5 $recentUpdates }} {{ $cleanLine := replace $line "- [ ]" "" }} {{ $withoutDate :=
+      {{ range $line := first 5 $recentUpdates }} {{ $cleanLine := replace (replace $line "- [ ]" "") "- [x]" "" }} {{ $withoutDate :=
       replaceRE `\*\\\[[^\]]*\\\]\*\s*` "" $cleanLine }}
       <li>{{ $withoutDate | markdownify }}</li>
       {{ end }}
