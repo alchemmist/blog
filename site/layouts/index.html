@@ -99,11 +99,16 @@
     <h3>Last updates</h3>
     {{ $updates := .Site.GetPage "updates" }}
     <ul>
-      {{ range $line := split $updates.RawContent "\n" }} {{ if in $line "- [ ]"
-      }} {{ $cleanLine := replace $line "- [ ]" "" }} {{ $withoutDate :=
+      {{ $recentUpdates := slice }}
+      {{ range $line := split $updates.RawContent "\n" }}
+        {{ if or (hasPrefix $line "- [ ]") (hasPrefix $line "- [x]") }}
+          {{ $recentUpdates = $recentUpdates | append $line }}
+        {{ end }}
+      {{ end }}
+      {{ range $line := first 5 $recentUpdates }} {{ $cleanLine := replace $line "- [ ]" "" }} {{ $withoutDate :=
       replaceRE `\*\\\[[^\]]*\\\]\*\s*` "" $cleanLine }}
       <li>{{ $withoutDate | markdownify }}</li>
-      {{ end }} {{ end }}
+      {{ end }}
     </ul>
   </div>
 </div>
