@@ -1,38 +1,115 @@
-name: Deploy
+name: Blog release
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HUGO_VERSION: 0.167.0
+  PAGEFIND_VERSION: 1.5.2
+
 jobs:
-  deploy:
+  validate:
+    name: Build and validate the site
     runs-on: ubuntu-latest
     steps:
-      - name: Pull repo
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ${{ secrets.SSH_PROJECT_PATH }}
-            git pull origin main --rebase
-      - name: Rebuild Hugo builder
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ${{ secrets.SSH_PROJECT_PATH }}
-            docker compose up --no-deps --build -d hugo-builder
-      - name: Reload Caddy
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            set -e
-            cd ${{ secrets.SSH_PROJECT_PATH }}
-            docker compose up -d --force-recreate --no-deps caddy
+      - uses: actions/checkout@v7
 
+      - name: Set up Go for Hugo modules
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: false
+
+      - name: Set up Hugo (extended)
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build with Hugo
+        working-directory: site
+        run: hugo --minify --gc
+
+      - name: Build Pagefind index
+        working-directory: site
+        run: npx -y pagefind@${{ env.PAGEFIND_VERSION }} --site public --output-subdir _pagefind --force-language all
+
+      - name: Verify content module assets
+        working-directory: site
+        run: |
+          test -f public/hugo-content/lib/mermaid.js
+          test -f public/hugo-content/lib/zoom.js
+          test -f public/hugo-content/lib/mathjax/tex-svg.js
+          test ! -e public/ru/content-demo/index.html
+
+  publish-and-deploy:
+    name: Publish Harbor image and update Argo CD
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: blog-release
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Harbor
+        uses: docker/login-action@v3
+        with:
+          registry: harbor.socrat.alchemmist.xyz
+          username: ${{ secrets.HARBOR_USERNAME }}
+          password: ${{ secrets.HARBOR_PASSWORD }}
+
+      - name: Build and push immutable image
+        id: image
+        uses: docker/build-push-action@v6
+        with:
+          context: site
+          file: site/Dockerfile.blog
+          push: true
+          tags: harbor.socrat.alchemmist.xyz/homelab/blog:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Update the blog Application through the Argo CD API
+        env:
+          ARGOCD_AUTH_TOKEN: ${{ secrets.ARGOCD_AUTH_TOKEN }}
+          ARGOCD_SERVER: https://argocd.socrat.alchemmist.xyz
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${ARGOCD_AUTH_TOKEN:?missing ARGOCD_AUTH_TOKEN}"
+          [[ "$IMAGE_DIGEST" =~ ^sha256:[a-f0-9]{64}$ ]]
+
+          # Older builds may finish after a newer main commit. Do not regress the app.
+          latest_main_sha="$(git ls-remote origin refs/heads/main | awk 'NR == 1 { print $1 }')"
+          if [[ "$GITHUB_SHA" != "$latest_main_sha" ]]; then
+            echo "Skipping stale build $GITHUB_SHA; main is now $latest_main_sha."
+            exit 0
+          fi
+
+          patch="$(jq -cn --arg digest "$IMAGE_DIGEST" \
+            '{spec:{source:{helm:{parameters:[{name:"image.digest",value:$digest,forceString:true}]}}}}')"
+          request="$(jq -cn --arg patch "$patch" \
+            '{name:"blog",appNamespace:"argocd",project:"blog",patchType:"merge",patch:$patch}')"
+
+          status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
+            --request PATCH \
+            --config <(printf 'header = "Authorization: Bearer %s"\n' "$ARGOCD_AUTH_TOKEN") \
+            --header 'Content-Type: application/json' \
+            --data "$request" \
+            "$ARGOCD_SERVER/api/v1/applications/blog")"
+          if [[ "$status" != 200 ]]; then
+            echo "Argo CD Application update failed with HTTP $status." >&2
+            exit 1
+          fi
+          echo "Submitted immutable image digest to the blog Application; Argo CD handles rollout."
