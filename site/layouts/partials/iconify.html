@@ -1,14 +1,14 @@
 {{- $icon := .icon -}}
-{{- $class := .class -}}
+{{- $class := .class | default "" -}}
 {{- $size := .size | default "1em" -}}
+{{- $path := printf "icons/%s.svg" (replace $icon ":" "/") -}}
 
-{{- $url := printf "https://api.iconify.design/%s.svg?width=%s&height=%s" $icon $size $size -}}
-{{- $result := try (resources.GetRemote $url) -}}
-
-{{- if and (not $result.Err) $result.Value -}}
+{{- with resources.Get $path -}}
+    {{- /* Vendored SVGs have a viewBox; dimensions come from the caller. */ -}}
+    {{- $dimensions := printf `<svg width="%s" height="%s" ` (htmlEscape $size) (htmlEscape $size) -}}
     <span class="{{ $class }}">
-        {{ $result.Value.Content | safeHTML }}
+        {{- replace .Content "<svg " $dimensions 1 | safeHTML -}}
     </span>
 {{- else -}}
-    <!-- Ошибка загрузки иконки {{ $icon }} -->
+    {{- errorf "Missing local icon %q: add assets/%s (see assets/icons/README.md)" $icon $path -}}
 {{- end -}}

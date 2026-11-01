@@ -39,6 +39,12 @@ jobs:
         working-directory: site
         run: hugo --minify --gc
 
+      - name: Verify rendered Follow icons
+        run: python3 scripts/check-follow-icons.py site/public
+
+      - name: Verify keyboard shortcuts
+        run: node scripts/test-shortcuts.cjs
+
       - name: Build search index (pagefind)
         working-directory: site
         run: npx -y pagefind@${{ env.PAGEFIND_VERSION }} --site public --output-subdir _pagefind --force-language all

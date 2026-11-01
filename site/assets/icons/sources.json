@@ -1,0 +1,176 @@
+{
+  "source": "https://github.com/iconify/icon-sets",
+  "collections": {
+    "devicon-plain": {
+      "name": "Devicon Plain",
+      "author": {
+        "name": "konpa",
+        "url": "https://github.com/devicons/devicon/tree/master"
+      },
+      "license": {
+        "title": "MIT",
+        "spdx": "MIT",
+        "url": "https://github.com/devicons/devicon/blob/master/LICENSE"
+      }
+    },
+    "fontisto": {
+      "name": "Fontisto",
+      "author": {
+        "name": "Kenan G\u00fcndo\u011fan",
+        "url": "https://github.com/kenangundogan/fontisto"
+      },
+      "license": {
+        "title": "MIT",
+        "spdx": "MIT",
+        "url": "https://github.com/kenangundogan/fontisto/blob/master/LICENSE"
+      }
+    },
+    "ic": {
+      "name": "Google Material Icons",
+      "author": {
+        "name": "Material Design Authors",
+        "url": "https://github.com/material-icons/material-icons"
+      },
+      "license": {
+        "title": "Apache 2.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/material-icons/material-icons/blob/master/LICENSE"
+      }
+    },
+    "icon-park-solid": {
+      "name": "IconPark Solid",
+      "author": {
+        "name": "ByteDance",
+        "url": "https://github.com/bytedance/IconPark"
+      },
+      "license": {
+        "title": "Apache 2.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/bytedance/IconPark/blob/master/LICENSE"
+      }
+    },
+    "ion": {
+      "name": "IonIcons",
+      "author": {
+        "name": "Ben Sperry",
+        "url": "https://github.com/ionic-team/ionicons"
+      },
+      "license": {
+        "title": "MIT",
+        "spdx": "MIT",
+        "url": "https://github.com/ionic-team/ionicons/blob/main/LICENSE"
+      }
+    },
+    "logos": {
+      "name": "SVG Logos",
+      "author": {
+        "name": "Gil Barbara",
+        "url": "https://github.com/gilbarbara/logos"
+      },
+      "license": {
+        "title": "CC0",
+        "spdx": "CC0-1.0",
+        "url": "https://raw.githubusercontent.com/gilbarbara/logos/master/LICENSE.txt"
+      }
+    },
+    "material-symbols": {
+      "name": "Material Symbols",
+      "author": {
+        "name": "Google",
+        "url": "https://github.com/google/material-design-icons"
+      },
+      "license": {
+        "title": "Apache 2.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/google/material-design-icons/blob/master/LICENSE"
+      }
+    },
+    "mdi": {
+      "name": "Material Design Icons",
+      "author": {
+        "name": "Pictogrammers",
+        "url": "https://github.com/Templarian/MaterialDesign"
+      },
+      "license": {
+        "title": "Apache 2.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/Templarian/MaterialDesign/blob/master/LICENSE"
+      }
+    },
+    "mingcute": {
+      "name": "MingCute Icon",
+      "author": {
+        "name": "MingCute Design",
+        "url": "https://github.com/Richard9394/MingCute"
+      },
+      "license": {
+        "title": "Apache 2.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/Richard9394/MingCute/blob/main/LICENSE"
+      }
+    },
+    "prime": {
+      "name": "Prime Icons",
+      "author": {
+        "name": "PrimeTek",
+        "url": "https://github.com/primefaces/primeicons"
+      },
+      "license": {
+        "title": "MIT",
+        "spdx": "MIT",
+        "url": "https://github.com/primefaces/primeicons/blob/master/LICENSE"
+      }
+    },
+    "ri": {
+      "name": "Remix Icon",
+      "author": {
+        "name": "Remix Design",
+        "url": "https://github.com/cyberalien/RemixIcon"
+      },
+      "license": {
+        "title": "Apache 2.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/cyberalien/RemixIcon/blob/master/License"
+      }
+    },
+    "simple-icons": {
+      "name": "Simple Icons",
+      "author": {
+        "name": "Simple Icons Collaborators",
+        "url": "https://github.com/simple-icons/simple-icons"
+      },
+      "license": {
+        "title": "CC0 1.0",
+        "spdx": "CC0-1.0",
+        "url": "https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md"
+      }
+    },
+    "teenyicons": {
+      "name": "Teenyicons",
+      "author": {
+        "name": "smhmd",
+        "url": "https://github.com/teenyicons/teenyicons"
+      },
+      "license": {
+        "title": "MIT",
+        "spdx": "MIT",
+        "url": "https://github.com/teenyicons/teenyicons/blob/master/LICENSE"
+      }
+    },
+    "wi": {
+      "name": "Weather Icons",
+      "author": {
+        "name": "Erik Flowers",
+        "url": "https://github.com/erikflowers/weather-icons"
+      },
+      "license": {
+        "title": "Open Font License",
+        "spdx": "OFL-1.1",
+        "url": "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"
+      }
+    }
+  },
+  "aliases": {
+    "teenyicons:document-text-solid": "teenyicons:text-document-solid"
+  }
+}
