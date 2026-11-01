@@ -13,6 +13,9 @@ for path in articles books ru/poetry cv essays updates teach; do
   mkdir -p "$fixture/$path"
   printf 'ok\n' > "$fixture/$path/index.html"
 done
+# nginx in the container does not run as the host user. A 0700 temp dir
+# is readable on Docker Desktop and returns 404 on a Linux runner.
+chmod -R a+rX "$fixture"
 container="$(docker run -d -p 127.0.0.1::8080 \
   -v "$root/site/nginx.conf:/etc/nginx/conf.d/default.conf:ro" \
   -v "$fixture:/usr/share/nginx/html:ro" nginx:1.27-alpine)"
