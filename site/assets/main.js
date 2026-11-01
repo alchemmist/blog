@@ -1,3 +1,15 @@
+// Use physical keys so shortcuts also work with non-Latin layouts and Shift.
+function shortcutKey(event) {
+  return /^Key[A-Z]$/.test(event.code || "")
+    ? event.code.slice(3).toLowerCase()
+    : (event.key || "").toLowerCase();
+}
+
+function isEditing(event) {
+  return event.target?.isContentEditable ||
+    !!event.target?.closest?.("input, textarea, select, [contenteditable]:not([contenteditable='false'])");
+}
+
 // Высота хедера в CSS-переменную --header-h: нужна, чтобы центрировать стих
 // по экрану с учётом хедера (#24). Обновляем на загрузке и при ресайзе.
 function updateHeaderHeightVar() {
@@ -15,7 +27,14 @@ if (document.readyState === "loading") {
 window.addEventListener("load", updateHeaderHeightVar);
 window.addEventListener("resize", updateHeaderHeightVar);
 
-let currentAngle = parseInt(localStorage.getItem("burgerAngle")) || 0;
+// Storage may be disabled by browser privacy settings; navigation must still work.
+let currentAngle = 0;
+try {
+  const savedAngle = Number.parseInt(localStorage.getItem("burgerAngle"), 10);
+  if (Number.isFinite(savedAngle)) currentAngle = savedAngle;
+} catch {
+  // Keep the default angle when storage is unavailable.
+}
 
 const style = document.createElement("style");
 style.textContent = `
@@ -50,7 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
       menuOpen = !menuOpen;
       header.classList.toggle("is-open");
 
-      localStorage.setItem("burgerAngle", currentAngle);
+      try {
+        localStorage.setItem("burgerAngle", currentAngle);
+      } catch {
+        // The menu remains functional without persistence.
+      }
     }
 
     burger.addEventListener("click", toggleMenu);
@@ -160,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.addEventListener("keydown", (e) => {
-      if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "л")) {
+      if ((e.ctrlKey || e.metaKey) && shortcutKey(e) === "k") {
         e.preventDefault();
         openSearch();
       }
@@ -180,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (isEditing(e) || e.ctrlKey || e.metaKey || e.altKey) return;
 
   if (document.body.classList.contains("modal-open")) return;
 
@@ -193,7 +216,7 @@ document.addEventListener("keydown", (e) => {
     });
   }
 
-  switch (e.key) {
+  switch (shortcutKey(e)) {
     case "j":
       smoothScroll(window.scrollY + step);
       e.preventDefault();
@@ -243,7 +266,7 @@ const shortcuts = [
   { key: "b", description: "Go to book shelf", url: "/books" },
   { key: "j", description: "Scroll down" },
   { key: "k", description: "Scroll up" },
-  { key: "Ctrl+k", description: "Search" },
+  { key: "Ctrl+k / Cmd+k", description: "Search" },
 ];
 
 const shortcutsMap = Object.fromEntries(
@@ -311,8 +334,7 @@ if (closeBtn) closeBtn.addEventListener("click", closeModal);
 if (overlay) overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (event) {
-  const tag = event.target.tagName.toLowerCase();
-  if (tag === "input" || tag === "textarea") return;
+  if (isEditing(event) || event.isComposing) return;
 
   if (event.ctrlKey || event.altKey || event.metaKey) return;
 
@@ -326,8 +348,11 @@ document.addEventListener("keydown", function (event) {
     return;
   }
 
-  if (shortcutsMap[event.key]) {
-    window.location.href = shortcutsMap[event.key];
+  if (document.body.classList.contains("modal-open")) return;
+
+  if (shortcutsMap[shortcutKey(event)]) {
+    event.preventDefault();
+    window.location.href = shortcutsMap[shortcutKey(event)];
   }
 });
 
@@ -356,13 +381,13 @@ document.addEventListener("keydown", (e) => {
     (link) => link === document.activeElement,
   );
 
-  if (e.altKey && e.key.toLowerCase() === "j") {
+  if (e.altKey && shortcutKey(e) === "j") {
     e.preventDefault();
     const next = (activeIndex + 1) % links.length;
     links[next].focus();
   }
 
-  if (e.altKey && e.key.toLowerCase() === "k") {
+  if (e.altKey && shortcutKey(e) === "k") {
     e.preventDefault();
     const prev = (activeIndex - 1 + links.length) % links.length;
     links[prev].focus();
