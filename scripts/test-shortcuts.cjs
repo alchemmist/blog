@@ -37,7 +37,7 @@ vm.runInContext(source, browser);
 for (const key of ['a', 'A', 'ф', 'Ф']) {
   browser.window.location.href = '';
   for (const fn of listeners) fn({key, code: 'KeyA', target: {tagName: 'BODY'}, preventDefault() {}});
-  assert.equal(browser.window.location.href, '/articles');
+  assert.equal(browser.window.location.href, '/articles/');
 }
 for (const extra of [{ctrlKey: true}, {metaKey: true}, {altKey: true}, {isComposing: true}, {target: {isContentEditable: true, tagName: 'DIV'}}]) {
   browser.window.location.href = '';
@@ -53,3 +53,17 @@ assert.doesNotThrow(() => vm.runInContext(source, vm.createContext({
   localStorage: {getItem() {throw new Error('SecurityError');}},
 })));
 console.log('Storage-denied initialization regression passed');
+
+// Every section shortcut must use the canonical directory URL, avoiding a
+// server redirect (which used to leak the reverse proxy's HTTP/8080 origin).
+const destinations = {h: '/', a: '/articles/', p: '/ru/poetry/',
+  b: '/books/', c: '/cv/', e: '/essays/', u: '/updates/', t: '/teach/'};
+for (const [key, destination] of Object.entries(destinations)) {
+  browser.window.location.href = '';
+  for (const fn of listeners) fn({key, code: `Key${key.toUpperCase()}`,
+    target: {tagName: 'BODY'}, preventDefault() {}});
+  assert.equal(browser.window.location.href, destination);
+  const url = new URL(browser.window.location.href, browser.window.location.origin);
+  assert.equal(url.origin, browser.window.location.origin);
+}
+console.log('Canonical section URL regression tests passed');

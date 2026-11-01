@@ -41,6 +41,9 @@ jobs:
       - name: Verify keyboard shortcuts
         run: node scripts/test-shortcuts.cjs
 
+      - name: Verify reverse-proxy redirects
+        run: bash scripts/test-redirects.sh
+
       - name: Build Pagefind index
         working-directory: site
         run: npx -y pagefind@${{ env.PAGEFIND_VERSION }} --site public --output-subdir _pagefind --force-language all
