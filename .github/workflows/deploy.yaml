@@ -96,3 +96,5 @@ jobs:
     uses: alchemmist/deploy-to-socrat/.github/workflows/deploy.yml@v1
     with:
       image_version: ${{ needs.publish-and-deploy.outputs.digest }}
+    secrets:
+      homelab_deploy_key: ${{ secrets.HOMELAB_DEPLOY_KEY }}
