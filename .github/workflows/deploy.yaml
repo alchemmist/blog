@@ -64,6 +64,8 @@ jobs:
     concurrency:
       group: blog-release
       cancel-in-progress: false
+    outputs:
+      digest: ${{ steps.image.outputs.digest }}
     steps:
       - uses: actions/checkout@v4
 
@@ -88,8 +90,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Deploy to Socrat
-        uses: alchemmist/deploy-to-socrat@v1
-        with:
-          token: ${{ secrets.ARGOCD_AUTH_TOKEN }}
-          image_version: ${{ steps.image.outputs.digest }}
+  record-release:
+    name: Record the image version in homelab
+    needs: publish-and-deploy
+    uses: alchemmist/deploy-to-socrat/.github/workflows/deploy.yml@v1
+    with:
+      image_version: ${{ needs.publish-and-deploy.outputs.digest }}
