@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {{ $svg := partial "logo-nobackground.html" . }}
     <link
       rel="icon"
-      href="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
-      type="image/svg+xml"
+      href="{{ "favicon.ico" | relURL }}"
+      type="image/x-icon"
+      sizes="16x16 32x32 48x48"
     />
 
     {{ $js := resources.Get "logo-symbolism.js" | resources.Minify | resources.Fingerprint

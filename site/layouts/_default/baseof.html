@@ -84,12 +84,12 @@
     }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
 
-    <!-- Favicons -->
-    {{ $svg := partial "logo-nobackground.html" . }}
+    <!-- The ICO has a white backing to stay legible on light and dark browser tabs. -->
     <link
       rel="icon"
-      href="data:image/svg+xml;base64,{{ $svg | base64Encode }}"
-      type="image/svg+xml"
+      href="{{ "favicon.ico" | relURL }}"
+      type="image/x-icon"
+      sizes="16x16 32x32 48x48"
     />
 
     <!-- RSS -->
