@@ -85,37 +85,8 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Update the blog Application through the Argo CD API
-        env:
-          ARGOCD_AUTH_TOKEN: ${{ secrets.ARGOCD_AUTH_TOKEN }}
-          ARGOCD_SERVER: https://argocd.socrat.alchemmist.xyz
-          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          : "${ARGOCD_AUTH_TOKEN:?missing ARGOCD_AUTH_TOKEN}"
-          [[ "$IMAGE_DIGEST" =~ ^sha256:[a-f0-9]{64}$ ]]
-
-          # Older builds may finish after a newer main commit. Do not regress the app.
-          latest_main_sha="$(git ls-remote origin refs/heads/main | awk 'NR == 1 { print $1 }')"
-          if [[ "$GITHUB_SHA" != "$latest_main_sha" ]]; then
-            echo "Skipping stale build $GITHUB_SHA; main is now $latest_main_sha."
-            exit 0
-          fi
-
-          patch="$(jq -cn --arg digest "$IMAGE_DIGEST" \
-            '{spec:{source:{helm:{parameters:[{name:"image.digest",value:$digest,forceString:true}]}}}}')"
-          request="$(jq -cn --arg patch "$patch" \
-            '{name:"blog",appNamespace:"argocd",project:"blog",patchType:"merge",patch:$patch}')"
-
-          status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \
-            --request PATCH \
-            --config <(printf 'header = "Authorization: Bearer %s"\n' "$ARGOCD_AUTH_TOKEN") \
-            --header 'Content-Type: application/json' \
-            --data "$request" \
-            "$ARGOCD_SERVER/api/v1/applications/blog")"
-          if [[ "$status" != 200 ]]; then
-            echo "Argo CD Application update failed with HTTP $status." >&2
-            exit 1
-          fi
-          echo "Submitted immutable image digest to the blog Application; Argo CD handles rollout."
+      - name: Deploy to Socrat
+        uses: alchemmist/deploy-to-socrat@v1
+        with:
+          token: ${{ secrets.ARGOCD_AUTH_TOKEN }}
+          image_version: ${{ steps.image.outputs.digest }}
