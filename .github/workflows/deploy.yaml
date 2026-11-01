@@ -57,15 +57,13 @@ jobs:
           test ! -e public/ru/content-demo/index.html
 
   publish-and-deploy:
-    name: Publish Harbor image and update Argo CD
+    name: Publish Harbor image and deploy
     needs: validate
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     concurrency:
       group: blog-release
       cancel-in-progress: false
-    outputs:
-      digest: ${{ steps.image.outputs.digest }}
     steps:
       - uses: actions/checkout@v4
 
@@ -90,11 +88,8 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  record-release:
-    name: Record the image version in homelab
-    needs: publish-and-deploy
-    uses: alchemmist/deploy-to-socrat/.github/workflows/deploy.yml@v1
-    with:
-      image_version: ${{ needs.publish-and-deploy.outputs.digest }}
-    secrets:
-      homelab_deploy_key: ${{ secrets.HOMELAB_DEPLOY_KEY }}
+      - name: Deploy to Socrat
+        uses: alchemmist/deploy-to-socrat@v1
+        with:
+          token: ${{ secrets.HOMELAB_DEPLOY_KEY }}
+          image_version: ${{ steps.image.outputs.digest }}
