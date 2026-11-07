@@ -31,4 +31,9 @@ for path in articles books ru/poetry cv essays updates teach; do
   grep -qi "^Location: /$path/?test=1$" <<< "$headers"
   curl -fsS "http://127.0.0.1:$port/$path/" >/dev/null
 done
+headers="$(curl -sS -D - -o /dev/null -H 'Host: alchemmist.xyz' \
+  "http://127.0.0.1:$port/cv/ru/short/" | tr -d '\r')"
+grep -q '^HTTP/1.1 302 ' <<< "$headers"
+grep -qi '^Location: https://alchemmist.github.io/CV/pdf/short-rus.pdf$' <<< "$headers"
 printf 'Nginx section redirects preserve public origin (no HTTP/8080 leakage)\n'
+printf 'CV resume paths redirect to GitHub Pages PDFs\n'
